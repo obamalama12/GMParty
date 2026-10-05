@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0aubkywn5qqe"
-path.s3tc="res://.godot/imported/fill.png-a3946c6841f8653c5ad6b98861ab3a91.s3tc.ctex"
+uid="uid://bcxeriv2xtdc4"
+path="res://.godot/imported/ice_Atlas_Party.png-e850f6f99797a16d1961f4ff246deee6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "dac57631669a29df4dd48baac565234b"
 }
 
 [deps]
 
-source_file="res://plugins/minigames/kernel_compiling/screen/fill.png"
-dest_files=["res://.godot/imported/fill.png-a3946c6841f8653c5ad6b98861ab3a91.s3tc.ctex"]
+source_file="res://plugins/minigames/knock_off/ice_Atlas_Party.png"
+dest_files=["res://.godot/imported/ice_Atlas_Party.png-e850f6f99797a16d1961f4ff246deee6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -38,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
