@@ -37,6 +37,7 @@ Currently, Godot Engine version 4.7 is used.
 
 - `tools/minigame_playthrough` plays every minigame once and takes screenshots.
 - `tools/character_builder` builds the characters in Blender and renders previews.
+- `tools/board_builder` generates the Marky Valley board, `tools/board_tour` takes screenshots of boards.
 - `tools/get_assets.sh` copies the upstream assets in (see above).
 
 ## Issues

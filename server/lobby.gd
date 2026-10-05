@@ -158,6 +158,9 @@ func game_ended(): pass
 								max_turns = int(scene.get_node_property_value(i, prop))
 		settings["main/cake_cost"].update_value(cake_cost)
 		settings["main/turns"].update_value(max_turns)
+		# update_value only changes the settings menu, the game itself reads the overrides
+		overrides.cake_cost = cake_cost
+		overrides.max_turns = max_turns
 		send_board()
 		send_settings()
 

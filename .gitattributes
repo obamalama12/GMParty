@@ -27,3 +27,6 @@ assets/icons/icon-smallest.png -filter -diff -merge
 
 # The title logo was redrawn for this project
 assets/textures/title/Title.png -filter -diff -merge
+
+# The landmark palette of the Marky Valley board is small
+plugins/boards/MarkyValley/props/*.png -filter -diff -merge
