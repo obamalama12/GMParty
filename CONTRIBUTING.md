@@ -35,7 +35,7 @@ repository.
 
 ## Tools
 
-Super Tux Party is built in Godot 4.2 with GDscript.
+Super Tux Party is built in Godot 4.7 with GDscript.
 3D models are exported from [Blender](https://www.blender.org/) with the default gltf exporter.
 
 ### File structure

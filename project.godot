@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Super Tux Party"
 run/main_scene="res://client/menus/main_menu.tscn"
-config/features=PackedStringArray("4.2")
+config/features=PackedStringArray("4.7")
 config/icon="res://assets/icons/icon-smallest.png"
 run/main_scene.Server="res://server/server.tscn"
 
