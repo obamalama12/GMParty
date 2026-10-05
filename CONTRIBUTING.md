@@ -27,7 +27,7 @@ asset files. Tutorial for git-lfs can be found [here](https://www.atlassian.com/
 Too clone the repository, simply run:
 
 - `git clone https://github.com/obamalama12/GMParty.git`
-- run `tools/get_assets.sh` to get the assets that are stored in Git LFS upstream (see the README)
+- run `tools/get_assets.py` to get the assets that are stored in Git LFS upstream (see the README)
 
 If you want to merge changes into the repository you must first fork the
 project, upload your changes there and then create a merge request on the main

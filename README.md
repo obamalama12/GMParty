@@ -20,7 +20,7 @@ this repository yet. Copy them in from the original project:
 ```sh
 git clone https://gitlab.com/SuperTuxParty/SuperTuxParty.git upstream
 (cd upstream && git lfs pull)
-tools/get_assets.sh upstream
+python tools/get_assets.py upstream
 ```
 
 The script keeps files that already exist here (the new characters, icon, title and cake)
@@ -38,7 +38,7 @@ Currently, Godot Engine version 4.7 is used.
 - `tools/minigame_playthrough` plays every minigame once and takes screenshots.
 - `tools/character_builder` builds the characters in Blender and renders previews.
 - `tools/board_builder` generates the Marky Valley board, `tools/board_tour` takes screenshots of boards.
-- `tools/get_assets.sh` copies the upstream assets in (see above).
+- `tools/get_assets.py` copies the upstream assets in (see above).
 
 ## Issues
 
