@@ -391,9 +391,144 @@ def tent(p):
     p.cone("brown_dark", (0, 3.8, 0), 0.07, 1.0, segs=6)
 
 
+def fountain(p):
+    """The grand fountain in the middle of the village plaza (about 18 m across, 9 m high)."""
+    p.cone("stone_light", (0, 0.12, 0), 9.4, 0.24, segs=32, smooth=False)                  # base step
+    p.cone("stone", (0, 0.2, 0), 8.2, 0.4, segs=32, smooth=False)
+    p.cone("stone", (0, 0.95, 0), 7.2, 1.3, top=7.0, segs=32, smooth=False, alt="stone_dark", sectors=16)
+    p.cone("stone_light", (0, 1.65, 0), 7.5, 0.28, segs=32, smooth=False)                  # rim
+    p.cone("water", (0, 1.62, 0), 6.9, 0.12, segs=32)
+    for i in range(8):                                                                       # flower pots on the rim
+        a = math.radians(i * 45 + 22.5)
+        x, f = 7.5 * math.cos(a), 7.5 * math.sin(a)
+        p.cone("stone_dark", (x, 2.0, f), 0.55, 0.5, top=0.45, segs=10)
+        p.blob("green", (x, 2.35, f), (0.5, 0.35, 0.5))
+        p.blob("pink" if i % 2 == 0 else "yellow", (x, 2.6, f), (0.25, 0.2, 0.25), segs=10)
+    p.cone("stone", (0, 2.9, 0), 1.7, 2.6, top=1.2, segs=16)                                 # pedestal
+    p.cone("stone_light", (0, 4.3, 0), 4.6, 0.3, segs=24, smooth=False)                      # middle basin
+    p.cone("stone", (0, 3.95, 0), 4.3, 0.55, top=3.0, segs=24, smooth=False)
+    p.cone("water", (0, 4.4, 0), 4.0, 0.1, segs=24)
+    p.cone("stone", (0, 5.5, 0), 0.9, 2.1, top=0.55, segs=14)                                # column
+    p.cone("stone_light", (0, 6.7, 0), 2.4, 0.25, segs=20, smooth=False)                     # top bowl
+    p.cone("stone", (0, 6.45, 0), 2.1, 0.4, top=1.2, segs=20, smooth=False)
+    p.cone("water", (0, 6.8, 0), 2.1, 0.08, segs=20)
+    p.cone("stone", (0, 7.6, 0), 0.4, 1.5, top=0.25, segs=10)
+    p.blob("yellow", (0, 8.6, 0), (0.95, 0.95, 0.95))                                        # golden orb
+    p.cone("yellow", (0, 9.7, 0), 0.4, 1.4, top=0.02, segs=10)
+    for i in range(8):                                                                       # water jets
+        a = math.radians(i * 45)
+        p.cone("ice", (1.3 * math.cos(a), 7.3, 1.3 * math.sin(a)), 0.1, 1.0, top=0.03, segs=6,
+               rot=(0, 0, 0))
+        p.blob("ice", (3.0 * math.cos(a), 4.9, 3.0 * math.sin(a)), (0.16, 0.5, 0.16), segs=8)
+    for i in range(16):                                                                      # splashes in the big basin
+        a = math.radians(i * 22.5 + 11)
+        p.blob("white", (5.2 * math.cos(a), 1.85, 5.2 * math.sin(a)), (0.35, 0.12, 0.35), segs=8)
+
+
+def town_hall(p):
+    """A grand town hall with a clock tower and columns. Front is +z, about 34 m wide."""
+    p.block("stone_dark", (0, 0.5, 0), (9.0, 0.5, 6.4))                                      # plinth
+    p.block("cream", (0, 5.0, -0.5), (7.2, 4.0, 4.6), bevel=0.15)                            # main hall
+    p.cone("roof_red", (0, 11.9, -0.5), 11.2, 4.6, segs=4, rot=(0, 45, 0), smooth=False, squash=(1.0, 1, 0.66))
+    for sx in (-1, 1):                                                                       # wings
+        p.block("cream", (sx * 12.0, 3.6, -0.5), (4.6, 2.6, 4.0), bevel=0.12)
+        p.cone("roof_red", (sx * 12.0, 7.9, -0.5), 8.0, 3.0, segs=4, rot=(0, 45, 0), smooth=False, squash=(1.0, 1, 0.82))
+        p.block("cream_dark", (sx * 16.7, 3.2, 1.6), (0.35, 3.2, 0.35))
+        for k in (-2, 0, 2):
+            p.block("window", (sx * 12.0 + k * 1.7, 3.9, 3.6), (0.6, 0.85, 0.08))
+            p.block("white", (sx * 12.0 + k * 1.7, 3.9, 3.66), (0.7, 0.08, 0.04))
+            p.block("white", (sx * 12.0 + k * 1.7, 3.9, 3.66), (0.08, 0.95, 0.04))
+    # clock tower
+    p.block("cream", (0, 17.0, -0.5), (2.9, 3.5, 2.9), bevel=0.1)
+    p.block("stone_dark", (0, 20.7, -0.5), (3.2, 0.3, 3.2))
+    p.cone("blue", (0, 25.2, -0.5), 4.3, 8.0, top=0.12, segs=4, rot=(0, 45, 0), smooth=False)
+    p.blob("yellow", (0, 29.5, -0.5), (0.55, 0.55, 0.55))
+    p.cone("brown", (0, 31.2, -0.5), 0.07, 3.0, segs=6)
+    p.block("red", (0.9, 32.0, -0.5), (0.85, 0.5, 0.04))
+    p.cone("white", (0, 17.4, 2.45), 2.0, 0.2, segs=24, rot=(90, 0, 0), smooth=False)       # clock face
+    p.cone("black", (0, 17.4, 2.58), 2.1, 0.08, segs=24, rot=(90, 0, 0), smooth=False)
+    p.cone("white", (0, 17.4, 2.62), 1.85, 0.08, segs=24, rot=(90, 0, 0), smooth=False)
+    p.block("black", (0, 18.05, 2.7), (0.1, 0.75, 0.03))
+    p.block("black", (0.4, 17.55, 2.7), (0.45, 0.09, 0.03), rot=(0, 0, -25))
+    for i in range(12):
+        a = math.radians(i * 30)
+        p.block("black", (1.6 * math.sin(a), 17.4 + 1.6 * math.cos(a), 2.72), (0.07, 0.07, 0.02))
+    for sx in (-1, 1):
+        for sz in (-1, 1):
+            p.cone("stone", (sx * 2.8, 21.7, sz * 2.3 - 0.5), 0.45, 1.8, top=0.3, segs=8)    # pinnacles
+            p.cone("yellow", (sx * 2.8, 22.9, sz * 2.3 - 0.5), 0.35, 0.8, top=0.02, segs=8)
+    # entrance: steps, columns, pediment
+    p.block("stone_light", (0, 1.1, 6.6), (6.4, 0.12, 1.6))
+    p.block("stone_light", (0, 0.9, 7.6), (6.6, 0.1, 1.0))
+    for x in (-5.0, -1.7, 1.7, 5.0):
+        p.cone("white", (x, 4.7, 6.0), 0.65, 7.0, top=0.55, segs=14)
+        p.block("stone_light", (x, 1.35, 6.0), (0.85, 0.15, 0.85))
+        p.block("stone_light", (x, 8.3, 6.0), (0.85, 0.15, 0.85))
+        p.block("red", (x + 0.0, 5.4, 6.7), (0.28, 1.5, 0.03))
+    p.block("stone_light", (0, 8.9, 5.8), (6.4, 0.45, 1.3))
+    p.cone("cream_dark", (0, 9.9, 5.8), 9.6, 1.6, segs=4, rot=(0, 45, 0), smooth=False, squash=(1.0, 1, 0.2))
+    p.cone("yellow", (0, 10.3, 6.7), 0.55, 0.12, segs=5, rot=(90, 0, 0), smooth=False)       # crest
+    p.block("brown", (0, 3.0, 4.15), (1.4, 2.0, 0.12))                                       # doors
+    p.block("brown_dark", (0, 3.0, 4.2), (0.06, 2.0, 0.05))
+    p.cone("brown", (0, 5.0, 4.15), 1.4, 0.12, segs=14, rot=(90, 0, 0), smooth=False)
+    for sx in (-1, 1):
+        for k in (1, 2):
+            p.block("window", (sx * k * 3.4 + sx * 1.6, 5.0, 4.12), (0.6, 1.1, 0.08))
+            p.block("window", (sx * k * 3.4 + sx * 1.6, 8.2, 4.12), (0.6, 0.8, 0.08))
+        p.cone("brown", (sx * 8.4, 4.0, 7.4), 0.07, 8.0, segs=6)                              # flag poles on the steps
+        p.block("red", (sx * 8.4 + 0.75, 7.4, 7.4), (0.75, 0.5, 0.03))
+        p.blob("yellow", (sx * 8.4, 8.1, 7.4), (0.14, 0.14, 0.14))
+
+
+def arch(p):
+    """A gate over a road, 11 m wide. The road runs through along the z axis."""
+    for sx in (-1, 1):
+        p.block("stone_dark", (sx * 4.8, 0.3, 0), (1.35, 0.3, 1.35))
+        p.cone("stone", (sx * 4.8, 3.6, 0), 1.0, 6.6, top=0.85, segs=12)
+        p.block("stone_light", (sx * 4.8, 7.1, 0), (1.3, 0.2, 1.3))
+        p.cone("yellow", (sx * 4.8, 8.0, 0), 0.5, 1.6, top=0.02, segs=8)
+        p.blob("yellow", (sx * 4.8, 7.55, 0), (0.45, 0.45, 0.45))
+    p.block("stone", (0, 7.7, 0), (5.3, 0.55, 1.15), bevel=0.06)
+    p.block("stone_dark", (0, 8.4, 0), (5.5, 0.18, 1.3))
+    for i in range(-5, 6):
+        p.block("stone", (i * 0.95, 8.9, 0), (0.33, 0.35, 0.9))
+    p.cone("red", (0, 7.7, 1.2), 1.0, 0.1, segs=5, rot=(90, 0, 0), smooth=False)             # emblem
+    p.blob("yellow", (0, 7.7, 1.3), (0.45, 0.45, 0.1))
+    for sx in (-1, 1):                                                                       # banners
+        p.block("red", (sx * 3.2, 5.9, 1.0), (0.55, 1.35, 0.04))
+        p.block("yellow", (sx * 3.2, 4.4, 1.0), (0.55, 0.14, 0.05))
+
+
+def flag(p):
+    p.cone("stone", (0, 0.35, 0), 0.6, 0.7, top=0.45, segs=10)
+    p.cone("brown", (0, 3.8, 0), 0.09, 6.2, top=0.06, segs=8)
+    p.blob("yellow", (0, 6.95, 0), (0.17, 0.17, 0.17))
+    p.block("red", (0.95, 6.0, 0), (0.95, 0.6, 0.03), rot=(0, 0, -4))
+    p.block("yellow", (0.95, 6.0, 0.04), (0.95, 0.12, 0.02), rot=(0, 0, -4))
+    p.blob("yellow", (0.5, 6.0, 0.05), (0.22, 0.22, 0.03), segs=10)
+
+
+def statue(p):
+    """A golden statue of a businessman on a stone pedestal."""
+    p.cone("stone_dark", (0, 0.25, 0), 2.1, 0.5, top=1.9, segs=4, rot=(0, 45, 0), smooth=False)
+    p.block("stone", (0, 1.4, 0), (1.35, 0.9, 1.35), bevel=0.06)
+    p.block("stone_light", (0, 2.4, 0), (1.55, 0.13, 1.55))
+    p.block("yellow", (-0.28, 3.3, 0), (0.22, 0.85, 0.25), bevel=0.04)                       # legs
+    p.block("yellow", (0.28, 3.3, 0), (0.22, 0.85, 0.25), bevel=0.04)
+    p.block("yellow", (0, 5.0, 0), (0.6, 0.95, 0.3), bevel=0.08)                             # torso
+    p.block("hay_dark", (0, 4.5, 0.28), (0.07, 0.65, 0.03))                                  # tie
+    p.blob("yellow", (0, 6.35, 0), (0.38, 0.42, 0.38))                                       # head
+    p.cone("hay_dark", (0, 6.75, 0), 0.5, 0.1, segs=14)                                      # hat
+    p.cone("hay_dark", (0, 7.0, 0), 0.34, 0.5, top=0.3, segs=14)
+    p.block("yellow", (-0.86, 5.3, 0.0), (0.16, 0.7, 0.2), bevel=0.03)
+    p.block("yellow", (0.88, 6.0, 0.2), (0.16, 0.6, 0.2), rot=(0, 0, 25), bevel=0.03)        # waving arm
+    p.block("hay_dark", (-1.0, 4.35, 0.15), (0.34, 0.3, 0.14))                               # briefcase
+
+
 PROPS = dict(Cottage=cottage, Barn=barn, Windmill=windmill, Hay=hay, Well=well, Stall=stall, Lantern=lantern,
              Signpost=signpost, Dock=dock, Lighthouse=lighthouse, Castle=castle, Cave=cave, Tombstone=tombstone,
-             Cross=cross, Crypt=crypt, BeachHut=beach_hut, Umbrella=umbrella, Igloo=igloo, Snowman=snowman, Portal=portal, Campfire=campfire, Tent=tent)
+             Cross=cross, Crypt=crypt, BeachHut=beach_hut, Umbrella=umbrella, Igloo=igloo, Snowman=snowman, Portal=portal, Campfire=campfire, Tent=tent,
+             Fountain=fountain, TownHall=town_hall, Arch=arch, Flag=flag, Statue=statue)
 
 
 def export(name, fn):

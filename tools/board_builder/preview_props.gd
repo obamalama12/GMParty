@@ -1,5 +1,5 @@
 ## Renders the landmark props in two rows: godot --path . --script res://tools/board_builder/preview_props.gd
-## Environment: SHOTS_DIR (default user://)
+## Environment: SHOTS_DIR (default user://), ONLY=Fountain,TownHall shows just those, big and close
 extends SceneTree
 
 const DIR := "res://plugins/boards/MarkyValley/props/"
@@ -15,6 +15,9 @@ func _run() -> void:
 		if f.ends_with(".glb"):
 			names.append(f.trim_suffix(".glb"))
 	names.sort()
+	var only := OS.get_environment("ONLY")
+	if only != "":
+		names = Array(only.split(","))
 	var vp := SubViewport.new()
 	vp.size = Vector2i(1800, 900)
 	vp.own_world_3d = true
@@ -46,6 +49,8 @@ func _run() -> void:
 		var inst: Node3D = load(DIR + names[i] + ".glb").instantiate()
 		var row := i / per_row
 		inst.position = Vector3((i % per_row) * 12.0 - 54.0, 0, row * 22.0 - 10.0)
+		if only != "":
+			inst.position = Vector3(i * 40.0 - (names.size() - 1) * 20.0, 0, 0)
 		if names[i] == "Castle":
 			inst.scale = Vector3.ONE * 0.45
 		vp.add_child(inst)
@@ -53,6 +58,9 @@ func _run() -> void:
 	cam.fov = 38
 	vp.add_child(cam)
 	cam.look_at_from_position(Vector3(0, 34, 58), Vector3(0, 3, 0))
+	if only != "":
+		cam.fov = 45
+		cam.look_at_from_position(Vector3(0, 28, 62), Vector3(0, 8, 0))
 	for i in 8:
 		await process_frame
 	var dir := OS.get_environment("SHOTS_DIR") if OS.get_environment("SHOTS_DIR") != "" else "user://"

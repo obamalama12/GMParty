@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c107hq8y7bl36"
-path="res://.godot/imported/Cave.glb-c79579e4839d4afa9932457159c4af53.scn"
+uid="uid://b675ldypnodsp"
+path="res://.godot/imported/Arch.glb-54cdfd27e7712767c9db074c007abfe5.scn"
 
 [deps]
 
-source_file="res://plugins/boards/MarkyValley/props/Cave.glb"
-dest_files=["res://.godot/imported/Cave.glb-c79579e4839d4afa9932457159c4af53.scn"]
+source_file="res://plugins/boards/MarkyValley/props/Arch.glb"
+dest_files=["res://.godot/imported/Arch.glb-54cdfd27e7712767c9db074c007abfe5.scn"]
 
 [params]
 

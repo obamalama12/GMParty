@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c107hq8y7bl36"
-path="res://.godot/imported/Cave.glb-c79579e4839d4afa9932457159c4af53.scn"
+uid="uid://k0egc45bf6ya"
+path="res://.godot/imported/TownHall.glb-195084a74e126268d27212e819f2d57a.scn"
 
 [deps]
 
-source_file="res://plugins/boards/MarkyValley/props/Cave.glb"
-dest_files=["res://.godot/imported/Cave.glb-c79579e4839d4afa9932457159c4af53.scn"]
+source_file="res://plugins/boards/MarkyValley/props/TownHall.glb"
+dest_files=["res://.godot/imported/TownHall.glb-195084a74e126268d27212e819f2d57a.scn"]
 
 [params]
 

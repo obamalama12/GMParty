@@ -115,7 +115,7 @@ ROADS = {
     "east_out": dict(points=[(14, 0, 2.5), (36, -2, 2.5), (62, 2, 2.5), (84, 6, 2.5), (104, -2, 2.4)], join_ring_near=(112, -6)),
     "south_out": dict(points=[(0, 14, 2.5), (0, 36, 2.5), (-1, 58, 2.4), (-2, 80, 2.4), (-2, 96, 2.3)], join_ring_near=(0, 106)),
 }
-LOOP_R = 14.0
+LOOP_R = 24.0
 
 nodes = []        # dicts: name, pos, kind, area
 name_counter = [0]
@@ -156,7 +156,7 @@ for i, n in enumerate(ring):
     link(n, ring[(i + 1) % len(ring)])
 
 # village loop
-count = 14
+count = 26
 loop = []
 for i in range(count):
     a = 2 * math.pi * i / count - math.pi / 2          # counter-clockwise from north, i.e. clockwise on screen
@@ -169,37 +169,42 @@ def nearest(nodelist, x, z):
     return min(nodelist, key=lambda n: (n["x"] - x) ** 2 + (n["z"] - z) ** 2)
 
 
-# roads
+# roads: they run from one node of the ring to one node of the village loop (or the other way round), so
+# the path is closed everywhere. The spline passes through the real end nodes and is cut into equal pieces.
 gate = {"west_in": nearest(loop, -LOOP_R, 0), "north_in": nearest(loop, 0, -LOOP_R),
         "east_out": nearest(loop, LOOP_R, 0), "south_out": nearest(loop, 0, LOOP_R)}
+road_chains = {}     # name -> [(x, z, h)] including both end nodes, used to paint and flatten the terrain
+road_nodes = {}
 for name, spec in ROADS.items():
-    dense = catmull_rom(spec["points"], closed=False)
-    pts = resample(dense, SPACING, closed=False)
-    road = [add_node(x, z, h, area_of(x, z) if area_of(x, z) != "village" else "village", road=name) for x, z, h in pts]
-    # drop road points that would overlap the village loop or the ring (the road joins it there)
-    def clear(n):
-        if math.hypot(n["x"], n["z"]) <= LOOP_R + 4.0:
-            return False
-        return all(math.hypot(n["x"] - r["x"], n["z"] - r["z"]) > 4.6 for r in ring)
-    road = [n for n in road if clear(n)]
-    nodes[:] = [n for n in nodes if n["road"] != name or n in road]
-    if name.endswith("_in"):
-        start_ring = nearest(ring, *spec["leave_ring_near"])
-        link(start_ring, road[0])
-        for a, b in zip(road, road[1:]):
-            link(a, b)
-        link(road[-1], gate[name])
-    else:
-        link(gate[name], road[0])
-        for a, b in zip(road, road[1:]):
-            link(a, b)
-        link(road[-1], nearest(ring, *spec["join_ring_near"]))
+    ring_end = nearest(ring, *spec["leave_ring_near" if name.endswith("_in") else "join_ring_near"])
+    a, b = (ring_end, gate[name]) if name.endswith("_in") else (gate[name], ring_end)
+    chain = [(a["x"], a["z"], a["h"])] + list(spec["points"]) + [(b["x"], b["z"], b["h"])]
+    # the first and last waypoint may sit right next to the end nodes, so they are dropped when they are too close
+    chain = [chain[0]] + [q for q in chain[1:-1] if math.hypot(q[0] - a["x"], q[1] - a["z"]) > 6 and math.hypot(q[0] - b["x"], q[1] - b["z"]) > 6
+                         and math.hypot(q[0], q[1]) > LOOP_R + 7] + [chain[-1]]
+    road_chains[name] = chain
+    dense_ = catmull_rom(chain, closed=False)
+    seg_ = np.hypot(np.diff(dense_[:, 0]), np.diff(dense_[:, 1]))
+    arc_ = np.concatenate([[0.0], np.cumsum(seg_)])
+    pieces = max(2, int(round(arc_[-1] / SPACING)))
+    targets = np.linspace(0, arc_[-1], pieces + 1)[1:-1]
+    road = []
+    for t in targets:
+        k = int(np.searchsorted(arc_, t))
+        k = min(max(k, 1), len(arc_) - 1)
+        f = (t - arc_[k - 1]) / max(arc_[k] - arc_[k - 1], 1e-9)
+        x, z, h = dense_[k - 1] + (dense_[k] - dense_[k - 1]) * f
+        road.append(add_node(x, z, h, area_of(x, z), road=name))
+    road_nodes[name] = road
+    chain_nodes = [a] + road + [b]
+    for u, v in zip(chain_nodes, chain_nodes[1:]):
+        link(u, v)
 
 # start space (hidden) in the middle of the village, leads onto the loop
-start = add_node(0, 0, 2.5, "village", road="start")
+start = add_node(0, LOOP_R - 11.0, 2.5, "village", road="start")
 start["hidden"] = True
 start["name"] = "Start"
-link(start, loop[0])
+link(start, nearest(loop, 0, LOOP_R))
 
 # types: 0 blue, 1 red, 2 green (warp), 3 yellow, 4 shop, 5 nolok, 6 gnu
 visible = [n for n in nodes if not n["hidden"]]
@@ -302,7 +307,7 @@ height -= beach_w * 1.4 * smooth(0, 40, np.hypot(X - 45, Z - 60) - 15)
 height = height * land + (-4.5) * (1 - land)
 # flat village plateau
 vd = np.hypot(X, Z)
-village_w = smooth(34, 22, vd)
+village_w = smooth(62, 44, vd)
 height = height * (1 - village_w) + 2.5 * village_w
 
 # flatten along the path
@@ -320,8 +325,8 @@ for x, z, h in ring_dense:
     if abs(z + 85) < 4 and BRIDGE[0] - 6 <= x <= BRIDGE[1] + 6:
         continue
     path_points.append((x, z, h))
-for name, spec in ROADS.items():
-    for x, z, h in densify(spec["points"], False):
+for name, chain in road_chains.items():
+    for x, z, h in densify(chain, False):
         path_points.append((x, z, h))
 for n in loop:
     pass
@@ -448,7 +453,7 @@ mix(rock_amt * smooth(0.0, 0.6, n_fine) * 0.7, C["rock_dark"])
 mix(smooth(13.8, 15.2, hf) * mnt, C["snow"])
 mix(smooth(34, 16, cdistf) * 0.35, C["grass_dark"])
 mix(smooth(0.3, -1.5, hf) * lake_wf, C["lake"])
-plaza = smooth(24, 15, vdf)
+plaza = smooth(33, 24, vdf)
 mix(plaza * 0.95, C["cobble"])
 mix(plaza * smooth(0.0, 0.5, n_fine) * 0.6, C["cobble_dark"])
 mix(smooth(2.5, 2.1, dist_pathf), C["dirt"])
@@ -526,16 +531,30 @@ def landmark(kind, x, z, rot=0.0, scale=1.0, radius=3.0, y=None):
     placed.append((x, z, radius))
 
 
-# village: houses around the plaza, a well in the middle, market stalls, lamps
-landmark("Well", 0, 0, radius=5)
-house_ring = [(-30, -16, 40), (-31, 14, 120), (28, -18, -30), (30, 16, -120), (-18, -33, 10), (18, -33, -20), (18, 32, 170), (-17, 31, 190)]
-for x, z, rot in house_ring:
-    landmark("Cottage", x, z, rot=rot, scale=1.0, radius=6)
-for x, z, rot in [(-14, 20, 20), (14, 21, -20), (22, 6, -90)]:
+# village: a grand plaza. Fountain in the middle, arches over the four roads, town hall, statues, flags,
+# a ring of cottages and market stalls around it
+landmark("Fountain", 0, 0, radius=11)
+for name, road in road_nodes.items():                       # an arch over each road, a little way out of the plaza
+    n0, n1 = (road[-3], road[-2]) if name.endswith("_in") else (road[2], road[3])
+    landmark("Arch", n0["x"], n0["z"], rot=math.degrees(math.atan2(n1["x"] - n0["x"], n1["z"] - n0["z"])), radius=6)
+landmark("TownHall", 38, -40, rot=math.degrees(math.atan2(-38, 40)), radius=22)
+for sx, sz in [(30, 31), (-31, 30), (-30, -31)]:
+    landmark("Statue", sx, sz, rot=math.degrees(math.atan2(-sx, -sz)), scale=1.7, radius=5)
+for i in range(16):                                         # flags just inside the loop
+    a = math.radians(i * 22.5 + 11.25)
+    fx, fz = (LOOP_R - 4.5) * math.cos(a), (LOOP_R - 4.5) * math.sin(a)
+    if math.hypot(fx, fz - (LOOP_R - 11.0)) > 5:
+        landmark("Flag", fx, fz, rot=0, radius=1.2)
+for i in range(26):                                         # lanterns along the outside of the loop
+    a = math.radians(i * 360 / 26 + 6.9)
+    landmark("Lantern", (LOOP_R + 3.2) * math.cos(a), (LOOP_R + 3.2) * math.sin(a), radius=1)
+for x, z, rot in [(-15, 12, 20), (15, 12, -20), (12, -14, 160), (-12, -14, 200)]:
     landmark("Stall", x, z, rot=rot, radius=3)
-for i in range(8):
-    a = math.radians(45 * i + 22)
-    landmark("Lantern", (LOOP_R + 4.0) * math.cos(a), (LOOP_R + 4.0) * math.sin(a), radius=1)
+for i in range(14):                                         # cottages in a wide ring
+    a = math.radians(i * 360 / 14 + 8)
+    hx, hz = 46 * math.cos(a), 46 * math.sin(a)
+    if free(hx, hz, 5.5, min_path=3.5):
+        landmark("Cottage", hx, hz, rot=math.degrees(math.atan2(-hx, -hz)), scale=1.0 + 0.08 * (i % 3), radius=6)
 
 # farm: barn, windmill, hay, fenced fields
 landmark("Barn", -26, 78, rot=90, radius=9)
@@ -588,9 +607,9 @@ for ang in (30, 150, 270):
     landmark("Tent", campx + 8 * math.sin(a), campz + 8 * math.cos(a), rot=ang + 180, radius=4)
 
 # signposts at the road junctions
-for name, spec in ROADS.items():
-    x, z, _ = spec["points"][0] if name.endswith("_in") else spec["points"][-1]
-    landmark("Signpost", x + 3, z + 3, rot=0, radius=1.5)
+for name, road in road_nodes.items():
+    n_ = road[0] if name.endswith("_in") else road[-1]
+    landmark("Signpost", n_["x"] + 3, n_["z"] + 3, rot=0, radius=1.5)
 
 for x, z, tx, tz in portal_sites:
     landmark("Portal", x, z, rot=math.degrees(math.atan2(tx - x, tz - z)), radius=3)
@@ -598,7 +617,7 @@ for x, z, tx, tz in portal_sites:
 # landmarks that sit too close to the path are reported, so their position can be adjusted
 for lm in landmarks:
     d = float(np.min(np.hypot(path_dense_xz[:, 0] - lm["pos"][0], path_dense_xz[:, 1] - lm["pos"][2])))
-    if d < 3.0 and lm["kind"] not in ("Lantern", "Signpost", "Stall", "Hay", "Tombstone", "Cross", "Snowman", "Umbrella", "Portal"):
+    if d < 3.0 and lm["kind"] not in ("Lantern", "Signpost", "Stall", "Hay", "Tombstone", "Cross", "Snowman", "Umbrella", "Portal", "Arch", "Flag"):
         print("WARNING landmark close to the path:", lm["kind"], [round(v, 1) for v in lm["pos"]], round(d, 1))
 
 # trees and plants (nature models from assets/models/nature)
@@ -644,6 +663,7 @@ scatter_area(["Grass_Large", "Plant_1", "Rock_1", "Rock_2", "Bush_Small"], (0, -
              h_min=0.4, h_max=2.3, scale=(1.4, 2.4), min_path=2.5)
 scatter_area(tree_kinds("NormalTree") + tree_kinds("BirchTree"), (0, -100), (64, 30), 30, 1.6, 2.4, h_min=1.2, scale=(0.9, 1.3))
 
+placed.append((0, 0, 31))          # keep the plaza clear
 # village greenery
 scatter_area(["Bush", "Bush_Flowers", "Flower_1_Clump", "Flower_3_Clump"], (0, 0), (50, 50), 60, 0.5, 1.0, scale=(1.0, 1.5), min_path=2.5)
 scatter_area(tree_kinds("NormalTree") + tree_kinds("MapleTree"), (0, 0), (46, 46), 14, 2.0, 3.0, scale=(1.0, 1.4))

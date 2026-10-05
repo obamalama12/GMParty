@@ -56,7 +56,7 @@ func freeze_animation():
 	if animations:
 		var player = get_node(animations)
 		if player is AnimationPlayer:
-			player.playback_speed = 0
+			player.speed_scale = 0.0
 		elif player is AnimationTree:
 			# Force an animation update or else it will get stuck in the default pose
 			# when instantly frozen
@@ -68,7 +68,7 @@ func resume_animation():
 	if animations:
 		var player = get_node(animations)
 		if player is AnimationPlayer:
-			player.playback_speed = 1
+			player.speed_scale = 1.0
 		elif player is AnimationTree:
 			var state_machine = player["parameters/playback"]
 			var current_animation = state_machine.get_current_node()
