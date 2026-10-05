@@ -26,6 +26,14 @@ python tools/get_assets.py upstream
 The script keeps files that already exist here (the new characters, icon, title and cake)
 and skips the characters and art that were removed.
 
+Then import everything once (needs Godot 4.7; pass the path to it if it is not on your PATH):
+
+```sh
+python tools/first_import.py "C:/path/to/Godot_v4.7-stable_win64.exe"
+```
+
+Now open the folder in Godot and press F5. In the lobby pick the board "MarkyValley".
+
 ## Engine
 
 Marky Party is built with the [Godot Engine](https://godotengine.org/).
@@ -38,7 +46,7 @@ Currently, Godot Engine version 4.7 is used.
 - `tools/minigame_playthrough` plays every minigame once and takes screenshots.
 - `tools/character_builder` builds the characters in Blender and renders previews.
 - `tools/board_builder` generates the Marky Valley board, `tools/board_tour` takes screenshots of boards.
-- `tools/get_assets.py` copies the upstream assets in (see above).
+- `tools/get_assets.py` copies the upstream assets in, `tools/first_import.py` imports them (see above).
 
 ## Issues
 
