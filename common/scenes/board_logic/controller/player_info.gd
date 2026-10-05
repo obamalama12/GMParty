@@ -1,10 +1,10 @@
 extends PanelContainer
 
-const PLACEMENT_COLORS := [Color("#FFD700"), Color("#C9C0BB"), Color("#CD7F32"), Color(0.3, 0.3, 0.3)]
+const PLACEMENT_COLORS := [Color("#FFD700"), Color("#C9C0BB"), Color("#CD7F32"), Color("#8f8bb5")]
 
 func update(p: PlayerBoard, placement: int, highlighted: bool) -> void:
 	var stylebox: StyleBoxFlat = get_theme_stylebox("panel")
-	stylebox.border_color.a = 0.8 if highlighted else 0.0
+	stylebox.border_color = Color("#ffc83a") if highlighted else Color(1, 1, 1, 0.14)
 
 	%Position.text = str(placement)
 	%Position.set("theme_override_colors/font_color", PLACEMENT_COLORS[placement - 1])

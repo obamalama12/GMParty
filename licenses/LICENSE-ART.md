@@ -232,12 +232,6 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-### splash_background.png
-
-Copyright © 2018 Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
 ### gnu_icon.png
 
 Copyright Néd J. Édoire
@@ -252,13 +246,12 @@ Copyright Anthony Carré (yekcim)
 Retrieved from: [Super Tux Kart Sourceforge](https://sourceforge.net/p/supertuxkart/code/HEAD/tree/media/trunk/karts/nolok/nolokicon.png)
 License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
-### sara.png
+### host.png | splash_background.png
 
-Copyright © Spring
+Made for this project (host.png is the Businessman icon, the splash banner is generated).
+The licence below is a placeholder; the project owner can change it.
 
-Retrieved from [Open Game Art](https://opengameart.org/content/sara-sketch-portrait-improvement)
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## common/scenes/board_logic/node
 ### node.blend | node.glb
@@ -321,9 +314,10 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 ## common/scenes/speech_dialog
 ### dialog_box.png | dialog_box_focus.png
 
-Copyright © 2019 Florian Kothmeier
+Drawn for this project with a script (rounded box, gold rim).
+The licence below is a placeholder; the project owner can change it.
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## client/team_indicator
 ### indicator.png
@@ -361,21 +355,6 @@ Modified by Florian Kothmeier 2019
 Retrieved from: [OpenGameArt](https://opengameart.org/content/mascots-and-friends-iconset-2)
 
 License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
-
-## plugins/boards/test/islands
-### island1.blend | island1.dae | island2.blend | island2.dae
-
-Copyright © Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### Sand3.jpg
-
-Public domain by MrCraft Animation
-
-Retrieved from [OpenGameArt](https://opengameart.org/content/sand-texture-pack)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## plugins/items/cookie_steal_trap
 ### icon.png | icon.xcf | material.png | material.xcf

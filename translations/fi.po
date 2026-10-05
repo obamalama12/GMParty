@@ -387,7 +387,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Liity napauttamalla"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Sara"
+msgstr "Mayor Marky"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

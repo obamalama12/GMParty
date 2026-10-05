@@ -13,11 +13,18 @@
 [ext_resource type="AudioStream" uid="uid://dvy1l71f473vi" path="res://assets/sounds/step-fx.ogg" id="19"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj5u6"]
-content_margin_left = 10.0
-content_margin_right = 10.0
-bg_color = Color(0.196078, 0.196078, 0.196078, 0.784314)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
+content_margin_left = 24.0
+content_margin_top = 2.0
+content_margin_right = 24.0
+bg_color = Color(0.0980392, 0.0901961, 0.313726, 0.9)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(1, 0.784314, 0.227451, 0.9)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 6
 
 [sub_resource type="Animation" id="2"]
 length = 0.8

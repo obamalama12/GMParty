@@ -385,7 +385,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Premu por aliĝi"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Sara"
+msgstr "Mayor Marky"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

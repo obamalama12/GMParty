@@ -21,6 +21,9 @@ func _go():
 		await get_tree().create_timer(0.5).timeout
 	var files := PackedStringArray()
 	_collect("res://", files)
+	# files that do not have a .import yet (new assets) can be listed here: FIRST_IMPORT_EXTRA=res://a.png,res://b.png
+	for extra in OS.get_environment("FIRST_IMPORT_EXTRA").split(",", false):
+		files.append(extra)
 	print("FIRST_IMPORT importing ", files.size(), " files")
 	fs.reimport_files(files)
 	print("FIRST_IMPORT DONE")

@@ -272,20 +272,20 @@ func wait_for_acknowledgement():
 
 func announce(text: String, format_args := {}):
 	var current_player = players[player_turn - 1]
-	var sara_icon := "res://common/scenes/board_logic/controller/icons/sara.png"
-	$Screen/SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_icon, text, current_player.info.player_id, format_args)
+	var host_icon := "res://common/scenes/board_logic/controller/icons/host.png"
+	$Screen/SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", host_icon, text, current_player.info.player_id, format_args)
 	await $Screen/SpeechDialog.dialog_finished
 
 func ask_yes_no(text: String, format_args := {}):
 	var current_player = players[player_turn - 1]
-	var sara_icon := "res://common/scenes/board_logic/controller/icons/sara.png"
-	$Screen/SpeechDialog.show_accept_dialog("CONTEXT_SPEAKER_SARA", sara_icon, text, current_player.info.player_id, format_args)
+	var host_icon := "res://common/scenes/board_logic/controller/icons/host.png"
+	$Screen/SpeechDialog.show_accept_dialog("CONTEXT_SPEAKER_SARA", host_icon, text, current_player.info.player_id, format_args)
 	return await $Screen/SpeechDialog.dialog_option_taken
 
 func query_range(text: String, minimum: int, maximum: int, start_value: int, format_args := {}):
 	var current_player = players[player_turn - 1]
-	var sara_icon := "res://common/scenes/board_logic/controller/icons/sara.png"
-	$Screen/SpeechDialog.show_query_dialog("CONTEXT_SPEAKER_SARA", sara_icon, text, current_player.info.player_id, minimum, maximum, start_value, format_args)
+	var host_icon := "res://common/scenes/board_logic/controller/icons/host.png"
+	$Screen/SpeechDialog.show_query_dialog("CONTEXT_SPEAKER_SARA", host_icon, text, current_player.info.player_id, minimum, maximum, start_value, format_args)
 	return await $Screen/SpeechDialog.dialog_option_taken
 
 # TODO: Provide a tutorial option in the main menu instead of at game creation?

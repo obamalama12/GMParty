@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c6aw5cs71kqpf"]
+[gd_scene load_steps=39 format=3 uid="uid://c6aw5cs71kqpf"]
 
 [ext_resource type="Theme" uid="uid://d3w3vt3s6ujoh" path="res://assets/defaults/default_theme.tres" id="1"]
 [ext_resource type="PackedScene" path="res://plugins/characters/Businessman/character.tscn" id="mascot"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://jeq4trt5v2ii" path="res://client/menus/options_menu.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://c0nrxhlddlfnb" path="res://assets/icons/loading/load7.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://irb550xf4wrh" path="res://assets/icons/loading/load5.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://bwuce5d5a2314" path="res://assets/icons/cookie-grayscale.png" id="9"]
 [ext_resource type="AudioStream" uid="uid://84xm3vqhllm4" path="res://assets/music/menus/main menu.ogg" id="10"]
 [ext_resource type="Texture2D" uid="uid://do4atdfkvupja" path="res://assets/textures/title/Title.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://c78h7wwr1xo57" path="res://assets/icons/loading/load2.png" id="15"]
@@ -90,7 +89,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-464, 412), Vector2(-464, 412), Vector2(128, 412)]
+"values": [Vector2(-464, 300), Vector2(-464, 300), Vector2(96, 300)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -102,7 +101,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(128, -248), Vector2(128, -248), Vector2(128, 152)]
+"values": [Vector2(-246, -560), Vector2(-246, -560), Vector2(-246, -150)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -114,7 +113,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1018, 133.5)]
+"values": [Vector2(-1018, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -193,7 +192,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(265, 188)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_285ke"]
@@ -246,6 +245,18 @@ frame_14/duration = 1.0
 frame_15/texture = ExtResource("22")
 frame_15/duration = 1.0
 
+[sub_resource type="Gradient" id="Gradient_glow"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.35, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_glow"]
+gradient = SubResource("Gradient_glow")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xva7f"]
 shader = ExtResource("26_0hf63")
 
@@ -285,53 +296,109 @@ offset_left = 10.0
 offset_top = -49.9999
 offset_right = 46.0
 offset_bottom = -13.9999
+theme_type_variation = &"IconButton"
 icon = ExtResource("16")
 expand_icon = true
 
 [node name="Buttons" type="GridContainer" parent="MainMenu"]
-custom_minimum_size = Vector2(400, 100)
+custom_minimum_size = Vector2(340, 100)
 layout_mode = 0
-offset_left = -464.0
-offset_top = 412.0
-offset_right = 41.0
-offset_bottom = 584.0
-columns = 2
+offset_left = 96.0
+offset_top = 300.0
+offset_right = 436.0
+offset_bottom = 640.0
+theme_override_constants/v_separation = 10
+columns = 1
 
 [node name="Play" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(340, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 layout_mode = 2
 text = "MENU_LABEL_NEW_GAME"
 clip_text = true
 
 [node name="Play2" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(340, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 layout_mode = 2
 text = "MENU_LABEL_ONLINE"
 clip_text = true
 
 [node name="Load" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(340, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 layout_mode = 2
 text = "MENU_IO_LOAD_GAME"
 
 [node name="Options" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(340, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 layout_mode = 2
 text = "MENU_OPTIONS"
 
 [node name="Screenshots" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(340, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 layout_mode = 2
 text = "MENU_LABEL_SCREENSHOTS"
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = -248.0
-offset_right = 1152.0
-offset_bottom = 392.0
-scale = Vector2(0.4, 0.4)
+offset_left = -246.0
+offset_top = -150.0
+offset_right = 778.0
+offset_bottom = 490.0
+pivot_offset = Vector2(512, 320)
+scale = Vector2(0.43, 0.43)
 texture = ExtResource("14")
+
+[node name="Glow" type="TextureRect" parent="MainMenu"]
+modulate = Color(1, 0.82, 0.35, 0.55)
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = 60.0
+offset_right = -10.0
+offset_bottom = -40.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_glow")
+expand_mode = 1
+
+[node name="Floor" type="TextureRect" parent="MainMenu"]
+modulate = Color(0.05, 0.03, 0.2, 0.55)
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -520.0
+offset_top = -150.0
+offset_right = -90.0
+offset_bottom = -70.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_glow")
+expand_mode = 1
+
+[node name="Footer" type="Label" parent="MainMenu"]
+modulate = Color(1, 1, 1, 0.7)
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -44.0
+offset_right = -16.0
+offset_bottom = -12.0
+text = "A party game  -  made with Godot 4.7"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 18
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MainMenu"]
 layout_mode = 0
@@ -409,8 +476,8 @@ anchor_bottom = 1.0
 [node name="Title" type="Label" parent="OptionsMenu"]
 layout_mode = 0
 anchor_right = 1.0
-offset_top = 100.0
-offset_bottom = 158.0
+offset_top = 8.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"HeaderLarge"
@@ -421,10 +488,10 @@ visible_ratio = 0.0
 
 [node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource("6")]
 layout_mode = 1
-offset_left = 265.0
-offset_top = 188.0
-offset_right = 1545.0
-offset_bottom = 908.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -522,16 +589,13 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "MENU_LABEL_CANCEL"
 
-[node name="Background" type="TextureRect" parent="."]
-self_modulate = Color(0.184314, 0.729412, 0.85098, 1)
+[node name="Background" type="ColorRect" parent="."]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_xva7f")
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-texture = ExtResource("9")
-stretch_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10")

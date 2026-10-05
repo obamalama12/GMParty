@@ -1,20 +1,3 @@
-## assets/music/boards
-### test board bgm.wav
-Public Domain by Cityfires
-
-Retrieved from [Open Game Art](https://opengameart.org/content/acrostics)
-
-License [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
-
-### kdevalley.wav
-Public Domain by pheonton
-
-Modified by RiderExMachina (David Seward)
-
-Retrieved from [Open Game Art](https://opengameart.org/content/one)
-
-License [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
-
 ## assets/music/menus
 ### main menu.ogg
 

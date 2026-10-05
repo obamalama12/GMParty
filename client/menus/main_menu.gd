@@ -29,6 +29,16 @@ func _ready() -> void:
 		_on_connection_succeeded(current_server)
 		$MainMenu.hide()
 
+var _time := 0.0
+
+# The logo sways a little
+func _process(delta: float) -> void:
+	_time += delta
+	var logo := $MainMenu/TextureRect
+	logo.rotation = deg_to_rad(sin(_time * 1.1) * 1.3)
+	var k := 0.43 + sin(_time * 1.7) * 0.006
+	logo.scale = Vector2(k, k)
+
 #*** Options menu ***#
 
 func _on_Options_pressed() -> void:

@@ -389,7 +389,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Brúigh chun páirt a ghlacadh"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Sara"
+msgstr "Mayor Marky"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

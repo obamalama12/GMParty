@@ -385,7 +385,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "点击加入"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Sara"
+msgstr "Mayor Marky"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr "我知道你们所有人都努力得胜，但游戏结束了，我们需要一位胜者。胜者是…"

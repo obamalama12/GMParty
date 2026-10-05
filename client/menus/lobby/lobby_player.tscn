@@ -20,6 +20,7 @@ alignment = 1
 [node name="Character" type="Button" parent="PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+theme_type_variation = &"IconButton"
 expand_icon = true
 
 [node name="Name" type="LineEdit" parent="PanelContainer/HBoxContainer"]

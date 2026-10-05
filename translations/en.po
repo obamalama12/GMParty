@@ -385,7 +385,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Press to join"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Sara"
+msgstr "Mayor Marky"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

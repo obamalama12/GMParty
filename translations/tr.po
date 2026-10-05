@@ -387,7 +387,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Katılmak için basın"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Sara"
+msgstr "Mayor Marky"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

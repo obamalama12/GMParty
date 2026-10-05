@@ -8,11 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://jeq4trt5v2ii" path="res://client/menus/options_menu.tscn" id="8"]
 
 [sub_resource type="StyleBoxFlat" id="1"]
-bg_color = Color(0.654902, 0.12549, 0.12549, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+bg_color = Color(0.0980392, 0.0901961, 0.313726, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.784314, 0.227451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 12
 
 [sub_resource type="StyleBoxFlat" id="3"]
 bg_color = Color(0.352941, 0.788235, 0.866667, 1)
@@ -42,6 +49,7 @@ offset_bottom = 23.4
 [node name="Label" type="Label" parent="Container"]
 layout_mode = 2
 size_flags_vertical = 2
+theme_type_variation = &"HeaderMedium"
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "MENU_LABEL_PAUSED"
 horizontal_alignment = 1
