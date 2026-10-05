@@ -28,7 +28,7 @@ func _ready():
 	log_("lobby created")
 	await wait(1.0)
 	client_lobby.set_player_name(0, "Tester")
-	client_lobby.select_character(0, "Tux")
+	client_lobby.select_character(0, OS.get_environment("CHARACTER") if OS.get_environment("CHARACTER") != "" else "Tux")
 	client_lobby.select_board("KDEValley")
 	await wait(1.0)
 	client_lobby.start()

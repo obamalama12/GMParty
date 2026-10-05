@@ -1058,3 +1058,12 @@ License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 Copyright © 2020 Florian Kothmeier
 
 License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+## plugins/characters/Bolt | plugins/characters/Kit | plugins/characters/Mushi
+### bolt.glb | kit.glb | mushi.glb | palette.png | icon.png | splash.png
+
+Original characters made for this project with the scripts in `tools/character_builder`.
+The licence below is a placeholder chosen to match the other original assets; the
+project owner can change it.
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)

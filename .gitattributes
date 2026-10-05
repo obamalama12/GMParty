@@ -11,3 +11,8 @@ plugins/test_board.zip filter=lfs diff=lfs merge=lfs -text
 *.mp3 filter=lfs diff=lfs merge=lfs -text
 *.bin filter=lfs diff=lfs merge=lfs -text
 *.ogg filter=lfs diff=lfs merge=lfs -text
+
+# Generated character images are small, so they are stored as normal files instead of LFS
+plugins/characters/Bolt/*.png -filter -diff -merge
+plugins/characters/Kit/*.png -filter -diff -merge
+plugins/characters/Mushi/*.png -filter -diff -merge
