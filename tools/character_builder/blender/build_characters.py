@@ -68,7 +68,7 @@ class Builder:
     def bone(self, name, parent, x, up, front):
         self.bones.append((name, parent, self.v(x, up, front)))
 
-    def _add(self, part_bm, color, bone, smooth):
+    def _add(self, part_bm, color, bone, smooth, detail=False):
         mesh = bpy.data.meshes.new("part")
         part_bm.to_mesh(mesh)
         part_bm.free()
@@ -86,6 +86,7 @@ class Builder:
             vert[self.dvert][group] = 1.0
         for face in self.bm.faces[first_f:]:
             face.smooth = smooth
+            face.material_index = 1 if detail else 0
             for loop in face.loops:
                 loop[self.uv].uv = (u, w)
 
@@ -106,10 +107,14 @@ class Builder:
         bm = bmesh.new()
         bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=14,
                               radius1=radius, radius2=top, depth=depth)
-        self._finish(bm, color, bone, pos, (1, 1, 1), rot, smooth)
+        self._finish(bm, color, bone, pos, (1, 1, 1), rot, smooth, detail=depth <= 0.05)
 
-    def _finish(self, bm, color, bone, pos, size, rot, smooth, bevel=0.0):
+    def _finish(self, bm, color, bone, pos, size, rot, smooth, bevel=0.0, detail=None):
         sx, sy, sz = size
+        if detail is None:
+            # thin plates on the front (eyes, mouth, chest prints) and thin rings are drawn without the black
+            # outline: their outline shells poke through the body as dotted lines
+            detail = (pos[2] >= 0.1 and sz <= 0.045) or sy <= 0.03
         # to blender axes: x, y(depth) = -front, z = up
         scale = mathutils.Matrix.Diagonal((sx * self.k, sz * self.k, sy * self.k, 1.0))
         # rot: pitch about x, yaw about up (blender z), roll about front (blender -y)
@@ -121,7 +126,7 @@ class Builder:
                             offset=bevel * self.k, segments=3, affect="EDGES", profile=0.6)
         bmesh.ops.transform(bm, matrix=rotation, verts=bm.verts)
         bmesh.ops.transform(bm, matrix=mathutils.Matrix.Translation(self.v(*pos)), verts=bm.verts)
-        self._add(bm, color, bone, smooth)
+        self._add(bm, color, bone, smooth, detail)
 
     # ---- build the object, armature and animations
 
@@ -164,6 +169,9 @@ class Builder:
         mat.node_tree.links.new(tex.outputs["Color"], bsdf.inputs["Base Color"])
         bsdf.inputs["Roughness"].default_value = 0.75
         mesh.materials.append(mat)
+        face_mat = mat.copy()
+        face_mat.name = self.name + "Face"
+        mesh.materials.append(face_mat)
 
         self.animate(arm, anims)
         return arm, body
@@ -442,10 +450,8 @@ def build_businessman(folder):
     shoe = swatch("shoe", hexc("#0d0d10"))
     white = swatch("white", hexc("#f6f6f6"))
     black = swatch("black", hexc("#141414"))
-    case = swatch("case", hexc("#8a5a2b"))
-    gold = swatch("gold", hexc("#f2c230"))
     mouth = swatch("mouth", hexc("#8c3b3b"))
-    pal = [skin, skin_dark, hair, suit, suit_light, shirt, tie, shoe, white, black, case, gold, mouth]
+    pal = [skin, skin_dark, hair, suit, suit_light, shirt, tie, shoe, white, black, mouth]
     b = Builder("Businessman", 0.68, pal)
     standard_bones(b, 0.34, 0.28, 0.58, 0.1, 0.64)
 
@@ -455,11 +461,6 @@ def build_businessman(folder):
         b.blob(suit, "Arm" + s_, (sign * 0.29, 0.46, 0), (0.06, 0.14, 0.06))
         b.blob(shirt, "Arm" + s_, (sign * 0.29, 0.325, 0), (0.063, 0.028, 0.063))
         b.blob(skin, "Arm" + s_, (sign * 0.29, 0.285, 0), (0.065, 0.065, 0.065))
-    # the briefcase hangs from the right hand
-    b.block(case, "ArmR", (-0.31, 0.19, 0), (0.095, 0.075, 0.035), bevel=0.012)
-    b.block(shoe, "ArmR", (-0.31, 0.275, 0), (0.035, 0.012, 0.012))
-    b.block(gold, "ArmR", (-0.31, 0.21, 0.037), (0.02, 0.016, 0.006))
-
     b.block(suit, "Hips", (0, 0.5, 0), (0.235, 0.18, 0.15), bevel=0.07, smooth=True)
     b.block(shirt, "Hips", (0, 0.52, 0.148), (0.07, 0.15, 0.012))
     b.blob(tie, "Hips", (0, 0.46, 0.158), (0.038, 0.12, 0.014))
@@ -501,7 +502,7 @@ def build_timber(folder):
     b.cone(bark_dark, "Hips", (0, 0.17, 0), 0.285, 0.05, top=0.27)
     b.blob(moss, "Hips", (-0.1, 0.56, -0.2), (0.09, 0.05, 0.07), rot=(30, 0, 0))
     for x, h, up in ((-0.15, 0.22, 0.38), (0.0, 0.18, 0.3), (0.14, 0.2, 0.42), (0.08, 0.14, 0.52), (-0.07, 0.12, 0.52)):
-        b.block(bark_dark, "Hips", (x, up, 0.27), (0.011, h / 2, 0.006))
+        b.block(bark_dark, "Hips", (x, up, math.sqrt(0.27 ** 2 - x ** 2) + 0.002), (0.011, h / 2, 0.006))
     b.blob(bark_dark, "Hips", (0.21, 0.33, 0.1), (0.05, 0.08, 0.025), rot=(0, 20, 0))
     for s_, sign in (("L", 1), ("R", -1)):
         b.blob(bark_dark, "Leg" + s_, (sign * 0.12, 0.1, 0.02), (0.07, 0.12, 0.07))
@@ -532,7 +533,7 @@ def build_timber(folder):
     for sign in (1, -1):
         b.block(mouth, "Head", (sign * 0.085, 0.685, 0.268), (0.012, 0.022, 0.012), rot=(0, 0, sign * 20))
     for x, h, up in ((-0.22, 0.14, 0.88), (0.22, 0.1, 0.9), (0.0, 0.07, 0.6)):
-        b.block(bark_dark, "Head", (x, up, 0.28), (0.01, h / 2, 0.006))
+        b.block(bark_dark, "Head", (x, up, math.sqrt(0.28 ** 2 - x ** 2) + 0.002), (0.01, h / 2, 0.006))
     return b, anim_set(), "Timber"
 
 

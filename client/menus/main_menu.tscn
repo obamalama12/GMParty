@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c6aw5cs71kqpf"]
+[gd_scene load_steps=40 format=3 uid="uid://c6aw5cs71kqpf"]
 
 [ext_resource type="Theme" uid="uid://d3w3vt3s6ujoh" path="res://assets/defaults/default_theme.tres" id="1"]
 [ext_resource type="PackedScene" path="res://plugins/characters/Businessman/character.tscn" id="mascot"]
@@ -89,7 +89,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-464, 300), Vector2(-464, 300), Vector2(96, 300)]
+"values": [Vector2(-464, 346), Vector2(-464, 346), Vector2(96, 346)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -257,6 +257,10 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
+[sub_resource type="Gradient" id="Gradient_confetti"]
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
+colors = PackedColorArray(1, 0.78, 0.23, 1, 1, 0.35, 0.6, 1, 0.4, 0.85, 1, 1, 0.55, 0.95, 0.55, 1, 0.8, 0.5, 1, 1, 1, 1, 1, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xva7f"]
 shader = ExtResource("26_0hf63")
 
@@ -275,6 +279,25 @@ libraries = {
 "": SubResource("AnimationLibrary_285ke")
 }
 autoplay = "MainMenu"
+
+[node name="Confetti" type="CPUParticles2D" parent="."]
+position = Vector2(640, -20)
+amount = 70
+lifetime = 11.0
+preprocess = 11.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(680, 4)
+direction = Vector2(0, 1)
+spread = 12.0
+gravity = Vector2(0, 30)
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+scale_amount_min = 4.0
+scale_amount_max = 9.0
+color_initial_ramp = SubResource("Gradient_confetti")
 
 [node name="MainMenu" type="Control" parent="."]
 anchors_preset = 0
@@ -304,7 +327,7 @@ expand_icon = true
 custom_minimum_size = Vector2(340, 100)
 layout_mode = 0
 offset_left = 96.0
-offset_top = 300.0
+offset_top = 346.0
 offset_right = 436.0
 offset_bottom = 640.0
 theme_override_constants/v_separation = 10
@@ -354,7 +377,7 @@ offset_top = -150.0
 offset_right = 778.0
 offset_bottom = 490.0
 pivot_offset = Vector2(512, 320)
-scale = Vector2(0.43, 0.43)
+scale = Vector2(0.47, 0.47)
 texture = ExtResource("14")
 
 [node name="Glow" type="TextureRect" parent="MainMenu"]
@@ -396,7 +419,7 @@ offset_left = -420.0
 offset_top = -44.0
 offset_right = -16.0
 offset_bottom = -12.0
-text = "A party game  -  made with Godot 4.7"
+text = "Made with Godot 4.7"
 horizontal_alignment = 2
 theme_override_font_sizes/font_size = 18
 

@@ -13,6 +13,8 @@ func _ready() -> void:
 	$AudioStreamPlayer.play()
 	$MainMenu/Buttons/Play.grab_focus()
 	$MainMenu/SubViewportContainer/SubViewport/mascot.play_animation("happy")
+	_make_floaters()
+	_setup_button_hover()
 	
 	var servers: Array = get_servers()
 	for server in servers:
@@ -30,14 +32,58 @@ func _ready() -> void:
 		$MainMenu.hide()
 
 var _time := 0.0
+var _floaters: Array[Control] = []
 
-# The logo sways a little
+# The logo sways a little, the glow behind the mascot breathes and cookies and cakes drift around
 func _process(delta: float) -> void:
 	_time += delta
 	var logo := $MainMenu/TextureRect
 	logo.rotation = deg_to_rad(sin(_time * 1.1) * 1.3)
-	var k := 0.43 + sin(_time * 1.7) * 0.006
+	var k := 0.47 + sin(_time * 1.7) * 0.006
 	logo.scale = Vector2(k, k)
+	$MainMenu/Glow.modulate.a = 0.5 + 0.1 * sin(_time * 1.3)
+	for i in _floaters.size():
+		var f := _floaters[i]
+		var base: Vector2 = f.get_meta("base")
+		f.position = base + Vector2(sin(_time * 0.6 + i) * 14.0, sin(_time * 0.9 + i * 1.7) * 18.0)
+		f.rotation = sin(_time * 0.7 + i * 2.3) * 0.35
+
+func _make_floaters() -> void:
+	var holder := Control.new()
+	holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	holder.set_anchors_preset(Control.PRESET_FULL_RECT)
+	add_child(holder)
+	move_child(holder, 2)
+	var textures := [
+		preload("res://common/scenes/board_logic/controller/icons/cookie.png"),
+		preload("res://common/scenes/board_logic/controller/icons/cake.png"),
+	]
+	var spots := [Vector2(700, 90), Vector2(1170, 120), Vector2(610, 330), Vector2(1190, 380),
+			Vector2(720, 600), Vector2(1120, 610), Vector2(560, 80)]
+	for i in spots.size():
+		var tr := TextureRect.new()
+		tr.texture = textures[i % 2]
+		tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		tr.custom_minimum_size = Vector2(1, 1)
+		tr.size = Vector2.ONE * (46 + (i * 13) % 30)
+		tr.pivot_offset = tr.size / 2
+		tr.modulate = Color(1, 1, 1, 0.6)
+		tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		tr.set_meta("base", spots[i])
+		holder.add_child(tr)
+		_floaters.append(tr)
+
+# Buttons grow a little when hovered or focused
+func _setup_button_hover() -> void:
+	for button: Control in $MainMenu/Buttons.get_children():
+		button.resized.connect(func(): button.pivot_offset = button.size / 2)
+		var grow := func(to: float):
+			var tween := create_tween()
+			tween.tween_property(button, "scale", Vector2.ONE * to, 0.12).set_trans(Tween.TRANS_BACK)
+		button.mouse_entered.connect(grow.bind(1.05))
+		button.focus_entered.connect(grow.bind(1.05))
+		button.mouse_exited.connect(grow.bind(1.0))
+		button.focus_exited.connect(grow.bind(1.0))
 
 #*** Options menu ***#
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="PackedScene" path="res://plugins/characters/Timber/timber.glb" id="1"]
 [ext_resource type="Script" path="res://common/scripts/character.gd" id="2"]
 [ext_resource type="Material" path="res://plugins/characters/Timber/Material.tres" id="3"]
+[ext_resource type="Material" path="res://plugins/characters/Timber/Face.tres" id="5"]
 
 [sub_resource type="CapsuleShape3D" id="4"]
 radius = 0.3
@@ -15,6 +16,7 @@ collision_shape = NodePath("Shape3D")
 
 [node name="Body" parent="Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3")
+surface_material_override/1 = ExtResource("5")
 
 [node name="Shape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
