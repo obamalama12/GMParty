@@ -49,27 +49,32 @@ func set_state(new_state: STATE):
 				$Model.play_animation("jump")
 
 var fired_count := 0
-@rpc("call_local") func fire():
+
+# Only the peer that controls the player decides whether a ball is fired.
+# Everyone else spawns it unconditionally, so a ball never exists on only one side
+# because the cooldown timers of the peers differ slightly.
+func try_fire():
 	if fire_cooldown <= 0 and state != STATE.DEAD:
-		var ball := preload("res://plugins/minigames/bowling/ball.tscn").instantiate()
-		ball.position = position + Vector3(0, 0.25, -2)
-		ball.name = "Ball" + str(fired_count)
-		get_parent().add_child(ball)
-		
 		fire_cooldown = FIRE_COOLDOWN_TIME
-		fired_count += 1
+		fire()
+		get_parent().lobby.broadcast(fire)
+
+@rpc("call_local") func fire():
+	var ball := preload("res://plugins/minigames/bowling/ball.tscn").instantiate()
+	ball.position = position + Vector3(0, 0.25, -2)
+	ball.name = "Ball" + str(fired_count)
+	get_parent().add_child(ball)
+	fired_count += 1
 
 func solo_player(delta: float):
 	if not info.is_ai():
 		if Input.is_action_just_pressed("player%d_action2" % info.player_id):
-			fire()
-			get_parent().lobby.broadcast(fire)
+			try_fire()
 		var right_strength := Input.get_action_strength("player%d_right" % info.player_id)
 		var left_strength := Input.get_action_strength("player%d_left" % info.player_id)
 		position.x += (right_strength - left_strength) * SPEED * delta
 	else:
-		fire()
-		get_parent().lobby.broadcast(fire)
+		try_fire()
 		if position.x <= -2.7 or position. x >= 2.7:
 			ai_running_dir = -ai_running_dir
 		ai_time_dir_change -= delta
