@@ -24,7 +24,7 @@ func _discover_character(filename: String) -> void:
 	# Check if the character has the necessary script attached
 	if _CHARACTER_SCRIPT.instance_has(scene):
 		# Get the second last path entry
-		# e.g. res://plugins/characters/Tux/character.tscn -> Tux
+		# e.g. res://plugins/characters/Kit/character.tscn -> Kit
 		_characters.append(filename.split('/')[-2])
 	else:
 		var msg = "Character `{0}` does not have the script " + \

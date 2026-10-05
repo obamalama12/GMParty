@@ -9,7 +9,7 @@ godot --path . res://tools/minigame_playthrough/playthrough.tscn
 ```
 
 - `ONLY=hurdle,bowling` limits the run to those minigame folders.
-- `CHARACTER=Kit` picks the character the human player uses (default `Tux`).
+- `CHARACTER=Kit` picks the character the human player uses (default `Businessman`).
 - `SHOTS_DIR=/some/dir` sets where screenshots go (default `user://playthrough_shots`).
 - Lines starting with `DRV` are progress; `DRV ALL DONE` marks the end.
 

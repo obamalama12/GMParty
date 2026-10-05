@@ -1,6 +1,6 @@
 # Character builder
 
-Builds the Bolt, Kit and Mushi characters in `plugins/characters/` and renders previews.
+Builds the characters (Bolt, Businessman, Emo, Kit, Mushi, Timber) in `plugins/characters/`, the board cake topper and the game icon, and renders previews.
 
 ## Rebuild the characters
 
@@ -18,8 +18,7 @@ What it does:
    exports a `.glb`. Edit the part lists in that file to change a character.
 2. The `.glb` files are imported in a temporary Godot project with the same folder layout
    and the animation loop flags are written into the `.glb.import` files.
-3. `write_scenes.py` writes `Material.tres` (toon shading plus a black outline pass, like
-   Beastie) and `character.tscn` for each character.
+3. `write_scenes.py` writes `Material.tres` (toon shading plus a black outline pass) and `character.tscn` for each character.
 
 Pass `--keep-blend` to also copy the `.blend` files next to the models (they are tracked by
 Git LFS in this repo).
@@ -34,3 +33,11 @@ Needs a display (or `xvfb-run`, with `--rendering-driver opengl3 --audio-driver 
 Writes a turnaround and an animation strip per character plus a lineup next to the original
 characters. `SHOTS_DIR=<dir>` sets the output folder. `WRITE_ICONS=1` also writes
 `icon.png` and `splash.png` into the character folders; import them in Godot afterwards.
+
+## Other scripts
+
+- `import_images.py` creates the Godot `.import` files for new PNGs (headless `godot --import`
+  skips new files in a big project).
+- `make_game_icon.py` builds `assets/icons/icon*.png` and `icon.ico` from a 1024 px render.
+- `blender/cake_topper.py <cake.blend> <cake.glb>` replaces the figure on the board cake with a
+  star and cherries (needs the original `cake.blend`, which is stored in Git LFS upstream).

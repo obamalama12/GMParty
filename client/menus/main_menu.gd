@@ -12,6 +12,7 @@ func _ready() -> void:
 	# Wait with main menu music until audio options have been loaded
 	$AudioStreamPlayer.play()
 	$MainMenu/Buttons/Play.grab_focus()
+	$MainMenu/SubViewportContainer/SubViewport/mascot.play_animation("happy")
 	
 	var servers: Array = get_servers()
 	for server in servers:
@@ -146,11 +147,6 @@ func _on_Quit_pressed() -> void:
 
 func _on_Screenshots_pressed():
 	OS.shell_open("file://{0}/screenshots".format([OS.get_user_data_dir()]))
-
-func _on_AnimationPlayer_animation_finished(_anim_name: String) -> void:
-	await get_tree().create_timer(5).timeout
-	$MainMenu/SubViewportContainer/SubViewport/tux/AnimationPlayer.play("ArmatureAction")
-	$MainMenu/SubViewportContainer/SubViewport/tux/AnimationPlayer2.play("CylinderAction")
 
 #*** Server List Menu ***#
 

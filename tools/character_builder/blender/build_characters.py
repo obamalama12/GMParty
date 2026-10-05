@@ -431,6 +431,171 @@ def build_mushi(folder):
     return b, anim_set(), "Mushi"
 
 
+def build_businessman(folder):
+    skin = swatch("skin", hexc("#f4cba8"))
+    skin_dark = swatch("skin_dark", hexc("#dba583"))
+    hair = swatch("hair", hexc("#5a3a22"))
+    suit = swatch("suit", hexc("#1c1c24"))
+    suit_light = swatch("suit_light", hexc("#34343f"))
+    shirt = swatch("shirt", hexc("#f7f7f7"))
+    tie = swatch("tie", hexc("#d12b2b"))
+    shoe = swatch("shoe", hexc("#0d0d10"))
+    white = swatch("white", hexc("#f6f6f6"))
+    black = swatch("black", hexc("#141414"))
+    case = swatch("case", hexc("#8a5a2b"))
+    gold = swatch("gold", hexc("#f2c230"))
+    mouth = swatch("mouth", hexc("#8c3b3b"))
+    pal = [skin, skin_dark, hair, suit, suit_light, shirt, tie, shoe, white, black, case, gold, mouth]
+    b = Builder("Businessman", 0.68, pal)
+    standard_bones(b, 0.34, 0.28, 0.58, 0.1, 0.64)
+
+    for s_, sign in (("L", 1), ("R", -1)):
+        b.blob(suit, "Leg" + s_, (sign * 0.1, 0.19, 0), (0.08, 0.17, 0.085))
+        b.blob(shoe, "Leg" + s_, (sign * 0.1, 0.045, 0.045), (0.09, 0.05, 0.14))
+        b.blob(suit, "Arm" + s_, (sign * 0.29, 0.46, 0), (0.06, 0.14, 0.06))
+        b.blob(shirt, "Arm" + s_, (sign * 0.29, 0.325, 0), (0.063, 0.028, 0.063))
+        b.blob(skin, "Arm" + s_, (sign * 0.29, 0.285, 0), (0.065, 0.065, 0.065))
+    # the briefcase hangs from the right hand
+    b.block(case, "ArmR", (-0.31, 0.19, 0), (0.095, 0.075, 0.035), bevel=0.012)
+    b.block(shoe, "ArmR", (-0.31, 0.275, 0), (0.035, 0.012, 0.012))
+    b.block(gold, "ArmR", (-0.31, 0.21, 0.037), (0.02, 0.016, 0.006))
+
+    b.block(suit, "Hips", (0, 0.5, 0), (0.235, 0.18, 0.15), bevel=0.07, smooth=True)
+    b.block(shirt, "Hips", (0, 0.52, 0.148), (0.07, 0.15, 0.012))
+    b.blob(tie, "Hips", (0, 0.46, 0.158), (0.038, 0.12, 0.014))
+    b.blob(tie, "Hips", (0, 0.61, 0.155), (0.045, 0.035, 0.022))
+    for sign in (1, -1):
+        b.block(suit_light, "Hips", (sign * 0.105, 0.54, 0.15), (0.03, 0.12, 0.01), rot=(0, 0, sign * 14))
+
+    b.blob(skin, "Head", (0, 0.93, 0), (0.3, 0.27, 0.27))
+    b.blob(hair, "Head", (0, 1.04, -0.04), (0.315, 0.2, 0.27))
+    b.blob(hair, "Head", (0.1, 1.15, 0.1), (0.2, 0.07, 0.15), rot=(0, 0, -12))
+    b.blob(hair, "Head", (0, 0.97, -0.1), (0.31, 0.21, 0.2))
+    for sign in (1, -1):
+        b.blob(skin, "Head", (sign * 0.3, 0.92, 0), (0.04, 0.06, 0.035))
+        b.blob(white, "Head", (sign * 0.12, 0.965, 0.25), (0.085, 0.1, 0.035))
+        b.blob(black, "Head", (sign * 0.12, 0.95, 0.278), (0.048, 0.058, 0.025))
+        b.block(hair, "Head", (sign * 0.12, 1.06, 0.262), (0.065, 0.014, 0.012), rot=(0, 0, sign * -8))
+    b.blob(skin_dark, "Head", (0, 0.885, 0.275), (0.035, 0.04, 0.04))
+    b.block(mouth, "Head", (0, 0.81, 0.262), (0.07, 0.011, 0.01))
+    return b, anim_set(), "Businessman"
+
+
+def build_timber(folder):
+    bark = swatch("bark", hexc("#8a5530"))
+    bark_dark = swatch("bark_dark", hexc("#5a341c"))
+    wood = swatch("wood", hexc("#e2b26a"))
+    ring = swatch("ring", hexc("#b97f3f"))
+    leaf = swatch("leaf", hexc("#69bd3f"))
+    leaf_dark = swatch("leaf_dark", hexc("#3f8c2b"))
+    white = swatch("white", hexc("#f6f6f6"))
+    black = swatch("black", hexc("#141414"))
+    mouth = swatch("mouth", hexc("#4a1f12"))
+    moss = swatch("moss", hexc("#7fa84a"))
+    pal = [bark, bark_dark, wood, ring, leaf, leaf_dark, white, black, mouth, moss]
+    b = Builder("Timber", 0.72, pal)
+    standard_bones(b, 0.2, 0.3, 0.64, 0.12, 0.58)
+
+    # lower half of the log and its roots
+    b.cone(bark, "Hips", (0, 0.4, 0), 0.27, 0.46, top=0.265)
+    b.cone(bark_dark, "Hips", (0, 0.17, 0), 0.285, 0.05, top=0.27)
+    b.blob(moss, "Hips", (-0.1, 0.56, -0.2), (0.09, 0.05, 0.07), rot=(30, 0, 0))
+    for x, h, up in ((-0.15, 0.22, 0.38), (0.0, 0.18, 0.3), (0.14, 0.2, 0.42), (0.08, 0.14, 0.52), (-0.07, 0.12, 0.52)):
+        b.block(bark_dark, "Hips", (x, up, 0.27), (0.011, h / 2, 0.006))
+    b.blob(bark_dark, "Hips", (0.21, 0.33, 0.1), (0.05, 0.08, 0.025), rot=(0, 20, 0))
+    for s_, sign in (("L", 1), ("R", -1)):
+        b.blob(bark_dark, "Leg" + s_, (sign * 0.12, 0.1, 0.02), (0.07, 0.12, 0.07))
+        b.blob(bark_dark, "Leg" + s_, (sign * 0.13, 0.035, 0.06), (0.09, 0.045, 0.13))
+        # branch arms with a leaf at the tip
+        b.blob(bark, "Arm" + s_, (sign * 0.35, 0.52, 0), (0.045, 0.14, 0.045), rot=(0, 0, sign * -22))
+        b.blob(bark_dark, "Arm" + s_, (sign * 0.285, 0.64, 0), (0.07, 0.07, 0.07))
+        b.blob(bark_dark, "Arm" + s_, (sign * 0.4, 0.38, 0), (0.06, 0.06, 0.06))
+        b.blob(leaf, "Arm" + s_, (sign * 0.43, 0.43, 0.03), (0.09, 0.025, 0.05), rot=(0, 0, sign * -40))
+
+    # upper half of the log is the head: face, cut top with rings, leafy sprout
+    b.cone(bark, "Head", (0, 0.77, 0), 0.285, 0.4, top=0.28)
+    b.cone(bark_dark, "Head", (0, 0.57, 0), 0.295, 0.04, top=0.29)
+    b.cone(wood, "Head", (0, 0.975, 0), 0.272, 0.03, top=0.272)
+    b.cone(ring, "Head", (0, 0.99, 0), 0.21, 0.012, top=0.21)
+    b.cone(wood, "Head", (0, 0.996, 0), 0.15, 0.012, top=0.15)
+    b.cone(ring, "Head", (0, 1.002, 0), 0.09, 0.012, top=0.09)
+    b.cone(wood, "Head", (0, 1.008, 0), 0.035, 0.012, top=0.035)
+    b.blob(leaf_dark, "Head", (0.08, 1.07, 0.02), (0.015, 0.07, 0.015), rot=(0, 0, -15))
+    b.blob(leaf, "Head", (0.14, 1.14, 0.02), (0.1, 0.03, 0.055), rot=(0, 0, -28))
+    b.blob(leaf, "Head", (0.03, 1.12, 0.02), (0.085, 0.03, 0.05), rot=(0, 0, 25))
+    for sign in (1, -1):
+        b.blob(white, "Head", (sign * 0.11, 0.8, 0.255), (0.085, 0.1, 0.035))
+        b.blob(black, "Head", (sign * 0.11, 0.785, 0.282), (0.048, 0.058, 0.025))
+        b.block(bark_dark, "Head", (sign * 0.11, 0.925, 0.262), (0.06, 0.016, 0.012), rot=(0, 0, sign * -10))
+    b.blob(bark_dark, "Head", (0.2, 0.7, 0.2), (0.045, 0.07, 0.02), rot=(0, 35, 0))
+    b.block(mouth, "Head", (0, 0.665, 0.272), (0.075, 0.013, 0.012))
+    for sign in (1, -1):
+        b.block(mouth, "Head", (sign * 0.085, 0.685, 0.268), (0.012, 0.022, 0.012), rot=(0, 0, sign * 20))
+    for x, h, up in ((-0.22, 0.14, 0.88), (0.22, 0.1, 0.9), (0.0, 0.07, 0.6)):
+        b.block(bark_dark, "Head", (x, up, 0.28), (0.01, h / 2, 0.006))
+    return b, anim_set(), "Timber"
+
+
+def build_emo(folder):
+    skin = swatch("pale", hexc("#f3dccf"))
+    skin_dark = swatch("pale_dark", hexc("#d8b8a8"))
+    hair = swatch("hair", hexc("#121216"))
+    black = swatch("black", hexc("#17171d"))
+    grey = swatch("grey", hexc("#3a3a45"))
+    purple = swatch("purple", hexc("#7a2fa8"))
+    white = swatch("white", hexc("#f4f4f4"))
+    metal = swatch("metal", hexc("#b8bcc8"))
+    liner = swatch("liner", hexc("#0b0b0f"))
+    pink = swatch("pink", hexc("#e68fa6"))
+    mouth = swatch("mouth", hexc("#6b2c3a"))
+    pal = [skin, skin_dark, hair, black, grey, purple, white, metal, liner, pink, mouth]
+    b = Builder("Emo", 0.68, pal)
+    standard_bones(b, 0.37, 0.25, 0.6, 0.1, 0.66)
+
+    for s_, sign in (("L", 1), ("R", -1)):
+        b.blob(black, "Leg" + s_, (sign * 0.1, 0.21, 0), (0.062, 0.18, 0.068))
+        b.blob(purple, "Leg" + s_, (sign * 0.1, 0.33, 0), (0.066, 0.02, 0.072))
+        b.blob(black, "Leg" + s_, (sign * 0.1, 0.07, 0.04), (0.095, 0.07, 0.15))
+        b.blob(white, "Leg" + s_, (sign * 0.1, 0.02, 0.04), (0.1, 0.022, 0.16))
+        # striped sleeves and a spiked wristband
+        b.blob(black, "Arm" + s_, (sign * 0.27, 0.48, 0), (0.05, 0.13, 0.05))
+        b.blob(purple, "Arm" + s_, (sign * 0.27, 0.52, 0), (0.054, 0.025, 0.054))
+        b.blob(purple, "Arm" + s_, (sign * 0.27, 0.43, 0), (0.054, 0.025, 0.054))
+        b.blob(metal, "Arm" + s_, (sign * 0.27, 0.34, 0), (0.058, 0.025, 0.058))
+        b.blob(skin, "Arm" + s_, (sign * 0.27, 0.29, 0), (0.06, 0.06, 0.06))
+    b.block(black, "Hips", (0, 0.5, 0), (0.2, 0.17, 0.14), bevel=0.06, smooth=True)
+    b.block(purple, "Hips", (0, 0.5, 0.139), (0.2, 0.025, 0.006))
+    b.block(grey, "Hips", (0, 0.37, 0), (0.205, 0.03, 0.145), bevel=0.01)
+    b.blob(metal, "Hips", (0, 0.37, 0.15), (0.035, 0.025, 0.012))
+    # a small skull print on the chest
+    b.blob(white, "Hips", (0, 0.55, 0.138), (0.05, 0.05, 0.012))
+    b.blob(white, "Hips", (0, 0.5, 0.138), (0.03, 0.022, 0.012))
+    b.blob(black, "Hips", (0.02, 0.555, 0.147), (0.012, 0.016, 0.006))
+    b.blob(black, "Hips", (-0.02, 0.555, 0.147), (0.012, 0.016, 0.006))
+
+    b.blob(skin, "Head", (0, 0.94, 0), (0.3, 0.27, 0.27))
+    # swoopy side fringe over the character's right eye, messy back of the hair
+    b.blob(hair, "Head", (0, 1.04, -0.04), (0.32, 0.21, 0.28))
+    b.blob(hair, "Head", (-0.09, 1.0, 0.17), (0.22, 0.17, 0.12), rot=(10, 0, 18))
+    b.blob(hair, "Head", (-0.24, 0.9, 0.1), (0.1, 0.17, 0.12), rot=(0, 0, 8))
+    b.cone(hair, "Head", (0.14, 1.28, -0.02), 0.07, 0.2, rot=(0, 0, -20))
+    b.cone(hair, "Head", (-0.05, 1.3, -0.06), 0.07, 0.22, rot=(-12, 0, 5))
+    b.cone(hair, "Head", (-0.2, 1.2, -0.05), 0.065, 0.2, rot=(0, 0, 28))
+    b.cone(hair, "Head", (0.0, 1.05, -0.3), 0.08, 0.22, rot=(-70, 0, 0))
+    b.cone(hair, "Head", (0.17, 1.0, -0.26), 0.07, 0.2, rot=(-65, 0, -25))
+    b.blob(hair, "Head", (0, 0.93, -0.12), (0.31, 0.21, 0.2))
+    for sign in (1, -1):
+        b.blob(skin, "Head", (sign * 0.3, 0.93, 0), (0.04, 0.06, 0.035))
+    # the visible eye gets heavy eyeliner, the other one hides behind the fringe
+    b.blob(liner, "Head", (0.12, 0.965, 0.247), (0.11, 0.125, 0.03))
+    b.blob(white, "Head", (0.12, 0.965, 0.262), (0.085, 0.1, 0.03))
+    b.blob(black, "Head", (0.12, 0.95, 0.284), (0.05, 0.06, 0.022))
+    b.block(hair, "Head", (0.12, 1.07, 0.262), (0.065, 0.014, 0.012), rot=(0, 0, 12))
+    b.blob(skin_dark, "Head", (0, 0.89, 0.275), (0.03, 0.035, 0.035))
+    b.block(mouth, "Head", (0.01, 0.81, 0.262), (0.06, 0.01, 0.01), rot=(0, 0, -8))
+    return b, anim_set(), "Emo"
+
+
 # ---------------------------------------------------------------- main
 
 def export(builder_fn):
@@ -455,5 +620,5 @@ def export(builder_fn):
     print("EXPORTED", path, "height", max(v.co.z for v in body.data.vertices))
 
 
-for fn in (build_bolt, build_kit, build_mushi):
+for fn in (build_bolt, build_kit, build_mushi, build_businessman, build_timber, build_emo):
     export(fn)

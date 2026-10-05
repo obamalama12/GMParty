@@ -16,3 +16,11 @@ plugins/test_board.zip filter=lfs diff=lfs merge=lfs -text
 plugins/characters/Bolt/*.png -filter -diff -merge
 plugins/characters/Kit/*.png -filter -diff -merge
 plugins/characters/Mushi/*.png -filter -diff -merge
+plugins/characters/Businessman/*.png -filter -diff -merge
+plugins/characters/Timber/*.png -filter -diff -merge
+plugins/characters/Emo/*.png -filter -diff -merge
+
+# The game icon was redrawn for this project and is small as well
+assets/icons/icon.png -filter -diff -merge
+assets/icons/icon-smaller.png -filter -diff -merge
+assets/icons/icon-smallest.png -filter -diff -merge

@@ -377,97 +377,6 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/sand-texture-pack)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## plugins/characters/Tux
-### Atlas_Party.png | tux.blend | tux.glb
-
-Public Domain by Quaternius
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-### splash.png
-
-Copyright © 2020 Paulius Danelius
-
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-### icon.png
-
-Copyright © 2019 Néd J
-
-Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-friends-iconset-1)
-
-License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
-
-## plugins/characters/Green Tux
-### Atlas_Party.png
-
-Public Domain by Quaternius
-Modified by Yvonne Kothmeier
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-### splash.png
-
-Copyright © 2020 Paulius Danelius
-
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-### icon.png
-
-Copyright © 2019 Néd J
-
-Modified by Florian Kothmeier
-
-Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-friends-iconset-1)
-
-License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
-
-## plugins/characters/Beastie
-### beastie_tex.png | beastie.blend | beastie.glb
-
-Copyright © 2010 durmieu
-
-Modified by Florian Kothmeier 2018
-
-Retrived from [Open Game Art](https://opengameart.org/content/beastie)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-### splash.png
-
-Copyright © 2020 Paulius Danelius
-
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-### icon.png
-
-Copyright © 2020 Paulius Danelius
-
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-## plugins/characters/Godette
-### palette.png | godot_chan.blend | godot_chan.glb
-
-Copyright © SirRichard94
-
-Models modified by Florian Kothmeier 2018
-
-Retrieved from [Github](https://github.com/SirRichard94/low-poly-godette)
-
-License: [CC BY 3.0](https://github.com/SirRichard94/low-poly-godette/blob/master/License)
-
-### splash.png
-
-Copyright © 2020 Paulius Danelius
-
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-### icon.png
-
-Copyright © 2020 Paulius Danelius
-
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
-
 ## plugins/items/cookie_steal_trap
 ### icon.png | icon.xcf | material.png | material.xcf
 
@@ -489,31 +398,6 @@ Public domain by Vytautas Butėnas
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
-## assets/icons/blender
-### icon.blend
-
-Copyright © 2018 Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### tux_texture.png
-
-Copyright © 2010 durmieu
-
-Modified by Florian Kothmeier 2018
-
-Retrieved from [Open Game Art](https://opengameart.org/content/tux)
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### blue-sky-merge-clouds-675977.jpeg
-
-Public Domain by Skitterphoto
-
-Retrieved from [pexels.com](https://www.pexels.com/photo/air-atmosphere-blue-blue-sky-675977)
-
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
 ## assets/icons/loading
 ### load*.png
 
@@ -524,11 +408,13 @@ Retrieved from [wikipedia.org](https://cs.wikipedia.org/wiki/Soubor:Loading_2.gi
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## assets/icons
-### icon.\* | icon-\*
+### icon.png | icon-smaller.png | icon-smallest.png | icon.ico
 
-Copyright © 2018 Florian Kothmeier
+Made for this project from a render of the Businessman character
+(see `tools/character_builder/make_game_icon.py`).
+The licence below is a placeholder; the project owner can change it.
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### heart.png | heart_grayscale.png
 
@@ -991,34 +877,16 @@ License: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode
 ### circle.png | cake.blend | cake.glb
 Public domain by Vytautas Butėnas
 
+The figure on top of the cake was replaced with a star and cherries for this project
+(see `tools/character_builder/blender/cake_topper.py`).
+
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
-
-### tux_texture.png
-
-Copyright © 2010 durmieu
-
-Modified by Florian Kothmeier 2018
-
-Retrieved from [Open Game Art](https://opengameart.org/content/tux)
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/textures/title
 ### Title.png
 Public domain by Vytautas Butėnas
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
-
-## assets/tux
-### tux.glb
-
-Copyright © 2010 durmieu
-
-Modified by Florian Kothmeier 2018
-
-Retrived from [Open Game Art](https://opengameart.org/content/tux)
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/icons
 
@@ -1059,8 +927,8 @@ Copyright © 2020 Florian Kothmeier
 
 License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
-## plugins/characters/Bolt | plugins/characters/Kit | plugins/characters/Mushi
-### bolt.glb | kit.glb | mushi.glb | palette.png | icon.png | splash.png
+## plugins/characters/Bolt | plugins/characters/Businessman | plugins/characters/Emo | plugins/characters/Kit | plugins/characters/Mushi | plugins/characters/Timber
+### *.glb | palette.png | icon.png | splash.png
 
 Original characters made for this project with the scripts in `tools/character_builder`.
 The licence below is a placeholder chosen to match the other original assets; the

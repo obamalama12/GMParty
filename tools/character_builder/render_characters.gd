@@ -1,15 +1,18 @@
 ## Dev tool: renders character previews (and icon.png / splash.png for the
 ## procedural characters). Needs a display or xvfb, see README.md.
 ##
-## Environment: SHOTS_DIR  where previews go (default user://character_previews)
+## Environment: ICON_SIZE    size of icon.png and splash.png in pixels (default 512)
+##              SHOTS_DIR  where previews go (default user://character_previews)
 ##              WRITE_ICONS=1  also write icon.png and splash.png into the plugin folders
 extends SceneTree
 
-const PROCEDURAL := ["Bolt", "Kit", "Mushi"]
-const LINEUP := ["Tux", "Beastie", "Godette", "Green Tux", "Bolt", "Kit", "Mushi"]
+## Characters to preview: every folder in plugins/characters, or the ones listed in CHARACTERS
+## (comma separated).
+var characters: Array = []
 
 var shots_dir: String
 var write_icons := false
+var icon_size := 512
 
 
 func _initialize() -> void:
@@ -18,6 +21,13 @@ func _initialize() -> void:
 		shots_dir = "user://character_previews"
 	DirAccess.make_dir_recursive_absolute(shots_dir)
 	write_icons = OS.get_environment("WRITE_ICONS") == "1"
+	if OS.get_environment("ICON_SIZE") != "":
+		icon_size = int(OS.get_environment("ICON_SIZE"))
+	if OS.get_environment("CHARACTERS") != "":
+		characters = Array(OS.get_environment("CHARACTERS").split(","))
+	else:
+		characters = Array(DirAccess.get_directories_at("res://plugins/characters"))
+		characters.sort()
 	_run()
 
 
@@ -89,7 +99,7 @@ func render(nodes: Array, cam_pos: Vector3, look_at: Vector3, fov: float, size: 
 
 func _run() -> void:
 	# Turnaround sheets for the procedural characters: front, three-quarter, side, back.
-	for char_name in PROCEDURAL:
+	for char_name in characters:
 		var views: Array[Image] = []
 		for angle in [0.0, 40.0, 90.0, 180.0]:
 			var c := load_char(char_name)
@@ -104,7 +114,7 @@ func _run() -> void:
 		print("PREVIEW ", char_name)
 
 	# Animation strip so the poses can be checked.
-	for char_name in PROCEDURAL:
+	for char_name in characters:
 		var anims := [["idle", 0.5], ["walk", 0.1], ["run", 0.1], ["jump", 0.4], ["happy", 0.25],
 				["sad", 1.0], ["stun", 0.1], ["punch", 0.2], ["kick", 0.35]]
 		var strip := Image.create(300 * anims.size(), 420, false, Image.FORMAT_RGBA8)
@@ -119,8 +129,8 @@ func _run() -> void:
 
 	# Lineup next to the existing characters, to compare size and style.
 	var nodes: Array = []
-	var x := -(LINEUP.size() - 1) * 0.6
-	for char_name in LINEUP:
+	var x := -(characters.size() - 1) * 0.6
+	for char_name in characters:
 		var c := load_char(char_name)
 		c.position.x = x
 		x += 1.2
@@ -132,17 +142,17 @@ func _run() -> void:
 	print("PREVIEW lineup")
 
 	if write_icons:
-		for char_name in PROCEDURAL:
+		for char_name in characters:
 			var c := load_char(char_name)
 			pose(c, "idle", 0.3)
 			var icon := await render([c], Vector3(0, 0.72, 1.5), Vector3(0, 0.7, 0), 30.0,
-					Vector2i(512, 512), true)
+					Vector2i(icon_size, icon_size), true)
 			icon.save_png("res://plugins/characters/%s/icon.png" % char_name)
 			var s := load_char(char_name)
 			s.rotation_degrees.y = 25
-			pose(s, "happy", 0.25)
+			pose(s, "happy", 0.5)
 			var splash := await render([s], Vector3(0, 0.6, 2.7), Vector3(0, 0.46, 0), 30.0,
-					Vector2i(512, 512), true)
+					Vector2i(icon_size, icon_size), true)
 			splash.save_png("res://plugins/characters/%s/splash.png" % char_name)
 			print("ICONS ", char_name)
 	print("RENDER DONE")

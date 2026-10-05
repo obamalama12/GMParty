@@ -9,7 +9,7 @@ see README.md).
 import os
 import sys
 
-CHARACTERS = {"Bolt": "bolt", "Kit": "kit", "Mushi": "mushi"}
+CHARACTERS = {"Bolt": "bolt", "Kit": "kit", "Mushi": "mushi", "Businessman": "businessman", "Timber": "timber", "Emo": "emo"}
 
 MATERIAL = '''[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
 
