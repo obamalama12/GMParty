@@ -312,7 +312,7 @@ msgstr "Miskongruo de versio"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Vi rulas nekongruan version de SuperTuxParty por ĉi tiu servilo.\n"
+"Vi rulas nekongruan version de MarkyParty por ĉi tiu servilo.\n"
 "Via versio: {local}\n"
 "Servila versio: {remote}\n"
 "\n"

@@ -2,7 +2,7 @@
 
 ## Workflow
 
-Super Tux Party now follows the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+Marky Party follows the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 This means that:
 
 - All merge requests should have their own branch
@@ -26,8 +26,8 @@ asset files. Tutorial for git-lfs can be found [here](https://www.atlassian.com/
 
 Too clone the repository, simply run:
 
-- `git clone https://gitlab.com/SuperTuxParty/SuperTuxParty.git`
-- `git lfs pull`
+- `git clone https://github.com/obamalama12/GMParty.git`
+- run `tools/get_assets.sh` to get the assets that are stored in Git LFS upstream (see the README)
 
 If you want to merge changes into the repository you must first fork the
 project, upload your changes there and then create a merge request on the main
@@ -35,7 +35,7 @@ repository.
 
 ## Tools
 
-Super Tux Party is built in Godot 4.7 with GDscript.
+Marky Party is built in Godot 4.7 with GDscript.
 3D models are exported from [Blender](https://www.blender.org/) with the default gltf exporter.
 
 ### File structure

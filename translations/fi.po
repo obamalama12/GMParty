@@ -312,7 +312,7 @@ msgstr "Ei täsmäävä versio"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Käytät yhteensopimatonta SuperTuxParty-versiota tälle palvelimelle.\n"
+"Käytät yhteensopimatonta MarkyParty-versiota tälle palvelimelle.\n"
 "Sinun versiosi: {local}\n"
 "Palvelinversio: {remote}\n"
 "\n"

@@ -312,7 +312,7 @@ msgstr "Sürüm uyuşmazlığı"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Bu sunucu için SuperTuxParty'nin uyumsuz bir sürümünü çalıştırıyorsunuz.\n"
+"Bu sunucu için MarkyParty'nin uyumsuz bir sürümünü çalıştırıyorsunuz.\n"
 "Sizin sürümünüz: {local}\n"
 "Sunucu sürümü: {remote}\n"
 "\n"

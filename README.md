@@ -1,32 +1,43 @@
-# <img alt="SuperTuxParty Logo" src="assets/icons/icon-smallest.png" width="64" height="64" /> SuperTuxParty
+# <img alt="Marky Party logo" src="assets/icons/icon-smallest.png" width="64" height="64" /> Marky Party
 
-[![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fsupertux.party)](https://supertux.party/)
 [![License](https://img.shields.io/badge/License-GPL%20v3.0-orange)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![Godot Version](https://img.shields.io/badge/Godot-v4.7-%23478cbf)](https://downloads.tuxfamily.org/godotengine/4.7/)
-[![Mentioned in Awesome Godot](https://awesome.re/mentioned-badge.svg)](https://github.com/godotengine/awesome-godot)
-[![Translated on Weblate](https://hosted.weblate.org/widgets/super-tux-party/-/svg-badge.svg)](https://hosted.weblate.org/engage/super-tux-party/?utm_source=widget)
-[![Matrix](https://img.shields.io/matrix/SuperTuxParty-Extra:matrix.org)](https://app.element.io/#/room/#SuperTuxParty-Dev:matrix.org)
-[![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/SuperTuxParty)](https://www.reddit.com/r/SuperTuxParty/)
+[![Godot Version](https://img.shields.io/badge/Godot-v4.7-%23478cbf)](https://godotengine.org/)
 
 A [free/libre](https://www.gnu.org/philosophy/free-sw.html) and
 [open-source](https://opensource.org/docs/osd/) party game that is meant to
 replicate the feel of games such as Mario Party.
 
+Marky Party is a fork of [Super Tux Party](https://gitlab.com/SuperTuxParty/SuperTuxParty)
+(licensed under the GPL, see below) with its own characters and a new name.
+
 ![Mini-game Screenshot](screenshot.png)
 
-## Download
+## Getting the assets
 
-You can download SuperTuxParty from [Itch.io](https://anti.itch.io/super-tux-party),our [website](https://supertux.party/download) or get it on [FlatHub](https://flathub.org/apps/details/party.supertux.supertuxparty).
+Textures, models, music and sounds are stored with Git LFS upstream and are not part of
+this repository yet. Copy them in from the original project:
 
-</a>
-    <a href="https://flathub.org/apps/details/party.supertux.supertuxparty">
-    <img src="https://flathub.org/assets/badges/flathub-badge-en.png" alt="Flathub" width='240' />
-</a>
+```sh
+git clone https://gitlab.com/SuperTuxParty/SuperTuxParty.git upstream
+(cd upstream && git lfs pull)
+tools/get_assets.sh upstream
+```
+
+The script keeps files that already exist here (the new characters, icon, title and cake)
+and skips the characters and art that were removed.
 
 ## Engine
 
-SuperTuxParty is built with the [Godot Engine](https://godotengine.org/).
+Marky Party is built with the [Godot Engine](https://godotengine.org/).
 Currently, Godot Engine version 4.7 is used.
+
+## Tools
+
+`tools/` has helpers for development:
+
+- `tools/minigame_playthrough` plays every minigame once and takes screenshots.
+- `tools/character_builder` builds the characters in Blender and renders previews.
+- `tools/get_assets.sh` copies the upstream assets in (see above).
 
 ## Issues
 
@@ -42,16 +53,6 @@ All other data such as art, sound, music, and etc. is released under a bunch
 of different licenses.
 See the [**LICENSE-ART**](licenses/LICENSE-ART.md) file, the [**LICENSE-MUSIC**](licenses/LICENSE-MUSIC.md) file, the [**LICENSE-SHADER**](licenses/LICENSE-SHADER.md) file and the [**LICENSE-FONTS**](licenses/LICENSE-FONTS.md) file for more details.
 
-## Translation
+## Credits
 
-All translation is done on [Hosted Weblate](https://hosted.weblate.org/projects/super-tux-party/)
-
-## Community
-
-We also have a [subreddit](https://www.reddit.com/r/SuperTuxParty/)
-for discussions about the project, and two Matrix rooms for
-[development](https://matrix.to/#/#SuperTuxParty-Dev:matrix.org) and
-[general](https://matrix.to/#/#SuperTuxParty-Extra:matrix.org) talking.
-
-
-[def]: https://downloads.tuxfamily.org/godotengine/3.2.2/
+Based on [Super Tux Party](https://gitlab.com/SuperTuxParty/SuperTuxParty) by its contributors.

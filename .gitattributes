@@ -24,3 +24,6 @@ plugins/characters/Emo/*.png -filter -diff -merge
 assets/icons/icon.png -filter -diff -merge
 assets/icons/icon-smaller.png -filter -diff -merge
 assets/icons/icon-smallest.png -filter -diff -merge
+
+# The title logo was redrawn for this project
+assets/textures/title/Title.png -filter -diff -merge

@@ -312,7 +312,7 @@ msgstr "Versión incorrecta"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Está ejecutando una versión incompatible de SuperTuxParty para este servidor."
+"Está ejecutando una versión incompatible de MarkyParty para este servidor."
 "\n"
 "Su versión: {local}\n"
 "Versión del servidor: {remote}\n"

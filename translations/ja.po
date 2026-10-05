@@ -314,7 +314,7 @@ msgstr "バージョンが一致しませんでした"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"このサーバーでは互換性のないバージョンの SuperTuxParty を実行しています。\n"
+"このサーバーでは互換性のないバージョンの MarkyParty を実行しています。\n"
 "あなたのバージョン: {local}\n"
 "サーバーのバージョン: {remote}\n"
 "\n"

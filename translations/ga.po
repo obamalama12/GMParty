@@ -313,7 +313,7 @@ msgstr "Neamhréir leagan"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Tá leagan neamh-chomhoiriúnach de SuperTuxParty á rith agat don fhreastalaí "
+"Tá leagan neamh-chomhoiriúnach de MarkyParty á rith agat don fhreastalaí "
 "seo.\n"
 "Do leagan: {áitiúil}\n"
 "Leagan an fhreastalaí: {iargúlta}\n"

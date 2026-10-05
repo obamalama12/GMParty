@@ -312,7 +312,7 @@ msgstr "Onjuiste versie"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Je versie van SuperTuxParty is niet compatibel met deze server.\n"
+"Je versie van MarkyParty is niet compatibel met deze server.\n"
 "Jouw versie: {local}\n"
 "Serverversie: {remote}\n"
 "\n"

@@ -312,7 +312,7 @@ msgstr "Versão não bate"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Você está rodando uma versão incompatível de SuperTuxParty para este "
+"Você está rodando uma versão incompatível de MarkyParty para este "
 "servidor.\n"
 "Sua versão: {local}\n"
 "Versão do servidor: {remote}\n"

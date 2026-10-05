@@ -291,7 +291,6 @@ expand_icon = true
 [node name="Buttons" type="GridContainer" parent="MainMenu"]
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 0
-anchor_bottom = 1.0
 offset_left = -464.0
 offset_top = 412.0
 offset_right = 41.0
@@ -327,7 +326,6 @@ text = "MENU_LABEL_SCREENSHOTS"
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 0
-anchor_bottom = 1.0
 offset_left = 128.0
 offset_top = -248.0
 offset_right = 1152.0
