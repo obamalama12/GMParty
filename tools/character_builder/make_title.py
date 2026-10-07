@@ -3,8 +3,8 @@
 
     python tools/character_builder/make_title.py assets/textures/title/Title.png
 
-MARKY in glossy gold and PARTY in candy colours, both with a thick outline and a drop shadow,
-on a slight tilt, with sparkles and a "a party game" ribbon.
+RETRO in glossy gold and PARTY in candy colours, both with a thick outline and a drop shadow,
+on a slight tilt, with sparkles.
 """
 import math
 import random
@@ -114,7 +114,7 @@ party, _, _ = word(
                                 Image.new("RGB", (w, h), (0, 0, 0))),
     16, NAVY, 20, (60, 30, 110, 255))
 
-for layer, cy, tilt in ((retro, 175, -3.0), (party, 440, 2.0)):
+for layer, cy, tilt in ((retro, 200, -3.0), (party, 440, 2.0)):
     layer = layer.rotate(tilt, resample=Image.BICUBIC, expand=True)
     sc = min(1.0, (W - 30) / layer.width)
     if sc < 1.0:
@@ -127,20 +127,6 @@ for layer, cy, tilt in ((retro, 175, -3.0), (party, 440, 2.0)):
     y = cy - layer.height // 2
     canvas.alpha_composite(shadow, (x + 6, y + 14))
     canvas.alpha_composite(layer, (x, y))
-
-# ribbon between the words
-rib = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-d = ImageDraw.Draw(rib)
-rx0, rx1, ry0, ry1 = 330, 700, 292, 352
-d.polygon([(rx0 - 36, ry0 + 14), (rx0 + 10, ry0 + 14), (rx0 + 10, ry1 + 14), (rx0 - 36, ry1 + 14), (rx0 - 12, (ry0 + ry1) / 2 + 14)], fill=(150, 30, 80, 255))
-d.polygon([(rx1 + 36, ry0 + 14), (rx1 - 10, ry0 + 14), (rx1 - 10, ry1 + 14), (rx1 + 36, ry1 + 14), (rx1 + 12, (ry0 + ry1) / 2 + 14)], fill=(150, 30, 80, 255))
-d.rounded_rectangle((rx0, ry0, rx1, ry1), radius=14, fill=(226, 52, 120, 255), outline=NAVY, width=6)
-d.rounded_rectangle((rx0 + 8, ry0 + 8, rx1 - 8, ry0 + 26), radius=8, fill=(255, 255, 255, 50))
-f = ImageFont.truetype(FONT, 40)
-text = "A PARTY GAME"
-tw = d.textlength(text, font=f)
-d.text(((rx0 + rx1) / 2 - tw / 2, ry0 + 3), text, font=f, fill=(255, 255, 255, 255), stroke_width=3, stroke_fill=NAVY)
-canvas.alpha_composite(rib)
 
 # sparkles
 sp = ImageDraw.Draw(canvas)

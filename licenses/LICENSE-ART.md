@@ -922,3 +922,11 @@ Panels, buttons, player cards, glove cursor and dice faces drawn for this projec
 `tools/ui_builder/make_ui_art.py`. The licence below is a placeholder; the project owner can change it.
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## assets/textures/title
+### mascot.png
+
+Poster picture of Joy drawn with `tools/character_builder/draw_mascot_art.py`. The licence below is a placeholder;
+the project owner can change it.
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)

@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://common/scenes/board_logic/controller/dice_roll.gd" id="1"]
+[ext_resource type="AudioStream" path="res://assets/sounds/dice/dice_rattle.wav" id="rattle"]
+[ext_resource type="AudioStream" path="res://assets/sounds/dice/dice_land.wav" id="land"]
+[ext_resource type="AudioStream" path="res://assets/sounds/dice/dice_chime.wav" id="chime"]
 
 [sub_resource type="Environment" id="Environment_dice"]
 background_mode = 1
@@ -51,3 +54,15 @@ transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 
 light_energy = 1.6
 
 [node name="Dice" type="MeshInstance3D" parent="Container/Viewport"]
+
+[node name="Rattle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("rattle")
+bus = &"Effects"
+
+[node name="Land" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("land")
+bus = &"Effects"
+
+[node name="Chime" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("chime")
+bus = &"Effects"

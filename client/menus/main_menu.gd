@@ -12,7 +12,6 @@ func _ready() -> void:
 	# Wait with main menu music until audio options have been loaded
 	$AudioStreamPlayer.play()
 	$MainMenu/Buttons/Play.grab_focus()
-	$MainMenu/SubViewportContainer/SubViewport/mascot.play_animation("happy")
 	_make_floaters()
 	_setup_button_hover()
 	
@@ -42,6 +41,11 @@ func _process(delta: float) -> void:
 	var k := 0.47 + sin(_time * 1.7) * 0.006
 	logo.scale = Vector2(k, k)
 	$MainMenu/Glow.modulate.a = 0.5 + 0.1 * sin(_time * 1.3)
+	var mascot: Control = $MainMenu/Mascot
+	mascot.rotation = deg_to_rad(sin(_time * 1.6) * 2.2)
+	mascot.position.y = 50.0 - absf(sin(_time * 2.4)) * 16.0
+	var squash := 1.0 + sin(_time * 4.8 + 1.0) * 0.012
+	mascot.scale = Vector2(1.0 / squash, squash)
 	var glove: Control = $MainMenu/Glove
 	var target := _glove_target + Vector2(sin(_time * 5.0) * 6.0, 0.0)
 	glove.position = glove.position.lerp(target, clampf(delta * 14.0, 0.0, 1.0))
@@ -102,7 +106,7 @@ func _on_Options_pressed() -> void:
 	$Animation.play_backwards("MainMenu")
 	await $Animation.animation_finished
 	$MainMenu/Buttons.hide()
-	$MainMenu/SubViewportContainer.hide()
+	$MainMenu/Mascot.hide()
 	$OptionsMenu.show()
 	$Animation.play("OptionsMenu")
 	$OptionsMenu/OptionsMenu/Menu/Back.grab_focus()
@@ -114,7 +118,7 @@ func _on_OptionsMenu_quit() -> void:
 	$OptionsMenu.hide()
 	$MainMenu/Buttons.show()
 	$OptionsMenu/OptionsMenu/Menu/Back.disabled = false
-	$MainMenu/SubViewportContainer.show()
+	$MainMenu/Mascot.show()
 	$Animation.play("MainMenu")
 	$MainMenu/Buttons/Options.grab_focus()
 

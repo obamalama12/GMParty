@@ -28,11 +28,12 @@ def shade_of(c, f=0.78):
 
 
 class Canvas:
-    def __init__(self):
-        self.img = Image.new("RGBA", (S * K, S * K), (0, 0, 0, 0))
+    def __init__(self, w=S, h=S):
+        self.w, self.h = w, h
+        self.img = Image.new("RGBA", (w * K, h * K), (0, 0, 0, 0))
 
     def mask(self, fn):
-        m = Image.new("L", (S * K, S * K), 0)
+        m = Image.new("L", (self.w * K, self.h * K), 0)
         fn(ImageDraw.Draw(m))
         return m
 
@@ -45,17 +46,17 @@ class Canvas:
             self.img.paste(Image.new("RGBA", m.size, OUTLINE + (255,)), mask=o)
         self.img.paste(Image.new("RGBA", m.size, tuple(color) + (255,)), mask=m)
         if shade:
-            off = ImageChops.offset(m, -int(S * K * 0.035), -int(S * K * 0.045))
+            off = ImageChops.offset(m, -int(self.w * K * 0.03), -int(self.w * K * 0.04))
             crescent = ImageChops.subtract(m, off)
             self.img.paste(Image.new("RGBA", m.size, shade_of(color) + (255,)), mask=crescent)
             if light is not False:
-                hl = ImageChops.offset(m, int(S * K * 0.02), int(S * K * 0.03))
+                hl = ImageChops.offset(m, int(self.w * K * 0.018), int(self.w * K * 0.026))
                 glow = ImageChops.subtract(m, hl)
                 glow = glow.point(lambda v: v * 0.5)
                 self.img.paste(Image.new("RGBA", m.size, tuple(min(255, int(v * 1.12 + 14)) for v in color) + (255,)), mask=glow)
 
     def done(self):
-        return self.img.resize((S, S), Image.LANCZOS)
+        return self.img.resize((self.w, self.h), Image.LANCZOS)
 
 
 def E(cx, cy, rx, ry):
@@ -254,4 +255,5 @@ def main():
     print("drew Mayor Pixel")
 
 
-main()
+if __name__ == "__main__":
+    main()

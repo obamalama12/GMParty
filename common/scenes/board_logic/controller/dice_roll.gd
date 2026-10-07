@@ -83,6 +83,7 @@ func play(number: int) -> void:
 	dice.rotation = target + Vector3(randf_range(3.0, 5.0), randf_range(3.0, 5.0), randf_range(1.0, 2.0)) * TAU
 	dice.scale = Vector3.ONE * 0.2
 	dice.position = Vector3(0, -0.6, 0)
+	$Rattle.play()
 	var spin := create_tween()
 	spin.tween_property(dice, "rotation", target, 1.05).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	var pop := create_tween()
@@ -91,6 +92,8 @@ func play(number: int) -> void:
 	hop.tween_property(dice, "position:y", 0.5, 0.35).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	hop.tween_property(dice, "position:y", 0.0, 0.3).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 	await spin.finished
+	$Land.play()
+	get_tree().create_timer(0.12).timeout.connect($Chime.play)
 	# a little squash when it lands
 	var land := create_tween()
 	land.tween_property(dice, "scale", Vector3(1.12, 0.9, 1.12), 0.07)
