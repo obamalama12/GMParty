@@ -21,19 +21,54 @@ var ai_wander := {}
 
 
 func build_world() -> void:
-	make_environment(Color(0.2, 0.15, 0.35), Color(0.75, 0.7, 0.95))
+	make_sky(Color(0.16, 0.05, 0.22), Color(0.95, 0.38, 0.18), Color(0.2, 0.05, 0.05))
 	make_camera(Vector3(0, 10.5, 9.0), Vector3(0, 0.3, 0.5), 50.0)
 	make_music("res://assets/music/minigames/escape from lava.ogg")
-	add_disc(ARENA, Color(0.38, 0.3, 0.55))
-	var ring := MeshInstance3D.new()
-	var torus := TorusMesh.new()
-	torus.inner_radius = ARENA - 0.25
-	torus.outer_radius = ARENA + 0.05
-	torus.material = toon(Color(1.0, 0.55, 0.15))
-	ring.mesh = torus
-	ring.position.y = 0.02
-	add_child(ring)
-	decorate(ARENA + 1.5, ARENA + 8.0, 18, ["Rock_2", "Rock_4", "DeadTree_1", "DeadTree_3"], 9)
+	# a cracked rock platform in a lava lake, rocks and dead trees around it, and a glow from below
+	add_floor(ARENA, 3, [Color(0.26, 0.19, 0.34), Color(0.0, 0.0, 0.0), Color(0.9, 0.32, 0.06), Color(1.0, 0.45, 0.05)], 7.0)
+	var lava := MeshInstance3D.new()
+	var plane := PlaneMesh.new()
+	plane.size = Vector2(60, 60)
+	var lava_mat := toon(Color(1.0, 0.38, 0.05), load("res://assets/textures/lava.png"))
+	lava_mat.emission_enabled = true
+	lava_mat.emission = Color(1.0, 0.3, 0.02)
+	lava_mat.emission_energy_multiplier = 1.3
+	lava_mat.uv1_scale = Vector3(6, 6, 1)
+	plane.material = lava_mat
+	lava.mesh = plane
+	lava.position.y = -0.5
+	add_child(lava)
+	arc_props(["Rock_2", "Rock_4", "Rock_5", "Rock_1"], 12, ARENA + 2.4, 195.0, 345.0, 2.0, 3.2, -0.6, 9, 0.5)
+	arc_props(["DeadTree_1", "DeadTree_3", "DeadTree_5", "DeadTree_7"], 9, ARENA + 3.6, 200.0, 340.0, 1.3, 1.9, -0.6, 11, 0.7)
+	for k in 4:
+		var light := OmniLight3D.new()
+		light.light_color = Color(1.0, 0.45, 0.12)
+		light.light_energy = 2.2
+		light.omni_range = 9.0
+		var a := deg_to_rad(210.0 + k * 40.0)
+		light.position = Vector3(cos(a) * (ARENA + 1.2), 0.6, sin(a) * (ARENA + 1.2))
+		add_child(light)
+	var embers := CPUParticles3D.new()
+	embers.amount = 60
+	embers.lifetime = 4.0
+	embers.preprocess = 4.0
+	embers.emission_shape = CPUParticles3D.EMISSION_SHAPE_BOX
+	embers.emission_box_extents = Vector3(10, 0.2, 8)
+	embers.direction = Vector3.UP
+	embers.spread = 20.0
+	embers.gravity = Vector3(0, 1.0, 0)
+	embers.initial_velocity_min = 1.0
+	embers.initial_velocity_max = 2.5
+	var ember_mesh := SphereMesh.new()
+	ember_mesh.radius = 0.05
+	ember_mesh.height = 0.1
+	var ember_mat := StandardMaterial3D.new()
+	ember_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	ember_mat.albedo_color = Color(1.0, 0.7, 0.2)
+	ember_mesh.material = ember_mat
+	embers.mesh = ember_mesh
+	embers.position.y = 0.0
+	add_child(embers)
 	placement.resize(players.size())
 	for i in players.size():
 		var p := players[i]

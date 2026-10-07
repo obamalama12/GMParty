@@ -19,12 +19,17 @@ var ai_targets := {}         # player id -> { "id": item id, "time": float }
 
 
 func build_world() -> void:
-	make_environment(Color(0.55, 0.8, 1.0), Color(0.9, 0.93, 1.0))
+	make_sky(Color(0.35, 0.62, 0.95), Color(0.85, 0.93, 1.0), Color(0.5, 0.7, 0.4))
 	make_camera(Vector3(0, 12.2, 10.6), Vector3(0, 0.4, 0.6), 50.0)
 	make_music("res://assets/music/minigames/harvest food.ogg")
-	add_disc(ARENA, Color(0.45, 0.8, 0.35), load("res://assets/models/nature/Textures/Grass.png"))
-	add_disc(ARENA + 0.5, Color(0.95, 0.8, 0.4)).position.y = -0.05
-	decorate(ARENA + 1.5, ARENA + 9.0, 26, ["Bush_Large", "Rock_1", "Rock_3", "Bush_Flowers", "NormalTree_1", "NormalTree_3"], 4)
+	# a picnic: the checked cloth in the middle of a mown lawn, a fence and a row of trees behind it
+	add_floor(ARENA, 2, [Color(0.52, 0.80, 0.34), Color(0.45, 0.73, 0.29), Color(0.90, 0.22, 0.22), Color(0.96, 0.82, 0.45)], 14.0)
+	fence_arc(ARENA + 0.9, 196.0, 344.0, 15)
+	arc_props(["Bush_Large_Flowers", "Bush_Flowers"], 13, ARENA + 1.7, 200.0, 340.0, 1.0, 1.25, -0.1, 3, 0.15)
+	arc_props(["NormalTree_1", "NormalTree_3", "NormalTree_5", "BirchTree_2"], 9, ARENA + 4.2, 205.0, 335.0, 1.3, 1.7, -0.4, 4, 0.5)
+	arc_props(["NormalTree_2", "NormalTree_4", "BirchTree_4"], 7, ARENA + 8.0, 212.0, 328.0, 1.6, 2.1, -0.6, 5, 0.8)
+	arc_props(["Flower_2_Clump", "Flower_4_Clump"], 14, ARENA - 0.9, 190.0, 350.0, 1.3, 1.8, 0.0, 6, 0.1)
+	pole_ring(ARENA + 0.2, 8, 2.2, Color(0.95, 0.95, 0.95), Color(0.95, 0.25, 0.3), Color(1.0, 0.85, 0.25), 200.0, 340.0)
 	var corners := [Vector3(-3, 0, -3), Vector3(3, 0, -3), Vector3(-3, 0, 3), Vector3(3, 0, 3)]
 	for i in players.size():
 		var p := players[i]

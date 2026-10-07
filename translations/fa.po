@@ -394,7 +394,7 @@ msgid "CONTEXT_LABEL_COOKIES"
 msgstr ""
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "Joy"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr ""

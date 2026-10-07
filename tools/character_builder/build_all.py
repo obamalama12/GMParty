@@ -18,7 +18,7 @@ import sys
 import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-NAMES = {"Bolt": "bolt", "Kit": "kit", "Mushi": "mushi", "Businessman": "businessman", "Timber": "timber", "Emo": "emo", "Joy": "joy"}
+NAMES = {"Bolt": "bolt", "Kit": "kit", "Mushi": "mushi", "Businessman": "businessman", "Timber": "timber", "Emo": "emo"}
 ONLY = [n for n in os.environ.get("ONLY", "").split(",") if n]
 if ONLY:
     NAMES = {k: v for k, v in NAMES.items() if k in ONLY}

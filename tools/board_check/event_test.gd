@@ -28,7 +28,7 @@ func _ready() -> void:
 	var lobby = await game.create_lobby()
 	await wait(1.0)
 	lobby.set_player_name(0, "Tester")
-	lobby.select_character(0, "Joy")
+	lobby.select_character(0, "Businessman")
 	lobby.select_board("RetroValley")
 	await wait(1.0)
 	lobby.start()

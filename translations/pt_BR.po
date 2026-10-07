@@ -417,7 +417,7 @@ msgid "CONTEXT_LABEL_COOKIES"
 msgstr "Biscoitos"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr "GNU"
+msgstr "Joy"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr ""

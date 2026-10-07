@@ -413,7 +413,7 @@ msgid "CONTEXT_LABEL_COOKIES"
 msgstr "餅乾"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr "GNU"
+msgstr "Joy"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr "嘿，需要幫忙嗎？讓我看看能幫你做什麼…"

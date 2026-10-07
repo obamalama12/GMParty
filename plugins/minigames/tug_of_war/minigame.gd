@@ -22,30 +22,32 @@ var press_count := {}
 
 
 func build_world() -> void:
-	make_environment(Color(0.6, 0.85, 1.0), Color(0.95, 0.95, 1.0))
+	make_sky(Color(0.35, 0.62, 0.95), Color(0.85, 0.93, 1.0), Color(0.5, 0.7, 0.4))
 	make_camera(Vector3(0, 5.8, 8.6), Vector3(0, 0.8, 0), 56.0)
 	make_music("res://assets/music/minigames/harvest food.ogg")
-	add_disc(11.0, Color(0.5, 0.8, 0.35), load("res://assets/models/nature/Textures/Grass.png"))
-	# the mud pit in the middle
+	# a sports field: red team on the left, blue team on the right, the mud pit in the middle, a fence and a crowd of trees behind
+	add_floor(11.0, 4, [Color(0.93, 0.42, 0.38), Color(0.40, 0.58, 0.95), Color(0.97, 0.9, 0.55), Color(1, 1, 1)])
 	var pit := MeshInstance3D.new()
 	var cyl := CylinderMesh.new()
-	cyl.top_radius = 1.5
-	cyl.bottom_radius = 1.5
-	cyl.height = 0.05
-	cyl.material = toon(Color(0.4, 0.27, 0.15))
+	cyl.top_radius = 1.6
+	cyl.bottom_radius = 1.6
+	cyl.height = 0.06
+	cyl.material = toon(Color(0.40, 0.26, 0.14))
 	pit.mesh = cyl
-	pit.position.y = 0.03
+	pit.position.y = 0.035
 	add_child(pit)
-	var lines := [-3.0, 3.0]
-	for x in lines:
+	for x in [-3.0, 3.0]:
 		var line := MeshInstance3D.new()
 		var box := BoxMesh.new()
-		box.size = Vector3(0.12, 0.03, 5.0)
+		box.size = Vector3(0.14, 0.03, 5.0)
 		box.material = toon(Color(1, 1, 1))
 		line.mesh = box
-		line.position = Vector3(x, 0.04, 0)
+		line.position = Vector3(x, 0.05, 0)
 		add_child(line)
-	decorate(8.0, 16.0, 26, ["NormalTree_1", "NormalTree_3", "NormalTree_5", "Bush_Large", "Rock_2", "Bush_Flowers"], 21)
+	fence_arc(11.5, 203.0, 337.0, 20)
+	arc_props(["Bush_Large_Flowers", "Bush_Flowers", "Bush_Large"], 16, 12.4, 200.0, 340.0, 1.1, 1.4, -0.1, 21, 0.2)
+	arc_props(["NormalTree_1", "NormalTree_3", "NormalTree_5", "BirchTree_2", "BirchTree_4"], 12, 15.0, 203.0, 337.0, 1.5, 2.0, -0.5, 22, 0.6)
+	pole_ring(11.0, 5, 3.2, Color(0.95, 0.95, 0.95), Color(0.95, 0.3, 0.3), Color(0.3, 0.45, 1.0), 180.0, 360.0)
 	# rope and flag
 	rope_mesh = MeshInstance3D.new()
 	var rope_box := BoxMesh.new()

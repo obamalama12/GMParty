@@ -130,28 +130,171 @@ func toon(color: Color, texture: Texture2D = null) -> StandardMaterial3D:
 	return m
 
 
-## A round floor with collision, its top at y = 0.
-func add_disc(radius: float, color: Color, texture: Texture2D = null) -> StaticBody3D:
+const FLOOR_SHADER := preload("res://common/scripts/arcade/arcade_floor.gdshader")
+
+
+## A round floor with collision, its top at y = 0. `mode` picks the pattern of arcade_floor.gdshader.
+func add_floor(radius: float, mode: int, colors: Array, count := 12.0) -> StaticBody3D:
 	var body := StaticBody3D.new()
 	body.name = "Floor"
 	var mesh := MeshInstance3D.new()
 	var cyl := CylinderMesh.new()
 	cyl.top_radius = radius
 	cyl.bottom_radius = radius
-	cyl.height = 0.6
-	cyl.material = toon(color, texture)
+	cyl.height = 0.7
+	cyl.radial_segments = 96
+	var mat := ShaderMaterial.new()
+	mat.shader = FLOOR_SHADER
+	mat.set_shader_parameter("mode", mode)
+	mat.set_shader_parameter("radius", radius)
+	mat.set_shader_parameter("count", count)
+	var names := ["color_a", "color_b", "color_c", "color_d"]
+	for i in mini(colors.size(), 4):
+		mat.set_shader_parameter(names[i], Vector3(colors[i].r, colors[i].g, colors[i].b))
+	cyl.material = mat
 	mesh.mesh = cyl
-	mesh.position.y = -0.3
+	mesh.position.y = -0.35
 	body.add_child(mesh)
 	var shape := CollisionShape3D.new()
 	var cs := CylinderShape3D.new()
 	cs.radius = radius
-	cs.height = 0.6
+	cs.height = 0.7
 	shape.shape = cs
-	shape.position.y = -0.3
+	shape.position.y = -0.35
 	body.add_child(shape)
 	add_child(body)
+	# a stone rim around the edge so the floor looks like a stage
+	var rim := MeshInstance3D.new()
+	var torus := TorusMesh.new()
+	torus.inner_radius = radius - 0.12
+	torus.outer_radius = radius + 0.28
+	torus.material = toon(Color(0.93, 0.9, 0.85))
+	rim.mesh = torus
+	rim.position.y = -0.02
+	rim.scale.y = 0.9
+	add_child(rim)
 	return body
+
+
+## Places scenery on an arc of a circle around the origin (angles in degrees, 270 is straight away from the camera).
+func arc_props(kinds: Array, count: int, radius: float, from_deg: float, to_deg: float, scale_min := 1.0, scale_max := 1.3,
+		y := -0.4, seed_value := 1, jitter := 0.4) -> Node3D:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = seed_value
+	var holder := Node3D.new()
+	holder.name = "Props"
+	add_child(holder)
+	var scenes: Array[PackedScene] = []
+	for kind: String in kinds:
+		var path := kind if kind.begins_with("res://") else NATURE + kind + ".gltf"
+		var scene := load(path) as PackedScene
+		if scene:
+			scenes.append(scene)
+	if scenes.is_empty():
+		return holder
+	for i in count:
+		var t := float(i) / maxf(count - 1, 1)
+		var ang := deg_to_rad(lerpf(from_deg, to_deg, t))
+		var r := radius + rng.randf_range(-jitter, jitter)
+		var inst := scenes[i % scenes.size()].instantiate() as Node3D
+		inst.position = Vector3(cos(ang) * r, y, sin(ang) * r)
+		inst.rotation.y = rng.randf() * TAU
+		inst.scale = Vector3.ONE * rng.randf_range(scale_min, scale_max)
+		holder.add_child(inst)
+	return holder
+
+
+## A low picket fence along an arc, built from boxes: posts with two rails between them.
+func fence_arc(radius: float, from_deg: float, to_deg: float, segments: int, color := Color(0.97, 0.94, 0.88), post_color := Color(0.78, 0.55, 0.32)) -> void:
+	var holder := Node3D.new()
+	holder.name = "Fence"
+	add_child(holder)
+	var angles: Array[float] = []
+	for i in segments + 1:
+		angles.append(deg_to_rad(lerpf(from_deg, to_deg, float(i) / maxf(segments, 1))))
+	var post_mat := toon(post_color)
+	var rail_mat := toon(color)
+	for i in angles.size():
+		var post := MeshInstance3D.new()
+		var box := BoxMesh.new()
+		box.size = Vector3(0.22, 1.1, 0.22)
+		box.material = post_mat
+		post.mesh = box
+		post.position = Vector3(cos(angles[i]) * radius, 0.55, sin(angles[i]) * radius)
+		holder.add_child(post)
+		var cap := MeshInstance3D.new()
+		var cap_mesh := SphereMesh.new()
+		cap_mesh.radius = 0.16
+		cap_mesh.height = 0.32
+		cap_mesh.material = post_mat
+		cap.mesh = cap_mesh
+		cap.position = post.position + Vector3(0, 0.62, 0)
+		holder.add_child(cap)
+		if i == 0:
+			continue
+		var p0 := Vector3(cos(angles[i - 1]) * radius, 0.0, sin(angles[i - 1]) * radius)
+		var p1 := Vector3(cos(angles[i]) * radius, 0.0, sin(angles[i]) * radius)
+		for height in [0.38, 0.8]:
+			var rail := MeshInstance3D.new()
+			var rail_box := BoxMesh.new()
+			rail_box.size = Vector3(p0.distance_to(p1) + 0.02, 0.14, 0.09)
+			rail_box.material = rail_mat
+			rail.mesh = rail_box
+			rail.position = (p0 + p1) / 2.0 + Vector3(0, height, 0)
+			rail.rotation.y = -atan2(p1.z - p0.z, p1.x - p0.x)
+			holder.add_child(rail)
+
+
+## Poles with a ball on top, evenly spaced around a circle (balloon stands, torches, lamps ...).
+func pole_ring(radius: float, count: int, height: float, pole_color: Color, ball_color: Color, alt_color := Color(-1, 0, 0), from_deg := 0.0, to_deg := 360.0) -> void:
+	for i in count:
+		var t: float = float(i) / (count if to_deg - from_deg >= 359.0 else maxf(count - 1, 1))
+		var ang := deg_to_rad(lerpf(from_deg, to_deg, t))
+		var node := Node3D.new()
+		node.position = Vector3(cos(ang) * radius, 0.0, sin(ang) * radius)
+		var pole := MeshInstance3D.new()
+		var cyl := CylinderMesh.new()
+		cyl.top_radius = 0.07
+		cyl.bottom_radius = 0.1
+		cyl.height = height
+		cyl.material = toon(pole_color)
+		pole.mesh = cyl
+		pole.position.y = height / 2.0
+		node.add_child(pole)
+		var ball := MeshInstance3D.new()
+		var sph := SphereMesh.new()
+		sph.radius = 0.28
+		sph.height = 0.56
+		sph.material = toon(alt_color if (alt_color.r >= 0.0 and i % 2 == 1) else ball_color)
+		ball.mesh = sph
+		ball.position.y = height + 0.2
+		node.add_child(ball)
+		add_child(node)
+
+
+func make_sky(top: Color, horizon: Color, ground: Color) -> void:
+	var sky_material := ProceduralSkyMaterial.new()
+	sky_material.sky_top_color = top
+	sky_material.sky_horizon_color = horizon
+	sky_material.ground_horizon_color = horizon
+	sky_material.ground_bottom_color = ground
+	sky_material.sun_angle_max = 8.0
+	var sky := Sky.new()
+	sky.sky_material = sky_material
+	var env := Environment.new()
+	env.background_mode = Environment.BG_SKY
+	env.sky = sky
+	env.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
+	env.ambient_light_energy = 0.9
+	env.tonemap_mode = Environment.TONE_MAPPER_LINEAR
+	var we := WorldEnvironment.new()
+	we.environment = env
+	add_child(we)
+	var sun := DirectionalLight3D.new()
+	sun.rotation_degrees = Vector3(-52, -28, 0)
+	sun.light_energy = 1.25
+	sun.shadow_enabled = true
+	add_child(sun)
 
 
 ## Scenery outside of a circle: rocks, bushes and trees from the nature models.

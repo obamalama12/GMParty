@@ -90,7 +90,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-464, 346), Vector2(-464, 346), Vector2(96, 346)]
+"values": [Vector2(-464, 326), Vector2(-464, 326), Vector2(96, 326)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -328,46 +328,46 @@ expand_icon = true
 custom_minimum_size = Vector2(340, 100)
 layout_mode = 0
 offset_left = 96.0
-offset_top = 346.0
+offset_top = 326.0
 offset_right = 436.0
 offset_bottom = 640.0
-theme_override_constants/v_separation = 10
+theme_override_constants/v_separation = 8
 columns = 1
 
 [node name="Play" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(340, 52)
+custom_minimum_size = Vector2(340, 46)
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 layout_mode = 2
 text = "MENU_LABEL_NEW_GAME"
 clip_text = true
 
 [node name="Play2" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(340, 52)
+custom_minimum_size = Vector2(340, 46)
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 layout_mode = 2
 text = "MENU_LABEL_ONLINE"
 clip_text = true
 
 [node name="Load" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(340, 52)
+custom_minimum_size = Vector2(340, 46)
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 layout_mode = 2
 text = "MENU_IO_LOAD_GAME"
 
 [node name="Options" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(340, 52)
+custom_minimum_size = Vector2(340, 46)
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 layout_mode = 2
 text = "MENU_OPTIONS"
 
 [node name="Screenshots" parent="MainMenu/Buttons" instance=ExtResource("4")]
-custom_minimum_size = Vector2(340, 52)
+custom_minimum_size = Vector2(340, 46)
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 layout_mode = 2
 text = "MENU_LABEL_SCREENSHOTS"
 
@@ -402,20 +402,6 @@ offset_left = -640.0
 offset_top = 60.0
 offset_right = -10.0
 offset_bottom = -40.0
-mouse_filter = 2
-texture = SubResource("GradientTexture2D_glow")
-expand_mode = 1
-
-[node name="Floor" type="TextureRect" parent="MainMenu"]
-modulate = Color(0.05, 0.03, 0.2, 0.55)
-layout_mode = 0
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -520.0
-offset_top = -150.0
-offset_right = -90.0
-offset_bottom = -70.0
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_glow")
 expand_mode = 1
@@ -494,10 +480,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Title" type="Label" parent="OptionsMenu"]
+visible = false
 layout_mode = 0
 anchor_right = 1.0
-offset_top = 8.0
-offset_bottom = 66.0
+offset_top = 14.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"HeaderLarge"
@@ -511,7 +498,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 60.0
+offset_top = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 

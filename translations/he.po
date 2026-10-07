@@ -415,7 +415,7 @@ msgid "CONTEXT_LABEL_COOKIES"
 msgstr "עוגיות"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr "גנו"
+msgstr "Joy"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr "שלום לך, רוצה קצת עזרה? רק רגע, אראה מה אוכל לעשות בשבילך היום…"

@@ -24,19 +24,15 @@ var sync_timer := 0.0
 
 
 func build_world() -> void:
-	make_environment(Color(1.0, 0.82, 0.55), Color(1.0, 0.95, 0.9))
+	make_sky(Color(0.95, 0.5, 0.45), Color(1.0, 0.85, 0.55), Color(0.7, 0.4, 0.3))
 	make_camera(Vector3(0, 9.8, 8.2), Vector3(0, 0.4, 0.5), 50.0)
 	make_music("res://assets/music/minigames/haunted dreams.ogg")
-	add_disc(ARENA, Color(0.95, 0.55, 0.35))
-	var inner := MeshInstance3D.new()
-	var cyl := CylinderMesh.new()
-	cyl.top_radius = 2.0
-	cyl.bottom_radius = 2.0
-	cyl.height = 0.05
-	cyl.material = toon(Color(1.0, 0.85, 0.35))
-	inner.mesh = cyl
-	inner.position.y = 0.03
-	add_child(inner)
+	# a circus ring: red and cream sectors, a golden middle and a ring of balloon poles, with bushes and trees behind it
+	add_floor(ARENA, 1, [Color(0.93, 0.25, 0.25), Color(0.99, 0.93, 0.80), Color(0.99, 0.93, 0.80), Color(1.0, 0.8, 0.2)], 16.0)
+	pole_ring(ARENA + 0.9, 9, 1.9, Color(0.95, 0.95, 0.95), Color(0.95, 0.25, 0.3), Color(0.3, 0.55, 1.0), 195.0, 345.0)
+	arc_props(["Bush_Large_Flowers", "Bush_Large"], 12, ARENA + 2.4, 195.0, 345.0, 1.1, 1.4, -0.1, 12, 0.2)
+	arc_props(["NormalTree_2", "NormalTree_4", "BirchTree_1", "BirchTree_3"], 8, ARENA + 5.0, 205.0, 335.0, 1.3, 1.8, -0.4, 13, 0.6)
+	fence_arc(ARENA + 1.6, 200.0, 340.0, 13)
 	var pole := MeshInstance3D.new()
 	var pc := CylinderMesh.new()
 	pc.top_radius = 0.3

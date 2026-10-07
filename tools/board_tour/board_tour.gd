@@ -1,7 +1,7 @@
 ## Dev tool: starts a local game and takes screenshots of the board from a few camera angles.
 ##
 ## godot --path . res://tools/board_tour/board_tour.tscn
-## Environment: BOARD (default KDEValley), SHOTS_DIR (default user://board_tour)
+## Environment: BOARD (default RetroValley), SHOTS_DIR (default user://board_tour)
 extends Node
 
 var shots_dir := ""
@@ -51,7 +51,7 @@ func shot(cam: Camera3D, name: String, pos: Vector3, target: Vector3, fov := 50.
 func _ready() -> void:
 	shots_dir = OS.get_environment("SHOTS_DIR") if OS.get_environment("SHOTS_DIR") != "" else "user://board_tour"
 	DirAccess.make_dir_recursive_absolute(shots_dir)
-	var board_name := OS.get_environment("BOARD") if OS.get_environment("BOARD") != "" else "KDEValley"
+	var board_name := OS.get_environment("BOARD") if OS.get_environment("BOARD") != "" else "RetroValley"
 	await wait(1.0)
 	var game := Global.create_local_server()
 	await game.multiplayer.connected_to_server

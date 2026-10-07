@@ -452,7 +452,13 @@ func _on_Roll_pressed() -> void:
 	lobby.broadcast(splash_ended)
 	var player = players[player_turn - 1]
 	var item: Item
-	if not player.info.is_ai():
+	var dice_index := 0
+	for k in player.items.size():
+		if player.items[k].type == Item.TYPES.DICE:
+			dice_index = k
+			break
+	if not player.info.is_ai() and player.items.size() > 1:
+		# only ask which item to use when there is a choice; with just the dice the roll starts at once
 		start_timer_for_player(player.info.addr)
 		select_item.rpc_id(info.addr.peer_id, player_turn)
 		wait_for_select_item = true
@@ -460,8 +466,10 @@ func _on_Roll_pressed() -> void:
 		cancel_timer()
 		wait_for_select_item = false
 		item = player.items[item_idx]
-	else:
+	elif player.info.is_ai():
 		item = player.items[randi() % len(player.items)]
+	else:
+		item = player.items[dice_index]
 
 	# Remove the item from the inventory if it is consumed.
 	if item.is_consumed:

@@ -38,6 +38,8 @@ func _on_settings_changed(settings: Array):
 			Lobby.Settings.TYPES.BOOL:
 				var checkbox := CheckButton.new()
 				checkbox.text = setting.name
+				checkbox.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+				checkbox.custom_minimum_size.x = 340
 				checkbox.button_pressed = setting.value
 				checkbox.disabled = not lobby.is_lobby_owner(multiplayer.get_unique_id())
 				checkbox.toggled.connect(_on_change_setting.bind(id))
@@ -52,6 +54,9 @@ func _on_settings_changed(settings: Array):
 				slider.editable = lobby.is_lobby_owner(multiplayer.get_unique_id())
 				option_label.text = setting.name
 				option_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+				option_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+				option_label.custom_minimum_size.x = 170
+				slider.custom_minimum_size.x = 120
 				slider.value_changed.connect(_on_setting_slider_change.bind(id))
 				container.add_child(option_label)
 				container.add_child(slider)
@@ -66,6 +71,9 @@ func _on_settings_changed(settings: Array):
 				optionbutton.disabled = not lobby.is_lobby_owner(multiplayer.get_unique_id())
 				option_label.text = setting.name
 				option_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+				option_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+				option_label.custom_minimum_size.x = 170
+				optionbutton.custom_minimum_size.x = 170
 				optionbutton.item_selected.connect(_on_setting_option_change.bind(optionbutton, id))
 				container.add_child(option_label)
 				container.add_child(optionbutton)

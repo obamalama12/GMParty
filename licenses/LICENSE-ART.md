@@ -234,10 +234,10 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### gnu_icon.png
 
-Copyright Néd J. Édoire
+Drawn for this project (Joy, the mascot) with `tools/character_builder/draw_portraits.py`. It is a placeholder until a
+custom icon is made. The licence below is a placeholder; the project owner can change it.
 
-Retrieved from: [OpenGameArt](https://opengameart.org/content/gnu-mascots-and-friends-iconset)
-License: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### nolokicon.png
 
@@ -325,36 +325,6 @@ License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/l
 Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-## plugins/boards/KDEValley/landscape
-### kdevalley.blend | kdevalley.glb
-
-Copyright © Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-## plugins/boards/KDEValley/dragons
-### dragon\*_head.png | eyes.png
-
-Copyright © 2019 Florian Kothmeier 
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### dragon\*.glb
-
-Copyright © 2019 Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### dragon\*_icon.png
-
-Copyright © 2019 Néd J
-
-Modified by Florian Kothmeier 2019
-
-Retrieved from: [OpenGameArt](https://opengameart.org/content/mascots-and-friends-iconset-2)
-
-License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/items/cookie_steal_trap
 ### icon.png | icon.xcf | material.png | material.xcf
@@ -685,19 +655,6 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/low-poly-tree-1)
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
-## assets/models/KDE Dragon
-### dragon.blend
-
-Copyright © 2019 Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### eyes.png | Head.png | Scarf.png
-
-Copyright © 2019 Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
 ## plugins/minigames/knock_off/player_ball_material
 ### paper02_col.jpg | paper02_nrm.jpg | paper02_rgh.jpg
 
@@ -906,7 +863,7 @@ Copyright © 2020 Florian Kothmeier
 
 License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
-## plugins/characters/Bolt | plugins/characters/Businessman | plugins/characters/Emo | plugins/characters/Joy | plugins/characters/Kit | plugins/characters/Mushi | plugins/characters/Timber
+## plugins/characters/Bolt | plugins/characters/Businessman | plugins/characters/Emo | plugins/characters/Kit | plugins/characters/Mushi | plugins/characters/Timber
 ### *.glb | palette.png | icon.png | splash.png
 
 Original characters made for this project with the scripts in `tools/character_builder`.

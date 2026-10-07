@@ -47,6 +47,7 @@ func _process(delta: float) -> void:
 	var squash := 1.0 + sin(_time * 4.8 + 1.0) * 0.012
 	mascot.scale = Vector2(1.0 / squash, squash)
 	var glove: Control = $MainMenu/Glove
+	glove.visible = $MainMenu.visible and $MainMenu/Buttons.visible
 	var target := _glove_target + Vector2(sin(_time * 5.0) * 6.0, 0.0)
 	glove.position = glove.position.lerp(target, clampf(delta * 14.0, 0.0, 1.0))
 	for i in _floaters.size():

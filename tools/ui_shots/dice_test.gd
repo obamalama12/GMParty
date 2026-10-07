@@ -6,11 +6,10 @@ func _ready():
 	add_child(bg)
 	var d = load("res://common/scenes/board_logic/controller/dice_roll.tscn").instantiate()
 	add_child(d)
-	for n in [5, 2, 4, 6, 1, 3]:
+	for n in [5, 2]:
 		d.play(n)
-		await get_tree().create_timer(0.35).timeout
-		get_viewport().get_texture().get_image().save_png("%s/d%d_a.png" % [OS.get_environment("OUT"), n])
-		await get_tree().create_timer(1.15).timeout
-		get_viewport().get_texture().get_image().save_png("%s/d%d_b.png" % [OS.get_environment("OUT"), n])
+		for k in 7:
+			await get_tree().create_timer(0.3).timeout
+			get_viewport().get_texture().get_image().save_png("%s/d%d_%d.png" % [OS.get_environment("OUT"), n, k])
 		await d.finished
 	get_tree().quit()

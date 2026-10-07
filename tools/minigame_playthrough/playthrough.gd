@@ -29,7 +29,7 @@ func _ready():
 	await wait(1.0)
 	client_lobby.set_player_name(0, "Tester")
 	client_lobby.select_character(0, OS.get_environment("CHARACTER") if OS.get_environment("CHARACTER") != "" else "Businessman")
-	client_lobby.select_board("KDEValley")
+	client_lobby.select_board("RetroValley")
 	await wait(1.0)
 	client_lobby.start()
 	server_lobby = find_server_lobby()

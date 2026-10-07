@@ -196,19 +196,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -144.0
-offset_top = -44.9999
-offset_right = 144.0
-offset_bottom = -7.99994
+offset_left = -190.0
+offset_top = -72.0
+offset_right = 190.0
+offset_bottom = -14.0
 theme_override_constants/separation = 25
 
 [node name="Try" type="Button" parent="Buttons"]
-custom_minimum_size = Vector2(130, 30)
+custom_minimum_size = Vector2(170, 52)
 layout_mode = 2
 text = "MENU_LABEL_TRY"
 
 [node name="Play" type="Button" parent="Buttons"]
-custom_minimum_size = Vector2(133, 30)
+custom_minimum_size = Vector2(170, 52)
 layout_mode = 2
 text = "MENU_LABEL_PLAY"
 

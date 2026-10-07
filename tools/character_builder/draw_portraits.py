@@ -246,13 +246,16 @@ def joy():
 
 def main():
     chars, host = sys.argv[1], sys.argv[2]
-    for name, fn in {"Businessman": businessman, "Emo": emo, "Kit": kit, "Bolt": bolt, "Mushi": mushi, "Timber": timber, "Joy": joy}.items():
+    for name, fn in {"Businessman": businessman, "Emo": emo, "Kit": kit, "Bolt": bolt, "Mushi": mushi, "Timber": timber}.items():
         img = fn()
         for f in ("icon.png", "splash.png"):
             img.save(os.path.join(chars, name, f))
         print("drew", name)
     businessman(mayor=True).save(host)
     print("drew Mayor Pixel")
+    # Joy is the GNU of the game: the speaker of the special events (replace this picture with your own icon)
+    joy().save(os.path.join(os.path.dirname(host), "gnu_icon.png"))
+    print("drew Joy as gnu_icon.png")
 
 
 if __name__ == "__main__":

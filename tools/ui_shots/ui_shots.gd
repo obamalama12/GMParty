@@ -10,8 +10,48 @@ func wait(s: float) -> void:
 	await get_tree().create_timer(s).timeout
 
 
+## Reports controls that stick out of the window and texts that do not fit their control.
+func audit(name: String) -> void:
+	var win := Rect2(Vector2.ZERO, get_viewport().get_visible_rect().size)
+	var problems := 0
+	var stack: Array = [get_tree().root]
+	while not stack.is_empty():
+		var n: Node = stack.pop_back()
+		stack.append_array(n.get_children())
+		if not (n is Control) or not n.is_visible_in_tree() or n.get_viewport() != get_viewport():
+			continue
+		var c: Control = n
+		var r := c.get_global_rect()
+		if c.size.x < 2 or c.size.y < 2 or c.modulate.a < 0.05:
+			continue
+		var reason := ""
+		if c is Label or c is Button or c is CheckBox:
+			var text: String = tr(c.text)
+			if text != "" and not (c is Label and (c as Label).autowrap_mode != TextServer.AUTOWRAP_OFF):
+				var font: Font = c.get_theme_font("font")
+				var fs: int = c.get_theme_font_size("font_size")
+				var w := font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x
+				var avail: float = c.size.x
+				if c is Button:
+					avail -= 20
+				var ellipsis: bool = (c is Label and (c as Label).text_overrun_behavior != TextServer.OVERRUN_NO_TRIMMING) or \
+						(c is Button and (c as Button).text_overrun_behavior != TextServer.OVERRUN_NO_TRIMMING)
+				if w > avail + 2.0:
+					reason = "text %dpx wide in %dpx%s" % [w, avail, " (trimmed)" if ellipsis else ""]
+					if ellipsis and not OS.get_environment("AUDIT_TRIMMED") != "":
+						reason = ""
+		if reason == "" and r.size.x > 4 and r.size.y > 4 and (r.position.x < -3 or r.position.y < -3 or r.end.x > win.size.x + 3 or r.end.y > win.size.y + 3):
+			if not (c is Label and c.get_parent() is ProgressBar) and not c.get_parent() is ScrollContainer and c.get_parent() != null and c.get_parent().get_class() != "SubViewportContainer":
+				reason = "outside the window %s" % [r]
+		if reason != "":
+			problems += 1
+			print("AUDIT ", name, ": ", n.get_path(), " ", reason)
+	print("AUDIT ", name, " done, problems: ", problems)
+
+
 func snap(name: String) -> void:
 	await wait(0.8)
+	audit(name)
 	get_viewport().get_texture().get_image().save_png(dir.path_join(name + ".png"))
 	print("UI ", name)
 
