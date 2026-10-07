@@ -1,5 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://dcyoe2uryyyef"]
 
+[ext_resource type="Script" path="res://common/scenes/board_logic/controller/board_event_banner.gd" id="banner_script"]
 [ext_resource type="PackedScene" path="res://common/scenes/board_logic/controller/dice_roll.tscn" id="dice_roll"]
 [ext_resource type="Script" path="res://common/scenes/board_logic/controller/controller.gd" id="1"]
 [ext_resource type="Theme" uid="uid://d3w3vt3s6ujoh" path="res://assets/defaults/default_theme.tres" id="2"]
@@ -501,6 +502,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DiceRoll" parent="Screen" instance=ExtResource("dice_roll")]
+
+[node name="BoardEventBanner" type="Control" parent="Screen"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("banner_script")
 
 [node name="Stepcounter" type="Label" parent="Screen"]
 layout_mode = 1

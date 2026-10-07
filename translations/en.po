@@ -770,3 +770,48 @@ msgstr "Saving games is disabled on this server"
 
 #~ msgid "MENU_CONTROLS_GAMEPAD_START"
 #~ msgstr "Gamepad Start"
+
+msgid "EVENT_COOKIE_SHOWER"
+msgstr "Cookie Shower!"
+
+msgid "EVENT_COOKIE_SHOWER_TEXT"
+msgstr "Cookies fall from the sky! Everybody gets 4, and {player} gets 6 more!"
+
+msgid "EVENT_ROBIN_HOOD"
+msgstr "Robin Hood"
+
+msgid "EVENT_ROBIN_HOOD_TEXT"
+msgstr "Mayor Pixel takes {amount} cookies from {from} and gives them to {to}. Fair is fair!"
+
+msgid "EVENT_FREE_ITEM"
+msgstr "Surprise Gift!"
+
+msgid "EVENT_FREE_ITEM_TEXT"
+msgstr "A gift for {player}: {item}!"
+
+msgid "EVENT_TURBO_DICE"
+msgstr "Turbo Dice!"
+
+msgid "EVENT_TURBO_DICE_TEXT"
+msgstr "{player}'s next 3 rolls get +2. Go go go!"
+
+msgid "EVENT_COOKIE_SWAP"
+msgstr "Cookie Swap!"
+
+msgid "EVENT_COOKIE_SWAP_TEXT"
+msgstr "{player} and {other} swap their cookies!"
+
+msgid "EVENT_GAMBLE"
+msgstr "Double or Nothing"
+
+msgid "EVENT_GAMBLE_WIN"
+msgstr "Lucky! {player} wins {amount} cookies!"
+
+msgid "EVENT_GAMBLE_LOSE"
+msgstr "Oh no! {player} loses {amount} cookies."
+
+msgid "EVENT_CRUMBS"
+msgstr "Sweet Crumbs"
+
+msgid "EVENT_CRUMBS_TEXT"
+msgstr "{player} finds {amount} cookies behind the cake stand."

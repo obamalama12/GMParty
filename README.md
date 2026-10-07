@@ -37,6 +37,12 @@ Besides the original ones there are four arcade minigames made for Retro Party: 
 **Hot Bomb** (pass the lit bomb on), **Jump Rope** (jump the sweeping rope) and **Tug of War** (mash the button). Their logic is in
 `plugins/minigames/<name>/minigame.gd` on top of `common/scripts/arcade`; `tools/arcade_test` plays them to the end with bots.
 
+## Board events
+
+The pink "?" spaces of RetroValley trigger an event run by Mayor Pixel: Cookie Shower, Robin Hood, Surprise Gift, Turbo Dice,
+Cookie Swap, Double or Nothing and Sweet Crumbs (`common/scenes/board_logic/controller/board_events.gd`; add your own there).
+`tools/board_check/event_test.gd` lands a bot on an event space for every event.
+
 ## Retro look
 
 The 3D picture is drawn with a Nintendo 64 style post-processing shader (`common/retro/`): about 240 lines,

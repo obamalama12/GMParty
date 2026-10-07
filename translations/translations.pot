@@ -577,3 +577,48 @@ msgstr ""
 
 msgid "SAVE_GAME_DISABLED"
 msgstr ""
+
+msgid "EVENT_COOKIE_SHOWER"
+msgstr ""
+
+msgid "EVENT_COOKIE_SHOWER_TEXT"
+msgstr ""
+
+msgid "EVENT_ROBIN_HOOD"
+msgstr ""
+
+msgid "EVENT_ROBIN_HOOD_TEXT"
+msgstr ""
+
+msgid "EVENT_FREE_ITEM"
+msgstr ""
+
+msgid "EVENT_FREE_ITEM_TEXT"
+msgstr ""
+
+msgid "EVENT_TURBO_DICE"
+msgstr ""
+
+msgid "EVENT_TURBO_DICE_TEXT"
+msgstr ""
+
+msgid "EVENT_COOKIE_SWAP"
+msgstr ""
+
+msgid "EVENT_COOKIE_SWAP_TEXT"
+msgstr ""
+
+msgid "EVENT_GAMBLE"
+msgstr ""
+
+msgid "EVENT_GAMBLE_WIN"
+msgstr ""
+
+msgid "EVENT_GAMBLE_LOSE"
+msgstr ""
+
+msgid "EVENT_CRUMBS"
+msgstr ""
+
+msgid "EVENT_CRUMBS_TEXT"
+msgstr ""

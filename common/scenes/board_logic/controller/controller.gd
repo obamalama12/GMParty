@@ -804,6 +804,12 @@ func land_on_space(player: PlayerBoard):
 				lobby.minigame_state = state
 				lobby.broadcast(show_minigame.bind(state.encode()))
 				return
+		NodeBoard.NODE_TYPES.EVENT:
+			var outcome := BoardEvents.run(player, players, self)
+			lobby.broadcast(show_board_event.bind(outcome.title, outcome.text, outcome.args))
+			await show_board_event(outcome.title, outcome.text, outcome.args)
+			$Screen/SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", "res://common/scenes/board_logic/controller/icons/host.png", outcome.text, player.info.player_id, outcome.args)
+			await $Screen/SpeechDialog.dialog_finished
 		NodeBoard.NODE_TYPES.GNU:
 			$Screen/SpeechDialog.show_dialog("CONTEXT_GNU_NAME", "res://common/scenes/board_logic/controller/icons/gnu_icon.png", "CONTEXT_GNU_EVENT_START", player.info.player_id)
 			await $Screen/SpeechDialog.dialog_finished
@@ -893,6 +899,9 @@ func show_minigame_info(state) -> void:
 	$Screen/GNUSelection/AnimationPlayer.play("show")
 	await $Screen/GNUSelection/AnimationPlayer.animation_finished
 	$Screen/GNUSelection.hide()
+
+@rpc func show_board_event(title: String, text: String, args: Dictionary) -> void:
+	await $Screen/BoardEventBanner.play(title, tr(text).format(args))
 
 @rpc func show_nolok_animation(text: String) -> void:
 	$Screen/NolokSelection/Content/Selection.text = text

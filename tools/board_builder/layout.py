@@ -244,6 +244,20 @@ for area_a, area_b in WARPS:
     if ga and gb:
         warp_pairs.append((ga[0]["name"], gb[0]["name"]))
 
+# event spaces ("?"): spread over the whole map, away from shops and warps
+event_count = 0
+pool = [n for n in visible if n["type"] in (0, 1) and not n["bridge"] and len(n["next"]) == 1]
+rng.shuffle(pool)
+for n in pool:
+    if event_count >= 18:
+        break
+    near = [m for m in visible if m is not n and m["type"] in (2, 4, 7) and math.hypot(m["x"] - n["x"], m["z"] - n["z"]) < 26]
+    if near:
+        continue
+    n["type"] = 7
+    event_count += 1
+print("event spaces", event_count)
+
 # cake spots: spread over the areas
 for area in ("lake", "mountain", "graveyard", "beach", "farm", "frozen", "forest", "castle", "village"):
     pool = [n for n in visible if n["area"] == area and n["type"] in (0, 1, 3) and not n["bridge"] and len(n["next"]) == 1]

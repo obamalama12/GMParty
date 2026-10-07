@@ -9,7 +9,8 @@ enum NODE_TYPES {
 	YELLOW,
 	SHOP,
 	NOLOK,
-	GNU
+	GNU,
+	EVENT
 }
 
 @export var _visible: bool = true: set = set_hidden
@@ -186,6 +187,10 @@ func set_material() -> void:
 			$Model/Cylinder.set_surface_override_material(0, preload(
 			"res://common/scenes/board_logic/node/material/" +
 			"node_gnu_material.tres"))
+		NODE_TYPES.EVENT:
+			$Model/Cylinder.set_surface_override_material(0, preload(
+			"res://common/scenes/board_logic/node/material/" +
+			"node_event_material.tres"))
 
 func _enter_tree() -> void:
 	set_material()
