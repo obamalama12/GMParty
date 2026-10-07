@@ -51,6 +51,11 @@ func _on_Retro_toggled(button_pressed):
 
 	save_option("visual", "retro", button_pressed)
 
+func _on_Crt_toggled(button_pressed):
+	Retro.crt = button_pressed
+
+	save_option("visual", "crt", button_pressed)
+
 func _on_Language_item_selected(ID):
 	var locales = ProjectSettings.get("locale/locale_filter")[1]
 	var option_meta = $Menu/TabContainer/Visual/Language/OptionButton.get_item_metadata(ID)
@@ -156,6 +161,10 @@ func load_options():
 	var retro = get_option_value_safely("visual", "retro", true)
 	Retro.enabled = retro
 	$Menu/TabContainer/Visual/Retro.button_pressed = retro
+
+	var crt = get_option_value_safely("visual", "crt", true)
+	Retro.crt = crt
+	$Menu/TabContainer/Visual/Crt.button_pressed = crt
 
 	var fxaa = get_option_value_safely("visual", "fxaa", false)
 	$Menu/TabContainer/Visual/FXAA.button_pressed = fxaa

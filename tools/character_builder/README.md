@@ -38,6 +38,7 @@ characters. `SHOTS_DIR=<dir>` sets the output folder. `WRITE_ICONS=1` also write
 
 - `import_images.py` creates the Godot `.import` files for new PNGs (headless `godot --import`
   skips new files in a big project).
+- `draw_portraits.py` draws the 2D portraits (`icon.png`, `splash.png`) of the characters and Mayor Marky with Pillow.
 - `make_title.py` draws the title logo `assets/textures/title/Title.png` with Pillow.
 - `make_game_icon.py` builds `assets/icons/icon*.png` and `icon.ico` from a 1024 px render.
 - `blender/cake_topper.py <cake.blend> <cake.glb>` replaces the figure on the board cake with a

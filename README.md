@@ -35,7 +35,8 @@ Currently, Godot Engine version 4.7 is used.
 
 The 3D picture is drawn with a Nintendo 64 style post-processing shader (`common/retro/`): about 240 lines,
 the console's three-point texture filter, 16 bit colour with dithering. The menus and text stay sharp.
-Switch it off under Options > Visual > Retro look (Nintendo 64).
+The board has distance fog, an old-TV overlay (scanlines, dark corners) sits on top, and the sound is slightly
+muffled like a 90s console. Switch the look off under Options > Visual (Retro look, Old TV scanlines).
 
 ## Tools
 

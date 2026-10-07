@@ -69,6 +69,11 @@ layout_mode = 2
 text = "Retro look (Nintendo 64)"
 flat = true
 
+[node name="Crt" parent="Menu/TabContainer/Visual" instance=ExtResource("11")]
+layout_mode = 2
+text = "Old TV scanlines"
+flat = true
+
 [node name="MSAA" type="HBoxContainer" parent="Menu/TabContainer/Visual"]
 layout_mode = 2
 
@@ -281,6 +286,7 @@ layout_mode = 2
 [connection signal="toggled" from="Menu/TabContainer/Visual/VSync" to="." method="_on_VSync_toggled"]
 [connection signal="toggled" from="Menu/TabContainer/Visual/FXAA" to="." method="_on_FXAA_toggled"]
 [connection signal="toggled" from="Menu/TabContainer/Visual/Retro" to="." method="_on_Retro_toggled"]
+[connection signal="toggled" from="Menu/TabContainer/Visual/Crt" to="." method="_on_Crt_toggled"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/MSAA/OptionButton" to="." method="_on_MSAA_item_selected"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/FrameCap/OptionButton" to="." method="_on_FrameCap_item_selected"]
 [connection signal="button_down" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_cancel_sound"]
