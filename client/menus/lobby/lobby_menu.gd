@@ -10,18 +10,27 @@ func _ready():
 	lobby.board_selected.connect(_on_board_selected)
 	lobby.player_info_updated.connect(_on_player_info_updated)
 	lobby.changed.connect(_on_settings_changed)
-	$MarginContainer/VBoxContainer/Content/VBoxContainer/Board.disabled = true
+	$MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Board.disabled = true
 	$MarginContainer/VBoxContainer/Footer/Start.disabled = true
-	$MarginContainer/VBoxContainer/Footer/HBoxContainer/Lobby.text = "Join code: " + lobby.name
+	$MarginContainer/VBoxContainer/Footer/Code/Lobby.text = tr("MENU_LOBBY_JOIN_CODE") + " " + lobby.name
+	# The join code is only useful when friends connect over the network
+	$MarginContainer/VBoxContainer/Footer/Code.visible = servermenu != null
 	
 	for board in PluginSystem.board_loader.get_loaded_boards():
-		var boards := $MarginContainer/VBoxContainer/Content/VBoxContainer/Board
+		var boards := $MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Board
 		boards.add_item(board)
 		boards.set_item_metadata(boards.get_item_count() - 1, board)
+	# With a single board there is nothing to choose
+	if boards_count() <= 1:
+		$MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Label.hide()
+		$MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Board.hide()
 	$MarginContainer/VBoxContainer/Footer/Start.grab_focus()
 
+func boards_count() -> int:
+	return PluginSystem.board_loader.get_loaded_boards().size()
+
 func _on_settings_changed(settings: Array):
-	var root := $MarginContainer/VBoxContainer/Content/ScrollContainer/Sidebar
+	var root := $MarginContainer/VBoxContainer/Content/Setup/Margin/Box/ScrollContainer/Sidebar
 	for child in root.get_children():
 		child.queue_free()
 		root.remove_child(child)
@@ -31,6 +40,11 @@ func _on_settings_changed(settings: Array):
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.theme_type_variation = &"HeaderMedium"
 	root.add_child(label)
+	if not lobby.is_lobby_owner(multiplayer.get_unique_id()):
+		var note := Label.new()
+		note.text = "MENU_LOBBY_OWNER_ONLY"
+		note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		root.add_child(note)
 	for entry in settings:
 		var id = entry[0]
 		var setting = entry[1]
@@ -89,14 +103,14 @@ func _on_setting_option_change(idx: int, node: OptionButton, id: String):
 	lobby.update_setting(id, node.get_item_text(idx))
 
 func _on_board_selected(board: String):
-	$MarginContainer/VBoxContainer/Content/VBoxContainer/Board.text = board
+	$MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Board.text = board
 
 func _on_player_info_updated(info: Array):
 	var is_owner: bool = lobby.is_lobby_owner(multiplayer.get_unique_id())
-	$MarginContainer/VBoxContainer/Content/VBoxContainer/Board.disabled = not is_owner
+	$MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Board.disabled = not is_owner
 	$MarginContainer/VBoxContainer/Footer/Start.disabled = not is_owner
 	
-	var characters = $MarginContainer/VBoxContainer/Content/VBoxContainer/Characters
+	var characters = $MarginContainer/VBoxContainer/Content/Players/Characters
 	for child in characters.get_children():
 		child.queue_free()
 		characters.remove_child(child)
@@ -113,6 +127,7 @@ func _on_player_info_updated(info: Array):
 		playername.text_submitted.connect(_on_name_changed.bind(playerinfo.addr.idx))
 		if playerinfo.character:
 			character.icon = PluginSystem.character_loader.load_character_icon(playerinfo.character)
+		character.tooltip_text = tr("MENU_LOBBY_CHANGE_CHARACTER")
 		character.pressed.connect(_on_character_select.bind(playerinfo.addr))
 		remove.pressed.connect(_on_remove_player.bind(playerinfo.addr.idx))
 		if playerinfo.addr.peer_id != multiplayer.get_unique_id():
@@ -144,7 +159,7 @@ func _on_CharacterMenu_character_selected(character: String, idx: int) -> void:
 	lobby.select_character(idx, character)
 
 func _on_Board_item_selected(index: int) -> void:
-	lobby.select_board($MarginContainer/VBoxContainer/Content/VBoxContainer/Board.get_item_metadata(index))
+	lobby.select_board($MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Board.get_item_metadata(index))
 
 func _on_Leave_pressed() -> void:
 	queue_free()

@@ -610,10 +610,10 @@ msgid "MINIGAME_TYPE_DUEL"
 msgstr "Duel minigame"
 
 msgid "MINIGAME_TYPE_GNU_COOP"
-msgstr "GNU Coop minigame"
+msgstr "Joy Co-op minigame"
 
 msgid "MINIGAME_TYPE_GNU_SOLO"
-msgstr "GNU Solo minigame"
+msgstr "Joy Solo minigame"
 
 msgid "MINIGAME_TYPE_NOLOK_COOP"
 msgstr "Nolok Coop minigame"
@@ -815,3 +815,30 @@ msgstr "Sweet Crumbs"
 
 msgid "EVENT_CRUMBS_TEXT"
 msgstr "{player} finds {amount} cookies behind the cake stand."
+
+msgid "MENU_LOBBY_PLAYERS"
+msgstr "Players"
+
+msgid "MENU_LOBBY_HINT"
+msgstr "Press your action button to join. Click your portrait to change your character."
+
+msgid "MENU_LOBBY_JOIN_CODE"
+msgstr "Join code:"
+
+msgid "MENU_LOBBY_OWNER_ONLY"
+msgstr "Only the host can change these."
+
+msgid "MENU_LOBBY_CHANGE_CHARACTER"
+msgstr "Change character"
+
+msgid "CONTEXT_ZOOM_HINT"
+msgstr "Mouse wheel / + - : zoom   Z: board overview"
+
+msgid "MENU_LABEL_MINIGAMES"
+msgstr "Minigames"
+
+msgid "MENU_MINIGAMES_TITLE"
+msgstr "Minigame Test Room"
+
+msgid "MENU_MINIGAMES_HINT"
+msgstr "Pick a minigame and a mode to jump straight in. You are Player 1, the rest are bots. Press Try on the info screen to practise."

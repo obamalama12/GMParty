@@ -53,6 +53,16 @@ var wait_for_duel_selection := false
 
 var camera_focus: Node3D
 
+# Camera zoom: distance added behind the camera, along its viewing direction.
+# Mouse wheel, +/- and Page Up/Down zoom, Z toggles a far overview of the board.
+const ZOOM_MIN := -1.5
+const ZOOM_MAX := 48.0
+const ZOOM_OVERVIEW := 42.0
+var zoom_target := 0.0
+var zoom_current := 0.0
+var zoom_before_overview := 0.0
+var camera_base_position := Vector3.ZERO
+
 enum EDITOR_NODE_LINKING_DISPLAY {
 	DISABLED,
 	NEXT_NODES,
@@ -69,6 +79,7 @@ enum EDITOR_NODE_LINKING_DISPLAY {
 var step_count := 0
 
 func _ready() -> void:
+	_add_zoom_hint()
 	# Force the display to stay empty until the server set up everything
 	$Screen/BeforeSetupCurtain.show()
 	lobby = Lobby.get_lobby(self)
@@ -924,7 +935,30 @@ func raise_event(action: String, pressed: bool) -> void:
 
 	Input.parse_input_event(event)
 
+func _set_zoom(value: float) -> void:
+	zoom_target = clampf(value, ZOOM_MIN, ZOOM_MAX)
+
+func _handle_zoom_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			_set_zoom(zoom_target - 1.5)
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			_set_zoom(zoom_target + 1.5)
+	elif event is InputEventKey and event.pressed and not event.echo:
+		match event.keycode:
+			KEY_MINUS, KEY_KP_SUBTRACT, KEY_PAGEDOWN:
+				_set_zoom(zoom_target + 3.0)
+			KEY_EQUAL, KEY_PLUS, KEY_KP_ADD, KEY_PAGEUP:
+				_set_zoom(zoom_target - 3.0)
+			KEY_Z, KEY_HOME:
+				if zoom_target < ZOOM_OVERVIEW - 0.5:
+					zoom_before_overview = zoom_target
+					_set_zoom(ZOOM_OVERVIEW)
+				else:
+					_set_zoom(zoom_before_overview)
+
 func _unhandled_input(event: InputEvent) -> void:
+	_handle_zoom_input(event)
 	if player_turn <= players.size() and lobby.get_player_by_id(player_turn).is_local():
 		if event.is_action_pressed("player%d_ok" % player_turn):
 			_on_Roll_pressed()
@@ -1025,6 +1059,10 @@ func play_space_step_sfx(space: NodeBoard, player_id: int) -> void:
 		$StepFX.play()
 
 func _process(delta: float) -> void:
+	if camera_base_position == Vector3.ZERO:
+		camera_base_position = $Camera3D.position
+	zoom_current = lerpf(zoom_current, zoom_target, minf(1.0, 6.0 * delta))
+	$Camera3D.position = camera_base_position + $Camera3D.transform.basis.z * zoom_current
 	if camera_focus != null:
 		var dir: Vector3 = camera_focus.position - position
 		if dir.length() > 0.01:
@@ -1091,3 +1129,25 @@ func show_minigame_animation(state: Lobby.MinigameState) -> void:
 
 func _on_choose_path_arrow_activated(idx: int) -> void:
 	server_path_chosen.rpc_id(1, idx)
+
+
+func _add_zoom_hint() -> void:
+	var hint := Label.new()
+	hint.text = tr("CONTEXT_ZOOM_HINT")
+	hint.add_theme_font_size_override("font_size", 16)
+	hint.add_theme_color_override("font_outline_color", Color(0, 0, 0, 1))
+	hint.add_theme_constant_override("outline_size", 4)
+	hint.modulate = Color(1, 1, 1, 0.8)
+	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	hint.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
+	hint.offset_left = -520
+	hint.offset_top = -30
+	hint.offset_right = -14
+	hint.offset_bottom = -6
+	$Screen.add_child(hint)
+	# Only needed for the first moments of a turn
+	var tween := create_tween()
+	tween.tween_interval(12.0)
+	tween.tween_property(hint, "modulate:a", 0.0, 1.5)
+	tween.tween_callback(hint.queue_free)

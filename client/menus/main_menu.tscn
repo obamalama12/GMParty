@@ -357,6 +357,14 @@ theme_override_font_sizes/font_size = 22
 layout_mode = 2
 text = "MENU_IO_LOAD_GAME"
 
+[node name="Minigames" parent="MainMenu/Buttons" instance=ExtResource("4")]
+custom_minimum_size = Vector2(340, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+layout_mode = 2
+text = "MENU_LABEL_MINIGAMES"
+clip_text = true
+
 [node name="Options" parent="MainMenu/Buttons" instance=ExtResource("4")]
 custom_minimum_size = Vector2(340, 46)
 layout_mode = 2
@@ -614,6 +622,7 @@ stream = ExtResource("10")
 [connection signal="pressed" from="MainMenu/Buttons/Play2" to="." method="_on_Play2_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MainMenu/Buttons/Minigames" to="." method="_on_Minigames_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Screenshots" to="." method="_on_Screenshots_pressed"]
 [connection signal="pressed" from="ServerList/VBoxContainer/Footer/Leave" to="." method="_on_ServerList_Leave_pressed"]
 [connection signal="quit" from="OptionsMenu/OptionsMenu" to="." method="_on_OptionsMenu_quit"]

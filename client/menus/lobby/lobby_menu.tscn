@@ -31,33 +31,66 @@ layout_mode = 2
 [node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 24
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content"]
-custom_minimum_size = Vector2(380, 0)
-layout_mode = 2
-
-[node name="Sidebar" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/ScrollContainer"]
+[node name="Players" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Content/Players"]
 layout_mode = 2
-size_flags_horizontal = 3
+theme_type_variation = &"HeaderMedium"
+text = "MENU_LOBBY_PLAYERS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Content/VBoxContainer"]
+[node name="Hint" type="Label" parent="MarginContainer/VBoxContainer/Content/Players"]
+layout_mode = 2
+text = "MENU_LOBBY_HINT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Characters" type="GridContainer" parent="MarginContainer/VBoxContainer/Content/Players"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="Setup" type="PanelContainer" parent="MarginContainer/VBoxContainer/Content"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/Content/Setup"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Box" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/Setup/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Content/Setup/Margin/Box"]
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 text = "MENU_LABEL_SELECT_BOARD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Board" type="OptionButton" parent="MarginContainer/VBoxContainer/Content/VBoxContainer"]
+[node name="Board" type="OptionButton" parent="MarginContainer/VBoxContainer/Content/Setup/Margin/Box"]
 layout_mode = 2
 
-[node name="Characters" type="GridContainer" parent="MarginContainer/VBoxContainer/Content/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content/Setup/Margin/Box"]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 2
+horizontal_scroll_mode = 0
+
+[node name="Sidebar" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/Setup/Margin/Box/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Footer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -69,20 +102,20 @@ shortcut = SubResource("2")
 shortcut_in_tooltip = false
 text = "MENU_LABEL_BACK"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Footer"]
+[node name="Code" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Footer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Lobby" type="Label" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer"]
+[node name="Lobby" type="Label" parent="MarginContainer/VBoxContainer/Footer/Code"]
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Footer/HBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Footer/Code"]
 custom_minimum_size = Vector2(250, 56)
 layout_mode = 2
 text = "MENU_LABEL_COPY"
@@ -98,7 +131,7 @@ layout_mode = 1
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Content/VBoxContainer/Board" to="." method="_on_Board_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Content/Setup/Margin/Box/Board" to="." method="_on_Board_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Footer/Leave" to="." method="_on_Leave_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Footer/HBoxContainer/Button" to="." method="_on_lobby_code_copy"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Footer/Code/Button" to="." method="_on_lobby_code_copy"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Footer/Start" to="." method="_on_Start_pressed"]

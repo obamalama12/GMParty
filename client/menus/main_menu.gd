@@ -214,6 +214,15 @@ func _on_LoadGame_Back_pressed() -> void:
 	$Animation.play("MainMenu")
 	$MainMenu/Buttons/Load.grab_focus()
 
+func _on_Minigames_pressed() -> void:
+	var menu := preload("res://client/menus/minigame_test_menu.gd").new()
+	menu.back.connect(func():
+		menu.queue_free()
+		$MainMenu.show()
+		$MainMenu/Buttons/Minigames.grab_focus())
+	add_child(menu)
+	$MainMenu.hide()
+
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
 
