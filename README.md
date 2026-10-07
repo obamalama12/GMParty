@@ -31,6 +31,12 @@ and press F5. In the lobby pick the board "MarkyValley".
 Marky Party is built with the [Godot Engine](https://godotengine.org/).
 Currently, Godot Engine version 4.7 is used.
 
+## Retro look
+
+The 3D picture is drawn with a Nintendo 64 style post-processing shader (`common/retro/`): about 240 lines,
+the console's three-point texture filter, 16 bit colour with dithering. The menus and text stay sharp.
+Switch it off under Options > Visual > Retro look (Nintendo 64).
+
 ## Tools
 
 `tools/` has helpers for development:

@@ -27,6 +27,7 @@ Global="*res://common/scripts/global.gd"
 PluginSystem="*res://common/scripts/loader/plugin_system.gd"
 ControlHelper="*res://common/scripts/control_helper.gd"
 UISound="*res://common/scenes/sound_button/ui_sound.tscn"
+Retro="*res://common/retro/retro.tscn"
 
 [debug]
 

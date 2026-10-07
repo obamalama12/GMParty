@@ -46,6 +46,11 @@ func _on_FXAA_toggled(button_pressed):
 	
 	save_option("visual", "fxaa", button_pressed)
 
+func _on_Retro_toggled(button_pressed):
+	Retro.enabled = button_pressed
+
+	save_option("visual", "retro", button_pressed)
+
 func _on_Language_item_selected(ID):
 	var locales = ProjectSettings.get("locale/locale_filter")[1]
 	var option_meta = $Menu/TabContainer/Visual/Language/OptionButton.get_item_metadata(ID)
@@ -148,6 +153,10 @@ func load_options():
 	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (get_option_value_safely("visual", "fullscreen", false)) else Window.MODE_WINDOWED
 	$Menu/TabContainer/Visual/Fullscreen.button_pressed = ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))
 	
+	var retro = get_option_value_safely("visual", "retro", true)
+	Retro.enabled = retro
+	$Menu/TabContainer/Visual/Retro.button_pressed = retro
+
 	var fxaa = get_option_value_safely("visual", "fxaa", false)
 	$Menu/TabContainer/Visual/FXAA.button_pressed = fxaa
 	
