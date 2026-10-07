@@ -691,7 +691,7 @@ print("graph ok: every space is reachable and has a next space; closest two spac
 # ------------------------------------------------------------------ write
 
 # ------------------------------------------------------------------ fit the spaces to the terrain
-# A space is a flat hexagon (radius 1, 0.1 thick, centre at the node position). On a slope the uphill side
+# A space is a flat hexagon (radius 1, 0.1 thick, its top surface at the node position). On a slope the uphill side
 # would sink into the ground, so every space is tilted to the slope of the terrain under it and lifted until
 # its top surface is above the terrain mesh everywhere.
 
@@ -709,7 +709,11 @@ def mesh_height(x, z):
 FOOT = [(0.0, 0.0)] + [(r_ * math.cos(2 * math.pi * i / 24), r_ * math.sin(2 * math.pi * i / 24))
                        for r_ in (0.35, 0.7, 1.05) for i in range(24)]
 for n in nodes:
-    if n["bridge"] or n["hidden"]:
+    if n["bridge"]:
+        n["y"] = 2.49                       # the deck of the bridge is flat, its planks end at y = 2.45
+        n["normal"] = [0.0, 1.0, 0.0]
+        continue
+    if n["hidden"]:
         n["y"] = round(n["h"] + 0.02, 3)
         n["normal"] = [0.0, 1.0, 0.0]
         continue
@@ -723,8 +727,8 @@ for n in nodes:
     A = np.array([[1.0, dx, dz] for dx, dz in foot])
     c0, bx, bz = np.linalg.lstsq(A, hs, rcond=None)[0]
     bx, bz = float(np.clip(bx, -0.7, 0.7)), float(np.clip(bz, -0.7, 0.7))
-    top = max(hs[i] - bx * dx - bz * dz for i, (dx, dz) in enumerate(foot)) + 0.05
-    n["y"] = round(top - 0.05, 3)
+    top = max(hs[i] - bx * dx - bz * dz for i, (dx, dz) in enumerate(foot)) + 0.04
+    n["y"] = round(top, 3)             # the top surface of the hexagon is at the node position, its body hangs 0.1 below
     nl = math.sqrt(1 + bx * bx + bz * bz)
     n["normal"] = [round(-bx / nl, 4), round(1 / nl, 4), round(-bz / nl, 4)]
 

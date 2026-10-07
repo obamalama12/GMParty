@@ -175,11 +175,22 @@ func _physics_process(delta: float):
 		group_player(delta)
 
 func knockout(mov: Vector3):
+	# A player that falls off on their own client has to tell the server, which decides who is out
+	if not multiplayer.is_server():
+		if state != STATE.DEAD:
+			state = STATE.DEAD
+			_request_knockout.rpc_id(1, mov)
+		return
 	if state != STATE.DEAD:
 		state = STATE.DEAD
 		get_parent().knockout()
 		movement = mov
 		get_parent().lobby.broadcast(get_parent().die.bind(info.player_id, movement))
+
+@rpc("any_peer") func _request_knockout(mov: Vector3):
+	if not multiplayer.is_server() or multiplayer.get_remote_sender_id() != info.addr.peer_id:
+		return
+	knockout(mov)
 
 @rpc("any_peer") func _client_stun(duration: float):
 	# Only allowed by the server

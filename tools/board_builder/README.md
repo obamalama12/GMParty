@@ -32,4 +32,7 @@ What is where:
 `check_board.py <layout dir>` reports spaces that sink into the terrain and scenery that stands on the path
 (layout.py already tilts every space to the slope and removes scenery from the path).
 
+`tools/board_check/space_check.gd` checks a finished board in Godot: it builds collision from the terrain and the bridge and
+reports spaces that sink into the ground, hover above it or have no ground (`BOARD=RetroValley godot --headless --path . --script res://tools/board_check/space_check.gd`).
+
 Take screenshots of the board with `tools/board_tour`.

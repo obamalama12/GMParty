@@ -55,7 +55,7 @@ for nd in L["nodes"]:
     low = 9
     for px, pz in footprint(x, z):
         # height of the space's top surface above this point
-        top = y + 0.05 - (normal[0] * (px - x) + normal[2] * (pz - z)) / max(normal[1], 1e-6)
+        top = y - (normal[0] * (px - x) + normal[2] * (pz - z)) / max(normal[1], 1e-6)
         gap = top - mesh_height(px, pz)
         worst = max(worst, -gap)
         low = min(low, gap)

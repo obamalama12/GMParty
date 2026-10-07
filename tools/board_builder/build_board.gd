@@ -109,6 +109,23 @@ func toon_material(c: Color) -> StandardMaterial3D:
 	return m
 
 
+
+## Adds a box (without its bottom) to a SurfaceTool; origin is the lowest corner.
+func add_box(st: SurfaceTool, origin: Vector3, size: Vector3, color: Color) -> void:
+	var o := origin
+	var s := size
+	var p := [
+		o, o + Vector3(s.x, 0, 0), o + Vector3(s.x, 0, s.z), o + Vector3(0, 0, s.z),
+		o + Vector3(0, s.y, 0), o + Vector3(s.x, s.y, 0), o + Vector3(s.x, s.y, s.z), o + Vector3(0, s.y, s.z),
+	]
+	# faces as quads (top, front, back, left, right); Godot treats clockwise triangles as the front
+	var quads := [[4, 7, 6, 5], [0, 4, 5, 1], [3, 2, 6, 7], [0, 3, 7, 4], [1, 5, 6, 2]]
+	for q in quads:
+		for i in [0, 2, 1, 0, 3, 2]:
+			st.set_color(color)
+			st.add_vertex(p[q[i]])
+
+
 func _initialize() -> void:
 	data_dir = OS.get_environment("DATA_DIR")
 	layout = JSON.parse_string(FileAccess.get_file_as_string(data_dir.path_join("layout.json")))
@@ -161,6 +178,26 @@ func _initialize() -> void:
 		piece.rotation_degrees.y = 90
 		piece.scale = Vector3(1.4, 1.0, seg_len / 8.64)
 		own(bridge, piece, "Piece%d" % i)
+	# The planks of the bridge model undulate, so a flat deck of planks goes on top of them. The spaces stand on it.
+	var deck := SurfaceTool.new()
+	deck.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var plank_x := bx0
+	var plank_no := 0
+	while plank_x < bx1 - 0.05:
+		var plank_len := minf(0.55, bx1 - plank_x)
+		var shade := 0.0 if plank_no % 2 == 0 else 0.07
+		add_box(deck, Vector3(plank_x, layout.bridge.y - 0.1, layout.bridge.z - 1.45), Vector3(plank_len, 0.1, 2.9),
+				Color(0.70 - shade, 0.50 - shade, 0.30 - shade))
+		plank_x += 0.61
+		plank_no += 1
+	deck.generate_normals()
+	var deck_mat := toon_material(Color.WHITE)
+	deck_mat.vertex_color_use_as_albedo = true
+	var deck_mesh := deck.commit()
+	deck_mesh.surface_set_material(0, deck_mat)
+	var deck_node := MeshInstance3D.new()
+	deck_node.mesh = deck_mesh
+	own(bridge, deck_node, "Deck")
 
 	# scatter: one MultiMesh per kind of prop
 	DirAccess.make_dir_recursive_absolute(BOARD_DIR + "meshes")
