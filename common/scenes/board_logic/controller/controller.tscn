@@ -1,5 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://dcyoe2uryyyef"]
 
+[ext_resource type="Script" path="res://common/scenes/board_logic/controller/turn_banner.gd" id="turn_banner"]
 [ext_resource type="Script" path="res://common/scenes/board_logic/controller/board_event_banner.gd" id="banner_script"]
 [ext_resource type="PackedScene" path="res://common/scenes/board_logic/controller/dice_roll.tscn" id="dice_roll"]
 [ext_resource type="Script" path="res://common/scenes/board_logic/controller/controller.gd" id="1"]
@@ -524,6 +525,15 @@ grow_horizontal = 2
 theme_type_variation = &"HeaderLarge"
 horizontal_alignment = 1
 
+[node name="TurnBanner" type="Control" parent="Screen"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("turn_banner")
+
 [node name="Splash" type="AnimationPlayer" parent="Screen"]
 root_node = NodePath("Background")
 libraries = {
@@ -531,6 +541,7 @@ libraries = {
 }
 
 [node name="Background" type="TextureRect" parent="Screen/Splash"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

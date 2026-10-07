@@ -390,7 +390,7 @@ func relocate_cake() -> void:
 	show_splash()
 
 @rpc func splash_ended():
-	$Screen/Splash.play("hide")
+	$Screen/TurnBanner.dismiss()
 
 @rpc func select_item(player_id: int):
 	if player_id < 1 || player_id > len(players):
@@ -424,9 +424,7 @@ func _on_next_player():
 func show_splash():
 	var info := lobby.get_player_by_id(player_turn)
 	var character := info.character
-	$Screen/Splash/Background/Player.texture =\
-			PluginSystem.character_loader.load_character_splash(character)
-	$Screen/Splash.play("show")
+	$Screen/TurnBanner.play(info.name, PluginSystem.character_loader.load_character_splash(character), player_turn)
 	camera_focus = players[player_turn - 1]
 
 func _on_Roll_pressed() -> void:
@@ -1084,7 +1082,7 @@ func update_player_info() -> void:
 		i += 1
 
 func hide_splash() -> void:
-	$Screen/Splash/Background.hide()
+	$Screen/TurnBanner.dismiss()
 
 func show_minigame_animation(state: Lobby.MinigameState) -> void:
 	var i := 1

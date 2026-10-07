@@ -44,7 +44,19 @@ func _ready() -> void:
 		while get_tree().get_nodes_in_group("Controller").size() < 2 and waited < 90:
 			await wait(1.0)
 			waited += 1.0
-		await wait(14.0)
+		for k in 4:
+			var e := InputEventAction.new()
+			e.action = "player1_ok"
+			e.pressed = true
+			Input.parse_input_event(e)
+			await wait(0.15)
+			e = InputEventAction.new()
+			e.action = "player1_ok"
+			Input.parse_input_event(e)
+			await wait(1.5)
+		for k in 8:
+			await wait(0.4)
+			await snap("turn%d" % k)
 		var ct
 		for c in get_tree().get_nodes_in_group("Controller"):
 			if not c.server:
