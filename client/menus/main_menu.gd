@@ -42,6 +42,9 @@ func _process(delta: float) -> void:
 	var k := 0.47 + sin(_time * 1.7) * 0.006
 	logo.scale = Vector2(k, k)
 	$MainMenu/Glow.modulate.a = 0.5 + 0.1 * sin(_time * 1.3)
+	var glove: Control = $MainMenu/Glove
+	var target := _glove_target + Vector2(sin(_time * 5.0) * 6.0, 0.0)
+	glove.position = glove.position.lerp(target, clampf(delta * 14.0, 0.0, 1.0))
 	for i in _floaters.size():
 		var f := _floaters[i]
 		var base: Vector2 = f.get_meta("base")
@@ -73,9 +76,17 @@ func _make_floaters() -> void:
 		holder.add_child(tr)
 		_floaters.append(tr)
 
+var _glove_target := Vector2(14, 340)
+
+# The pointing glove sits next to the focused button and bobs a little
+func _point_glove_at(button: Control) -> void:
+	_glove_target = button.global_position - $MainMenu.global_position + Vector2(-84, button.size.y / 2 - 40)
+
 # Buttons grow a little when hovered or focused
 func _setup_button_hover() -> void:
 	for button: Control in $MainMenu/Buttons.get_children():
+		button.focus_entered.connect(_point_glove_at.bind(button))
+		button.mouse_entered.connect(_point_glove_at.bind(button))
 		button.resized.connect(func(): button.pivot_offset = button.size / 2)
 		var grow := func(to: float):
 			var tween := create_tween()

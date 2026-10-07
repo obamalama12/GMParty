@@ -38,6 +38,12 @@ the console's three-point texture filter, 16 bit colour with dithering. The menu
 The board has distance fog, an old-TV overlay (scanlines, dark corners) sits on top, and the sound is slightly
 muffled like a 90s console. Switch the look off under Options > Visual (Retro look, Old TV scanlines).
 
+## Look of the interface
+
+Bright blue panels with a thick white border, chunky buttons that turn gold when selected, a pointing glove in the
+main menu, one colour per player on the board (red, blue, green, yellow) and outlined bold text, in the spirit of
+the 90s party games. The pictures are drawn by `tools/ui_builder/make_ui_art.py`.
+
 ## Tools
 
 `tools/` has helpers for development:

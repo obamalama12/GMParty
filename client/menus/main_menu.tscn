@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://c6aw5cs71kqpf"]
+[gd_scene load_steps=41 format=3 uid="uid://c6aw5cs71kqpf"]
 
 [ext_resource type="Theme" uid="uid://d3w3vt3s6ujoh" path="res://assets/defaults/default_theme.tres" id="1"]
 [ext_resource type="PackedScene" path="res://plugins/characters/Businessman/character.tscn" id="mascot"]
 [ext_resource type="Script" path="res://client/menus/main_menu.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/glove.png" id="glove"]
 [ext_resource type="PackedScene" uid="uid://bwy7gmeseew1j" path="res://common/scenes/sound_button/sound_button.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://jeq4trt5v2ii" path="res://client/menus/options_menu.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://c0nrxhlddlfnb" path="res://assets/icons/loading/load7.png" id="7"]
@@ -379,6 +380,17 @@ offset_bottom = 490.0
 pivot_offset = Vector2(512, 320)
 scale = Vector2(0.47, 0.47)
 texture = ExtResource("14")
+
+[node name="Glove" type="TextureRect" parent="MainMenu"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 330.0
+offset_right = 100.0
+offset_bottom = 410.0
+mouse_filter = 2
+texture = ExtResource("glove")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Glow" type="TextureRect" parent="MainMenu"]
 modulate = Color(1, 0.82, 0.35, 0.55)
