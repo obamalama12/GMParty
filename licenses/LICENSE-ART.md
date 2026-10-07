@@ -930,3 +930,9 @@ Poster picture of Joy drawn with `tools/character_builder/draw_mascot_art.py`. T
 the project owner can change it.
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/cookie_catch | plugins/minigames/hot_bomb | plugins/minigames/jump_rope | plugins/minigames/tug_of_war
+### screenshot.png
+
+Screenshots of the game made for this project. The sounds in `assets/sounds/arcade` are synthesised by
+`tools/ui_builder/make_arcade_sounds.py` (CC0 1.0 Universal).

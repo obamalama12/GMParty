@@ -442,6 +442,8 @@ func get_ffa_reward(pos: int):
 
 # Go back to board from mini-game, placement is an array with the players' ids.
 func _goto_board(placement) -> void:
+	if OS.has_environment("MINIGAME_RESULT_LOG"):
+		print("MINIGAME_RESULT ", placement)
 	# Only award if the players were not trying the minigame out
 	if minigame_state.is_try:
 		_goto_scene_board.call_deferred()

@@ -1,0 +1,20 @@
+# English texts of the minigame Hot Bomb.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "MINIGAME_NAME"
+msgstr "Hot Bomb"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "One player holds a lit bomb. Touch another player to pass it on!\n\nWhen the fuse is burnt up, the player with the bomb is out. The last one standing wins."
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Jump"
+
+msgid "MINIGAME_ACTION_PULL"
+msgstr "Pull (press as fast as you can)"

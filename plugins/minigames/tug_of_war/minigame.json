@@ -1,0 +1,20 @@
+{
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/tug_of_war/minigame.tscn",
+	"image_path": "res://plugins/minigames/tug_of_war/screenshot.png",
+	"translation_directory": "res://plugins/minigames/tug_of_war/translations",
+	"type": [
+		"2v2",
+		"1v3",
+		"Duel"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"action1"
+			],
+			"text": "MINIGAME_ACTION_PULL"
+		}
+	]
+}

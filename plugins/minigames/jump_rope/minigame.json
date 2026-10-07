@@ -1,0 +1,30 @@
+{
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/jump_rope/minigame.tscn",
+	"image_path": "res://plugins/minigames/jump_rope/screenshot.png",
+	"translation_directory": "res://plugins/minigames/jump_rope/translations",
+	"type": [
+		"FFA",
+		"Duel"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"spacer",
+				"up",
+				"spacer",
+				"left",
+				"down",
+				"right"
+			],
+			"text": "MINIGAME_ACTION_MOVEMENT"
+		},
+		{
+			"actions": [
+				"action1"
+			],
+			"text": "MINIGAME_ACTION_JUMP"
+		}
+	]
+}

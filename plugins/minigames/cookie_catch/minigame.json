@@ -1,0 +1,25 @@
+{
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/cookie_catch/minigame.tscn",
+	"image_path": "res://plugins/minigames/cookie_catch/screenshot.png",
+	"translation_directory": "res://plugins/minigames/cookie_catch/translations",
+	"type": [
+		"FFA",
+		"Duel",
+		"2v2"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"spacer",
+				"up",
+				"spacer",
+				"left",
+				"down",
+				"right"
+			],
+			"text": "MINIGAME_ACTION_MOVEMENT"
+		}
+	]
+}

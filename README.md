@@ -31,6 +31,12 @@ and press F5. In the lobby pick the board "RetroValley".
 Retro Party is built with the [Godot Engine](https://godotengine.org/).
 Currently, Godot Engine version 4.7 is used.
 
+## Minigames
+
+Besides the original ones there are four arcade minigames made for Retro Party: **Cookie Catch** (catch falling cookies, avoid bombs),
+**Hot Bomb** (pass the lit bomb on), **Jump Rope** (jump the sweeping rope) and **Tug of War** (mash the button). Their logic is in
+`plugins/minigames/<name>/minigame.gd` on top of `common/scripts/arcade`; `tools/arcade_test` plays them to the end with bots.
+
 ## Retro look
 
 The 3D picture is drawn with a Nintendo 64 style post-processing shader (`common/retro/`): about 240 lines,
