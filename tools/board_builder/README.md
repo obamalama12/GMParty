@@ -29,4 +29,7 @@ What is where:
 - `build_board.gd` writes `board.tscn`, the terrain mesh and its colour texture, and the mesh files in
   `meshes/`. Green spaces become warps in pairs (see `plugins/boards/MarkyValley/board.gd`).
 
+`check_board.py <layout dir>` reports spaces that sink into the terrain and scenery that stands on the path
+(layout.py already tilts every space to the slope and removes scenery from the path).
+
 Take screenshots of the board with `tools/board_tour`.

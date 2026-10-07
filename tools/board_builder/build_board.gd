@@ -233,6 +233,8 @@ func _initialize() -> void:
 	for nd in layout.nodes:
 		var space: Node3D = space_scene.instantiate()
 		space.position = Vector3(nd.pos[0], nd.pos[1], nd.pos[2])
+		if nd.has("normal"):
+			space.basis = Basis(Quaternion(Vector3.UP, Vector3(nd.normal[0], nd.normal[1], nd.normal[2])))
 		own(nodes_root, space, nd.name)
 		space.set("type", int(nd.type))
 		space.set("_visible", not nd.hidden)

@@ -690,13 +690,90 @@ print("graph ok: every space is reachable and has a next space; closest two spac
 
 # ------------------------------------------------------------------ write
 
+# ------------------------------------------------------------------ fit the spaces to the terrain
+# A space is a flat hexagon (radius 1, 0.1 thick, centre at the node position). On a slope the uphill side
+# would sink into the ground, so every space is tilted to the slope of the terrain under it and lifted until
+# its top surface is above the terrain mesh everywhere.
+
+def mesh_height(x, z):
+    """Height of the terrain mesh as build_board.gd builds it (two triangles per cell)."""
+    fx, fz = (x + HALF) / CELL, (z + HALF) / CELL
+    ix = int(np.clip(math.floor(fx), 0, N - 2)); iz = int(np.clip(math.floor(fz), 0, N - 2))
+    tx, tz = fx - ix, fz - iz
+    a, b, c, e = height[iz, ix], height[iz, ix + 1], height[iz + 1, ix], height[iz + 1, ix + 1]
+    if tx + tz <= 1.0:
+        return float(a + (b - a) * tx + (c - a) * tz)
+    return float(e + (c - e) * (1 - tx) + (b - e) * (1 - tz))
+
+
+FOOT = [(0.0, 0.0)] + [(r_ * math.cos(2 * math.pi * i / 24), r_ * math.sin(2 * math.pi * i / 24))
+                       for r_ in (0.35, 0.7, 1.05) for i in range(24)]
 for n in nodes:
-    n["y"] = round(n["h"] + 0.02, 3)
+    if n["bridge"] or n["hidden"]:
+        n["y"] = round(n["h"] + 0.02, 3)
+        n["normal"] = [0.0, 1.0, 0.0]
+        continue
+    # the terrain is piecewise linear, so its highest point under the hexagon is on the ring or at a grid vertex
+    foot = list(FOOT)
+    for gx_ in range(int(math.floor(n["x"] - 1.1)), int(math.ceil(n["x"] + 1.1)) + 1):
+        for gz_ in range(int(math.floor(n["z"] - 1.1)), int(math.ceil(n["z"] + 1.1)) + 1):
+            if math.hypot(gx_ - n["x"], gz_ - n["z"]) <= 1.1:
+                foot.append((gx_ - n["x"], gz_ - n["z"]))
+    hs = np.array([mesh_height(n["x"] + dx, n["z"] + dz) for dx, dz in foot])
+    A = np.array([[1.0, dx, dz] for dx, dz in foot])
+    c0, bx, bz = np.linalg.lstsq(A, hs, rcond=None)[0]
+    bx, bz = float(np.clip(bx, -0.7, 0.7)), float(np.clip(bz, -0.7, 0.7))
+    top = max(hs[i] - bx * dx - bz * dz for i, (dx, dz) in enumerate(foot)) + 0.05
+    n["y"] = round(top - 0.05, 3)
+    nl = math.sqrt(1 + bx * bx + bz * bz)
+    n["normal"] = [round(-bx / nl, 4), round(1 / nl, 4), round(-bz / nl, 4)]
+
+# ------------------------------------------------------------------ keep the path clear
+by_name_ = {n["name"]: n for n in nodes}
+seg_list = np.array([[n["x"], n["z"], by_name_[m]["x"], by_name_[m]["z"]] for n in nodes for m in n["next"]])
+
+
+def path_distance(x, z):
+    """Distance to the nearest path segment and the unit vector pointing away from it."""
+    ax, az, bx, bz = seg_list[:, 0], seg_list[:, 1], seg_list[:, 2], seg_list[:, 3]
+    dx, dz = bx - ax, bz - az
+    t = np.clip(((x - ax) * dx + (z - az) * dz) / np.maximum(dx * dx + dz * dz, 1e-9), 0, 1)
+    px, pz = ax + t * dx, az + t * dz
+    d = np.hypot(px - x, pz - z)
+    k = int(np.argmin(d))
+    if d[k] < 1e-6:
+        return 0.0, (0.0, 1.0)
+    return float(d[k]), ((x - px[k]) / d[k], (z - pz[k]) / d[k])
+
+
+SMALL = {"Lantern": 0.3, "Signpost": 0.6, "Hay": 1.2}
+for lm in landmarks:
+    if lm["kind"] not in SMALL:
+        continue
+    for _ in range(6):
+        d_, (ux, uz) = path_distance(lm["pos"][0], lm["pos"][2])
+        want = SMALL[lm["kind"]] + (2.2 if lm["kind"] != "Lantern" else 1.7)
+        if d_ >= want:
+            break
+        move = want - d_ + 0.1
+        lm["pos"][0] += ux * move
+        lm["pos"][2] += uz * move
+        lm["pos"][1] = height_at(lm["pos"][0], lm["pos"][2])
+        if lm["kind"] == "Hay":
+            lm["pos"][1] -= 0.0
+removed = 0
+for kind in list(scatter.keys()):
+    size = 0.35 if kind.startswith(("Grass", "Plant", "Flower", "Petals")) else 0.8 if kind.startswith(("Bush", "Rock")) else 1.0
+    limit = 0.9 if kind.startswith(("Grass", "Plant", "Flower", "Petals")) else 1.8
+    keep = [it for it in scatter[kind] if path_distance(it[0], it[2])[0] - size * it[4] >= limit]
+    removed += len(scatter[kind]) - len(keep)
+    scatter[kind] = keep
+print("scenery removed from the path:", removed)
 
 layout = dict(
     cell=CELL, half=HALF, n=N, nc=NC, water_y=WATER_Y,
     nodes=[dict(name=n["name"], pos=[round(n["x"], 3), n["y"], round(n["z"], 3)], type=n["type"], cake=n["cake"],
-                hidden=n["hidden"], next=n["next"], prev=n["prev"], area=n["area"], bridge=n["bridge"]) for n in nodes],
+                hidden=n["hidden"], next=n["next"], prev=n["prev"], area=n["area"], bridge=n["bridge"], normal=n["normal"]) for n in nodes],
     start="Start", warps=warp_pairs,
     scatter={k: [[round(v, 3) for v in item] for item in items] for k, items in scatter.items()},
     landmarks=landmarks,
