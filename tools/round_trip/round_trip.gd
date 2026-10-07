@@ -1,6 +1,6 @@
 ## Dev tool: plays board -> minigame -> reward screen -> board a few times and reports problems.
 ##
-## BOARD=MarkyValley ROUNDS=2 godot --path . res://tools/round_trip/round_trip.tscn
+## BOARD=RetroValley ROUNDS=2 godot --path . res://tools/round_trip/round_trip.tscn
 extends Node
 
 
@@ -37,7 +37,7 @@ func wait_for(cond: Callable, timeout: float, what: String) -> bool:
 
 
 func _ready() -> void:
-	var board_name := OS.get_environment("BOARD") if OS.get_environment("BOARD") != "" else "MarkyValley"
+	var board_name := OS.get_environment("BOARD") if OS.get_environment("BOARD") != "" else "RetroValley"
 	var rounds := int(OS.get_environment("ROUNDS")) if OS.get_environment("ROUNDS") != "" else 2
 	await wait(1.0)
 	var game := Global.create_local_server()

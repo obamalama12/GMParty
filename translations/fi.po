@@ -312,7 +312,7 @@ msgstr "Ei täsmäävä versio"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Käytät yhteensopimatonta MarkyParty-versiota tälle palvelimelle.\n"
+"Käytät yhteensopimatonta RetroParty-versiota tälle palvelimelle.\n"
 "Sinun versiosi: {local}\n"
 "Palvelinversio: {remote}\n"
 "\n"
@@ -387,7 +387,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Liity napauttamalla"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

@@ -1,4 +1,4 @@
-"""Designs the Marky Valley board: path network, terrain and scenery placement.
+"""Designs the Retro Valley board: path network, terrain and scenery placement.
 
     python layout.py <output dir>
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draws the 2D character portraits (icon.png and splash.png of every character) and the Mayor Marky portrait.
+"""Draws the 2D character portraits (icon.png and splash.png of every character) and the Mayor Pixel portrait.
 
     python tools/character_builder/draw_portraits.py plugins/characters common/scenes/board_logic/controller/icons/host.png
 
@@ -225,15 +225,33 @@ def timber():
     return c.done()
 
 
+def joy():
+    c = Canvas()
+    blue, red = hexc("#1fa9ff"), hexc("#ff3b4a")
+    c.paint(R(76, 60, 258, 560, 70), blue)                                      # left half
+    c.paint(R(254, 60, 436, 560, 70), red)                                      # right half
+    c.paint(R(250, 90, 262, 560, 4), OUTLINE, shade=False, outline=False)       # seam
+    c.paint(R(120, 30, 230, 80, 18), hexc("#2a2f3a")); c.paint(R(282, 30, 392, 80, 18), hexc("#2a2f3a"))   # shoulder buttons
+    for i, y in enumerate((130, 190, 250, 310)):                                 # sync lights
+        c.paint(E(92, y, 8, 14), hexc("#5fe3f0") if i < 2 else (255, 255, 255), shade=False, outline=False)
+    eye(c, 190, 200, 44, 54, 24); eye(c, 322, 200, 44, 54, 24)
+    blush(c, 140, 300); blush(c, 372, 300)
+    c.paint(P([(190, 312), (256, 346), (322, 312), (312, 300), (256, 326), (200, 300)]), hexc("#5a1020"), shade=False)   # smile
+    c.paint(E(170, 440, 48, 48), hexc("#2a2f3a")); c.paint(E(170, 436, 34, 34), hexc("#aeb6c6"), shade=False)         # thumb stick
+    for dx, dy, col in ((0, -50, hexc("#ffd21f")), (0, 50, hexc("#3fd36a")), (50, 0, hexc("#5fe3f0")), (-50, 0, hexc("#ff9aa8"))):
+        c.paint(E(342 + dx, 440 + dy, 24, 24), col, shade=False)
+    return c.done()
+
+
 def main():
     chars, host = sys.argv[1], sys.argv[2]
-    for name, fn in {"Businessman": businessman, "Emo": emo, "Kit": kit, "Bolt": bolt, "Mushi": mushi, "Timber": timber}.items():
+    for name, fn in {"Businessman": businessman, "Emo": emo, "Kit": kit, "Bolt": bolt, "Mushi": mushi, "Timber": timber, "Joy": joy}.items():
         img = fn()
         for f in ("icon.png", "splash.png"):
             img.save(os.path.join(chars, name, f))
         print("drew", name)
     businessman(mayor=True).save(host)
-    print("drew Mayor Marky")
+    print("drew Mayor Pixel")
 
 
 main()

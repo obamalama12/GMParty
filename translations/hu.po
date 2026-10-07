@@ -312,7 +312,7 @@ msgstr "Verzió félreértés"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"A MarkyParty verziód nem egyezik a szerverével.\n"
+"A RetroParty verziód nem egyezik a szerverével.\n"
 "A Te verziód: {local}\n"
 "A Szerver verziója: {Remote}\n"
 "\n"

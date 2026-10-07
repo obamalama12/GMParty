@@ -312,7 +312,7 @@ msgstr "Version stimmt nicht überein"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Sie verwenden eine inkompatible Version von MarkyParty für diesen Server."
+"Sie verwenden eine inkompatible Version von RetroParty für diesen Server."
 "\n"
 "Ihre Version: {local}\n"
 "Server-Version: {remote}\n"
@@ -388,7 +388,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Drücken um Beizutreten"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
@@ -508,7 +508,7 @@ msgstr "Verfluchter Würfel"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
 msgstr ""
-"Es scheint, als spielst du das erste mal Marky Party. Darf ich dir die "
+"Es scheint, als spielst du das erste mal Retro Party. Darf ich dir die "
 "Regeln erklären?"
 
 msgid "CONTEXT_TUTORIAL_DICE"

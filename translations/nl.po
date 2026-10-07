@@ -312,7 +312,7 @@ msgstr "Onjuiste versie"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Je versie van MarkyParty is niet compatibel met deze server.\n"
+"Je versie van RetroParty is niet compatibel met deze server.\n"
 "Jouw versie: {local}\n"
 "Serverversie: {remote}\n"
 "\n"
@@ -385,7 +385,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Klik om naar binnen te gaan"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

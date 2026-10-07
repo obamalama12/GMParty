@@ -39,6 +39,9 @@ var players: Array[PlayerBoard]
 # Keeps track of whose turn it is.
 var player_turn := 1
 
+# Time the dice block needs to tumble and land before the player starts to walk
+const DICE_TIME := 1.9
+
 # Keeps track whether the current player has already rolled,
 # thus preventing them from rolling multiple times during their own turn
 # Reset in _on_next_player
@@ -472,6 +475,7 @@ func _on_Roll_pressed() -> void:
 			player.roll_modifiers_count_down()
 			step_count = dice
 
+			await _announce_dice(dice)
 			rolled.emit(player, dice)
 			lobby.broadcast(_rolled.bind(dice))
 		Item.TYPES.PLACABLE:
@@ -490,6 +494,7 @@ func _on_Roll_pressed() -> void:
 			var dice = (randi() % 6) + 1
 			step_count = dice
 
+			await _announce_dice(dice)
 			rolled.emit(player, dice)
 			lobby.broadcast(_rolled.bind(dice))
 		Item.TYPES.ACTION:
@@ -499,10 +504,19 @@ func _on_Roll_pressed() -> void:
 			var dice = (randi() % 6) + 1
 			step_count = dice
 
+			await _announce_dice(dice)
 			rolled.emit(player, dice)
 			lobby.broadcast(_rolled.bind(dice))
 		_:
 			push_error("Invalid type: %d (%s != %d)" % [item.type, typeof(item.type), TYPE_INT])
+
+# Shows the tumbling dice block on every client and waits until it has landed.
+func _announce_dice(dice: int) -> void:
+	lobby.broadcast(show_dice.bind(dice))
+	await get_tree().create_timer(DICE_TIME).timeout
+
+@rpc func show_dice(dice: int):
+	$Screen/DiceRoll.play(dice)
 
 @rpc func _rolled(dice: int):
 	step_count = dice

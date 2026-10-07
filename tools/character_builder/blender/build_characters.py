@@ -597,6 +597,60 @@ def build_emo(folder):
     return b, anim_set(), "Emo"
 
 
+def build_joy(folder):
+    blue = swatch("blue", hexc("#1fa9ff"))
+    blue_dark = swatch("blue_dark", hexc("#1678c4"))
+    red = swatch("red", hexc("#ff3b4a"))
+    red_dark = swatch("red_dark", hexc("#c42433"))
+    dark = swatch("dark", hexc("#2a2f3a"))
+    gray = swatch("gray", hexc("#aeb6c6"))
+    white = swatch("white", hexc("#f6f6f6"))
+    black = swatch("black", hexc("#141418"))
+    mouth = swatch("mouth", hexc("#5a1020"))
+    pink = swatch("pink", hexc("#ff9aa8"))
+    yellow = swatch("yellow", hexc("#ffd21f"))
+    green = swatch("green", hexc("#3fd36a"))
+    cyan = swatch("cyan", hexc("#5fe3f0"))
+    pal = [blue, blue_dark, red, red_dark, dark, gray, white, black, mouth, pink, yellow, green, cyan]
+    b = Builder("Joy", 0.92, pal)
+    standard_bones(b, 0.3, 0.3, 0.5, 0.1, 0.6)
+
+    # the whole controller is body and head in one: a blue half and a red half
+    b.block(blue, "Head", (-0.12, 0.6, 0), (0.12, 0.37, 0.1), bevel=0.07, smooth=True)
+    b.block(red, "Head", (0.12, 0.6, 0), (0.12, 0.37, 0.1), bevel=0.07, smooth=True)
+    b.block(blue_dark, "Head", (-0.2, 0.6, -0.01), (0.04, 0.3, 0.08), bevel=0.02)
+    b.block(red_dark, "Head", (0.2, 0.6, -0.01), (0.04, 0.3, 0.08), bevel=0.02)
+    b.block(dark, "Head", (0, 0.6, 0.097), (0.007, 0.34, 0.006))
+    for sign in (1, -1):
+        b.block(dark, "Head", (sign * 0.12, 0.985, 0), (0.07, 0.02, 0.08), bevel=0.01)     # shoulder buttons
+    # face
+    for sign in (1, -1):
+        b.blob(white, "Head", (sign * 0.1, 0.8, 0.093), (0.075, 0.09, 0.03))
+        b.blob(black, "Head", (sign * 0.1, 0.79, 0.12), (0.04, 0.052, 0.022))
+        b.blob(pink, "Head", (sign * 0.16, 0.68, 0.098), (0.04, 0.022, 0.012))
+    b.block(mouth, "Head", (0, 0.68, 0.1), (0.055, 0.012, 0.01))
+    b.block(mouth, "Head", (-0.062, 0.692, 0.1), (0.012, 0.016, 0.01), rot=(0, 0, -25))
+    b.block(mouth, "Head", (0.062, 0.692, 0.1), (0.012, 0.016, 0.01), rot=(0, 0, 25))
+    # thumb stick on the blue side, four buttons on the red side
+    b.cone(dark, "Head", (-0.12, 0.47, 0.105), 0.062, 0.03, rot=(90, 0, 0))
+    b.blob(gray, "Head", (-0.12, 0.47, 0.13), (0.045, 0.045, 0.028))
+    for dx, dy, col in ((0.0, 0.055, yellow), (0.0, -0.055, green), (0.055, 0.0, cyan), (-0.055, 0.0, pink)):
+        b.blob(col, "Head", (0.12 + dx, 0.47 + dy, 0.108), (0.03, 0.03, 0.018))
+    b.block(dark, "Head", (-0.12, 0.33, 0.097), (0.04, 0.008, 0.006))
+    b.block(dark, "Head", (0.12, 0.33, 0.097), (0.04, 0.008, 0.006))
+    # sync lights on the side
+    for i in range(4):
+        b.blob(cyan if i < 2 else white, "Head", (-0.241, 0.78 - i * 0.07, 0.0), (0.012, 0.022, 0.022))
+
+    for s_, sign in (("L", 1), ("R", -1)):
+        b.blob(dark, "Leg" + s_, (sign * 0.1, 0.17, 0), (0.055, 0.13, 0.058))
+        b.blob(white, "Leg" + s_, (sign * 0.1, 0.045, 0.04), (0.085, 0.05, 0.13))
+        b.block(blue if sign > 0 else red, "Leg" + s_, (sign * 0.1, 0.05, 0.1), (0.075, 0.015, 0.03), smooth=True, bevel=0.01)
+        b.blob(dark, "Arm" + s_, (sign * 0.32, 0.43, 0), (0.05, 0.12, 0.05))
+        b.blob(white, "Arm" + s_, (sign * 0.32, 0.29, 0), (0.07, 0.07, 0.07))
+    return b, anim_set(), "Joy"
+
+
 # ---------------------------------------------------------------- main
 
 def export(builder_fn):
@@ -621,5 +675,8 @@ def export(builder_fn):
     print("EXPORTED", path, "height", max(v.co.z for v in body.data.vertices))
 
 
-for fn in (build_bolt, build_kit, build_mushi, build_businessman, build_timber, build_emo):
+ONLY = [n for n in os.environ.get("ONLY", "").split(",") if n]
+for fn in (build_bolt, build_kit, build_mushi, build_businessman, build_timber, build_emo, build_joy):
+    if ONLY and fn.__name__.replace("build_", "") not in [n.lower() for n in ONLY]:
+        continue
     export(fn)

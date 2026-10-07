@@ -312,7 +312,7 @@ msgstr "Versões não combinam"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Está a executar uma versão incompatível do MarkyParty para este servidor."
+"Está a executar uma versão incompatível do RetroParty para este servidor."
 "\n"
 "A sua versão: {local}\n"
 "Versão do Servidor: {remote}\n"
@@ -386,7 +386,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Aperte para fazer parte"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

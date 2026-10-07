@@ -103,6 +103,33 @@ box(512, 70, hexc("#4f8fff"), hexc("#1d45c4"), bw=12, ow=7).save(os.path.join(DI
 box(512, 70, hexc("#ffe46b"), hexc("#ffb400"), bw=12, ow=7).save(os.path.join(DIALOG, "dialog_box_focus.png"))
 
 
+def dice_faces():
+    """Atlas for the 3D dice block: 3 x 2 tiles of 256 px, tile i shows i + 1 pips (1 is the big red one)."""
+    T = 256
+    atlas = Image.new("RGBA", (T * 3, T * 2), (0, 0, 0, 255))
+    pips = {1: [(0.5, 0.5)], 2: [(0.27, 0.27), (0.73, 0.73)], 3: [(0.27, 0.27), (0.5, 0.5), (0.73, 0.73)],
+            4: [(0.27, 0.27), (0.73, 0.27), (0.27, 0.73), (0.73, 0.73)],
+            5: [(0.27, 0.27), (0.73, 0.27), (0.5, 0.5), (0.27, 0.73), (0.73, 0.73)],
+            6: [(0.27, 0.25), (0.73, 0.25), (0.27, 0.5), (0.73, 0.5), (0.27, 0.75), (0.73, 0.75)]}
+    for n in range(1, 7):
+        tile = Image.new("RGBA", (T * SS, T * SS), (0, 0, 0, 255))
+        d = ImageDraw.Draw(tile)
+        d.rectangle((0, 0, T * SS, T * SS), fill=hexc("#f4f6ff") + (255,))
+        d.rectangle((0, 0, T * SS - 1, T * SS - 1), outline=hexc("#b9c6ee") + (255,), width=10 * SS)
+        for px_, py_ in pips[n]:
+            r = (0.17 if n == 1 else 0.10) * T * SS
+            col = hexc("#e8312f") if n == 1 else hexc("#1b2f7a")
+            d.ellipse((px_ * T * SS - r, py_ * T * SS - r, px_ * T * SS + r, py_ * T * SS + r), fill=col + (255,))
+            d.ellipse((px_ * T * SS - r * 0.5, py_ * T * SS - r * 0.7, px_ * T * SS - r * 0.1, py_ * T * SS - r * 0.3),
+                      fill=(255, 255, 255, 110))
+        tile = tile.resize((T, T), Image.LANCZOS)
+        atlas.paste(tile, (((n - 1) % 3) * T, ((n - 1) // 3) * T))
+    return atlas
+
+
+save(dice_faces(), "dice_faces.png")
+
+
 def bg_panel():
     """Soft shine strip for headings: used behind big titles."""
     img = Image.new("RGBA", (256, 64), (0, 0, 0, 0))

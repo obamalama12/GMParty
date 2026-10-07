@@ -1,9 +1,9 @@
-## Builds plugins/boards/MarkyValley/board.tscn from the files layout.py wrote.
+## Builds plugins/boards/RetroValley/board.tscn from the files layout.py wrote.
 ##
 ##   DATA_DIR=<layout.py output> godot --headless --path . --script res://tools/board_builder/build_board.gd
 extends SceneTree
 
-const BOARD_DIR := "res://plugins/boards/MarkyValley/"
+const BOARD_DIR := "res://plugins/boards/RetroValley/"
 const NATURE := "res://assets/models/nature/glTF/"
 const PROPS := BOARD_DIR + "props/"
 
@@ -113,7 +113,7 @@ func _initialize() -> void:
 	data_dir = OS.get_environment("DATA_DIR")
 	layout = JSON.parse_string(FileAccess.get_file_as_string(data_dir.path_join("layout.json")))
 	board = Node3D.new()
-	board.name = "MarkyValley"
+	board.name = "RetroValley"
 	board.set_script(load(BOARD_DIR + "board.gd"))
 
 	# terrain, saved as a separate binary resource so the scene stays small

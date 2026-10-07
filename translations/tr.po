@@ -312,7 +312,7 @@ msgstr "Sürüm uyuşmazlığı"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Bu sunucu için MarkyParty'nin uyumsuz bir sürümünü çalıştırıyorsunuz.\n"
+"Bu sunucu için RetroParty'nin uyumsuz bir sürümünü çalıştırıyorsunuz.\n"
 "Sizin sürümünüz: {local}\n"
 "Sunucu sürümü: {remote}\n"
 "\n"
@@ -387,7 +387,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Katılmak için basın"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

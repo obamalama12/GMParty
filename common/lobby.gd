@@ -1,4 +1,4 @@
-## Stores data relating to a game of "Marky Party"
+## Stores data relating to a game of "Retro Party"
 ## @tutorial(Network Design): https://gitlab.com/SuperTuxParty/SuperTuxParty/-/wikis/docs/For-Plugin-Authors/Network-Design
 extends Node
 class_name Lobby

@@ -70,7 +70,7 @@ func _ready() -> void:
 	lobby.set_player_name(0, "Tester")
 	lobby.select_character(0, "Businessman")
 	await wait(1.0)
-	lobby.select_board("MarkyValley")
+	lobby.select_board("RetroValley")
 	await snap("lobby_board")
 	lobby.start()
 	await wait(25.0)

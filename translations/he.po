@@ -312,7 +312,7 @@ msgstr "הגרסאות לא תואמות"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"הגרסה שמופעלת אצלך אינה תואמת לגרסת ה־MarkyParty לשרת הזה.\n"
+"הגרסה שמופעלת אצלך אינה תואמת לגרסת ה־RetroParty לשרת הזה.\n"
 "הגרסה שלך: {local}\n"
 "גרסת השרת: {remote}\n"
 "\n"

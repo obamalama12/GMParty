@@ -312,7 +312,7 @@ msgstr "Miskongruo de versio"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Vi rulas nekongruan version de MarkyParty por ĉi tiu servilo.\n"
+"Vi rulas nekongruan version de RetroParty por ĉi tiu servilo.\n"
 "Via versio: {local}\n"
 "Servila versio: {remote}\n"
 "\n"
@@ -385,7 +385,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Premu por aliĝi"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

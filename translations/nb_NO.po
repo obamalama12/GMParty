@@ -378,7 +378,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr ""
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

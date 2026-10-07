@@ -906,11 +906,19 @@ Copyright © 2020 Florian Kothmeier
 
 License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
-## plugins/characters/Bolt | plugins/characters/Businessman | plugins/characters/Emo | plugins/characters/Kit | plugins/characters/Mushi | plugins/characters/Timber
+## plugins/characters/Bolt | plugins/characters/Businessman | plugins/characters/Emo | plugins/characters/Joy | plugins/characters/Kit | plugins/characters/Mushi | plugins/characters/Timber
 ### *.glb | palette.png | icon.png | splash.png
 
 Original characters made for this project with the scripts in `tools/character_builder`.
 The licence below is a placeholder chosen to match the other original assets; the
 project owner can change it.
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## assets/ui
+### *.png
+
+Panels, buttons, player cards, glove cursor and dice faces drawn for this project with
+`tools/ui_builder/make_ui_art.py`. The licence below is a placeholder; the project owner can change it.
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)

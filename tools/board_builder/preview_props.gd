@@ -2,7 +2,7 @@
 ## Environment: SHOTS_DIR (default user://), ONLY=Fountain,TownHall shows just those, big and close
 extends SceneTree
 
-const DIR := "res://plugins/boards/MarkyValley/props/"
+const DIR := "res://plugins/boards/RetroValley/props/"
 
 
 func _initialize() -> void:

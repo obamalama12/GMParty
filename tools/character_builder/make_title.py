@@ -103,8 +103,8 @@ NAVY = (27, 20, 74, 255)
 canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 
 # MARKY: golden
-marky, _, _ = word(
-    "MARKY", 330,
+retro, _, _ = word(
+    "RETRO", 330,
     lambda w, h: gradient((w, h), [(0, (255, 244, 150)), (0.35, (255, 205, 60)), (0.7, (255, 150, 30)), (1, (240, 110, 30))]),
     16, NAVY, 20, (92, 40, 130, 255))
 # PARTY: candy colours from left to right
@@ -114,7 +114,7 @@ party, _, _ = word(
                                 Image.new("RGB", (w, h), (0, 0, 0))),
     16, NAVY, 20, (60, 30, 110, 255))
 
-for layer, cy, tilt in ((marky, 175, -3.0), (party, 440, 2.0)):
+for layer, cy, tilt in ((retro, 175, -3.0), (party, 440, 2.0)):
     layer = layer.rotate(tilt, resample=Image.BICUBIC, expand=True)
     sc = min(1.0, (W - 30) / layer.width)
     if sc < 1.0:

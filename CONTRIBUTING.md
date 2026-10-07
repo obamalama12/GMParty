@@ -2,7 +2,7 @@
 
 ## Workflow
 
-Marky Party follows the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+Retro Party follows the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 This means that:
 
 - All merge requests should have their own branch
@@ -35,7 +35,7 @@ repository.
 
 ## Tools
 
-Marky Party is built in Godot 4.7 with GDscript.
+Retro Party is built in Godot 4.7 with GDscript.
 3D models are exported from [Blender](https://www.blender.org/) with the default gltf exporter.
 
 ### File structure

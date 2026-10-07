@@ -313,7 +313,7 @@ msgstr "Neamhréir leagan"
 
 msgid "MENU_LABEL_VERSION_MISMATCH"
 msgstr ""
-"Tá leagan neamh-chomhoiriúnach de MarkyParty á rith agat don fhreastalaí "
+"Tá leagan neamh-chomhoiriúnach de RetroParty á rith agat don fhreastalaí "
 "seo.\n"
 "Do leagan: {áitiúil}\n"
 "Leagan an fhreastalaí: {iargúlta}\n"
@@ -389,7 +389,7 @@ msgid "MENU_LOBBY_ADD_PLAYER"
 msgstr "Brúigh chun páirt a ghlacadh"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr "Mayor Marky"
+msgstr "Mayor Pixel"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""

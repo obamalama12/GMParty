@@ -292,7 +292,7 @@ func print_licenses(f: FileAccess) -> String:
 
 func _on_TabContainer_tab_selected(tab):
 	if tab == 4:
-		var text = """[color=#ffffff][center]Marky Party is based on SuperTuxParty, brought to you by:[/center]
+		var text = """[color=#ffffff][center]Retro Party is based on SuperTuxParty, brought to you by:[/center]
 [color=#ffaa00][center][url=https://gitlab.com/Dragoncraft89]Dragoncraft89[/url], [url=https://gitlab.com/Antiwrapper]Antiwrapper[/url], [url=https://yeldham.itch.io]Yeldham[/url], [url=https://gitlab.com/RiderExMachina]RiderExMachina[/url], [url=https://gitlab.com/Hejka26]Hejka26[/url], [url=https://gitlab.com/airon90]airon90[/url], [url=https://gitlab.com/swolfschristophe]swolfschristophe[/url], [url=https://gitlab.com/pastmidnight14]pastmidnight14[/url], [url=https://gitlab.com/kratz00]kratz00[/url], [url=https://gitlab.com/Independent-Eye]Independent-Eye[/url] and [url=https://gitlab.com/doggoofspeed]DoggoOfSpeed[/url][/center][color=#e5e5e5]
 
 [center]with [color=#66aa00]ART[/color] by:[/center]

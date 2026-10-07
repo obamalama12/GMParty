@@ -3,7 +3,7 @@
 Starts a local game on a board and takes screenshots.
 
 ```sh
-BOARD=MarkyValley SHOTS_DIR=/tmp/tour godot --path . res://tools/board_tour/board_tour.tscn
+BOARD=RetroValley SHOTS_DIR=/tmp/tour godot --path . res://tools/board_tour/board_tour.tscn
 ```
 
 - default: an overview from five angles.

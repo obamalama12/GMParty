@@ -7,7 +7,7 @@ original Super Tux Party into this project.
     python tools/get_assets.py upstream
 
 Files that already exist here are kept, and the characters and art that were removed from
-Marky Party are not copied. Works on Linux, macOS and Windows (Python 3.6 or newer).
+Retro Party are not copied. Works on Linux, macOS and Windows (Python 3.6 or newer).
 """
 import os
 import shutil

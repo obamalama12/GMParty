@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Marky Party"
+config/name="Retro Party"
 run/main_scene="res://client/menus/main_menu.tscn"
 config/features=PackedStringArray("4.7")
 config/icon="res://assets/icons/icon-smallest.png"

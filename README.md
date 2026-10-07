@@ -1,4 +1,4 @@
-# <img alt="Marky Party logo" src="assets/icons/icon-smallest.png" width="64" height="64" /> Marky Party
+# <img alt="Retro Party logo" src="assets/icons/icon-smallest.png" width="64" height="64" /> Retro Party
 
 [![License](https://img.shields.io/badge/License-GPL%20v3.0-orange)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![Godot Version](https://img.shields.io/badge/Godot-v4.7-%23478cbf)](https://godotengine.org/)
@@ -7,8 +7,8 @@ A [free/libre](https://www.gnu.org/philosophy/free-sw.html) and
 [open-source](https://opensource.org/docs/osd/) party game that is meant to
 replicate the feel of games such as Mario Party.
 
-Marky Party is a fork of [Super Tux Party](https://gitlab.com/SuperTuxParty/SuperTuxParty)
-(licensed under the GPL, see below) with its own characters and a new name.
+Retro Party is a fork of [Super Tux Party](https://gitlab.com/SuperTuxParty/SuperTuxParty)
+(licensed under the GPL, see below) with its own characters and a new name. The mascot is Joy, a two-colour controller buddy.
 
 ![Mini-game Screenshot](screenshot.png)
 
@@ -24,11 +24,11 @@ python tools/first_import.py "C:/path/to/Godot_v4.7-stable_win64.exe"
 ```
 
 `first_import.py` imports every asset once (about 30 seconds). Then open the folder in Godot
-and press F5. In the lobby pick the board "MarkyValley".
+and press F5. In the lobby pick the board "RetroValley".
 
 ## Engine
 
-Marky Party is built with the [Godot Engine](https://godotengine.org/).
+Retro Party is built with the [Godot Engine](https://godotengine.org/).
 Currently, Godot Engine version 4.7 is used.
 
 ## Retro look
@@ -50,7 +50,7 @@ the 90s party games. The pictures are drawn by `tools/ui_builder/make_ui_art.py`
 
 - `tools/minigame_playthrough` plays every minigame once and takes screenshots.
 - `tools/character_builder` builds the characters in Blender and renders previews.
-- `tools/board_builder` generates the Marky Valley board, `tools/board_tour` takes screenshots of boards.
+- `tools/board_builder` generates the Retro Valley board, `tools/board_tour` takes screenshots of boards.
 - `tools/first_import.py` imports the assets on a fresh clone (see above). `tools/get_assets.py` re-copies assets from an upstream checkout.
 
 ## Issues

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the Marky Valley landmark props: Blender -> glb -> Godot import -> plugins/boards/MarkyValley/props.
+"""Builds the Retro Valley landmark props: Blender -> glb -> Godot import -> plugins/boards/RetroValley/props.
 
     python tools/board_builder/build_props_all.py --bpy-python <python with bpy+pillow> --godot <godot> --project .
 
@@ -15,11 +15,11 @@ import subprocess
 import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BOARD = os.path.join("plugins", "boards", "MarkyValley", "props")
+BOARD = os.path.join("plugins", "boards", "RetroValley", "props")
 
 MATERIAL = '''[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
 
-[ext_resource type="Texture2D" path="res://plugins/boards/MarkyValley/props/palette.png" id="1"]
+[ext_resource type="Texture2D" path="res://plugins/boards/RetroValley/props/palette.png" id="1"]
 
 [sub_resource type="StandardMaterial3D" id="1"]
 cull_mode = 1

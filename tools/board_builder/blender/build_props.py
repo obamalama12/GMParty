@@ -1,4 +1,4 @@
-"""Builds the landmark props of the Marky Valley board (houses, castle, graveyard, ...).
+"""Builds the landmark props of the Retro Valley board (houses, castle, graveyard, ...).
 
     python build_props.py <output dir>
 

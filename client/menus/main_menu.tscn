@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://c6aw5cs71kqpf"]
 
 [ext_resource type="Theme" uid="uid://d3w3vt3s6ujoh" path="res://assets/defaults/default_theme.tres" id="1"]
-[ext_resource type="PackedScene" path="res://plugins/characters/Businessman/character.tscn" id="mascot"]
+[ext_resource type="PackedScene" path="res://plugins/characters/Joy/character.tscn" id="mascot"]
 [ext_resource type="Script" path="res://client/menus/main_menu.gd" id="2"]
 [ext_resource type="Texture2D" path="res://assets/ui/glove.png" id="glove"]
 [ext_resource type="PackedScene" uid="uid://bwy7gmeseew1j" path="res://common/scenes/sound_button/sound_button.tscn" id="4"]
