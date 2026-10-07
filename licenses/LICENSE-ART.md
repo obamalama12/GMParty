@@ -241,10 +241,9 @@ License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/l
 
 ### nolokicon.png
 
-Copyright Anthony Carré (yekcim)
+Glitch, the purple pixel imp. Drawn for this project with `tools/character_builder/make_tiles.py`.
 
-Retrieved from: [Super Tux Kart Sourceforge](https://sourceforge.net/p/supertuxkart/code/HEAD/tree/media/trunk/karts/nolok/nolokicon.png)
-License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### host.png | splash_background.png
 
@@ -292,17 +291,15 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### tile_gnu_col.png
 
-Based upon the gnu icon file by Néd J. Édoire
+Drawn for this project (Joy emblem on the hex tile base) with `tools/character_builder/make_tiles.py`.
 
-Retrieved from: [OpenGameArt](https://opengameart.org/content/gnu-mascots-and-friends-iconset)
-License: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### tile_nolok_col.jpg
 
-Based upon the nolok icon by Anthony Carré (yekcim)
+Drawn for this project (Glitch emblem on the hex tile base) with `tools/character_builder/make_tiles.py`.
 
-Retrieved from: [Super Tux Kart Sourceforge](https://sourceforge.net/p/supertuxkart/code/HEAD/tree/media/trunk/karts/nolok/nolokicon.png)
-License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## client/menus/victory_screen
 ### stage.glb | stage.blend

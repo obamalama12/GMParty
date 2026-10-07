@@ -444,7 +444,7 @@ msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr "你没有成功，但你锻炼了团队合作能力。下次一定会成功的！"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "Nolok"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Nolok 操作"

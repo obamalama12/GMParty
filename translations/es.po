@@ -451,7 +451,7 @@ msgstr ""
 "que la próxima vez te saldrá bien!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "Nolok"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Acción de Nolok"

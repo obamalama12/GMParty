@@ -9,24 +9,43 @@ func _init():
 	_minigames = PluginSystem.minigame_loader.get_minigames()
 	_minigames.shuffle()
 
+# The game played last, so it never comes up twice in a row
+var _last: MinigameLoader.MinigameConfigFile
+
 # Utility function that should not be called use
 # get_random_1v3/get_random_2v2/get_random_duel/get_random_ffa/get_random_nolok/get_random_gnu.
+# Every minigame is played once before any of them is played again, in random order.
 func _get_random_minigame(type: String) -> MinigameLoader.MinigameConfigFile:
+	var candidates: Array[int] = []
 	for i in range(len(_minigames)):
 		if type in _minigames[i].type:
-			var minigame := _minigames[i]
-			_minigames.remove_at(i)
-			_played.append(minigame)
-			return minigame
-	# There's no minigame that has the needed type
-	# If we're at the start of the queue, then there's no minigame of that type,
-	# because we just looked at all of them
-	assert(len(_played) > 0, "No minigame for type: " + type)
-	# Rebuild a new queue, but keep the unused elements at the start
-	_played.shuffle()
-	_minigames += _played
-	_played = []
-	return _get_random_minigame(type)
+			candidates.append(i)
+	if candidates.is_empty():
+		# Everything of this type was played: start a new round with all of it shuffled
+		assert(len(_played) > 0, "No minigame for type: " + type)
+		_minigames += _played
+		_played = []
+		_minigames.shuffle()
+		return _get_random_minigame_fresh(type)
+	var pick: int = candidates[randi() % candidates.size()]
+	return _take(pick)
+
+# First pick after a new round: avoid the game that was just played, unless it is the only one
+func _get_random_minigame_fresh(type: String) -> MinigameLoader.MinigameConfigFile:
+	var candidates: Array[int] = []
+	for i in range(len(_minigames)):
+		if type in _minigames[i].type:
+			candidates.append(i)
+	var others: Array[int] = candidates.filter(func(i): return _minigames[i] != _last)
+	var pool := others if not others.is_empty() else candidates
+	return _take(pool[randi() % pool.size()])
+
+func _take(index: int) -> MinigameLoader.MinigameConfigFile:
+	var minigame := _minigames[index]
+	_minigames.remove_at(index)
+	_played.append(minigame)
+	_last = minigame
+	return minigame
 
 ## Returns a random minigame that can be played in 1v3 mode
 func get_random_1v3() -> MinigameLoader.MinigameConfigFile:

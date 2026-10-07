@@ -452,7 +452,7 @@ msgstr ""
 "hogy legközelebb sikerülni fog!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "Nolok"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Nolok akció"

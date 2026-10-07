@@ -446,7 +446,7 @@ msgstr ""
 "certeza que à próxima vez vai correr bem!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "nolok"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Nolok ação"

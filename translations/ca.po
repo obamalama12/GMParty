@@ -435,7 +435,7 @@ msgstr ""
 "convençut que el pròxim cop te'n sortiràs!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Acció Nolok"

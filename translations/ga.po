@@ -456,7 +456,7 @@ msgstr ""
 "oibreoidh an chéad uair eile amach duit!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "Nolok"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Gníomh Nolok"

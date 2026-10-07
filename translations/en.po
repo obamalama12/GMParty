@@ -449,10 +449,10 @@ msgstr ""
 "will work out for you!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "Nolok"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr "Nolok Action"
+msgstr "Glitch Action"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
 msgstr "It's my turn! I know exactly, what to do…"
@@ -549,8 +549,8 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
-"Special minigames will be played when a player lands on a GNU or NOLOK "
-"space. GNU minigames are good, while NOLOK minigames are bad for you. So "
+"Special minigames will be played when a player lands on a Joy or Glitch "
+"space. Joy minigames are good, while Glitch minigames are bad for you. So "
 "better stay away from the latter!"
 
 msgid "CONTEXT_TUTORIAL_END"

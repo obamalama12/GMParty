@@ -449,7 +449,7 @@ msgstr ""
 "יצליח לך!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "נוֹלוֹק"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "הפעולה של נולוק"

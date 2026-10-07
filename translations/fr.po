@@ -448,7 +448,7 @@ msgstr ""
 "d'équipe. La prochaine fois, vous y arriverez certainement !"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr "Nolok"
+msgstr "Glitch"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Action de Nolok"
