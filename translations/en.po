@@ -863,3 +863,162 @@ msgstr "Underdog Bonus"
 
 msgid "EVENT_UNDERDOG_TEXT"
 msgstr "{player} is in last place, so Mayor Pixel hands over {amount} cookies. Keep going!"
+
+msgid "ITEM_PICKPOCKET"
+msgstr "Pickpocket!"
+
+msgid "ITEM_PICKPOCKET_TEXT"
+msgstr "{player} sneaks {amount} cookies out of {victim}'s pockets!"
+
+msgid "ITEM_PICKPOCKET_EMPTY"
+msgstr "{player} reaches into every pocket... and finds nothing but lint."
+
+msgid "ITEM_SWAP_PLACES"
+msgstr "Swap Places!"
+
+msgid "ITEM_SWAP_PLACES_TEXT"
+msgstr "{player} and {other} swap places. Surprise!"
+
+msgid "ITEM_COOKIE_BOMB"
+msgstr "Cookie Bomb!"
+
+msgid "ITEM_COOKIE_BOMB_TEXT"
+msgstr "BOOM! Everybody except {player} loses up to {amount} cookies."
+
+msgid "QUIP_LEADER_1"
+msgstr "{player} leads with {cakes} cakes! Surely nobody will gang up on them... right?"
+
+msgid "QUIP_LEADER_2"
+msgstr "{player} is ahead with {cakes} cakes. That looks like a target on their back to me!"
+
+msgid "QUIP_LEADER_3"
+msgstr "All hail {player}, cake king with {cakes}! Enjoy it while it lasts!"
+
+msgid "QUIP_LEADER_4"
+msgstr "{player} has {cakes} cakes and a very smug face. Somebody fix that."
+
+msgid "QUIP_LAST_1"
+msgstr "{player} is in last place, but I have a feeling about this one."
+
+msgid "QUIP_LAST_2"
+msgstr "Poor {player}. Last place. Everybody point and laugh! Gently."
+
+msgid "QUIP_LAST_3"
+msgstr "{player} is at the back of the pack. Time for a dramatic comeback!"
+
+msgid "QUIP_LAST_4"
+msgstr "{player} is trailing, but in this game luck changes in a heartbeat."
+
+msgid "QUIP_TIED_1"
+msgstr "Everybody is tied! This is going to be a nail biter."
+
+msgid "QUIP_TIED_2"
+msgstr "Not a single cake yet? Come on, people, the cake is right there!"
+
+msgid "QUIP_TIED_3"
+msgstr "A perfectly even game. How boring! Somebody do something silly."
+
+msgid "QUIP_RED_1"
+msgstr "Ha ha! {player} stepped on a red space!"
+
+msgid "QUIP_RED_2"
+msgstr "{player} lost cookies on red. Mayor Pixel is not laughing. (He is laughing.)"
+
+msgid "QUIP_RED_3"
+msgstr "Ouch! {player} walked right into the red space."
+
+msgid "QUIP_RED_4"
+msgstr "Red space! {player}'s cookie jar is feeling lighter."
+
+msgid "QUIP_RED_5"
+msgstr "{player}, the red spaces are the ones that hurt!"
+
+msgid "QUIP_CAKE_1"
+msgstr "{player} bought a cake! Delicious and expensive."
+
+msgid "QUIP_CAKE_2"
+msgstr "A new cake for {player}! The others are green with envy."
+
+msgid "QUIP_CAKE_3"
+msgstr "{player} turns cookies into cake. Bakery magic!"
+
+msgid "QUIP_CAKE_4"
+msgstr "Cake alert! {player} is moving up in the world."
+
+msgid "QUIP_MINIGAME_1"
+msgstr "{player} wins the minigame! The others did their best. Probably."
+
+msgid "QUIP_MINIGAME_2"
+msgstr "Victory for {player}! A round of applause, please!"
+
+msgid "QUIP_MINIGAME_3"
+msgstr "{player} takes the minigame! What a performance!"
+
+msgid "QUIP_MINIGAME_4"
+msgstr "{player} crushes the competition. The cookies are theirs!"
+
+msgid "QUIP_POOR_1"
+msgstr "{player} is broke! Not a cookie to their name."
+
+msgid "QUIP_POOR_2"
+msgstr "{player} has almost no cookies left. Somebody call a cookie ambulance!"
+
+msgid "QUIP_POOR_3"
+msgstr "Empty pockets for {player}. Hit a blue space soon!"
+
+msgid "FRENZY_KICKER"
+msgstr "FINAL FRENZY"
+
+msgid "FRENZY_START"
+msgstr "Double Cookies!"
+
+msgid "FRENZY_START_TEXT"
+msgstr "The last two rounds are the Final Frenzy: all minigame cookie rewards are doubled!"
+
+msgid "FRENZY_LAST"
+msgstr "Last Round!"
+
+msgid "FRENZY_LAST_TEXT"
+msgstr "This is it, folks! Minigame cookies are still doubled. Make it count!"
+
+msgid "QUIP_BONUS_CAKE"
+msgstr "BONUS CAKE!"
+
+msgid "AWARD_KICKER"
+msgstr "BONUS AWARD"
+
+msgid "AWARD_MINIGAME"
+msgstr "Minigame Master"
+
+msgid "AWARD_MINIGAME_TEXT"
+msgstr "Won the most minigames ({value})."
+
+msgid "AWARD_MYSTERY"
+msgstr "Mystery Magnet"
+
+msgid "AWARD_MYSTERY_TEXT"
+msgstr "Landed on the most ? spaces ({value}). Curiosity pays off!"
+
+msgid "AWARD_GADGET"
+msgstr "Gadget Guru"
+
+msgid "AWARD_GADGET_TEXT"
+msgstr "Used the most items ({value}). Shopping is a lifestyle."
+
+msgid "AWARD_BLACK_CAT"
+msgstr "Black Cat"
+
+msgid "AWARD_BLACK_CAT_TEXT"
+msgstr "Landed on the most red spaces ({value}). Here, have a cake for your pain."
+
+msgid "AWARD_HAPPY"
+msgstr "Happy Camper"
+
+msgid "AWARD_HAPPY_TEXT"
+msgstr "Landed on the most blue spaces ({value}). Always smiling!"
+
+msgid "AWARD_RUNNER"
+msgstr "Marathon Runner"
+
+msgid "AWARD_RUNNER_TEXT"
+msgstr "Walked the most steps ({value}). Mind the blisters."

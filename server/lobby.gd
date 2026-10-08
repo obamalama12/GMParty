@@ -404,6 +404,7 @@ func goto_minigame() -> void:
 		playerstates[i].space = get_path_to(r_players[i].space)
 
 		playerstates[i].roll_modifiers = r_players[i].roll_modifiers
+		playerstates[i].stats = r_players[i].stats.duplicate()
 
 		playerstates[i].items = duplicate_items(r_players[i].items)
 
@@ -440,6 +441,38 @@ func get_ffa_reward(pos: int):
 			else:
 				return 0
 
+## The last two rounds are the final frenzy: minigame cookie rewards are doubled. (The turn counter has already moved
+## on when the minigame of a round is played, so the minigame after round N is played at turn N + 1.)
+func reward_factor() -> int:
+	return 2 if turn >= overrides.max_turns else 1
+
+
+func _count_stat(player_id: int, key: String) -> void:
+	var stats: Dictionary = playerstates[player_id - 1].stats
+	stats[key] = stats.get(key, 0) + 1
+
+
+# Remembers who won a minigame, for the bonus awards at the end of the game.
+func _record_minigame_win(minigame_type, minigame_teams, placement) -> void:
+	match minigame_type:
+		MINIGAME_TYPES.FREE_FOR_ALL, MINIGAME_TYPES.DUEL:
+			if placement is Array and placement.size() > 0 and placement[0] is Array:
+				if minigame_type == MINIGAME_TYPES.DUEL and placement.size() != 2:
+					return
+				for player_id in placement[0]:
+					_count_stat(player_id, "mg_wins")
+		MINIGAME_TYPES.TWO_VS_TWO:
+			if placement is int and placement >= 0:
+				for player_id in minigame_teams[placement]:
+					_count_stat(player_id, "mg_wins")
+		MINIGAME_TYPES.ONE_VS_THREE:
+			if placement is int and placement == 1:
+				_count_stat(minigame_teams[1][0], "mg_wins")
+			elif placement is int and placement == 0:
+				for player_id in minigame_teams[0]:
+					_count_stat(player_id, "mg_wins")
+
+
 # Go back to board from mini-game, placement is an array with the players' ids.
 func _goto_board(placement) -> void:
 	if OS.has_environment("MINIGAME_RESULT_LOG"):
@@ -457,6 +490,8 @@ func _goto_board(placement) -> void:
 	minigame_summary.state = minigame_state
 	minigame_summary.placement = placement
 	minigame_state = null
+	_record_minigame_win(minigame_type, minigame_teams, placement)
+	var factor := reward_factor()
 
 	match minigame_type:
 		MINIGAME_TYPES.FREE_FOR_ALL:
@@ -464,23 +499,23 @@ func _goto_board(placement) -> void:
 			minigame_summary.reward = []
 			for position in placement:
 				for player_id in position:
-					minigame_summary.reward.append(get_ffa_reward(place))
-					playerstates[player_id - 1].cookies += get_ffa_reward(place)
+					minigame_summary.reward.append(get_ffa_reward(place) * factor)
+					playerstates[player_id - 1].cookies += get_ffa_reward(place) * factor
 				place += len(position)
 			_goto_scene_instant.call_deferred(MINIGAME_REWARD_SCREEN)
 		MINIGAME_TYPES.TWO_VS_TWO:
 			if placement != -1:
-				minigame_summary.reward = [10, 10, 0, 0]
+				minigame_summary.reward = [10 * factor, 10 * factor, 0, 0]
 				for player_id in minigame_teams[placement]:
-					playerstates[player_id - 1].cookies += 10
+					playerstates[player_id - 1].cookies += 10 * factor
 			else:
 				minigame_summary.reward = [0, 0, 0, 0]
 			_goto_scene_instant.call_deferred(MINIGAME_REWARD_SCREEN)
 		MINIGAME_TYPES.ONE_VS_THREE:
 			if placement == 1: # Solo player won
-				minigame_summary.reward = [0, 0, 0, 10]
+				minigame_summary.reward = [0, 0, 0, 10 * factor]
 			elif placement == 0:
-				minigame_summary.reward = [5, 5, 5, 0]
+				minigame_summary.reward = [5 * factor, 5 * factor, 5 * factor, 0]
 			else:
 				minigame_summary.reward = [0, 0, 0, 0]
 
@@ -652,6 +687,7 @@ func load_board_state(controller: Node3D) -> void:
 		if playerstates[i].space:
 			r_players[i].space = get_node(playerstates[i].space)
 		r_players[i].roll_modifiers = playerstates[i].roll_modifiers
+		r_players[i].stats = playerstates[i].stats.duplicate()
 
 		r_players[i].items = deduplicate_items(playerstates[i].items)
 

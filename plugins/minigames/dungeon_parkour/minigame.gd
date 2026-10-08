@@ -17,8 +17,10 @@ var pickups_spawned := false
 var pickups := {}
 var lane_timer := 5.0
 var lives_label: Label
+var start_position: Vector3
 
 func _ready():
+	start_position = $Player1.global_position
 	lives_label = Label.new()
 	lives_label.theme_type_variation = &"HeaderLarge"
 	lives_label.add_theme_color_override(&"font_shadow_color", Color.BLACK)
@@ -71,12 +73,12 @@ func get_checkpoints() -> Array:
 	return result
 
 func checkpoint_position() -> Vector3:
-	var best: Node3D = $Ground/Waypoint
+	var best_pos: Vector3 = start_position
 	var player_x: float = $Player1.global_position.x
 	for waypoint in get_checkpoints():
 		if waypoint.global_position.x <= player_x:
-			best = waypoint
-	return best.global_position + Vector3(0, 1.0, 0)
+			best_pos = waypoint.global_position
+	return best_pos + Vector3(0, 1.0, 0)
 
 func _server_process(delta: float):
 	if game_over:

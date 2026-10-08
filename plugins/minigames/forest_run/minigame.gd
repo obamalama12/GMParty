@@ -14,9 +14,10 @@ var invulnerable := 0.0
 var game_over := false
 var pickups_spawned := false
 var pickups := {}
-var sky_timer := 4.0
+var sky_timer := 5.0
 var elapsed := 0.0
 var lives_label: Label
+var start_position: Vector3
 
 func fire_catapults():
 	for i in range(1, 8):
@@ -24,6 +25,7 @@ func fire_catapults():
 		await get_tree().create_timer(0.1).timeout
 
 func _ready():
+	start_position = $Player1.global_position
 	lives_label = Label.new()
 	lives_label.theme_type_variation = &"HeaderLarge"
 	lives_label.add_theme_color_override(&"font_shadow_color", Color.BLACK)
@@ -39,11 +41,11 @@ func _client_process(_delta: float):
 
 # The index of the last waypoint the player has passed, used for respawning
 func checkpoint_position() -> Vector3:
-	var best: Node3D = $Ground/Waypoint
+	var best_pos: Vector3 = start_position
 	for waypoint in get_waypoints():
 		if waypoint.global_position.x <= $Player1.global_position.x:
-			best = waypoint
-	return best.global_position + Vector3(0, 1.0, 0)
+			best_pos = waypoint.global_position
+	return best_pos + Vector3(0, 1.0, 0)
 
 func get_waypoints() -> Array:
 	var result := []
@@ -67,14 +69,14 @@ func _server_process(delta: float):
 	sky_timer -= delta
 	if sky_timer <= 0:
 		var progress := clampf((player_x + 50.0) / 120.0, 0.0, 1.0)
-		sky_timer = lerpf(3.2, 1.3, progress)
+		sky_timer = lerpf(4.0, 1.8, progress)
 		if player_x > -38 and player_x < 62:
 			drop_sky_ball()
 
 func drop_sky_ball():
 	var player = $Player1
-	var target: Vector3 = player.global_position + Vector3(player.acceleration.x, 0, player.acceleration.z) * 1.3
-	target += Vector3(randf_range(-1.0, 1.0), 0, randf_range(-1.0, 1.0))
+	var target: Vector3 = player.global_position + Vector3(player.acceleration.x, 0, player.acceleration.z) * 1.0
+	target += Vector3(randf_range(-2.0, 2.0), 0, randf_range(-2.0, 2.0))
 	var pos := Vector3(target.x, 11.0, target.z)
 	lobby.broadcast(spawn_sky_ball.bind(pos))
 	spawn_sky_ball(pos)

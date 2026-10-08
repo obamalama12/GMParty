@@ -98,6 +98,8 @@ class PlayerState:
 	## Current Bonus or malus that affects the dice throws. [br]
 	## New effects can be added via [method PlayerBoard.add_roll_modifier]
 	var roll_modifiers := []
+	## Counters for the bonus awards at the end of the game (minigames won, spaces landed on, ...)
+	var stats := {}
 	
 	func _init(info: Lobby.PlayerInfo):
 		self.info = info
@@ -106,7 +108,7 @@ class PlayerState:
 	## Format is internal and subject to change! [br]
 	## [b] Only use this in the network layer and not in plugin code! [/b]
 	func encode():
-		return [info.player_id, cookies, cakes, items, roll_modifiers]
+		return [info.player_id, cookies, cakes, items, roll_modifiers, stats]
 
 	## Decodes a [Lobby.PlayerState] from the network representation.
 	## See [method encode] [br]
@@ -121,6 +123,8 @@ class PlayerState:
 		state.cakes = data[2]
 		state.items = data[3]
 		state.roll_modifiers = data[4]
+		if data.size() > 5:
+			state.stats = data[5]
 		return state
 
 	## Which space on the board the player is standing on.

@@ -409,6 +409,8 @@ func relocate_cake() -> void:
 	item_selected.emit(idx)
 
 func _on_next_player():
+	if player_turn == 1 and server:
+		await _round_start_banter()
 	if player_turn <= len(players):
 		has_rolled = false
 		lobby.broadcast(client_next_player.bind(player_turn))
@@ -483,6 +485,8 @@ func _on_Roll_pressed() -> void:
 	# Remove the item from the inventory if it is consumed.
 	if item.is_consumed:
 		player.remove_item(item)
+	if item.can_be_bought:
+		player.add_stat("items_used")
 
 	match item.type:
 		Item.TYPES.DICE:
@@ -491,6 +495,7 @@ func _on_Roll_pressed() -> void:
 			dice = max(dice + player.get_total_roll_modifier(), 0)
 			player.roll_modifiers_count_down()
 			step_count = dice
+			player.add_stat("steps", dice)
 
 			await _announce_dice(dice)
 			rolled.emit(player, dice)
@@ -515,7 +520,11 @@ func _on_Roll_pressed() -> void:
 			rolled.emit(player, dice)
 			lobby.broadcast(_rolled.bind(dice))
 		Item.TYPES.ACTION:
-			item.activate(player, self)
+			var result = item.activate(player, self)
+			if result is Dictionary:
+				result["args"]["kicker"] = "ITEM  !"
+				lobby.broadcast(show_board_event.bind(result.title, result.text, result.args))
+				await show_board_event(result.title, result.text, result.args)
 
 			# Use default dice.
 			var dice = (randi() % 6) + 1
@@ -713,10 +722,14 @@ func land_on_space(player: PlayerBoard):
 	match player.space.type:
 		NodeBoard.NODE_TYPES.BLUE:
 			player.cookies += 3
+			player.add_stat("blue_spaces")
 		NodeBoard.NODE_TYPES.RED:
 			player.cookies -= 3
 			if player.cookies < 0:
 				player.cookies = 0
+			player.add_stat("red_spaces")
+			if randf() < 0.6:
+				quip(Quips.pick("RED"), {"player": player.info.name})
 		NodeBoard.NODE_TYPES.GREEN:
 			if len(trigger_event.get_connections()) > 0:
 				trigger_event.emit(player, player.space)
@@ -822,11 +835,10 @@ func land_on_space(player: PlayerBoard):
 				lobby.broadcast(show_minigame.bind(state.encode()))
 				return
 		NodeBoard.NODE_TYPES.EVENT:
+			player.add_stat("events")
 			var outcome := BoardEvents.run(player, players, self)
 			lobby.broadcast(show_board_event.bind(outcome.title, outcome.text, outcome.args))
 			await show_board_event(outcome.title, outcome.text, outcome.args)
-			$Screen/SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", "res://common/scenes/board_logic/controller/icons/host.png", outcome.text, player.info.player_id, outcome.args)
-			await $Screen/SpeechDialog.dialog_finished
 		NodeBoard.NODE_TYPES.GNU:
 			$Screen/SpeechDialog.show_dialog("CONTEXT_GNU_NAME", "res://common/scenes/board_logic/controller/icons/gnu_icon.png", "CONTEXT_GNU_EVENT_START", player.info.player_id)
 			await $Screen/SpeechDialog.dialog_finished
@@ -918,7 +930,7 @@ func show_minigame_info(state) -> void:
 	$Screen/GNUSelection.hide()
 
 @rpc func show_board_event(title: String, text: String, args: Dictionary) -> void:
-	await $Screen/BoardEventBanner.play(title, tr(text).format(args))
+	await $Screen/BoardEventBanner.play(title, tr(text).format(args), tr(args.get("kicker", "?  EVENT  ?")))
 
 @rpc func show_nolok_animation(text: String) -> void:
 	$Screen/NolokSelection/Content/Selection.text = text
@@ -1036,6 +1048,8 @@ func buy_cake(player: PlayerBoard) -> void:
 			await announce("CONTEXT_CAKE_COLLECTED", {"player": player.name, "amount": amount})
 			player.cookies -= amount * COOKIES_FOR_CAKE
 			player.cakes += amount
+			player.add_stat("cakes_bought", amount)
+			quip(Quips.pick("CAKE"), {"player": player.info.name})
 			await relocate_cake()
 	else:
 		await announce("CONTEXT_CAKE_CANT_AFFORD")
@@ -1149,3 +1163,92 @@ func _add_zoom_hint() -> void:
 	tween.tween_interval(12.0)
 	tween.tween_property(hint, "modulate:a", 0.0, 1.5)
 	tween.tween_callback(hint.queue_free)
+
+
+# ----- Mayor Pixel's remarks -----
+
+var quip_panel: PanelContainer
+var quip_label: Label
+var quip_tween: Tween
+
+func _build_quip_ticker() -> void:
+	quip_panel = PanelContainer.new()
+	quip_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	quip_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	quip_panel.custom_minimum_size = Vector2(760, 0)
+	quip_panel.offset_left = -380
+	quip_panel.offset_right = 380
+	quip_panel.offset_top = 132
+	quip_panel.visible = false
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 14)
+	quip_panel.add_child(row)
+	var portrait := TextureRect.new()
+	portrait.texture = load("res://common/scenes/board_logic/controller/icons/host.png")
+	portrait.custom_minimum_size = Vector2(64, 64)
+	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(portrait)
+	quip_label = Label.new()
+	quip_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	quip_label.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	quip_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	quip_label.add_theme_font_size_override("font_size", 22)
+	quip_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(quip_label)
+	$Screen.add_child(quip_panel)
+
+
+## Server: Mayor Pixel says something short (it does not stop the game).
+func quip(key: String, args := {}) -> void:
+	lobby.broadcast(show_quip.bind(key, args))
+	show_quip(key, args)
+
+
+@rpc func show_quip(key: String, args: Dictionary) -> void:
+	if quip_panel == null:
+		_build_quip_ticker()
+	quip_label.text = tr(key).format(args)
+	quip_panel.visible = true
+	quip_panel.modulate.a = 0.0
+	if quip_tween:
+		quip_tween.kill()
+	quip_tween = create_tween()
+	quip_tween.tween_property(quip_panel, "modulate:a", 1.0, 0.25)
+	quip_tween.tween_interval(4.2)
+	quip_tween.tween_property(quip_panel, "modulate:a", 0.0, 0.4)
+	quip_tween.tween_callback(quip_panel.hide)
+
+
+func _standings() -> Array:
+	var sorted_players: Array = players.duplicate()
+	sorted_players.sort_custom(func(a, b): return a.cakes > b.cakes or (a.cakes == b.cakes and a.cookies > b.cookies))
+	return sorted_players
+
+
+# Server: at the start of a round the mayor comments on the standings, and the last rounds are announced.
+func _round_start_banter() -> void:
+	var max_turns: int = lobby.overrides.max_turns
+	if lobby.turn >= max_turns - 1 and max_turns > 2:
+		var last: bool = lobby.turn >= max_turns
+		var args := {"kicker": "FRENZY_KICKER"}
+		var title := "FRENZY_LAST" if last else "FRENZY_START"
+		var text := title + "_TEXT"
+		lobby.broadcast(show_board_event.bind(title, text, args))
+		await show_board_event(title, text, args)
+		return
+	var order := _standings()
+	if order.is_empty():
+		return
+	var leader: PlayerBoard = order[0]
+	var trailer: PlayerBoard = order[order.size() - 1]
+	var mood := randi() % 4
+	if leader.cakes == trailer.cakes and leader.cookies == trailer.cookies:
+		quip(Quips.pick("TIED"))
+	elif mood == 0 and trailer.cookies <= 3:
+		quip(Quips.pick("POOR"), {"player": trailer.info.name})
+	elif mood <= 1:
+		quip(Quips.pick("LAST"), {"player": trailer.info.name})
+	else:
+		quip(Quips.pick("LEADER"), {"player": leader.info.name, "cakes": leader.cakes})

@@ -21,6 +21,7 @@ var info: Lobby.PlayerInfo
 var space: NodeBoard # Space on the board the player is on
 var cookies := 0: set = set_cookies
 var cakes := 0: set = set_cakes
+var stats := {}              # counters for the bonus awards at the end of the game
 var cookies_gui := -1
 var gui_timer: float = GUI_TIMER
 var target_rotation := 0.0
@@ -61,6 +62,9 @@ func deserialize_items(data: Array):
 			return null
 		deserialized.append(res)
 	return deserialized
+
+func add_stat(key: String, amount := 1) -> void:
+	stats[key] = stats.get(key, 0) + amount
 
 func give_item(item: Item) -> bool:
 	if items.size() < MAX_ITEMS:

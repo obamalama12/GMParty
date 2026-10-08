@@ -114,10 +114,15 @@ func run_minigame(cfg, mname: String, ty: String) -> void:
 		else:
 			await wait(0.5)
 			elapsed += 0.5
+	if orig_peer != -1:
+		server_lobby.player_info[0].addr.peer_id = orig_peer
+		orig_peer = -1
 	var ok := Utility.get_nodes_in_group(server_lobby, "Controller").size() > 0
 	log_("%s: %s after %.1f s of play" % [label, "FINISHED" if ok else "DID NOT FINISH", (Time.get_ticks_msec() - started) / 1000.0])
 	await wait(4.0)
 
+
+var orig_peer := -1
 
 func find_scene(root: Node, path: String):
 	var stack: Array = [root]
@@ -134,6 +139,11 @@ func apply_test_mode(cfg) -> void:
 	if mode == "":
 		return
 	var srv = find_scene(get_node("/root/Server"), cfg.scene_path)
+	var w := 0.0
+	while srv == null and w < 30:
+		await wait(1.0)
+		w += 1.0
+		srv = find_scene(get_node("/root/Server"), cfg.scene_path)
 	var cli = find_scene(get_node("/root/Client"), cfg.scene_path)
 	log_("test mode %s server scene=%s client scene=%s" % [mode, srv, cli])
 	if srv == null:
@@ -143,10 +153,12 @@ func apply_test_mode(cfg) -> void:
 			if cli:
 				cli.get_node("Player1").set_physics_process(false)
 			var p = srv.get_node("Player1")
+			orig_peer = p.info.addr.peer_id
 			p.info.addr.peer_id = 1
 			p.set_multiplayer_authority(1)
 			p.ai_current_waypoint = srv.get_node("Ground/Waypoint")
 			p.ai_rand_start = 0.0
+			bot_report(srv)
 		"win":
 			await wait(3.0)
 			var fin = srv.get_node("Finish")
@@ -159,10 +171,20 @@ func apply_test_mode(cfg) -> void:
 		"fall":
 			await wait(3.0)
 			var p = srv.get_node("Player1")
+			var cp = cli.get_node("Player1")
 			log_("fall from %s" % p.position)
+			cp.position.y = -10
 			p.position.y = -10
 			await wait(2.0)
 			log_("after fall: pos %s lives %d" % [p.position, srv.lives])
 			p.position = srv.get_node("Finish").position + Vector3(-1, 0.2, 0)
 		"timeout":
 			srv.get_node("Timer2").start(3.0)
+
+
+func bot_report(srv) -> void:
+	for i in 40:
+		await wait(2.0)
+		if not is_instance_valid(srv) or srv.is_queued_for_deletion():
+			return
+		log_("t=%d pos=%s lives=%s boost=%s" % [i * 2, srv.get_node("Player1").position, srv.get("lives"), srv.get_node("Player1").boost_time])

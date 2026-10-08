@@ -4,6 +4,7 @@ extends Control
 var _panel: PanelContainer
 var _title: Label
 var _sub: Label
+var _kicker: Label
 
 
 func _ready() -> void:
@@ -21,6 +22,7 @@ func _ready() -> void:
 	box.alignment = BoxContainer.ALIGNMENT_CENTER
 	_panel.add_child(box)
 	var kicker := Label.new()
+	_kicker = kicker
 	kicker.text = "?  EVENT  ?"
 	kicker.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	kicker.add_theme_color_override("font_color", Color("#ffe04a"))
@@ -36,7 +38,8 @@ func _ready() -> void:
 	box.add_child(_sub)
 
 
-func play(title: String, sub: String) -> void:
+func play(title: String, sub: String, kicker := "?  EVENT  ?") -> void:
+	_kicker.text = kicker
 	_title.text = tr(title)
 	_sub.text = sub
 	show()
