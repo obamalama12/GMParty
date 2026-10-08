@@ -92,6 +92,15 @@ func _ready():
 			State.JUMP:
 				$Model.play_animation("jump")
 
+# Bots jump when there is no floor ahead of them
+func ai_gap_ahead(dir: Vector3) -> bool:
+	if dir.length_squared() < 0.01:
+		return false
+	var from := global_position + dir.normalized() * 1.1 + Vector3(0, 0.5, 0)
+	var query := PhysicsRayQueryParameters3D.create(from, from + Vector3(0, -3.0, 0))
+	query.exclude = [get_rid()]
+	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
+
 func _physics_process(delta):
 	boost_time = maxf(0.0, boost_time - delta)
 	if not info.is_local():
@@ -117,6 +126,9 @@ func _physics_process(delta):
 			jump = true
 			if ai_current_waypoint.nodes.size() > 0:
 				ai_current_waypoint = ai_current_waypoint.nodes[0]
+		
+		if is_on_floor() and ai_gap_ahead(dir):
+			jump = true
 		
 		if abs(dir.x) < 0.05:
 			dir.x = 0
