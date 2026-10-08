@@ -5,7 +5,6 @@
 	"translation_directory": "res://plugins/minigames/tug_of_war/translations",
 	"type": [
 		"2v2",
-		"1v3",
 		"Duel"
 	],
 	"description": "MINIGAME_DESCRIPTION",
