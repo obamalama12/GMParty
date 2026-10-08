@@ -34,15 +34,15 @@ func show_popup(text: String, color: Color):
 	label.text = text
 	label.modulate = color
 	label.outline_size = 12
-	label.pixel_size = 0.006
+	label.pixel_size = 0.0035
 	label.font_size = 64
 	label.no_depth_test = true
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	add_child(label)
-	label.position = Vector3(0, 1.6, 0)
+	label.position = Vector3(0, 1.8, 0)
 	var tween := create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(label, "position:y", 2.4, 0.9)
+	tween.tween_property(label, "position:y", 2.5, 0.9)
 	tween.tween_property(label, "modulate:a", 0.0, 0.9).set_delay(0.3)
 	tween.chain().tween_callback(label.queue_free)
 

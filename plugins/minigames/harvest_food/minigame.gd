@@ -135,7 +135,7 @@ func _process(_delta: float) -> void:
 	label.text = text
 	label.modulate = color
 	label.font_size = 96
-	label.pixel_size = 0.01
+	label.pixel_size = 0.006
 	label.outline_size = 24
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	label.no_depth_test = true

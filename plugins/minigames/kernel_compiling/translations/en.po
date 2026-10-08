@@ -24,7 +24,7 @@ msgid "MINIGAME_ACTION_PRESS_BUTTON"
 msgstr "Press the button"
 
 msgid "KERNEL_COMPILING_GOLDEN"
-msgstr "GOLDEN KEY! x3"
+msgstr "GOLD KEY x3"
 
 msgid "KERNEL_COMPILING_STREAK"
 msgstr "STREAK x{count}!"
