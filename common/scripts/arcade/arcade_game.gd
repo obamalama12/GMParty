@@ -335,6 +335,40 @@ func sound(path: String) -> void:
 	player.play()
 
 
+## Pops a big message up in the middle of the screen on every peer (the server calls this).
+func announce(text: String, color := Color(1.0, 0.88, 0.25), hold := 1.1) -> void:
+	lobby.broadcast(_announce.bind(text, color, hold))
+	_announce(text, color, hold)
+
+
+@rpc func _announce(text: String, color: Color, hold: float) -> void:
+	var screen := get_node_or_null("Screen") as Control
+	if screen == null:
+		return
+	var label := Label.new()
+	label.text = text
+	label.theme_type_variation = &"HeaderLarge"
+	label.add_theme_font_size_override("font_size", 78)
+	label.add_theme_color_override("font_color", color)
+	label.add_theme_color_override("font_outline_color", Color(0.1, 0.05, 0.3))
+	label.add_theme_constant_override("outline_size", 14)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	label.offset_left = -500
+	label.offset_right = 500
+	label.offset_top = 120
+	label.offset_bottom = 220
+	label.pivot_offset = Vector2(500, 50)
+	label.scale = Vector2.ZERO
+	screen.add_child(label)
+	var tween := create_tween()
+	tween.tween_property(label, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_interval(hold)
+	tween.tween_property(label, "modulate:a", 0.0, 0.3)
+	tween.tween_callback(label.queue_free)
+
+
 func player_by_id(player_id: int) -> ArcadePlayer:
 	for p in players:
 		if p.info.player_id == player_id:

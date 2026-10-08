@@ -94,10 +94,10 @@ func run_minigame(cfg, mname: String, ty: String) -> void:
 	if shot_times.is_empty():
 		shot_times = [6.0, 16.0]
 	while elapsed < 100.0 and Utility.get_nodes_in_group(server_lobby, "Controller").size() == 0:
-		if shots != "" and not shot_times.is_empty() and elapsed >= shot_times[0]:
+		if shots != "" and not shot_times.is_empty() and (Time.get_ticks_msec() - started) / 1000.0 >= shot_times[0]:
 			shot_times.remove_at(0)
 			DirAccess.make_dir_recursive_absolute(shots)
-			get_viewport().get_texture().get_image().save_png("%s/%s_%d.png" % [shots, label, int(elapsed)])
+			get_viewport().get_texture().get_image().save_png("%s/%s_%d.png" % [shots, label, int((Time.get_ticks_msec() - started) / 1000.0)])
 		if mash:
 			Input.action_press("player1_action1")
 			await wait(0.07)

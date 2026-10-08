@@ -1,7 +1,7 @@
 extends ArcadeGame
 ## Tug of War: two teams pull a rope. Mash the action button as fast as you can! The team that drags the other
 ## over the line (or pulls harder when the time is up) wins. In the 1 vs 3 version the single player pulls with
-## the strength of two players.
+## the strength of two players. A match is the best of three rounds.
 
 const TEAM_SIDE := 4.6
 const DRAG := 3.1
@@ -19,6 +19,10 @@ var rope_mesh: MeshInstance3D
 var ai_timers := {}
 var ended := false
 var press_count := {}
+var round_wins := [0, 0]
+var round_number := 1
+var round_label: Label
+const ROUNDS := 3
 
 
 func build_world() -> void:
@@ -97,7 +101,19 @@ func build_world() -> void:
 			press_count[p.info.player_id] = 0
 			p.action_pressed.connect(_on_local_press.bind(p))
 			p.ai_brain = Callable()
-	duration = 26.0
+	duration = 18.0
+	round_label = Label.new()
+	round_label.theme_type_variation = &"HeaderMedium"
+	round_label.add_theme_color_override("font_outline_color", Color(0.1, 0.05, 0.3))
+	round_label.add_theme_constant_override("outline_size", 8)
+	round_label.add_theme_font_size_override("font_size", 36)
+	round_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	round_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	round_label.offset_left = -300
+	round_label.offset_right = 300
+	round_label.offset_top = 66
+	$Screen.add_child(round_label)
+	_update_round_label()
 
 
 func _team_of(player_id: int) -> int:
@@ -186,6 +202,19 @@ func on_time_up() -> void:
 		_end(0 if rope_pos > 0 else 1)
 
 
+func _update_round_label() -> void:
+	var dots := func(wins: int) -> String:
+		return "●".repeat(wins) + "○".repeat(maxi(ROUNDS / 2 + 1 - wins, 0))
+	round_label.text = "%s   ROUND %d   %s" % [dots.call(round_wins[0]), round_number, dots.call(round_wins[1])]
+
+
+@rpc func sync_round(wins0: int, wins1: int, number: int) -> void:
+	round_wins = [wins0, wins1]
+	round_number = number
+	_update_round_label()
+
+
+# A round is over. The match goes on until a team has two round wins or three rounds have been played.
 func _end(winner: int) -> void:
 	if ended:
 		return
@@ -194,7 +223,36 @@ func _end(winner: int) -> void:
 	for p in players:
 		var won := winner == _team_of(p.info.player_id)
 		p.show_animation("happy" if won else "sad")
-	get_tree().create_timer(1.6).timeout.connect(_finish.bind(winner))
+	if winner >= 0:
+		round_wins[winner] += 1
+	var decided: bool = round_wins[0] > ROUNDS / 2 or round_wins[1] > ROUNDS / 2 or round_number >= ROUNDS
+	var match_winner := -1
+	if round_wins[0] > round_wins[1]:
+		match_winner = 0
+	elif round_wins[1] > round_wins[0]:
+		match_winner = 1
+	if decided:
+		lobby.broadcast(sync_round.bind(round_wins[0], round_wins[1], round_number))
+		sync_round(round_wins[0], round_wins[1], round_number)
+		announce("TEAM %s WINS!" % ("RED" if match_winner == 0 else "BLUE") if match_winner >= 0 else "DRAW!", Color(1.0, 0.88, 0.25), 1.4)
+		get_tree().create_timer(2.2).timeout.connect(_finish.bind(match_winner))
+	else:
+		announce("ROUND %d: %s" % [round_number, ("RED" if winner == 0 else "BLUE") if winner >= 0 else "DRAW"], Color(0.9, 0.95, 1.0), 0.9)
+		get_tree().create_timer(2.4).timeout.connect(_next_round)
+
+
+func _next_round() -> void:
+	round_number += 1
+	rope_pos = 0.0
+	force = [0.0, 0.0]
+	time_left = duration
+	for p in players:
+		p.show_animation("idle")
+	lobby.broadcast(sync_rope.bind(0.0))
+	lobby.broadcast(sync_round.bind(round_wins[0], round_wins[1], round_number))
+	sync_round(round_wins[0], round_wins[1], round_number)
+	announce("GO!", Color(0.4, 1.0, 0.5), 0.5)
+	ended = false
 
 
 func _finish(winner: int) -> void:

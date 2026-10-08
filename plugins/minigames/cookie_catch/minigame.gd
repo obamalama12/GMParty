@@ -1,5 +1,6 @@
 extends ArcadeGame
-## Cookie Catch: cookies rain from the sky, catch as many as you can. Golden cookies are worth three, bombs stun you.
+## Cookie Catch: cookies rain from the sky, catch as many as you can. Golden cookies are worth three, bombs stun you,
+## stars make you fast for a few seconds and the last seconds are a cookie storm.
 
 const ARENA := 7.0
 const FALL_SPEED := 6.5
@@ -9,7 +10,10 @@ const CATCH_RADIUS := 0.85
 const COOKIE_TEXTURE := preload("res://common/scenes/board_logic/controller/icons/cookie.png")
 const BOMB_MESH := preload("res://assets/models/Bomb/Bomb.obj")
 
-enum Kind { COOKIE, GOLD, BOMB }
+enum Kind { COOKIE, GOLD, BOMB, STAR }
+
+const STORM_TIME := 14.0       # seconds left when the storm starts
+var storm := false
 
 var items := {}              # id -> { "node": Node3D, "shadow": MeshInstance3D, "kind": int, "age": float, "x": float, "z": float }
 var next_id := 0
@@ -42,6 +46,34 @@ func build_world() -> void:
 
 func on_go() -> void:
 	spawn_timer = 0.4
+	storm = false
+
+
+static var _star_tex: ImageTexture
+
+# A little pixel-art star: bright cyan with a dark blue outline
+func _star_texture() -> ImageTexture:
+	if _star_tex:
+		return _star_tex
+	var size := 48
+	var img := Image.create(size, size, false, Image.FORMAT_RGBA8)
+	var pts := PackedVector2Array()
+	for i in 10:
+		var r := 22.0 if i % 2 == 0 else 9.5
+		var a := -PI / 2.0 + i * PI / 5.0
+		pts.append(Vector2(24.0 + cos(a) * r, 25.0 + sin(a) * r))
+	for y in size:
+		for x in size:
+			var v := Vector2(x + 0.5, y + 0.5)
+			if Geometry2D.is_point_in_polygon(v, pts):
+				var inner := Geometry2D.offset_polygon(pts, -3.0)
+				var core := false
+				for poly in inner:
+					if Geometry2D.is_point_in_polygon(v, poly):
+						core = true
+				img.set_pixel(x, y, Color(0.45, 0.95, 1.0) if core else Color(0.1, 0.2, 0.6))
+	_star_tex = ImageTexture.create_from_image(img)
+	return _star_tex
 
 
 func _make_item(kind: int) -> Node3D:
@@ -51,6 +83,14 @@ func _make_item(kind: int) -> Node3D:
 		m.mesh = BOMB_MESH
 		m.scale = Vector3.ONE * 0.2
 		root.add_child(m)
+	elif kind == Kind.STAR:
+		var star := Sprite3D.new()
+		star.texture = _star_texture()
+		star.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		star.pixel_size = 0.014
+		star.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+		star.shaded = false
+		root.add_child(star)
 	else:
 		var s := Sprite3D.new()
 		s.texture = COOKIE_TEXTURE
@@ -140,15 +180,22 @@ func world_tick(delta: float) -> void:
 
 func server_tick(delta: float) -> void:
 	spawn_timer -= delta
+	if not storm and time_left <= STORM_TIME:
+		storm = true
+		announce("COOKIE STORM!", Color(1.0, 0.75, 0.2), 1.3)
 	if spawn_timer <= 0.0:
 		var progress := 1.0 - time_left / duration
-		spawn_timer = lerpf(0.55, 0.26, progress)
+		spawn_timer = lerpf(0.55, 0.3, progress)
+		if storm:
+			spawn_timer *= 0.42
 		var roll := randf()
 		var kind := Kind.COOKIE
-		if roll < 0.16:
+		if roll < (0.13 if storm else 0.16):
 			kind = Kind.BOMB
-		elif roll < 0.26:
+		elif roll < (0.13 if storm else 0.16) + (0.25 if storm else 0.10):
 			kind = Kind.GOLD
+		elif roll > 0.955:
+			kind = Kind.STAR
 		var ang := randf() * TAU
 		var r := sqrt(randf()) * (ARENA - 1.0)
 		var x := cos(ang) * r
@@ -185,6 +232,8 @@ func _caught(p: ArcadePlayer, kind: int) -> void:
 		Kind.BOMB:
 			scores[pid] = maxi(scores[pid] - 2, 0)
 			p.stun(1.3)
+		Kind.STAR:
+			p.boost(5.0)
 	$Screen/ScoreOverlay.set_score(pid, scores[pid])
 
 
@@ -238,7 +287,8 @@ func _ai(p: ArcadePlayer, delta: float) -> Dictionary:
 					break
 			if rival_closer:
 				continue
-			var value := (3.0 if item.kind == Kind.GOLD else 1.0) / (dist + 1.0)
+			var worth := 3.0 if item.kind == Kind.GOLD else (2.0 if item.kind == Kind.STAR else 1.0)
+			var value := worth / (dist + 1.0)
 			if value > best_value:
 				best_value = value
 				best = id

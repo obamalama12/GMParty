@@ -18,6 +18,8 @@ signal action_pressed
 var info: Lobby.PlayerInfo
 var speed_multiplier := 1.0
 var stunned := 0.0
+var boosted := 0.0                         # seconds of speed boost left
+const BOOST_FACTOR := 1.55
 var dead := false
 var frozen := false                        # set by games that pause the players for a moment
 
@@ -65,6 +67,7 @@ func _physics_process(delta: float) -> void:
 	if not info or not info.is_local():
 		return
 	stunned = maxf(stunned - delta, 0.0)
+	boosted = maxf(boosted - delta, 0.0)
 	var dir := Vector2.ZERO
 	var jump := false
 	if not frozen:
@@ -78,8 +81,9 @@ func _physics_process(delta: float) -> void:
 	if jump and jump_velocity > 0.0 and is_on_floor() and stunned <= 0.0:
 		velocity.y = jump_velocity
 	velocity.y -= gravity * delta
-	velocity.x = dir.x * speed * speed_multiplier
-	velocity.z = dir.y * speed * speed_multiplier
+	var factor := speed_multiplier * (BOOST_FACTOR if boosted > 0.0 else 1.0)
+	velocity.x = dir.x * speed * factor
+	velocity.z = dir.y * speed * factor
 	move_and_slide()
 	if arena_radius > 0.0:
 		var flat := Vector2(position.x, position.z)
@@ -129,6 +133,16 @@ func stun(duration: float) -> void:
 @rpc func _stun(duration: float) -> void:
 	stunned = maxf(stunned, duration)
 	play("stun")
+
+
+## Speeds the player up for a while. The server calls this.
+func boost(duration: float) -> void:
+	info.lobby.broadcast(_boost.bind(duration))
+	_boost(duration)
+
+
+@rpc func _boost(duration: float) -> void:
+	boosted = maxf(boosted, duration)
 
 
 ## The player is out: it is flung away and hidden. The server calls this.

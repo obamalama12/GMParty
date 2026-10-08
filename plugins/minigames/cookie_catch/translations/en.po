@@ -11,7 +11,7 @@ msgid "MINIGAME_NAME"
 msgstr "Cookie Catch"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "Cookies rain from the sky! Run around and catch as many as you can.\n\nGolden cookies are worth three. Do not catch a bomb: it stuns you and costs you two cookies.\n\nWho has the most cookies after 30 seconds wins!"
+msgstr "Cookies rain from the sky! Run around and catch as many as you can.\n\nGolden cookies are worth three. Do not catch a bomb: it stuns you and costs you two cookies. A star makes you fast for a few seconds.\n\nIn the last 14 seconds a cookie storm breaks out. Who has the most cookies after 45 seconds wins!"
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"
