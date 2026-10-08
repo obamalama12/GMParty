@@ -775,7 +775,7 @@ msgid "EVENT_COOKIE_SHOWER"
 msgstr "Cookie Shower!"
 
 msgid "EVENT_COOKIE_SHOWER_TEXT"
-msgstr "Cookies fall from the sky! Everybody gets 4, and {player} gets 6 more!"
+msgstr "Cookies fall from the sky! Everybody gets 2, and {player} gets 3 more!"
 
 msgid "EVENT_ROBIN_HOOD"
 msgstr "Robin Hood"
@@ -793,7 +793,7 @@ msgid "EVENT_TURBO_DICE"
 msgstr "Turbo Dice!"
 
 msgid "EVENT_TURBO_DICE_TEXT"
-msgstr "{player}'s next 3 rolls get +2. Go go go!"
+msgstr "{player}'s next 2 rolls get +1. Go go go!"
 
 msgid "EVENT_COOKIE_SWAP"
 msgstr "Cookie Swap!"
@@ -842,3 +842,24 @@ msgstr "Minigame Test Room"
 
 msgid "MENU_MINIGAMES_HINT"
 msgstr "Pick a minigame and a mode to jump straight in. You are Player 1, the rest are bots. Press Try on the info screen to practise."
+
+msgid "EVENT_LUCKY_DRAW"
+msgstr "Lucky Draw"
+
+msgid "EVENT_LUCKY_DRAW_TEXT"
+msgstr "Mayor Pixel draws a name from his hat: {player} wins {amount} cookies!"
+
+msgid "EVENT_COOKIE_TAX"
+msgstr "Cookie Tax"
+
+msgid "EVENT_COOKIE_TAX_TEXT"
+msgstr "Time to pay up! Everybody with 15 or more cookies pays {amount}."
+
+msgid "EVENT_COOKIE_TAX_NONE"
+msgstr "Nobody has 15 cookies, so nobody pays. This time."
+
+msgid "EVENT_UNDERDOG"
+msgstr "Underdog Bonus"
+
+msgid "EVENT_UNDERDOG_TEXT"
+msgstr "{player} is in last place, so Mayor Pixel hands over {amount} cookies. Keep going!"

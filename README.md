@@ -47,7 +47,7 @@ The minigame test room (main menu > Minigames) starts any minigame straight away
 ## Board events
 
 The pink "?" spaces of RetroValley trigger an event run by Mayor Pixel: Cookie Shower, Robin Hood, Surprise Gift, Turbo Dice,
-Cookie Swap, Double or Nothing and Sweet Crumbs (`common/scenes/board_logic/controller/board_events.gd`; add your own there).
+Cookie Swap, Double or Nothing, Sweet Crumbs, Lucky Draw, Cookie Tax and Underdog Bonus (`common/scenes/board_logic/controller/board_events.gd`; add your own there).
 `tools/board_check/event_test.gd` lands a bot on an event space for every event.
 
 ## Retro look

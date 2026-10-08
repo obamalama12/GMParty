@@ -4,7 +4,7 @@ extends RefCounted
 ## Every event changes the game on the server and returns what to tell the players: the title for the banner and the
 ## key and arguments of the text the mayor says.
 
-const EVENTS := ["cookie_shower", "robin_hood", "free_item", "turbo_dice", "cookie_swap", "double_or_nothing", "cake_crumbs"]
+const EVENTS := ["cookie_shower", "robin_hood", "free_item", "turbo_dice", "cookie_swap", "double_or_nothing", "cake_crumbs", "lucky_draw", "cookie_tax", "underdog"]
 
 
 # The event that happened last, so the same one never comes up twice in a row
@@ -31,6 +31,12 @@ static func run(player: PlayerBoard, players: Array, controller: Controller) -> 
 			return double_or_nothing(player, players, controller)
 		"cake_crumbs":
 			return cake_crumbs(player, players, controller)
+		"lucky_draw":
+			return lucky_draw(player, players, controller)
+		"cookie_tax":
+			return cookie_tax(player, players, controller)
+		"underdog":
+			return underdog(player, players, controller)
 	return cookie_shower(player, players, controller)
 
 
@@ -100,3 +106,35 @@ static func cake_crumbs(player: PlayerBoard, _players: Array, _controller: Contr
 	var amount := 2 + int(player.cakes == 0) * 2
 	player.cookies += amount
 	return {"title": "EVENT_CRUMBS", "text": "EVENT_CRUMBS_TEXT", "args": {"player": player.info.name, "amount": amount}}
+
+
+static func lucky_draw(_player: PlayerBoard, players: Array, _controller: Controller) -> Dictionary:
+	# any player can win, not only the one who landed on the space
+	var winner: PlayerBoard = players.pick_random()
+	var amount := 5
+	winner.cookies += amount
+	return {"title": "EVENT_LUCKY_DRAW", "text": "EVENT_LUCKY_DRAW_TEXT", "args": {"player": winner.info.name, "amount": amount}}
+
+
+static func cookie_tax(_player: PlayerBoard, players: Array, _controller: Controller) -> Dictionary:
+	# a small brake on whoever is far ahead
+	var amount := 3
+	var paid := false
+	for p: PlayerBoard in players:
+		if p.cookies >= 15:
+			p.cookies -= amount
+			paid = true
+	if not paid:
+		return {"title": "EVENT_COOKIE_TAX", "text": "EVENT_COOKIE_TAX_NONE", "args": {}}
+	return {"title": "EVENT_COOKIE_TAX", "text": "EVENT_COOKIE_TAX_TEXT", "args": {"amount": amount}}
+
+
+static func underdog(player: PlayerBoard, players: Array, controller: Controller) -> Dictionary:
+	# the player in last place (fewest cakes, then fewest cookies) gets a boost
+	var last: PlayerBoard = players[0]
+	for p: PlayerBoard in players:
+		if p.cakes < last.cakes or (p.cakes == last.cakes and p.cookies < last.cookies):
+			last = p
+	var amount := 6
+	last.cookies += amount
+	return {"title": "EVENT_UNDERDOG", "text": "EVENT_UNDERDOG_TEXT", "args": {"player": last.info.name, "amount": amount}}
