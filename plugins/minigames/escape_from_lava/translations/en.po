@@ -18,7 +18,7 @@ msgid "MINIGAME_NAME"
 msgstr "Escape from Lava"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. One of each these doors is blocked and won't open.\nThe first player that makes it safe to the top wins!"
+msgstr "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. One of each these doors is blocked and won't open.\nGreen orbs give a speed boost, red orbs make the lava surge - which is bad for everybody behind you! Watch out for the warning, the lava gets faster over time.\nThe first player that makes it safe to the top wins!"
 
 msgid "MINIGAME_ACTION_UP"
 msgstr "Move Up"
@@ -35,3 +35,12 @@ msgstr "Move Right"
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"
 msgstr "Finish!"
 
+
+msgid "ESCAPE_FROM_LAVA_SURGE_WARNING"
+msgstr "Lava surge incoming!"
+
+msgid "ESCAPE_FROM_LAVA_BOOST"
+msgstr "Speed!"
+
+msgid "ESCAPE_FROM_LAVA_RUSH"
+msgstr "Lava rush!"

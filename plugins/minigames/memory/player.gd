@@ -101,11 +101,12 @@ func _ready():
 			await ally_card.animation_player().animation_finished
 		if ally_card.variant == current_card().variant:
 			info.lobby.broadcast(point_scored)
-			self.points += 1
+			self.points += get_parent().score_pair(self, current_card())
 		else:
 			# wait for the animation to complete
 			ally_node.cooldown = 0.5
 			cooldown = 0.5
+			get_parent().break_streak(team)
 			ally_card.flip_down()
 			current_card().flip_down()
 		blocked = false

@@ -22,6 +22,9 @@ msgstr "Knock Off"
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
 "Each player attempts to knock all opponents off the iceberg.\n"
+"The ice cracks and shrinks as time passes, so stay near the middle! "
+"Roll through glowing orbs for a speed boost (yellow) or to become heavy and "
+"hard to push (red). If it takes too long, the ice melts away completely.\n"
 "Last person standing wins!"
 
 msgid "MINIGAME_ACTION_MOVE"
@@ -44,3 +47,15 @@ msgstr "{player} wins!"
 
 msgid "KNOCK_OFF_TEAM_WINS_MSG"
 msgstr "Team {team} wins!"
+
+msgid "KNOCK_OFF_ICE_CRACKING"
+msgstr "The ice is cracking!"
+
+msgid "KNOCK_OFF_SUDDEN_DEATH"
+msgstr "Sudden death!"
+
+msgid "KNOCK_OFF_POWER_RUSH"
+msgstr "{player}: Speed boost!"
+
+msgid "KNOCK_OFF_POWER_HEAVY"
+msgstr "{player}: Heavy!"

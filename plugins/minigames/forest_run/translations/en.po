@@ -20,7 +20,7 @@ msgid "MINIGAME_NAME"
 msgstr "Forest Run"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "Jump and run your way to the finish line"
+msgstr "Jump and run your way to the finish line before time runs out.\nCannonballs rain down from the sky, so keep moving! You have 3 lives: a hit or a fall costs one life (a fall sends you back to the last checkpoint).\nCollect golden coins for extra time and red mushrooms for a speed boost."
 
 msgid "MINIGAME_ACTION_UP"
 msgstr "Move Up"
@@ -36,3 +36,15 @@ msgstr "Move Right"
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"
+
+msgid "FOREST_RUN_LIVES"
+msgstr "Lives: {lives}"
+
+msgid "FOREST_RUN_OUCH"
+msgstr "Ouch!"
+
+msgid "FOREST_RUN_TIME_BONUS"
+msgstr "+{seconds}s"
+
+msgid "FOREST_RUN_SPEED"
+msgstr "Speed!"

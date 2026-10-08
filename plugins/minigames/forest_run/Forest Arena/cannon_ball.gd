@@ -22,7 +22,7 @@ func _process(delta):
 	
 	if collision:
 		if collision.get_collider().is_in_group("player") and multiplayer.is_server():
-			get_parent().get_parent().lobby.minigame_gnu_loose()
+			get_parent().get_parent().on_player_hit()
 		
 		$Sprite3D.hide()
 		self.set_process(false)

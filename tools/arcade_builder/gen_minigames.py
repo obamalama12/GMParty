@@ -26,15 +26,13 @@ GAMES = {
         title="Hot Bomb", node="HotBomb", types=["FFA"], score=False, duration=90.0,
         positions=[(3, 0), (0, 3), (-3, 0), (0, -3)],
         controls=[MOVE],
-        description="One player holds a lit bomb. Touch another player to pass it on!\n\nWhen the fuse is burnt up, "
-                    "the player with the bomb is out. The last one standing wins.",
+        description='One player holds a lit bomb. Touch another player to pass it on!\n\nWhen the fuse is burnt up, the carrier loses one of two lives. Grab speed and shield pickups. Later the lava rises and fireballs rain down. The last one standing wins.',
         extra={}),
     "jump_rope": dict(
-        title="Jump Rope", node="JumpRope", types=["FFA", "Duel"], score=False, duration=55.0,
+        title="Jump Rope", node="JumpRope", types=["FFA", "Duel"], score=False, duration=62.0,
         positions=[(-3.4, -1.5), (3.4, -1.5), (-3.4, 2.5), (3.4, 2.5)],
         controls=[MOVE, {"actions": ["action1"], "text": "MINIGAME_ACTION_JUMP"}],
-        description="A rope sweeps around the pole in the middle, faster and faster. Jump over it!\n\n"
-                    "Watch out: the rope turns around now and then, and more ropes join in. The last player who is not hit wins.",
+        description='A rope sweeps around the pole in the middle. Jump over it! Whoever is hit is out.\n\nThe rope speeds up, turns around, surges, fakes you out and sometimes swings high. Jump to grab coins and stars for bonus points. The best score wins.',
         extra={}),
     "tug_of_war": dict(
         title="Tug of War", node="TugOfWar", types=["2v2", "Duel"], score=False, duration=18.0,
@@ -47,8 +45,7 @@ GAMES = {
         title="Color Clash", node="ColorClash", types=["FFA", "Duel", "2v2"], score=False, duration=75.0,
         positions=[(-4.4, -4.4), (4.4, -4.4), (-4.4, 4.4), (4.4, 4.4)],
         controls=[MOVE],
-        description="A colour is called: run onto a tile of that colour before the time is up!\n\nThen every other tile "
-                    "drops away. Every round is faster. The last player standing wins.",
+        description='A colour is called: run onto a tile of that colour before the time is up!\n\nThen every other tile drops away. Watch for rare colours, trap tiles, double drops and a shrinking floor. Grab the star for a shield that saves your tile once. The last player standing wins.',
         extra={}),
 }
 

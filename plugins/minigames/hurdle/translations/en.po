@@ -18,7 +18,10 @@ msgid "MINIGAME_NAME"
 msgstr "Hurdles"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "The players stand on a moving platform.\n\nDo not fall off the platform! The last player standing wins."
+msgstr ""
+"The players stand on a moving platform.\n\n"
+"Do not fall off the platform! Watch out for the warning: the belt is about to reverse! "
+"Now and then it also surges forward. Jump over the hurdles. The last player standing wins."
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"
@@ -26,3 +29,12 @@ msgstr "Jump"
 msgid "HURDLE_PLAYER_WINS_MSG"
 msgstr "{player} wins!"
 
+
+msgid "HURDLE_REVERSE_WARNING"
+msgstr "Reversing!"
+
+msgid "HURDLE_SURGE"
+msgstr "Speed surge!"
+
+msgid "HURDLE_PLAYER_OUT_MSG"
+msgstr "{player} is out!"

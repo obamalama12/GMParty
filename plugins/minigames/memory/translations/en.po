@@ -23,7 +23,11 @@ msgstr "Memory"
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
 "Players must find matching card pairs.\n"
-"The team with more pairs wins!"
+"Match several pairs in a row for streak bonuses, and look for the golden "
+"card shown at the bottom: its pair is worth triple! "
+"Halfway through, the remaining cards get shuffled and are shown once more. "
+"Beware of the clock.\n"
+"The team with more points wins!"
 
 msgid "MINIGAME_ACTION_UP"
 msgstr "Move Up"
@@ -39,3 +43,18 @@ msgstr "Move Right"
 
 msgid "MINIGAME_ACTION_FLIP_CARD"
 msgstr "Flip Card"
+
+msgid "MEMORY_GOLDEN_PAIR"
+msgstr "Golden pair: worth 3 points!"
+
+msgid "MEMORY_GOLDEN_FOUND"
+msgstr "Golden pair!"
+
+msgid "MEMORY_STREAK"
+msgstr "Streak x{count}"
+
+msgid "MEMORY_SHUFFLE"
+msgstr "Shuffle! Remember the new cards!"
+
+msgid "MEMORY_TIME_UP"
+msgstr "Time is up!"

@@ -55,16 +55,26 @@ var fired_count := 0
 # because the cooldown timers of the peers differ slightly.
 func try_fire():
 	if fire_cooldown <= 0 and state != STATE.DEAD:
-		fire_cooldown = FIRE_COOLDOWN_TIME
+		fire_cooldown = get_parent().fire_cooldown_time()
 		fire()
 		get_parent().lobby.broadcast(fire)
 
+# Every fifth shot is a triple shot
+const TRIPLE_SHOT_EVERY := 5
+
 @rpc("call_local") func fire():
-	var ball := preload("res://plugins/minigames/bowling/ball.tscn").instantiate()
-	ball.position = position + Vector3(0, 0.25, -2)
-	ball.name = "Ball" + str(fired_count)
-	get_parent().add_child(ball)
-	fired_count += 1
+	var triple := fired_count % TRIPLE_SHOT_EVERY == TRIPLE_SHOT_EVERY - 1
+	var angles := [-0.3, 0.0, 0.3] if triple else [0.0]
+	for angle in angles:
+		var ball := preload("res://plugins/minigames/bowling/ball.tscn").instantiate()
+		ball.position = position + Vector3(0, 0.25, -2)
+		ball.dir_x = angle
+		ball.name = "Ball" + str(fired_count)
+		get_parent().add_child(ball)
+		fired_count += 1
+	if triple:
+		get_parent().show_banner(tr("BOWLING_TRIPLE_SHOT"), Color(0.5, 0.9, 1.0), 0.8)
+		get_parent()._play(preload("res://assets/sounds/ui/turn_start.wav"))
 
 func solo_player(delta: float):
 	if not info.is_ai():

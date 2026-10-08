@@ -23,6 +23,8 @@ msgid "MINIGAME_DESCRIPTION"
 msgstr ""
 "The solo player needs to shoot all other players off the platform to win.\n"
 "If the time runs out, the group wins.\n"
+"The cannon fires faster as time passes, every fifth shot is a triple shot, "
+"and in the last seconds it unleashes a barrage!\n"
 "Keep an eye out for falling boxes. They stun if you get hit, but also block bullets."
 
 msgid "MINIGAME_ACTION_MOVE"
@@ -48,3 +50,18 @@ msgstr "Throw ball"
 
 msgid "BOWLING_FINISH_MSG"
 msgstr "Finish!"
+
+msgid "BOWLING_STRIKE"
+msgstr "Strike!"
+
+msgid "BOWLING_KNOCKOUTS"
+msgstr "{count} / {max} down!"
+
+msgid "BOWLING_ALL_DOWN"
+msgstr "Perfect game!"
+
+msgid "BOWLING_TRIPLE_SHOT"
+msgstr "Triple shot!"
+
+msgid "BOWLING_BARRAGE"
+msgstr "Final barrage!"

@@ -11,7 +11,7 @@ msgid "MINIGAME_NAME"
 msgstr "Jump Rope"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "A rope sweeps around the pole in the middle, faster and faster. Jump over it!\n\nWatch out: the rope turns around now and then, and more ropes join in. The last player who is not hit wins."
+msgstr "A rope sweeps around the pole in the middle. Jump over it! Whoever is hit is out.\n\nThe rope speeds up, turns around, surges, fakes you out and sometimes swings high. Jump to grab coins and stars for bonus points. The best score wins."
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"

@@ -20,7 +20,7 @@ msgid "MINIGAME_NAME"
 msgstr "Dungeon Parkour"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "Jump and run your way to the finish line"
+msgstr "Jump and run your way to the finish line before time runs out.\nFireballs fly across the path - watch for the warning signs! You have 3 lives: a hit or a fall costs one life (a fall sends you back to the last checkpoint).\nCollect golden coins for extra time, green orbs for a speed boost and pink gems for an extra life."
 
 msgid "MINIGAME_ACTION_UP"
 msgstr "Move Up"
@@ -36,3 +36,18 @@ msgstr "Move Right"
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"
+
+msgid "DUNGEON_PARKOUR_LIVES"
+msgstr "Lives: {lives}"
+
+msgid "DUNGEON_PARKOUR_OUCH"
+msgstr "Ouch!"
+
+msgid "DUNGEON_PARKOUR_TIME_BONUS"
+msgstr "+{seconds}s"
+
+msgid "DUNGEON_PARKOUR_SPEED"
+msgstr "Speed!"
+
+msgid "DUNGEON_PARKOUR_LIFE"
+msgstr "+1 life!"

@@ -11,7 +11,7 @@ msgid "MINIGAME_NAME"
 msgstr "Tug of War"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "Two teams pull on a rope. Mash the button as fast as you can!\n\nThe team that drags the other one over the line wins the round.  Win two rounds to win the match."
+msgstr "Two teams pull on a rope. Mash the button as fast as you can!\n\nA ring shrinks onto the target ring on the floor: press right when they meet for a PERFECT pull that is much stronger. Keep hitting the beat to build a streak. The last seconds of a round are a final push, and the team that lost the last round starts the next one with a power pull.\n\nThe team that drags the other one over the line wins the round. Win two rounds to win the match. If the match is tied, a sudden-death round decides it!"
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"

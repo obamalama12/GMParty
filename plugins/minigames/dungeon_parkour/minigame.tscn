@@ -582,7 +582,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 35.0
+wait_time = 50.0
 autostart = true
 
 [node name="Remaining" type="Label" parent="."]

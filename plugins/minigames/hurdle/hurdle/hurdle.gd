@@ -25,7 +25,7 @@ func _ready():
 	update_rotation(up_vector, self)
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
-	time -= SPEED * get_parent().direction * state.step
+	time -= SPEED * get_parent().belt() * state.step
 	var path: Path3D = get_node(self.curve)
 	var curve := path.curve
 	var offset = fposmod(time, curve.get_baked_length())

@@ -1,6 +1,12 @@
 extends Node3D
 
 const LAVA_RISE_SPEED = 0.25
+const SURGE_HEIGHT := 0.45
+const SURGE_SPEED := 1.1
+const SURGE_WARNING_TIME := 1.8
+const PICKUP_BOOST := 0
+const PICKUP_RUSH := 1
+const BOOST_TIME := 3.0
 
 # Player Ids that reached the finish line
 var winners = []
@@ -23,7 +29,130 @@ func _do_server_setup():
 	process_stage($Stage2)
 	process_stage($Stage3)
 
+# Lava surge state (server)
+var lava_time := 0.0
+var next_surge := 8.0
+var surge_warning := 0.0
+var surge_left := 0.0
+var pickups_spawned := false
+var pickups := {}
+var shake := 0.0
+
+func _allow_rush() -> bool:
+	return true
+
+func show_banner(text: String, color: Color):
+	var label := Label.new()
+	label.text = text
+	label.theme_type_variation = &"HeaderLarge"
+	label.add_theme_color_override(&"font_color", color)
+	label.add_theme_color_override(&"font_shadow_color", Color.BLACK)
+	label.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	label.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	label.position.y = 110
+	$Screen.add_child(label)
+	var tween := create_tween()
+	tween.tween_interval(1.0)
+	tween.tween_property(label, ^"modulate:a", 0.0, 0.5)
+	tween.tween_callback(label.queue_free)
+
+func play_sound(path: String, pitch := 1.0):
+	var player := AudioStreamPlayer.new()
+	player.stream = load(path)
+	player.pitch_scale = pitch
+	player.bus = &"Effects"
+	add_child(player)
+	player.finished.connect(player.queue_free)
+	player.play()
+
+@rpc func surge_warn():
+	show_banner(tr("ESCAPE_FROM_LAVA_SURGE_WARNING"), Color(1, 0.4, 0.1))
+	play_sound("res://assets/sounds/wrong.wav", 0.6)
+	shake = 0.15
+
+@rpc func surge_hit():
+	shake = 0.5
+	play_sound("res://assets/sounds/wrong.wav", 0.5)
+
+func start_surge():
+	if surge_warning > 0 or surge_left > 0:
+		return
+	surge_warning = SURGE_WARNING_TIME
+	lobby.broadcast(surge_warn)
+	surge_warn()
+
+func spawn_pickups():
+	pickups_spawned = true
+	var candidates := []
+	for waypoint in $Navigation.get_children():
+		if waypoint.position.z > -22 and waypoint.position.z < 14:
+			candidates.append(waypoint)
+	candidates.shuffle()
+	var id := 0
+	for waypoint in candidates.slice(0, 7):
+		var type := PICKUP_BOOST
+		if _allow_rush() and id % 3 == 2:
+			type = PICKUP_RUSH
+		var pos: Vector3 = waypoint.position + Vector3(0, 0.9, 0)
+		lobby.broadcast(spawn_pickup.bind(id, type, pos))
+		spawn_pickup(id, type, pos)
+		id += 1
+
+@rpc func spawn_pickup(id: int, type: int, pos: Vector3):
+	var area := Area3D.new()
+	var col := CollisionShape3D.new()
+	var shape := SphereShape3D.new()
+	shape.radius = 0.8
+	col.shape = shape
+	area.add_child(col)
+	var mesh := MeshInstance3D.new()
+	var sphere := SphereMesh.new()
+	sphere.radius = 0.3
+	sphere.height = 0.6
+	mesh.mesh = sphere
+	var material := StandardMaterial3D.new()
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.albedo_color = Color(0.3, 1, 0.4) if type == PICKUP_BOOST else Color(1, 0.2, 0.1)
+	mesh.material_override = material
+	area.add_child(mesh)
+	add_child(area)
+	area.position = pos
+	pickups[id] = area
+	var tween := mesh.create_tween().set_loops()
+	tween.tween_property(mesh, ^"position:y", 0.25, 0.5).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(mesh, ^"position:y", -0.15, 0.5).set_trans(Tween.TRANS_SINE)
+	if multiplayer.is_server():
+		area.body_entered.connect(_on_pickup_entered.bind(id, type))
+
+func _on_pickup_entered(body, id: int, type: int):
+	if not pickups.has(id) or not body.is_in_group("players") or body.is_dead():
+		return
+	lobby.broadcast(collect_pickup.bind(id, type, body.get_path()))
+	collect_pickup(id, type, body.get_path())
+	if type == PICKUP_RUSH:
+		start_surge()
+
+@rpc func collect_pickup(id: int, type: int, player_path: NodePath):
+	if pickups.has(id):
+		pickups[id].queue_free()
+		pickups.erase(id)
+	var player = get_node_or_null(player_path)
+	if player:
+		if type == PICKUP_BOOST:
+			player.apply_boost(BOOST_TIME)
+			player.show_popup(tr("ESCAPE_FROM_LAVA_BOOST"), Color(0.4, 1, 0.5))
+		else:
+			player.show_popup(tr("ESCAPE_FROM_LAVA_RUSH"), Color(1, 0.4, 0.2))
+	play_sound("res://assets/sounds/correct.wav", 1.4 if type == PICKUP_BOOST else 0.7)
+
 func _client_process(delta):
+	if shake > 0:
+		shake = maxf(0.0, shake - delta)
+		$Camera3D.h_offset = randf_range(-shake, shake)
+		$Camera3D.v_offset = randf_range(-shake, shake)
+	else:
+		$Camera3D.h_offset = 0.0
+		$Camera3D.v_offset = 0.0
 	var min_progress = null
 	
 	for player in Utility.get_nodes_in_group(self, "players"):
@@ -34,7 +163,28 @@ func _client_process(delta):
 		$Camera3D.position +=  (Vector3(0, min_progress.y, min_progress.z) + Vector3(0, 3, -4) - $Camera3D.position) * delta
 
 func _server_process(delta):
-	$Lava.position += Vector3(0, 1, 0) * delta * LAVA_RISE_SPEED
+	if not pickups_spawned:
+		spawn_pickups()
+	var rising := $EndTimer.is_stopped()
+	if rising:
+		lava_time += delta
+		# The lava gets slowly faster, and periodically surges after a warning
+		var speed := LAVA_RISE_SPEED * (1.0 + lava_time * 0.012)
+		$Lava.position += Vector3(0, 1, 0) * delta * speed
+		next_surge -= delta
+		if next_surge <= 0:
+			next_surge = 8.0 + randf() * 3.0
+			start_surge()
+		if surge_warning > 0:
+			surge_warning -= delta
+			if surge_warning <= 0:
+				surge_left = SURGE_HEIGHT
+				lobby.broadcast(surge_hit)
+				surge_hit()
+		elif surge_left > 0:
+			var step := minf(surge_left, SURGE_SPEED * delta)
+			surge_left -= step
+			$Lava.position.y += step
 	lobby.broadcast(set_lava_height.bind($Lava.position.y))
 
 @rpc func set_lava_height(height: float):

@@ -207,7 +207,7 @@ theme_override_fonts/font = ExtResource("5")
 theme_override_font_sizes/font_size = 48
 
 [node name="Duration" type="Timer" parent="Control"]
-wait_time = 30.0
+wait_time = 45.0
 one_shot = true
 autostart = true
 

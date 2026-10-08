@@ -33,3 +33,18 @@ msgstr ""
 
 msgid "MINIGAME_ACTION_FLIP_CARD"
 msgstr ""
+
+msgid "MEMORY_GOLDEN_PAIR"
+msgstr ""
+
+msgid "MEMORY_GOLDEN_FOUND"
+msgstr ""
+
+msgid "MEMORY_STREAK"
+msgstr ""
+
+msgid "MEMORY_SHUFFLE"
+msgstr ""
+
+msgid "MEMORY_TIME_UP"
+msgstr ""

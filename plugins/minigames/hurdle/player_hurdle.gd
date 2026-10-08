@@ -62,7 +62,7 @@ func process_ai(state: PhysicsDirectBodyState3D):
 		ai_direction = 0.0
 	var dir = Vector3()
 	dir = Vector3(0, 0, ai_direction)
-	var v =  speed * dir.normalized() + PLATFORM_SPEED * Vector3(0, 0, get_parent().direction)
+	var v =  speed * dir.normalized() + PLATFORM_SPEED * Vector3(0, 0, get_parent().belt())
 	state.linear_velocity.x = v.x
 	state.linear_velocity.z = v.z
 	state.linear_velocity += dir * speed
@@ -79,7 +79,7 @@ func process_player(state: PhysicsDirectBodyState3D):
 	
 	var v =  speed * dir.normalized()
 	if on_floor:
-		v += PLATFORM_SPEED * Vector3(0, 0, get_parent().direction)
+		v += PLATFORM_SPEED * Vector3(0, 0, get_parent().belt())
 	state.linear_velocity.x = v.x
 	state.linear_velocity.z = v.z
 	face_direction(dir, state)

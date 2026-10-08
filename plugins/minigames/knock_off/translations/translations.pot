@@ -26,3 +26,15 @@ msgstr ""
 msgid "KNOCK_OFF_TEAM_WINS_MSG"
 msgstr ""
 
+
+msgid "KNOCK_OFF_ICE_CRACKING"
+msgstr ""
+
+msgid "KNOCK_OFF_SUDDEN_DEATH"
+msgstr ""
+
+msgid "KNOCK_OFF_POWER_RUSH"
+msgstr ""
+
+msgid "KNOCK_OFF_POWER_HEAVY"
+msgstr ""

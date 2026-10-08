@@ -28,3 +28,18 @@ msgstr ""
 msgid "BOWLING_FINISH_MSG"
 msgstr ""
 
+
+msgid "BOWLING_STRIKE"
+msgstr ""
+
+msgid "BOWLING_KNOCKOUTS"
+msgstr ""
+
+msgid "BOWLING_ALL_DOWN"
+msgstr ""
+
+msgid "BOWLING_TRIPLE_SHOT"
+msgstr ""
+
+msgid "BOWLING_BARRAGE"
+msgstr ""

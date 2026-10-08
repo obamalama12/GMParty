@@ -11,7 +11,7 @@ msgid "MINIGAME_NAME"
 msgstr "Color Clash"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "A colour is called: run onto a tile of that colour before the time is up!\n\nThen every other tile drops away. Every round is faster. The last player standing wins."
+msgstr "A colour is called: run onto a tile of that colour before the time is up!\n\nThen every other tile drops away. Watch for rare colours, trap tiles, double drops and a shrinking floor. Grab the star for a shield that saves your tile once. The last player standing wins."
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"

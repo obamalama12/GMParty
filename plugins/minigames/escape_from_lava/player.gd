@@ -7,6 +7,27 @@ const GRAVITY_DIR = Vector3(0, -1, 0)
 var info: Lobby.PlayerInfo
 
 var movement = Vector3()
+var boost_time := 0.0
+
+func apply_boost(duration: float):
+	boost_time = duration
+
+func show_popup(text: String, color: Color):
+	var label := Label3D.new()
+	label.text = text
+	label.modulate = color
+	label.outline_size = 12
+	label.pixel_size = 0.008
+	label.font_size = 64
+	label.no_depth_test = true
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	add_child(label)
+	label.position = Vector3(0, 2.0, 0)
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label, "position:y", 3.0, 0.9)
+	tween.tween_property(label, "modulate:a", 0.0, 0.7).set_delay(0.3)
+	tween.chain().tween_callback(label.queue_free)
 
 @onready var ai_waypoint = $"../Navigation/Waypoint"
 @onready var lobby := Lobby.get_lobby(self)
@@ -23,6 +44,7 @@ func _ready():
 	set_multiplayer_authority(info.addr.peer_id)
 
 func _process(delta):
+	boost_time = maxf(0.0, boost_time - delta)
 	if not info.is_local() or state == STATE.DEAD:
 		return
 	var dir = Vector3()
@@ -47,7 +69,7 @@ func _process(delta):
 	
 	movement += GRAVITY_DIR * GRAVITY * delta
 	if state != STATE.DEAD:
-		set_velocity(movement + dir * SPEED)
+		set_velocity(movement + dir * SPEED * (1.6 if boost_time > 0 else 1.0))
 		set_up_direction(Vector3(0, 1, 0))
 		move_and_slide()
 	

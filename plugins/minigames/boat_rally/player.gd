@@ -47,6 +47,10 @@ func _process(_delta: float):
 		for rock in Utility.get_nodes_in_group(get_parent(), "rock"):
 			if rock.position.z < pos.z + 10 and rock.position.z > pos.z and abs(rock.position.x - pos.x) < 6:
 				rocks.append(rock)
+		# Try to dodge incoming bombs as well
+		for bomb in Utility.get_nodes_in_group(get_parent(), "bomb"):
+			if bomb.position.y < 14 and bomb.position.z < pos.z + 7 and bomb.position.z > pos.z - 1 and abs(bomb.position.x - pos.x) < 2.5:
+				rocks.append(bomb)
 		
 		if len(rocks) == 0:
 			fire.rpc_id(1)

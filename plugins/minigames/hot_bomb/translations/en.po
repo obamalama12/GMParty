@@ -11,7 +11,7 @@ msgid "MINIGAME_NAME"
 msgstr "Hot Bomb"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "One player holds a lit bomb. Touch another player to pass it on!\n\nWhen the fuse is burnt up, the player with the bomb is out. The last one standing wins."
+msgstr "One player holds a lit bomb. Touch another player to pass it on!\n\nWhen the fuse is burnt up, the carrier loses one of two lives. Grab speed and shield pickups. Later the lava rises and fireballs rain down. The last one standing wins."
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"

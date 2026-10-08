@@ -24,6 +24,16 @@ func _process(_delta):
 				target = ghost
 				dist = ndist
 		
+		if target == null or dist > 9.0:
+			# No ghost close by, go for a power-up instead
+			var pdist = INF
+			for powerup in Utility.get_nodes_in_group(get_parent(), "powerup"):
+				var ndist = (powerup.position - self.position).length_squared()
+				if ndist < pdist:
+					pdist = ndist
+					target = powerup
+					dist = ndist
+		
 		if target:
 			$Navigation.target_position = target.position
 			dir = ($Navigation.get_next_path_position() - self.position).normalized() * SPEED

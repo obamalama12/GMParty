@@ -14,6 +14,31 @@ var minigame_mode: int
 
 var is_walking = false
 
+# Temporary power-up state (see knock_off.gd)
+enum Power { NONE, RUSH, HEAVY }
+var power: int = Power.NONE
+var power_left := 0.0
+var speed_mult := 1.0
+var base_mass := 0.1
+
+func apply_power(type: int, duration: float):
+	clear_power()
+	power = type
+	power_left = duration
+	match type:
+		Power.RUSH:
+			speed_mult = 1.6
+		Power.HEAVY:
+			mass = base_mass * 4.0
+			$Ball.scale = Vector3.ONE * 1.25
+
+func clear_power():
+	power = Power.NONE
+	power_left = 0.0
+	speed_mult = 1.0
+	mass = base_mass
+	$Ball.scale = Vector3.ONE
+
 func set_winner(win):
 	winner = win
 	
@@ -65,6 +90,13 @@ func is_on_floor():
 
 func _process(delta):
 	$Model.position = self.position + Vector3(0, 0.5, 0)
+	if power != Power.NONE:
+		power_left -= delta
+		# Pulse while a power-up is active, faster when about to run out
+		var pulse := 1.0 + 0.06 * sin(Time.get_ticks_msec() * (0.03 if power_left < 1.5 else 0.01))
+		$Ball.scale = Vector3.ONE * (1.25 if power == Power.HEAVY else 1.0) * pulse
+		if power_left <= 0.0:
+			clear_power()
 	if not is_multiplayer_authority() or not active:
 		return
 	var dir = Vector3()
@@ -97,7 +129,7 @@ func _process(delta):
 	dir = dir.normalized()
 	
 	if dir.length_squared() > 0:
-		apply_torque(dir * accel)
+		apply_torque(dir * accel * speed_mult * (mass / base_mass))
 		var target_rotation = atan2(-dir.z, dir.x)
 		
 		var diff1 = (target_rotation - $Model.rotation.y)
@@ -119,7 +151,7 @@ func _process(delta):
 				$Model.play_animation("idle")
 			is_walking = false
 	
-	if angular_velocity.length() > max_speed:
-		angular_velocity = max_speed * angular_velocity.normalized()
+	if angular_velocity.length() > max_speed * speed_mult:
+		angular_velocity = max_speed * speed_mult * angular_velocity.normalized()
 	
 	info.lobby.broadcast(position_update.bind(position, angular_velocity, $Model.rotation.y))

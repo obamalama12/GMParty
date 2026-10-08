@@ -10,6 +10,10 @@ func _ready():
 	if multiplayer.is_server():
 		enter_stage($Player1, 0)
 
+func _allow_rush() -> bool:
+	# Only the runners can collect orbs, so a lava rush would only hurt their own team
+	return false
+
 func _do_server_setup():
 	# Prevent door locking in parent
 	pass

@@ -25,3 +25,12 @@ msgstr ""
 msgid "HURDLE_PLAYER_WINS_MSG"
 msgstr ""
 
+
+msgid "HURDLE_REVERSE_WARNING"
+msgstr ""
+
+msgid "HURDLE_SURGE"
+msgstr ""
+
+msgid "HURDLE_PLAYER_OUT_MSG"
+msgstr ""

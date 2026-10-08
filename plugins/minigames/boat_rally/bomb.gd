@@ -14,6 +14,16 @@ func _process(delta):
 	if self.position.y < -5:
 		queue_free()
 
+var popped := false
+
+@rpc func pop():
+	popped = true
+	$Mesh.hide()
+	$Sprite3D.hide()
+	$Particles.emitting = true
+	set_process(false)
+	get_tree().create_timer(1.5).timeout.connect(queue_free)
+
 @rpc func explode():
 	$Mesh.hide()
 	$Sprite3D.hide()
@@ -24,7 +34,14 @@ func _process(delta):
 func _on_Bomb_body_entered(body):
 	if not multiplayer.is_server():
 		return
-	if body.is_in_group("player") and not body.is_hit:
+	if body.is_in_group("player") and not body.is_hit and not popped:
+		if body.shield:
+			# The shield absorbs the bomb
+			popped = true
+			body.break_shield()
+			get_parent().get_parent().lobby.broadcast(pop)
+			pop()
+			return
 		body.is_hit = true
 		var lobby: Lobby = get_parent().get_parent().lobby
 		lobby.broadcast(explode)

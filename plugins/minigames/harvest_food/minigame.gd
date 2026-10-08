@@ -6,6 +6,22 @@ const Player := preload("res://plugins/minigames/harvest_food/player.gd")
 
 const PUMPKIN_MASS: float = 10.0
 
+const GAME_TIME := 45.0
+# Golden rush: all new pumpkins are golden
+const RUSH_START := 28.0
+const RUSH_END := 20.0
+# Fever time at the end: double points and faster growth
+const FEVER_TIME := 12.0
+
+const SND_RUSH := preload("res://assets/sounds/ui/turn_start.wav")
+const SND_FEVER := preload("res://assets/sounds/ui/round_win.wav")
+const SND_SCORE := preload("res://assets/sounds/correct.wav")
+const SND_STEAL := preload("res://assets/sounds/wrong.wav")
+
+var rush := false
+var fever := false
+var msg_tween: Tween
+
 @onready var plants: Array[Plant] = [
 	$Plant1,
 	$Plant2,
@@ -53,9 +69,96 @@ func _ready():
 		var material: StandardMaterial3D = nodes[0].get_node(^"MeshInstance3D").get_surface_override_material(0)
 		material.albedo_texture = PluginSystem.character_loader.load_character_icon(nodes[1].info.character)
 	
+	# Restart so that the game takes longer than the default of the scene
+	$Timer.start(GAME_TIME)
+	$Screen/Message.text = ""
+	
 	if multiplayer.is_server():
 		# Start the game timer on the server
 		$Timer.timeout.connect(_on_Timer_timeout)
+
+func growth_multiplier() -> float:
+	return 2.0 if fever else 1.0
+
+func _play(stream: AudioStream):
+	# The server has no audio
+	if multiplayer.is_server():
+		return
+	var player := AudioStreamPlayer.new()
+	player.stream = stream
+	add_child(player)
+	player.play()
+	player.finished.connect(player.queue_free)
+
+func _show_message(text: String, color: Color, duration: float):
+	var msg: Label = $Screen/Message
+	if msg_tween:
+		msg_tween.kill()
+	msg.text = text
+	msg.modulate = color
+	msg.pivot_offset = msg.size / 2.0
+	msg.scale = Vector2(1.6, 1.6)
+	msg_tween = create_tween()
+	msg_tween.tween_property(msg, "scale", Vector2.ONE, 0.2)
+	msg_tween.tween_interval(duration)
+	msg_tween.tween_callback(msg.set.bind("text", ""))
+
+# Phases of the game are derived from the timer on every peer
+func _process(_delta: float) -> void:
+	var left: float = $Timer.time_left
+	if $Timer.is_stopped():
+		return
+	var new_rush := left <= RUSH_START and left > RUSH_END
+	if new_rush != rush:
+		rush = new_rush
+		if rush:
+			_show_message(tr("HARVEST_GOLDEN_RUSH"), Color(1, 0.85, 0.2), 2.0)
+			_play(SND_RUSH)
+			if multiplayer.is_server():
+				for plant in plants:
+					if plant.active and not plant.special:
+						lobby.broadcast(plant.make_golden)
+						plant.make_golden()
+		else:
+			_show_message("", Color.WHITE, 0.0)
+	if left <= FEVER_TIME and not fever:
+		fever = true
+		_show_message(tr("HARVEST_FEVER"), Color(1, 0.4, 0.2), 2.5)
+		_play(SND_FEVER)
+		if multiplayer.is_server():
+			# More pumpkins to harvest
+			grow_new_plant()
+			grow_new_plant()
+
+@rpc func _popup(pos: Vector3, text: String, color: Color, sound: int):
+	var label := Label3D.new()
+	label.text = text
+	label.modulate = color
+	label.font_size = 96
+	label.pixel_size = 0.01
+	label.outline_size = 24
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	label.no_depth_test = true
+	label.position = pos + Vector3(0, 2.0, 0)
+	add_child(label)
+	var tween := label.create_tween().set_parallel()
+	tween.tween_property(label, "position:y", pos.y + 4.0, 1.0)
+	tween.tween_property(label, "modulate:a", 0.0, 0.4).set_delay(0.6)
+	tween.chain().tween_callback(label.queue_free)
+	if sound == 1:
+		_play(SND_SCORE)
+	elif sound == 2:
+		_play(SND_STEAL)
+
+func popup(pos: Vector3, text: String, color: Color, sound: int = 0):
+	lobby.broadcast(_popup.bind(pos, text, color, sound))
+	_popup(pos, text, color, sound)
+
+func same_team(a: Player, b: Player) -> bool:
+	for team in lobby.minigame_state.minigame_teams:
+		if a.info.player_id in team and b.info.player_id in team:
+			return true
+	return false
 
 func _on_Timer_timeout():
 	match lobby.minigame_state.minigame_type:
@@ -91,13 +194,17 @@ func grow_new_plant() -> void:
 	for plant in plants:
 		if not plant.active:
 			valid.append(plant)
+	if valid.is_empty():
+		return
 	var target: Plant = valid.pick_random()
-	var special := randf() < 0.1
+	var special := rush or randf() < 0.12
 	lobby.broadcast(target.activate.bind(special))
 	target.activate(special)
 
 func get_value(body: Pumpkin) -> float:
 	var modifier := 2.0 if body.special else 1.0
+	if fever:
+		modifier *= 2.0
 	return body.point_value * modifier
 
 func _on_area_body_entered(body: Pumpkin, player: Player) -> void:
@@ -105,7 +212,13 @@ func _on_area_body_entered(body: Pumpkin, player: Player) -> void:
 	if not multiplayer.is_server():
 		return
 	
-	player.score += get_value(body)
+	var value := get_value(body)
+	body.set_meta(&"scored_value", value)
+	body.set_meta(&"scorer", player)
+	player.score += value
+	var text := "+%.1f" % value
+	var color := Color(1, 0.85, 0.2) if body.special else Color.WHITE
+	popup(body.global_position, text, color, 1)
 	$Screen/ScoreOverlay.set_score(player.info.player_id, player.score)
 
 func _on_area_body_exited(body: Pumpkin, player: Player) -> void:
@@ -113,5 +226,8 @@ func _on_area_body_exited(body: Pumpkin, player: Player) -> void:
 	if not multiplayer.is_server():
 		return
 	
-	player.score -= get_value(body)
+	# Remove exactly what was awarded, even if the fever state changed meanwhile
+	player.score -= body.get_meta(&"scored_value", get_value(body))
+	if body.get_meta(&"scorer", null) == player:
+		body.remove_meta(&"scorer")
 	$Screen/ScoreOverlay.set_score(player.info.player_id, player.score)

@@ -4,25 +4,53 @@ extends ArcadeGame
 
 const GRID := 6
 const TILE := 2.0
-const COLORS := [Color(0.93, 0.28, 0.30), Color(0.30, 0.52, 0.96), Color(0.34, 0.80, 0.42), Color(0.99, 0.85, 0.25), Color(0.72, 0.42, 0.92)]
+const COLORS := [Color(0.93, 0.28, 0.30), Color(0.30, 0.52, 0.96), Color(0.34, 0.80, 0.42), Color(0.99, 0.85, 0.25), Color(0.72, 0.42, 0.92), Color(0.08, 0.06, 0.1)]
 const COLOR_NAMES := ["RED", "BLUE", "GREEN", "YELLOW", "PURPLE"]
+const TRAP := 5                 # colour index of a trap tile (never a safe tile)
 const FALL_Y := -2.5
 const DROP_HOLD := 1.5          # seconds the floor stays gone
 const BREAK := 1.0              # pause after the floor is back
+const POWER_RADIUS := 1.0
 
 enum Phase { START, THINK, DROP, BREAK }
+enum Kind { NORMAL, RARE, TRAPS, DOUBLE, SHRINK, QUICK }
 
-var tiles: Array = []           # { "body": StaticBody3D, "mesh": MeshInstance3D, "mat": StandardMaterial3D, "color": int, "pos": Vector3 }
+var tiles: Array = []           # { "body", "shape", "mesh", "mat", "color": int, "pos": Vector3, "idx": int, "gone": bool }
 var target := 0
+var kind := Kind.NORMAL
+var think_total := 3.0
 var phase := Phase.START
 var phase_left := 0.0
 var round_number := 0
 var survived := {}              # player id -> rounds survived, kept by the server
 var alive := {}                 # player id -> bool, kept by the server
+var shields := {}               # player id -> bool: survives the next drop
+var shield_nodes := {}
 var ended := false
 var call_label: Label
 var lights: Array[OmniLight3D] = []
 var pulse := 0.0
+var power_tile := -1            # index of the tile with the shield star, -1 = none
+var power_node: Node3D
+var traps: Array = []           # tile indices of this round's trap tiles
+var traps_permanent := false
+var traps_dropped := true
+var double_pending := false
+var shrink_stage := 0
+
+
+func _tile_layer(idx: int) -> int:
+	var ix := idx / GRID
+	var iz := idx % GRID
+	return mini(mini(ix, GRID - 1 - ix), mini(iz, GRID - 1 - iz))
+
+
+func _active() -> Array:
+	var out: Array = []
+	for t in tiles:
+		if not t.gone:
+			out.append(t.idx)
+	return out
 
 
 func build_world() -> void:
@@ -67,7 +95,7 @@ func build_world() -> void:
 			mesh.mesh = bm
 			body.add_child(mesh)
 			floor_holder.add_child(body)
-			tiles.append({"body": body, "shape": shape, "mesh": mesh, "mat": mat, "color": 0, "pos": pos})
+			tiles.append({"body": body, "shape": shape, "mesh": mesh, "mat": mat, "color": 0, "pos": pos, "idx": tiles.size(), "gone": false})
 	# disco lights circling over the floor
 	for i in 4:
 		var l := OmniLight3D.new()
@@ -77,6 +105,26 @@ func build_world() -> void:
 		l.position = Vector3(0, 4.5, 0)
 		add_child(l)
 		lights.append(l)
+	# the shield star that waits on a tile in some rounds
+	power_node = Node3D.new()
+	var star := MeshInstance3D.new()
+	var star_mesh := BoxMesh.new()
+	star_mesh.size = Vector3(0.7, 0.7, 0.7)
+	var star_mat := StandardMaterial3D.new()
+	star_mat.albedo_color = Color(1.0, 0.85, 0.2)
+	star_mat.emission_enabled = true
+	star_mat.emission = Color(1.0, 0.8, 0.1)
+	star_mat.emission_energy_multiplier = 1.5
+	star_mesh.material = star_mat
+	star.mesh = star_mesh
+	star.rotation = Vector3(0.6, 0.0, 0.6)
+	power_node.add_child(star)
+	var star_light := OmniLight3D.new()
+	star_light.light_color = Color(1.0, 0.85, 0.3)
+	star_light.omni_range = 3.5
+	power_node.add_child(star_light)
+	power_node.visible = false
+	add_child(power_node)
 	# HUD: the called colour
 	call_label = Label.new()
 	call_label.theme_type_variation = &"HeaderLarge"
@@ -90,8 +138,7 @@ func build_world() -> void:
 	call_label.offset_top = 78
 	call_label.offset_bottom = 150
 	$Screen.add_child(call_label)
-	var spots := [Vector3(-8.5, 0.05, -1), Vector3(8.5, 0.05, -1), Vector3(-8.5, 0.05, 2.5), Vector3(8.5, 0.05, 2.5)]
-	spots = [tiles[GRID * 1 + 1].pos, tiles[GRID * 4 + 1].pos, tiles[GRID * 1 + 4].pos, tiles[GRID * 4 + 4].pos]
+	var spots := [tiles[GRID * 1 + 1].pos, tiles[GRID * 4 + 1].pos, tiles[GRID * 1 + 4].pos, tiles[GRID * 4 + 4].pos]
 	for i in players.size():
 		var p := players[i]
 		p.position = spots[i] + Vector3(0, 0.25, 0)
@@ -99,17 +146,67 @@ func build_world() -> void:
 		p.ai_brain = _ai
 		survived[p.info.player_id] = 0
 		alive[p.info.player_id] = true
-	_recolor(_make_colors(), 0)
+		shields[p.info.player_id] = false
+		var bubble := MeshInstance3D.new()
+		var sph := SphereMesh.new()
+		sph.radius = 0.85
+		sph.height = 1.7
+		var bm := StandardMaterial3D.new()
+		bm.albedo_color = Color(0.4, 0.9, 1.0, 0.35)
+		bm.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		bm.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		sph.material = bm
+		bubble.mesh = sph
+		bubble.position.y = 0.8
+		bubble.visible = false
+		p.add_child(bubble)
+		shield_nodes[p.info.player_id] = bubble
+	var all: Array = []
+	for t in tiles:
+		all.append(t.idx)
+	var first := _plan_colors(all, [], -1, Kind.NORMAL)
+	_recolor(first.colors, first.called)
 	call_label.text = ""
 
 
-func _make_colors() -> Array:
-	# every colour shows up often enough that the called one is never a tiny island
+## Picks the colours of the tiles. `active` are the tile indices still in the game, `trap_list` become trap tiles.
+## Returns { "colors": Array (36 ints, -1 for tiles that are gone), "called": int }.
+func _plan_colors(active: Array, trap_list: Array, want_called: int, round_kind: int) -> Dictionary:
 	var colors: Array = []
-	for i in GRID * GRID:
-		colors.append(i % COLORS.size())
-	colors.shuffle()
-	return colors
+	colors.resize(GRID * GRID)
+	colors.fill(-1)
+	var bag: Array = []
+	for i in active.size():
+		bag.append(i % 5)
+	bag.shuffle()
+	for i in active.size():
+		colors[active[i]] = bag[i]
+	for idx in trap_list:
+		colors[idx] = TRAP
+	# which colours can be called? the ones on at least one safe tile
+	var counts := [0, 0, 0, 0, 0]
+	for idx in active:
+		if colors[idx] >= 0 and colors[idx] < 5:
+			counts[colors[idx]] += 1
+	var choices: Array = []
+	for c in 5:
+		if counts[c] > 0:
+			choices.append(c)
+	var called: int = choices.pick_random()
+	if want_called >= 0 and choices.has(want_called):
+		called = want_called
+	if round_kind == Kind.RARE:
+		# only two tiles keep the called colour, the rest becomes another colour
+		var mine: Array = []
+		for idx in active:
+			if colors[idx] == called:
+				mine.append(idx)
+		mine.shuffle()
+		while mine.size() > 2:
+			var idx: int = mine.pop_back()
+			var other: int = (called + 1 + randi() % 4) % 5
+			colors[idx] = other
+	return {"colors": colors, "called": called}
 
 
 func _recolor(colors: Array, called: int) -> void:
@@ -117,8 +214,10 @@ func _recolor(colors: Array, called: int) -> void:
 	for i in tiles.size():
 		var t = tiles[i]
 		t.color = colors[i]
+		if colors[i] < 0:
+			continue
 		t.mat.albedo_color = COLORS[colors[i]]
-		t.mat.emission = COLORS[colors[i]]
+		t.mat.emission = COLORS[colors[i]] if colors[i] != TRAP else Color(1.0, 0.1, 0.05)
 		t.mat.emission_energy_multiplier = 0.04
 
 
@@ -127,41 +226,105 @@ func on_go() -> void:
 	phase_left = 0.8
 
 
-@rpc func start_round(colors: Array, called: int, think: float, number: int) -> void:
+func _kind_text(k: int) -> String:
+	match k:
+		Kind.RARE:
+			return "RARE COLOUR!"
+		Kind.TRAPS:
+			return "TRAP TILES!"
+		Kind.DOUBLE:
+			return "DOUBLE DROP!"
+		Kind.SHRINK:
+			return "FLOOR SHRINKS!"
+		Kind.QUICK:
+			return "AGAIN, QUICK!"
+	return ""
+
+
+@rpc func start_round(colors: Array, called: int, think: float, number: int, round_kind: int, trap_list: Array, permanent: bool, power: int) -> void:
 	_recolor(colors, called)
 	phase = Phase.THINK
 	phase_left = think
+	think_total = think
 	round_number = number
+	kind = round_kind
+	traps = trap_list
+	traps_permanent = permanent
+	traps_dropped = trap_list.is_empty()
+	power_tile = power
+	power_node.visible = power >= 0
+	if power >= 0:
+		power_node.position = tiles[power].pos + Vector3(0, 1.0, 0)
 	call_label.text = ""
 	call_label.add_theme_color_override("font_color", COLORS[called])
 	sound("res://assets/sounds/countdown.wav")
 
 
-@rpc func drop_tiles() -> void:
+@rpc func drop_traps(list: Array, permanent: bool) -> void:
+	traps_dropped = true
+	for idx in list:
+		var t = tiles[idx]
+		if t.gone:
+			continue
+		var tween := create_tween()
+		tween.tween_property(t.body, "position:y", -9.0, 0.6).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		t.shape.set_deferred("disabled", true)
+		t.color = -2          # not a safe tile any more
+		if permanent:
+			t.gone = true
+	if power_tile in list:
+		power_tile = -1
+		power_node.visible = false
+	sound("res://assets/sounds/arcade/thud.wav")
+
+
+@rpc func drop_tiles(saved: Array) -> void:
 	phase = Phase.DROP
 	phase_left = DROP_HOLD
 	call_label.text = ""
+	power_node.visible = false
+	power_tile = -1
 	var any := false
 	for t in tiles:
-		if t.color != target:
-			var tween := create_tween()
-			tween.tween_property(t.body, "position:y", -9.0, 0.7).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-			t.shape.set_deferred("disabled", true)
-			any = true
+		if t.gone or t.color == target:
+			continue
+		if saved.has(t.idx):
+			t.mat.emission_energy_multiplier = 1.6
+			t.mat.emission = Color(0.4, 0.9, 1.0)
+			continue
+		var tween := create_tween()
+		tween.tween_property(t.body, "position:y", -9.0, 0.7).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		t.shape.set_deferred("disabled", true)
+		any = true
 	if any:
 		sound("res://assets/sounds/arcade/thud.wav")
 
 
-@rpc func restore_tiles() -> void:
+@rpc func restore_tiles(brk: float) -> void:
 	phase = Phase.BREAK
-	phase_left = BREAK
+	phase_left = brk
 	for t in tiles:
+		if t.gone:
+			continue
 		t.body.position = t.pos
 		t.shape.set_deferred("disabled", false)
 
 
+@rpc func take_power(player_id: int) -> void:
+	power_tile = -1
+	power_node.visible = false
+	set_shield(player_id, true)
+	sound("res://assets/sounds/arcade/pass.wav")
+
+
+@rpc func set_shield(player_id: int, on: bool) -> void:
+	shields[player_id] = on
+	if shield_nodes.has(player_id):
+		shield_nodes[player_id].visible = on
+
+
 func _think_time() -> float:
-	return maxf(3.6 - 0.28 * round_number, 1.55)
+	return maxf(3.6 - 0.26 * round_number, 1.6)
 
 
 func world_tick(delta: float) -> void:
@@ -170,14 +333,27 @@ func world_tick(delta: float) -> void:
 	for i in lights.size():
 		var a := pulse * 0.9 + i * TAU / lights.size()
 		lights[i].position = Vector3(cos(a) * 6.0, 4.5, sin(a) * 6.0)
+	if power_node.visible:
+		power_node.rotation.y += delta * 3.0
+		power_node.position.y = 1.0 + 0.15 * sin(pulse * 4.0)
 	if phase == Phase.THINK:
-		call_label.text = "STAND ON %s   %.1f" % [COLOR_NAMES[target], phase_left]
+		var prefix := "STAND ON %s" % COLOR_NAMES[target]
+		call_label.text = "%s   %.1f" % [prefix, phase_left]
 		var glow := 0.5 + 0.5 * sin(pulse * 12.0)
 		for t in tiles:
-			t.mat.emission_energy_multiplier = (0.45 + 0.55 * glow) if t.color == target else 0.02
+			if t.gone or t.color == -2:
+				continue
+			if t.color == target:
+				t.mat.emission_energy_multiplier = 0.45 + 0.55 * glow
+			elif t.color == TRAP:
+				t.mat.emission_energy_multiplier = 0.2 + 1.2 * (0.5 + 0.5 * sin(pulse * 22.0))
+			else:
+				t.mat.emission_energy_multiplier = 0.02
 	elif phase == Phase.BREAK:
 		for t in tiles:
 			t.mat.emission_energy_multiplier = 0.04
+			if not t.gone and t.color >= 0:
+				t.mat.emission = COLORS[t.color] if t.color != TRAP else Color(1.0, 0.1, 0.05)
 
 
 func server_tick(delta: float) -> void:
@@ -188,8 +364,28 @@ func server_tick(delta: float) -> void:
 		var pid := p.info.player_id
 		if alive[pid] and p.position.y < FALL_Y:
 			alive[pid] = false
+			if shields[pid]:
+				lobby.broadcast(set_shield.bind(pid, false))
+				set_shield(pid, false)
 			p.knock_out(Vector3(0.01, 0, 0.01))
 			sound("res://assets/sounds/wrong.wav")
+	if phase == Phase.THINK:
+		# the trap tiles fall away half way through the round
+		if not traps_dropped and phase_left <= think_total * 0.5:
+			traps_dropped = true
+			lobby.broadcast(drop_traps.bind(traps, traps_permanent))
+			drop_traps(traps, traps_permanent)
+		# the shield star
+		if power_tile >= 0:
+			for p in players:
+				var pid := p.info.player_id
+				if not alive[pid] or shields[pid] or p.position.y < -0.5:
+					continue
+				var tpos: Vector3 = tiles[power_tile].pos
+				if Vector2(p.position.x - tpos.x, p.position.z - tpos.z).length() < POWER_RADIUS:
+					lobby.broadcast(take_power.bind(pid))
+					take_power(pid)
+					break
 	if phase_left > 0.0:
 		return
 	match phase:
@@ -199,22 +395,96 @@ func server_tick(delta: float) -> void:
 			_end_check()
 			if ended:
 				return
-			round_number += 1
-			var called := randi() % COLORS.size()
-			var colors := _make_colors()
-			var think := _think_time()
-			lobby.broadcast(start_round.bind(colors, called, think, round_number))
-			start_round(colors, called, think, round_number)
+			_begin_round()
 		Phase.THINK:
-			lobby.broadcast(drop_tiles)
-			drop_tiles()
+			var saved := _shield_saves()
+			lobby.broadcast(drop_tiles.bind(saved))
+			drop_tiles(saved)
 		Phase.DROP:
 			# the floor comes back: everybody still alive has survived this round
 			for p in players:
 				if alive[p.info.player_id]:
 					survived[p.info.player_id] += 1
-			lobby.broadcast(restore_tiles)
-			restore_tiles()
+			var brk := BREAK
+			if kind == Kind.DOUBLE:
+				brk = 0.45
+			lobby.broadcast(restore_tiles.bind(brk))
+			restore_tiles(brk)
+
+
+## The tiles that stay because a shielded player stands on them when the floor drops. The shields are used up.
+func _shield_saves() -> Array:
+	var saved: Array = []
+	for p in players:
+		var pid := p.info.player_id
+		if not alive[pid] or not shields[pid] or p.position.y < -0.5:
+			continue
+		for t in tiles:
+			if t.gone or t.color == target or t.color == -2:
+				continue
+			if absf(p.position.x - t.pos.x) < TILE * 0.5 and absf(p.position.z - t.pos.z) < TILE * 0.5:
+				saved.append(t.idx)
+				lobby.broadcast(set_shield.bind(pid, false))
+				set_shield(pid, false)
+				break
+	return saved
+
+
+func _pick_kind() -> int:
+	if double_pending:
+		double_pending = false
+		return Kind.QUICK
+	if (round_number >= 5 and shrink_stage == 0) or (round_number >= 9 and shrink_stage == 1):
+		return Kind.SHRINK
+	if round_number <= 1:
+		return Kind.NORMAL
+	var pool := [Kind.NORMAL, Kind.RARE, Kind.RARE]
+	if round_number >= 3:
+		pool.append_array([Kind.TRAPS, Kind.TRAPS, Kind.DOUBLE])
+	return pool.pick_random()
+
+
+func _begin_round() -> void:
+	round_number += 1
+	var active := _active()
+	var round_kind := _pick_kind()
+	var trap_list: Array = []
+	var permanent := false
+	var think := _think_time()
+	match round_kind:
+		Kind.RARE:
+			think += 0.5
+		Kind.TRAPS:
+			var pool := active.duplicate()
+			pool.shuffle()
+			trap_list = pool.slice(0, mini(3 + round_number / 6, maxi(active.size() / 4, 1)))
+			think += 0.4
+		Kind.SHRINK:
+			for idx in active:
+				if _tile_layer(idx) == shrink_stage:
+					trap_list.append(idx)
+			permanent = true
+			shrink_stage += 1
+			think += 0.7
+		Kind.DOUBLE:
+			double_pending = true
+		Kind.QUICK:
+			think = 1.7
+	var plan := _plan_colors(active, trap_list, -1, round_kind)
+	# a shield star on a tile that is NOT safe: grab it and risk the run, or play it safe
+	var power := -1
+	if round_number >= 2 and randf() < 0.5 and round_kind != Kind.QUICK:
+		var spots: Array = []
+		for idx in active:
+			if plan.colors[idx] != plan.called and plan.colors[idx] != TRAP:
+				spots.append(idx)
+		if not spots.is_empty():
+			power = spots.pick_random()
+	lobby.broadcast(start_round.bind(plan.colors, plan.called, think, round_number, round_kind, trap_list, permanent, power))
+	start_round(plan.colors, plan.called, think, round_number, round_kind, trap_list, permanent, power)
+	var text := _kind_text(round_kind)
+	if text != "":
+		announce(text, Color(1.0, 0.55, 0.3) if round_kind in [Kind.TRAPS, Kind.SHRINK] else Color(0.5, 0.9, 1.0), 0.6)
 
 
 func _alive_players() -> Array:
@@ -256,11 +526,15 @@ func on_time_up() -> void:
 
 # ----- the bots -----
 
-func _nearest_target_tile(from: Vector3):
+func _safe_tile_at(pos: Vector3, tile) -> bool:
+	return absf(pos.x - tile.pos.x) < TILE * 0.4 and absf(pos.z - tile.pos.z) < TILE * 0.4
+
+
+func _nearest_target_tile(from: Vector3, skip: Array = []):
 	var best = null
 	var best_d := INF
 	for t in tiles:
-		if t.color != target:
+		if t.gone or t.color != target or skip.has(t.idx):
 			continue
 		var d := Vector2(t.pos.x - from.x, t.pos.z - from.z).length()
 		if d < best_d:
@@ -270,7 +544,7 @@ func _nearest_target_tile(from: Vector3):
 
 
 func _ai(p: ArcadePlayer, _delta: float) -> Dictionary:
-	if not running or phase == Phase.DROP:
+	if not running or phase == Phase.DROP or p.dead:
 		return {"dir": Vector2.ZERO}
 	var pid := p.info.player_id
 	# slower bots wait a moment before they react to the call
@@ -280,13 +554,33 @@ func _ai(p: ArcadePlayer, _delta: float) -> Dictionary:
 			reaction = 0.9
 		Lobby.Difficulty.NORMAL:
 			reaction = 0.55
-	if phase == Phase.THINK and phase_left > _think_time() - reaction:
+	if phase == Phase.THINK and phase_left > think_total - reaction:
 		return {"dir": Vector2.ZERO}
 	var tile = _nearest_target_tile(p.position)
 	if tile == null:
 		return {"dir": Vector2.ZERO}
-	# an easy bot sometimes heads for the wrong colour and has to scramble
+	var here := Vector2(p.position.x, p.position.z)
+	# a shield star is worth a detour if there is time to get to a safe tile afterwards
+	if phase == Phase.THINK and power_tile >= 0 and not shields[pid] and p.info.ai_difficulty != Lobby.Difficulty.EASY:
+		var ppos: Vector3 = tiles[power_tile].pos
+		var after = _nearest_target_tile(ppos)
+		if after != null:
+			var route := here.distance_to(Vector2(ppos.x, ppos.z)) + Vector2(ppos.x, ppos.z).distance_to(Vector2(after.pos.x, after.pos.z))
+			if route < p.speed * (phase_left - 0.35):
+				var to_star := Vector2(ppos.x - p.position.x, ppos.z - p.position.z)
+				if to_star.length() > 0.3:
+					return {"dir": to_star.normalized()}
+	# already on a safe tile: stay put
+	if _safe_tile_at(p.position, tile) or (tile.color == target and _on_any_target(p.position)):
+		return {"dir": Vector2.ZERO}
 	var to := Vector2(tile.pos.x - p.position.x, tile.pos.z - p.position.z)
 	if to.length() < 0.4:
 		return {"dir": Vector2.ZERO}
 	return {"dir": to.normalized()}
+
+
+func _on_any_target(pos: Vector3) -> bool:
+	for t in tiles:
+		if not t.gone and t.color == target and _safe_tile_at(pos, t):
+			return true
+	return false

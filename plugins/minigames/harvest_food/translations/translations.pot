@@ -20,3 +20,12 @@ msgstr ""
 
 msgid "MINIGAME_ACTION_PICKUP"
 msgstr ""
+
+msgid "HARVEST_GOLDEN_RUSH"
+msgstr ""
+
+msgid "HARVEST_FEVER"
+msgstr ""
+
+msgid "HARVEST_STOLEN"
+msgstr ""

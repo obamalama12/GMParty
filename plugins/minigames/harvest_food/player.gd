@@ -124,6 +124,11 @@ func update_animation(walking: bool):
 		var bodies: Array[Node3D] = area.get_overlapping_bodies()
 		if len(bodies) > 0:
 			var body: Pumpkin = bodies[0]
+			# Taking a pumpkin out of somebody else's field is stealing
+			var scorer = body.get_meta(&"scorer", null)
+			if scorer != null and is_instance_valid(scorer) and scorer != self \
+					and not minigame.same_team(self, scorer):
+				minigame.popup(body.global_position, tr("HARVEST_STOLEN"), Color(1, 0.3, 0.3), 2)
 			minigame.lobby.broadcast(_on_carry.bind(body.point_value, body.special))
 			_on_carry(body.point_value, body.special)
 			minigame.lobby.broadcast(body.remove)

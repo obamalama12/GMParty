@@ -4,6 +4,7 @@ const SPEED := 10.
 const MAX_TIME := 4.
 
 var time = 0
+var dir_x := 0.0
 
 @rpc func die():
 	queue_free()
@@ -14,7 +15,7 @@ var time = 0
 func _server_process(delta):
 	time += delta
 	
-	var forward := Vector3(0, 0, -1)
+	var forward := Vector3(dir_x, 0, -1)
 	var collider := move_and_collide(forward * SPEED * delta)
 	
 	if time > MAX_TIME:

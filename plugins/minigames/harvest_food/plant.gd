@@ -32,7 +32,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if active:
-		point_value += delta * GROWTH_SPEED
+		point_value += delta * GROWTH_SPEED * (minigame.growth_multiplier() if minigame else 1.0)
 	point_value = minf(point_value, MAX_POINTS)
 	collision_shape.scale = Vector3.ONE * maxf(0.001, point_value)
 
@@ -57,3 +57,6 @@ func pickup(player: Player) -> void:
 @rpc func reset() -> void:
 	point_value = 0.0
 	active = false
+
+@rpc func make_golden() -> void:
+	special = true
