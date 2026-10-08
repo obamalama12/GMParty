@@ -90,7 +90,7 @@
 [ext_resource type="Script" path="res://common/scenes/board_logic/player_board/player_board.gd" id="88_c3loc"]
 [ext_resource type="PackedScene" path="res://common/scenes/board_logic/node/node.tscn" id="89_0uxoa"]
 [ext_resource type="Script" path="res://common/scenes/board_logic/node/node.gd" id="90_hyg5p"]
-[ext_resource type="AudioStream" path="res://assets/music/boards/kdevalley.wav" id="91_77pd8"]
+[ext_resource type="AudioStream" path="res://assets/music/retro/valley_stroll.ogg" id="91_77pd8"]
 [ext_resource type="PackedScene" path="res://common/scenes/speech_dialog/speech_dialog.tscn" id="92_us6nd"]
 [ext_resource type="Script" path="res://common/scenes/speech_dialog/speech_dialog.gd" id="93_cera1"]
 

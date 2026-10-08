@@ -33,9 +33,16 @@ Currently, Godot Engine version 4.7 is used.
 
 ## Minigames
 
-Besides the original ones there are four arcade minigames made for Retro Party: **Cookie Catch** (catch falling cookies, avoid bombs),
-**Hot Bomb** (pass the lit bomb on), **Jump Rope** (jump the sweeping rope) and **Tug of War** (mash the button). Their logic is in
+Besides the original ones there are five arcade minigames made for Retro Party: **Cookie Catch** (catch falling cookies and stars,
+survive the cookie storm), **Hot Bomb** (pass the lit bomb on), **Jump Rope** (jump the sweeping rope), **Tug of War**
+(mash the button, best of three) and **Color Clash** (run to the called colour before the other tiles drop). Their logic is in
 `plugins/minigames/<name>/minigame.gd` on top of `common/scripts/arcade`; `tools/arcade_test` plays them to the end with bots.
+
+## Music
+
+The board, the main menu and the arcade minigames have original chiptune tracks (pulse, triangle and noise channels) that
+`tools/music_builder/make_music.py` synthesises into `assets/music/retro` (needs numpy and ffmpeg).
+The minigame test room (main menu > Minigames) starts any minigame straight away.
 
 ## Board events
 

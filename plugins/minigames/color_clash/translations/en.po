@@ -1,0 +1,20 @@
+# English texts of the minigame Color Clash.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "MINIGAME_NAME"
+msgstr "Color Clash"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "A colour is called: run onto a tile of that colour before the time is up!\n\nThen every other tile drops away. Every round is faster. The last player standing wins."
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Jump"
+
+msgid "MINIGAME_ACTION_PULL"
+msgstr "Pull (press as fast as you can)"

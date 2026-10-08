@@ -1,3 +1,10 @@
+## assets/music/retro
+### valley_stroll.ogg | cookie_rush.ogg | volcano_panic.ogg | big_top.ogg | tug_march.ogg | disco_floor.ogg | press_start.ogg
+
+Composed and synthesised for this project by `tools/music_builder/make_music.py`.
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ## assets/music/menus
 ### main menu.ogg
 

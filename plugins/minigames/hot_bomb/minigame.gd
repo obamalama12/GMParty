@@ -23,7 +23,7 @@ var ai_wander := {}
 func build_world() -> void:
 	make_sky(Color(0.16, 0.05, 0.22), Color(0.95, 0.38, 0.18), Color(0.2, 0.05, 0.05))
 	make_camera(Vector3(0, 10.5, 9.0), Vector3(0, 0.3, 0.5), 50.0)
-	make_music("res://assets/music/minigames/escape from lava.ogg")
+	make_music("res://assets/music/retro/volcano_panic.ogg")
 	# a cracked rock platform in a lava lake, rocks and dead trees around it, and a glow from below
 	add_floor(ARENA, 3, [Color(0.26, 0.19, 0.34), Color(0.0, 0.0, 0.0), Color(0.9, 0.32, 0.06), Color(1.0, 0.45, 0.05)], 7.0)
 	var lava := MeshInstance3D.new()

@@ -345,6 +345,8 @@ func announce(text: String, color := Color(1.0, 0.88, 0.25), hold := 1.1) -> voi
 	var screen := get_node_or_null("Screen") as Control
 	if screen == null:
 		return
+	if hold >= 0.8:
+		sound("res://assets/sounds/ui/round_win.wav")
 	var label := Label.new()
 	label.text = text
 	label.theme_type_variation = &"HeaderLarge"

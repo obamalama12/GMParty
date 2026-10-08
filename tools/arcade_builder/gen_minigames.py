@@ -15,11 +15,12 @@ MOVE = {"actions": ["spacer", "up", "spacer", "left", "down", "right"], "text": 
 
 GAMES = {
     "cookie_catch": dict(
-        title="Cookie Catch", node="CookieCatch", types=["FFA", "Duel", "2v2"], score=True, duration=30.0,
+        title="Cookie Catch", node="CookieCatch", types=["FFA", "Duel", "2v2"], score=True, duration=45.0,
         positions=[(-3, -3), (3, -3), (-3, 3), (3, 3)],
         controls=[MOVE],
         description="Cookies rain from the sky! Run around and catch as many as you can.\n\nGolden cookies are worth three. "
-                    "Do not catch a bomb: it stuns you and costs you two cookies.\n\nWho has the most cookies after 30 seconds wins!",
+                    "Do not catch a bomb: it stuns you and costs you two cookies. A star makes you fast for a few seconds.\n\n"
+                    "In the last 14 seconds a cookie storm breaks out. Who has the most cookies after 45 seconds wins!",
         extra={}),
     "hot_bomb": dict(
         title="Hot Bomb", node="HotBomb", types=["FFA"], score=False, duration=90.0,
@@ -36,11 +37,18 @@ GAMES = {
                     "Watch out: the rope turns around now and then, and more ropes join in. The last player who is not hit wins.",
         extra={}),
     "tug_of_war": dict(
-        title="Tug of War", node="TugOfWar", types=["2v2", "1v3", "Duel"], score=False, duration=26.0,
+        title="Tug of War", node="TugOfWar", types=["2v2", "Duel"], score=False, duration=18.0,
         positions=[(-4.6, -0.8), (-4.6, 0.8), (4.6, -0.8), (4.6, 0.8)],
         controls=[{"actions": ["action1"], "text": "MINIGAME_ACTION_PULL"}],
         description="Two teams pull on a rope. Mash the button as fast as you can!\n\nThe team that drags the other one "
-                    "over the line wins. In the 1 vs 3 version the single player pulls as hard as two players.",
+                    "over the line wins the round. Win two rounds to win the match.",
+        extra={}),
+    "color_clash": dict(
+        title="Color Clash", node="ColorClash", types=["FFA", "Duel", "2v2"], score=False, duration=75.0,
+        positions=[(-4.4, -4.4), (4.4, -4.4), (-4.4, 4.4), (4.4, 4.4)],
+        controls=[MOVE],
+        description="A colour is called: run onto a tile of that colour before the time is up!\n\nThen every other tile "
+                    "drops away. Every round is faster. The last player standing wins.",
         extra={}),
 }
 

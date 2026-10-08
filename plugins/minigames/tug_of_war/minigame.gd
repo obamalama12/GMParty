@@ -28,7 +28,7 @@ const ROUNDS := 3
 func build_world() -> void:
 	make_sky(Color(0.35, 0.62, 0.95), Color(0.85, 0.93, 1.0), Color(0.5, 0.7, 0.4))
 	make_camera(Vector3(0, 5.8, 8.6), Vector3(0, 0.8, 0), 56.0)
-	make_music("res://assets/music/minigames/harvest food.ogg")
+	make_music("res://assets/music/retro/tug_march.ogg")
 	# a sports field: red team on the left, blue team on the right, the mud pit in the middle, a fence and a crowd of trees behind
 	add_floor(11.0, 4, [Color(0.93, 0.42, 0.38), Color(0.40, 0.58, 0.95), Color(0.97, 0.9, 0.55), Color(1, 1, 1)])
 	var pit := MeshInstance3D.new()

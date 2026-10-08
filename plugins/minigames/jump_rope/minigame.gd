@@ -26,7 +26,7 @@ var sync_timer := 0.0
 func build_world() -> void:
 	make_sky(Color(0.95, 0.5, 0.45), Color(1.0, 0.85, 0.55), Color(0.7, 0.4, 0.3))
 	make_camera(Vector3(0, 9.8, 8.2), Vector3(0, 0.4, 0.5), 50.0)
-	make_music("res://assets/music/minigames/haunted dreams.ogg")
+	make_music("res://assets/music/retro/big_top.ogg")
 	# a circus ring: red and cream sectors, a golden middle and a ring of balloon poles, with bushes and trees behind it
 	add_floor(ARENA, 1, [Color(0.93, 0.25, 0.25), Color(0.99, 0.93, 0.80), Color(0.99, 0.93, 0.80), Color(1.0, 0.8, 0.2)], 16.0)
 	pole_ring(ARENA + 0.9, 9, 1.9, Color(0.95, 0.95, 0.95), Color(0.95, 0.25, 0.3), Color(0.3, 0.55, 1.0), 195.0, 345.0)

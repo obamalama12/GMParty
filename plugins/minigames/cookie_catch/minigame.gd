@@ -25,7 +25,7 @@ var ai_targets := {}         # player id -> { "id": item id, "time": float }
 func build_world() -> void:
 	make_sky(Color(0.35, 0.62, 0.95), Color(0.85, 0.93, 1.0), Color(0.5, 0.7, 0.4))
 	make_camera(Vector3(0, 12.2, 10.6), Vector3(0, 0.4, 0.6), 50.0)
-	make_music("res://assets/music/minigames/harvest food.ogg")
+	make_music("res://assets/music/retro/cookie_rush.ogg")
 	# a picnic: the checked cloth in the middle of a mown lawn, a fence and a row of trees behind it
 	add_floor(ARENA, 2, [Color(0.52, 0.80, 0.34), Color(0.45, 0.73, 0.29), Color(0.90, 0.22, 0.22), Color(0.96, 0.82, 0.45)], 14.0)
 	fence_arc(ARENA + 0.9, 196.0, 344.0, 15)

@@ -87,6 +87,7 @@ func play(player_name: String, texture: Texture2D, player_index: int) -> void:
 	_title.text = tr("CONTEXT_LABEL_YOUR_TURN").to_upper().replace("!", "")
 	_title.modulate = color.lerp(Color.WHITE, 0.85)
 
+	_play_sound("res://assets/sounds/ui/turn_start.wav")
 	var y := get_viewport_rect().size.y * 0.42
 	if _tween:
 		_tween.kill()
@@ -121,3 +122,15 @@ func dismiss() -> void:
 	var out := create_tween()
 	out.tween_property(_band, "position:x", get_viewport_rect().size.x + 20.0, 0.28).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 	out.tween_callback(hide)
+
+
+func _play_sound(path: String) -> void:
+	var stream := load(path) as AudioStream
+	if stream == null:
+		return
+	var player := AudioStreamPlayer.new()
+	player.stream = stream
+	player.bus = &"Effects"
+	add_child(player)
+	player.finished.connect(player.queue_free)
+	player.play()
