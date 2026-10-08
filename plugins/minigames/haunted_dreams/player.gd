@@ -18,9 +18,13 @@ func _process(_delta):
 	else:
 		var target
 		var dist = INF
+		var best_score = INF
 		for ghost in Utility.get_nodes_in_group(get_parent(), "ghost"):
 			var ndist = (ghost.position - self.position).length_squared()
-			if ghost.position.length_squared() < 25 and dist > ndist:
+			# Prefer ghosts that are close to the bed, but don't run too far for them
+			var score = ghost.position.length() + 0.35 * sqrt(ndist)
+			if ghost.position.length_squared() < 49 and score < best_score:
+				best_score = score
 				target = ghost
 				dist = ndist
 		
