@@ -5,6 +5,8 @@ extends Control
 const PLAYER_COLORS := [Color("#e8483f"), Color("#3f84e8"), Color("#3fbf5f"), Color("#f2c030")]
 const BAND_H := 150.0
 const SLANT := 46.0
+const SCALE := 0.7          # smaller than the full-size design
+const BAND_W := 900.0
 
 var _band: Control
 var _poly_dark: Polygon2D
@@ -69,7 +71,8 @@ func _shape(w: float, h: float, inset: float = 0.0) -> PackedVector2Array:
 func play(player_name: String, texture: Texture2D, player_index: int) -> void:
 	var color: Color = PLAYER_COLORS[(player_index - 1) % PLAYER_COLORS.size()]
 	var screen_w := get_viewport_rect().size.x
-	var w := screen_w - 200.0
+	var w := BAND_W
+	_band.scale = Vector2(SCALE, SCALE)
 	_band.size = Vector2(w, BAND_H)
 	_poly_accent.polygon = _shape(w, BAND_H + 12.0)
 	_poly_accent.color = color
@@ -84,18 +87,18 @@ func play(player_name: String, texture: Texture2D, player_index: int) -> void:
 	_title.text = tr("CONTEXT_LABEL_YOUR_TURN").to_upper().replace("!", "")
 	_title.modulate = color.lerp(Color.WHITE, 0.85)
 
-	var y := get_viewport_rect().size.y * 0.30
+	var y := get_viewport_rect().size.y * 0.42
 	if _tween:
 		_tween.kill()
 	show()
 	modulate.a = 1.0
-	_band.position = Vector2(-w - 20.0, y)
+	_band.position = Vector2(-w * SCALE - 20.0, y)
 	_portrait.scale = Vector2.ZERO
 	_portrait.pivot_offset = Vector2(125, 250)
 	_name.modulate.a = 0.0
 	_title.modulate.a = 0.0
 	_tween = create_tween()
-	_tween.tween_property(_band, "position:x", 100.0, 0.32).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	_tween.tween_property(_band, "position:x", (screen_w - w * SCALE) / 2.0, 0.32).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	_tween.parallel().tween_property(_portrait, "scale", Vector2.ONE, 0.4).set_delay(0.12).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	_tween.parallel().tween_property(_name, "modulate:a", 1.0, 0.2).set_delay(0.18)
 	_tween.parallel().tween_property(_title, "modulate:a", 1.0, 0.2).set_delay(0.24)
