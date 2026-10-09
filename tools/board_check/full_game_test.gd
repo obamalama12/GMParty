@@ -11,13 +11,17 @@ func wait(s: float) -> void:
 
 func press_ok_forever() -> void:
 	while true:
-		for action in ["player1_ok", "ui_accept"]:
+		# every few presses also a random direction, so path forks and menus can be passed
+		var actions := ["player1_ok", "ui_accept"]
+		if randi() % 3 == 0:
+			actions.append(["player1_left", "player1_right", "player1_up", "player1_down"].pick_random())
+		for action in actions:
 			var e := InputEventAction.new()
 			e.action = action
 			e.pressed = true
 			Input.parse_input_event(e)
 		await wait(0.1)
-		for action in ["player1_ok", "ui_accept"]:
+		for action in actions:
 			var e := InputEventAction.new()
 			e.action = action
 			e.pressed = false
