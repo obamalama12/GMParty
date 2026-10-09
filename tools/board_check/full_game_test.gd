@@ -10,9 +10,12 @@ func wait(s: float) -> void:
 
 
 func press_ok_forever() -> void:
+	var iteration := 0
 	while true:
 		# every few presses also a random direction, so path forks and menus can be passed
-		var actions := ["player1_ok"]
+		# a real key press on the info screens is a plain ui_accept; it is sent on its own, never together with player1_ok
+		iteration += 1
+		var actions := ["ui_accept"] if iteration % 5 == 0 else ["player1_ok"]
 		if randi() % 3 == 0:
 			actions.append(["player1_left", "player1_right", "player1_up", "player1_down"].pick_random())
 		for action in actions:
