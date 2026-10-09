@@ -14,6 +14,9 @@ func set_player_id(p: int):
 	show()
 
 func client_accepted():
+	# a second accept (a double press) must not touch the already removed key hint
+	if not has_node("VBoxContainer"):
+		return
 	$VBoxContainer.queue_free()
 	$Label.hide()
 	$AudioStreamPlayer.play()
