@@ -11,7 +11,7 @@ msgid "MINIGAME_NAME"
 msgstr "Cookie Catch"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "Cookies rain from the sky! Run around and catch as many as you can. Catch cookies in a row to build a combo: every five in a row add a bonus point.\n\nGolden cookies are worth three. Do not catch a bomb: it stuns you and costs you two cookies. Power-ups: a star makes you fast, a magnet pulls cookies in from afar and a shield blocks one bomb or one thief.\n\nWatch out: if you bump into a rival while running faster than they do, you steal a cookie! A golden rain falls in the middle of the game, and in the last 14 seconds a cookie storm breaks out. Who has the most cookies after 60 seconds wins!"
+msgstr "Cookies rain from the sky: catch as many as you can! Golden ones count triple, bombs stun you and cost two cookies.\n\nCatch cookies in a row for a combo, grab stars (speed), magnets and shields, and steal a cookie by bumping a slower rival. A cookie storm hits at the end. Most cookies after 60 seconds wins!"
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"

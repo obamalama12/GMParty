@@ -149,6 +149,8 @@ func apply_test_mode(cfg) -> void:
 	if srv == null:
 		return
 	match mode:
+		"report":
+			generic_report(srv)
 		"bot":
 			if cli:
 				cli.get_node("Player1").set_physics_process(false)
@@ -188,3 +190,15 @@ func bot_report(srv) -> void:
 		if not is_instance_valid(srv) or srv.is_queued_for_deletion():
 			return
 		log_("t=%d pos=%s lives=%s boost=%s" % [i * 2, srv.get_node("Player1").position, srv.get("lives"), srv.get_node("Player1").boost_time])
+
+
+func generic_report(srv) -> void:
+	for i in 60:
+		await wait(2.0)
+		if not is_instance_valid(srv) or srv.is_queued_for_deletion():
+			return
+		var info := ""
+		for prop in ["elapsed", "lives", "wave", "kills", "boost_time", "shield", "finished", "position"]:
+			if prop in srv:
+				info += " %s=%s" % [prop, srv.get(prop)]
+		log_("t=%d ghosts=%d%s" % [i * 2, Utility.get_nodes_in_group(srv, "ghost").size(), info])

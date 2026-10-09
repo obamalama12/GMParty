@@ -19,7 +19,7 @@ msgid "MINIGAME_NAME"
 msgstr "Boat Rally"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "The players have to reach the finish line, without getting hit by a bomb.\nBombs fall in ever denser waves, and some are aimed at the boat! Collect golden arrows for a speed boost and blue bubbles for a shield that absorbs one bomb."
+msgstr "Reach the finish line without getting hit by a bomb.\nBombs fall in denser waves. Grab arrows for a speed boost and bubbles for a shield!"
 
 msgid "MINIGAME_ACTION_PADDLE"
 msgstr "Paddle"

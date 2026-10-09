@@ -4,7 +4,9 @@ const BOMB := preload("res://plugins/minigames/boat_rally/bomb.tscn")
 const MAX_SPEED := 10.0
 const BOOST_SPEED := 17.0
 const BOOST_DURATION := 3.5
-const BOMB_STOP_Z := 100.0
+const FINISH_Z := 190.0
+const BOMB_STOP_Z := FINISH_Z - 12.0
+const ROCK := preload("res://plugins/minigames/boat_rally/formationLarge_rock.tscn")
 const PICKUP_BOOST := 0
 const PICKUP_SHIELD := 1
 
@@ -38,6 +40,21 @@ func _integrate_forces(state):
 
 func _ready():
 	$Ground.set_as_top_level(true)
+	extend_track()
+
+# Makes the course longer: more rocks along the sides, a bigger sea and the finish line further away
+func extend_track():
+	var z := 120.0
+	while z < FINISH_Z + 12.0:
+		for x in [12.0, -10.0]:
+			var rock := ROCK.instantiate()
+			rock.position = Vector3(x, -1, z)
+			rock.rotation.y = PI / 2
+			$Ground.add_child(rock)
+		z += 4.0
+	$Ground/Area3D.position.z = FINISH_Z
+	$Ground/MeshInstance3D.scale.z = 2.0
+	$Ground/MeshInstance3D.position.z = 100.0
 
 @rpc("any_peer") func fire(pos: Vector3, dir: Vector3):
 	if not is_hit:

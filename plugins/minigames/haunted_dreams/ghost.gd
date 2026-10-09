@@ -26,8 +26,8 @@ func _ready():
 			tint = Color(0.6, 0.9, 1.0)
 			base_scale = Vector3.ONE * 1.4
 		Kind.BOSS:
-			speed = 1.0
-			hp = 5
+			speed = 0.9
+			hp = 4
 			tint = Color(0.8, 0.4, 1.0)
 			base_scale = Vector3.ONE * 2.6
 	scale = base_scale

@@ -11,15 +11,17 @@ func wait(s: float) -> void:
 
 func press_ok_forever() -> void:
 	while true:
-		var e := InputEventAction.new()
-		e.action = "player1_ok"
-		e.pressed = true
-		Input.parse_input_event(e)
+		for action in ["player1_ok", "ui_accept"]:
+			var e := InputEventAction.new()
+			e.action = action
+			e.pressed = true
+			Input.parse_input_event(e)
 		await wait(0.1)
-		e = InputEventAction.new()
-		e.action = "player1_ok"
-		e.pressed = false
-		Input.parse_input_event(e)
+		for action in ["player1_ok", "ui_accept"]:
+			var e := InputEventAction.new()
+			e.action = action
+			e.pressed = false
+			Input.parse_input_event(e)
 		await wait(0.7)
 
 

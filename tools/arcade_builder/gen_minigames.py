@@ -18,7 +18,7 @@ GAMES = {
         title="Cookie Catch", node="CookieCatch", types=["FFA", "Duel", "2v2"], score=True, duration=60.0,
         positions=[(-3, -3), (3, -3), (-3, 3), (3, 3)],
         controls=[MOVE],
-        description='Cookies rain from the sky! Run around and catch as many as you can. Catch cookies in a row to build a combo: every five in a row add a bonus point.\n\nGolden cookies are worth three. Do not catch a bomb: it stuns you and costs you two cookies. Power-ups: a star makes you fast, a magnet pulls cookies in from afar and a shield blocks one bomb or one thief.\n\nWatch out: if you bump into a rival while running faster than they do, you steal a cookie! A golden rain falls in the middle of the game, and in the last 14 seconds a cookie storm breaks out. Who has the most cookies after 60 seconds wins!',
+        description="Cookies rain from the sky: catch as many as you can! Golden ones count triple, bombs stun you and cost two cookies.\n\nCatch cookies in a row for a combo, grab stars (speed), magnets and shields, and steal a cookie by bumping a slower rival. A cookie storm hits at the end. Most cookies after 60 seconds wins!",
         extra={}),
     "hot_bomb": dict(
         title="Hot Bomb", node="HotBomb", types=["FFA"], score=False, duration=90.0,
@@ -36,7 +36,7 @@ GAMES = {
         title="Tug of War", node="TugOfWar", types=["2v2", "Duel"], score=False, duration=18.0,
         positions=[(-4.6, -0.8), (-4.6, 0.8), (4.6, -0.8), (4.6, 0.8)],
         controls=[{"actions": ["action1"], "text": "MINIGAME_ACTION_PULL"}],
-        description='Two teams pull on a rope. Mash the button as fast as you can!\n\nA ring shrinks onto the target ring on the floor: press right when they meet for a PERFECT pull that is much stronger. Keep hitting the beat to build a streak. The last seconds of a round are a final push, and the team that lost the last round starts the next one with a power pull.\n\nThe team that drags the other one over the line wins the round. Win two rounds to win the match. If the match is tied, a sudden-death round decides it!',
+        description='Two teams pull a rope: mash the button! Press when the shrinking ring meets the target ring for a much stronger PERFECT pull.\n\nDrag the other team over the line to win the round. Win two rounds to win the match. A tie goes to sudden death!',
         extra={}),
     "color_clash": dict(
         title="Color Clash", node="ColorClash", types=["FFA", "Duel", "2v2"], score=False, duration=75.0,

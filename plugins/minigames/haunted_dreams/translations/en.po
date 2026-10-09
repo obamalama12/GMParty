@@ -18,7 +18,7 @@ msgid "MINIGAME_NAME"
 msgstr "Haunted Dreams"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "The players must protect the child's bed from ghosts for 45 seconds.\nSome ghosts are fast, some take two hits, and a giant boss ghost takes several hits. Grab glowing orbs: yellow ones banish ghosts, blue ones freeze them."
+msgstr "Protect the child's bed from ghosts for 45 seconds.\nFast ghosts, tough ghosts and a boss ghost attack. Orbs banish or freeze ghosts!"
 
 msgid "MINIGAME_ACTION_UP"
 msgstr "Move Up"

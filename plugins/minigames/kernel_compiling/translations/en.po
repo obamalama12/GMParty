@@ -18,7 +18,7 @@ msgid "MINIGAME_NAME"
 msgstr "Kernel Compiling"
 
 msgid "MINIGAME_DESCRIPTION"
-msgstr "The players generate energy to compile the Linux kernel. The key to press is shown on a screen.\nGolden keys are worth 3 presses, and every 5 quick presses in a row give a streak bonus - but a wrong key breaks your streak!\nThe fastest player wins!"
+msgstr "Press the key shown on your screen to compile the kernel.\nGolden keys count triple, quick streaks give bonuses, wrong keys break them. Fastest wins!"
 
 msgid "MINIGAME_ACTION_PRESS_BUTTON"
 msgstr "Press the button"
