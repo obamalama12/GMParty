@@ -22,13 +22,13 @@ func _process(_delta):
 		for ghost in Utility.get_nodes_in_group(get_parent(), "ghost"):
 			var ndist = (ghost.position - self.position).length_squared()
 			# Prefer ghosts that are close to the bed, but don't run too far for them
-			var score = ghost.position.length() + 0.35 * sqrt(ndist)
-			if ghost.position.length_squared() < 49 and score < best_score:
+			var score = ghost.position.length() + 0.2 * sqrt(ndist)
+			if ghost.position.length_squared() < 110 and score < best_score:
 				best_score = score
 				target = ghost
 				dist = ndist
 		
-		if target == null or dist > 9.0:
+		if target == null:
 			# No ghost close by, go for a power-up instead
 			var pdist = INF
 			for powerup in Utility.get_nodes_in_group(get_parent(), "powerup"):

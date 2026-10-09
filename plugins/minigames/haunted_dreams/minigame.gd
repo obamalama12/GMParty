@@ -193,7 +193,7 @@ func _on_Timer_timeout():
 	elapsed = GAME_DURATION - time_left
 	var progress := clampf(elapsed / GAME_DURATION, 0.0, 1.0)
 	# The ghosts come faster and faster
-	$SpawnTimer.wait_time = lerpf(0.9, 0.4, progress)
+	$SpawnTimer.wait_time = lerpf(1.3, 0.4, progress)
 	
 	# Boss ghost halfway through
 	if not boss_spawned and elapsed > GAME_DURATION * 0.5:
@@ -204,9 +204,9 @@ func _on_Timer_timeout():
 	
 	var kind := 0
 	var roll := randf()
-	if progress > 0.35 and roll < 0.18:
+	if progress > 0.5 and roll < 0.18:
 		kind = 2 # Tank
-	elif progress > 0.15 and roll < 0.4:
+	elif progress > 0.3 and roll < 0.4:
 		kind = 1 # Fast
 	_spawn_one(kind)
 	# Sometimes a pack of ghosts arrives at once

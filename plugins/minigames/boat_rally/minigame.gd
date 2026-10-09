@@ -4,7 +4,7 @@ const BOMB := preload("res://plugins/minigames/boat_rally/bomb.tscn")
 const MAX_SPEED := 10.0
 const BOOST_SPEED := 17.0
 const BOOST_DURATION := 3.5
-const FINISH_Z := 190.0
+const FINISH_Z := 360.0
 const BOMB_STOP_Z := FINISH_Z - 12.0
 const ROCK := preload("res://plugins/minigames/boat_rally/formationLarge_rock.tscn")
 const PICKUP_BOOST := 0
@@ -53,8 +53,8 @@ func extend_track():
 			$Ground.add_child(rock)
 		z += 4.0
 	$Ground/Area3D.position.z = FINISH_Z
-	$Ground/MeshInstance3D.scale.z = 2.0
-	$Ground/MeshInstance3D.position.z = 100.0
+	$Ground/MeshInstance3D.scale.z = 4.0
+	$Ground/MeshInstance3D.position.z = 170.0
 
 @rpc("any_peer") func fire(pos: Vector3, dir: Vector3):
 	if not is_hit:

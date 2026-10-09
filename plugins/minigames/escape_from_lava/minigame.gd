@@ -165,7 +165,7 @@ func _client_process(delta):
 func _server_process(delta):
 	if not pickups_spawned:
 		spawn_pickups()
-	var rising := $EndTimer.is_stopped()
+	var rising: bool = $EndTimer.is_stopped()
 	if rising:
 		lava_time += delta
 		# The lava gets slowly faster, and periodically surges after a warning
