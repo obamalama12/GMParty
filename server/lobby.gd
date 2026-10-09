@@ -297,7 +297,7 @@ func update_playerlist(peer := -1):
 		send_board(peer)
 
 func leave(id: int):
-	var keep := []
+	var keep: Array[PlayerInfo] = []
 	var human_players := 0
 	for player in player_info:
 		if player.addr.peer_id != id:
@@ -738,7 +738,7 @@ func _scene_loaded(s: PackedScene, callable: Callable):
 
 	var savegame := SaveGameLoader.SaveGame.from_data(data)
 	current_board = savegame.board_state.board_path
-	player_info = []
+	player_info.clear()
 	playerstates = []
 	for i in len(savegame.players):
 		# TODO: what should we do here to add support for multiplayer savegames?

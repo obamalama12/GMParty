@@ -109,6 +109,7 @@ func _show_award(award: Dictionary, bonus_cakes: Dictionary) -> void:
 	text.text = tr(award.text).format({"value": award.value})
 	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	text.add_theme_font_size_override("font_size", 26)
 	box.add_child(text)
 	var faces := HBoxContainer.new()
 	faces.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -125,6 +126,7 @@ func _show_award(award: Dictionary, bonus_cakes: Dictionary) -> void:
 		var name_label := Label.new()
 		name_label.text = w.info.name
 		name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		name_label.add_theme_font_size_override("font_size", 24)
 		one.add_child(name_label)
 		faces.add_child(one)
 	var cake := Label.new()
