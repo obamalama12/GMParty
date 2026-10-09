@@ -13,7 +13,7 @@ func init_client():
 func _on_connection_lost():
 	current_lobby = null
 	var scene := get_tree().current_scene
-	if not scene or scene.filename != "res://client/menus/main_menu.tscn":
+	if not scene or scene.scene_file_path != "res://client/menus/main_menu.tscn":
 		get_tree().change_scene_to_file("res://client/menus/main_menu.tscn")
 	Global.shutdown_connection()
 

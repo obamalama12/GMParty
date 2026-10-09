@@ -12,7 +12,7 @@ func wait(s: float) -> void:
 func press_ok_forever() -> void:
 	while true:
 		# every few presses also a random direction, so path forks and menus can be passed
-		var actions := ["player1_ok", "ui_accept"]
+		var actions := ["player1_ok"]
 		if randi() % 3 == 0:
 			actions.append(["player1_left", "player1_right", "player1_up", "player1_down"].pick_random())
 		for action in actions:
