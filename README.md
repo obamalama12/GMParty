@@ -38,6 +38,13 @@ survive the cookie storm), **Hot Bomb** (pass the lit bomb on), **Jump Rope** (j
 (mash the button, best of three) and **Color Clash** (run to the called colour before the other tiles drop). Their logic is in
 `plugins/minigames/<name>/minigame.gd` on top of `common/scripts/arcade`; `tools/arcade_test` plays them to the end with bots.
 
+## Minigame vote
+
+At the end of each round the players vote between three minigames of the right type (two for 1v3, which only has two games). Left/right moves the
+cursor, OK votes, bots vote on their own and anyone who does not vote within 15 s abstains. A tie is decided by a spinning highlight.
+The logic is in `common/scenes/board_logic/controller/minigamevote.gd`, the options come from `server/minigame_queue.gd`;
+`tools/board_check/vote_test` takes screenshots of it.
+
 ## Music
 
 The board, the main menu and the arcade minigames have original chiptune tracks (pulse, triangle and noise channels) that

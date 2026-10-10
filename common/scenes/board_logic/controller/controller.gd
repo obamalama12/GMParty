@@ -95,6 +95,11 @@ func _ready() -> void:
 	for p in players:
 		p.controller = self
 
+	# The vote for the minigame of the round. Created in code, so it exists with the same path on server and clients
+	var minigame_vote := preload("res://common/scenes/board_logic/controller/minigamevote.gd").new()
+	minigame_vote.name = "MinigameVote"
+	$Screen.add_child(minigame_vote)
+
 	# set up player info box
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -572,21 +577,32 @@ func prepare_minigame():
 	var state = Lobby.MinigameState.new()
 	state.minigame_teams = [blue_team, red_team]
 
+	var vote_type: String
 	match [blue_team.size(), red_team.size()]:
 		[4, 0]:
 			state.minigame_type = Lobby.MINIGAME_TYPES.FREE_FOR_ALL
-			state.minigame_config = lobby.minigame_queue.get_random_ffa()
+			vote_type = "FFA"
 		[3, 1]:
 			state.minigame_type = Lobby.MINIGAME_TYPES.ONE_VS_THREE
-			state.minigame_config = lobby.minigame_queue.get_random_1v3()
+			vote_type = "1v3"
 		[2, 2]:
 			state.minigame_type = Lobby.MINIGAME_TYPES.TWO_VS_TWO
-			state.minigame_config = lobby.minigame_queue.get_random_2v2()
+			vote_type = "2v2"
+	state.minigame_config = await _vote_for_minigame(vote_type)
 
 	lobby.turn += 1
 	player_turn = 1
 	lobby.minigame_state = state
 	lobby.broadcast(show_minigame.bind(state.encode()))
+
+## The players vote between up to three minigames of the given type, the winner is played
+func _vote_for_minigame(type: String) -> MinigameLoader.MinigameConfigFile:
+	var options: Array = lobby.minigame_queue.get_vote_options(type)
+	var chosen: MinigameLoader.MinigameConfigFile = options[0]
+	if options.size() > 1:
+		chosen = await $Screen/MinigameVote.run(options)
+	lobby.minigame_queue.choose(chosen)
+	return chosen
 
 @rpc func show_minigame(encoded_state: Array):
 	var state = Lobby.MinigameState.decode(encoded_state)
