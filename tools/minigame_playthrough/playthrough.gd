@@ -44,6 +44,8 @@ func _ready():
 		var mname: String = cfg.scene_path.get_base_dir().get_file()
 		if only != "" and not (mname in only.split(",")): continue
 		for ty in cfg.type:
+			if OS.get_environment("TYPE") != "" and ty != OS.get_environment("TYPE"):
+				continue
 			await run_minigame(cfg, mname, ty)
 	log_("ALL DONE")
 	get_tree().quit()

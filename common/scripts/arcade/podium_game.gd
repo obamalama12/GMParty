@@ -122,7 +122,14 @@ func pressed_direction(p: ArcadePlayer) -> int:
 func add_points(player_id: int, amount: int) -> void:
 	scores[player_id] = scores.get(player_id, 0) + amount
 	if has_node("Screen/ScoreOverlay"):
-		$Screen/ScoreOverlay.set_score(player_id, scores[player_id])
+		# in 1 vs 3 the solo player's points count three times (and the overlay adds up the team of three)
+		var shown: int = scores[player_id] * (3 if _is_solo(player_id) else 1)
+		$Screen/ScoreOverlay.set_score(player_id, shown)
+
+
+func _is_solo(player_id: int) -> bool:
+	var state := lobby.minigame_state
+	return state.minigame_type == Lobby.MINIGAME_TYPES.ONE_VS_THREE and player_id in state.minigame_teams[1]
 
 
 ## Number of points as an array in the order of the player nodes, for finish_by_points

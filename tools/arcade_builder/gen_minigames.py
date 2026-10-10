@@ -51,21 +51,21 @@ DIRECTIONS = {"actions": ["spacer", "up", "spacer", "left", "down", "right"], "t
 
 GAMES.update({
     "pattern_pop": dict(
-        title="Pattern Pop", node="PatternPop", types=["FFA", "Duel", "2v2"], score=True, duration=120.0, clock=False,
+        title="Pattern Pop", node="PatternPop", types=["FFA", "Duel", "2v2", "1v3"], score=True, duration=120.0, clock=False,
         positions=STAGE_POSITIONS,
         controls=[DIRECTIONS],
         texts={"MINIGAME_ACTION_DIRECTIONS": "Repeat the pattern with the direction buttons"},
         description="WATCH the big screen: arrows light up one after the other.\n\nWhen it says YOUR TURN, press the same arrows in the same order with your direction buttons. A finished pattern scores points, the fastest players get a bonus, a wrong button ends your round. The pattern grows by one arrow every round, five rounds in all. Most points wins!",
         extra={}),
     "quick_draw": dict(
-        title="Quick Draw", node="QuickDraw", types=["FFA", "Duel", "2v2"], score=True, duration=120.0, clock=False,
+        title="Quick Draw", node="QuickDraw", types=["FFA", "Duel", "2v2", "1v3"], score=True, duration=120.0, clock=False,
         positions=STAGE_POSITIONS,
         controls=[{"actions": ["action1"], "text": "MINIGAME_ACTION_PRESS"}],
         texts={"MINIGAME_ACTION_PRESS": "Press as soon as the light turns GREEN"},
         description="Watch the signal light. While it is RED or yellow, do NOT press!\n\nWhen it turns GREEN, press the button as fast as you can. The fastest player of a round scores the most points. Pressing too early is a false start and you sit the round out. Watch out for fake yellow flashes! Six rounds, the last one counts double. Most points wins!",
         extra={}),
     "perfect_stop": dict(
-        title="Perfect Stop", node="PerfectStop", types=["FFA", "Duel", "2v2"], score=True, duration=120.0, clock=False,
+        title="Perfect Stop", node="PerfectStop", types=["FFA", "Duel", "2v2", "1v3"], score=True, duration=120.0, clock=False,
         positions=STAGE_POSITIONS,
         controls=[{"actions": ["action1"], "text": "MINIGAME_ACTION_STOP"}],
         texts={"MINIGAME_ACTION_STOP": "Stop the marker"},

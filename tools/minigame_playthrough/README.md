@@ -19,3 +19,4 @@ Compatibility renderer, and about 10 minutes for a full run.
 
 `UNTIL_END=1` plays each game until it ends by itself (the bots play, player 1 presses random buttons) and logs
 `DRV DURATION <game> <seconds>`; `CAP=150` limits the time. Screenshots every 8 seconds. `ONLY=pattern_pop` picks games.
+`TYPE=1v3` runs only the games in that mode (FFA, Duel, 2v2, 1v3, ...).

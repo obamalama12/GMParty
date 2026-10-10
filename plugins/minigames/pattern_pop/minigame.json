@@ -6,7 +6,8 @@
 	"type": [
 		"FFA",
 		"Duel",
-		"2v2"
+		"2v2",
+		"1v3"
 	],
 	"description": "MINIGAME_DESCRIPTION",
 	"controls": [
