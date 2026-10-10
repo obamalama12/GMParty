@@ -15,6 +15,7 @@ var time_left: float
 var timer_finished: bool
 var card: Control
 var card_time := 0.0
+var card_sound_played := false
 
 func _force_animation_update(node):
 	if node is AnimationPlayer and node.is_playing():
@@ -36,10 +37,12 @@ func start():
 	timer_finished = false
 	card_time = CARD_TIME if _wants_card() else 0.0
 	time_left = countdown_time + card_time
-	if card_time > 0.0:
+	# the server only keeps the time, it has no screen
+	if card_time > 0.0 and not multiplayer.is_server():
 		_build_card()
 	lobby.process_mode = PROCESS_MODE_DISABLED
 	$Label.modulate = Color(1, 1, 1, 1)
+	card_sound_played = card_time <= 0.0
 	if card_time <= 0.0:
 		$AudioStreamPlayer.play()
 
@@ -53,14 +56,21 @@ func start():
 func _process(delta):
 	# Only let the timer run if the pause menu is not open
 	if not timer_finished:# and not _is_paused():
-		if card and time_left > countdown_time:
+		if card_time > 0.0 and time_left > countdown_time:
 			$Label.text = ""
 		else:
 			if card:
 				card.queue_free()
 				card = null
-				$AudioStreamPlayer.play()
+			if not card_sound_played:
+				card_sound_played = true
+				var sound := get_node_or_null("AudioStreamPlayer") as AudioStreamPlayer
+				if sound:
+					sound.play()
 			$Label.text = str(int(time_left) + 1)
+			var state = lobby.minigame_state
+			if state and state.minigame_config and state.minigame_config.heats > 1:
+				$Label.text = tr("CONTEXT_HEAT").format({"heat": state.heat, "total": state.minigame_config.heats}) + "\n" + $Label.text
 
 		time_left = max(time_left - delta, 0)
 		if time_left == 0:
@@ -78,7 +88,8 @@ func _on_Timer_timeout():
 func _wants_card() -> bool:
 	if not show_card or lobby == null or lobby.minigame_state == null:
 		return false
-	return not lobby.minigame_state.is_try and lobby.minigame_state.minigame_config != null
+	return not lobby.minigame_state.is_try and lobby.minigame_state.minigame_config != null \
+			and lobby.minigame_state.heat <= 1
 
 
 ## The card: the name and goal of the game and the buttons of every human player on this machine

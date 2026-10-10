@@ -120,6 +120,7 @@ func run_minigame(cfg, mname: String, ty: String):
 	# return to board (try mode avoids reward screens)
 	if server_lobby.minigame_state:
 		server_lobby.minigame_state.is_try = true
+		server_lobby.minigame_state.heat_results = []
 		server_lobby._goto_board([[1, 2, 3, 4]])
 	var t := 0.0
 	await wait(3.0)

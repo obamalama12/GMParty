@@ -1049,3 +1049,6 @@ msgstr "x2 COOKIES!"
 
 msgid "CONTEXT_HOW_TO_PLAY"
 msgstr "HOW TO PLAY"
+
+msgid "CONTEXT_HEAT"
+msgstr "HEAT {heat} of {total}"

@@ -117,6 +117,8 @@ func return_to_board(): pass
 @rpc
 func load_minigame(): pass
 @rpc
+func heat_started(_heat: int): pass
+@rpc
 func playerstate_updated(_players: Array): pass
 @rpc
 func minigame_ended(_was_try: bool, _placement, _reward): pass
@@ -385,6 +387,8 @@ func _goto_scene_board_callback(scene: Node):
 	if not is_lobby_owner(multiplayer.get_remote_sender_id()):
 		return
 	minigame_state.is_try = is_try
+	minigame_state.heat = 1
+	minigame_state.heat_results = []
 	broadcast(load_minigame)
 	goto_minigame()
 
@@ -485,6 +489,19 @@ func _record_minigame_win(minigame_type, minigame_teams, placement) -> void:
 func _goto_board(placement) -> void:
 	if OS.has_environment("MINIGAME_RESULT_LOG"):
 		print("MINIGAME_RESULT ", placement)
+	# A game with several heats is played again, the results are added up after the last heat
+	var config := minigame_state.minigame_config
+	if config.heats > 1:
+		minigame_state.heat_results.append(placement)
+		if minigame_state.heat < config.heats:
+			minigame_state.heat += 1
+			broadcast(heat_started.bind(minigame_state.heat))
+			broadcast(load_minigame)
+			call_deferred("_goto_scene_minigame", config.scene_path)
+			return
+		placement = _combine_heats(minigame_state.minigame_type, minigame_state.heat_results)
+		minigame_state.heat = 1
+		minigame_state.heat_results = []
 	# Only award if the players were not trying the minigame out
 	if minigame_state.is_try:
 		_goto_scene_board.call_deferred()
@@ -588,6 +605,47 @@ func _goto_board(placement) -> void:
 		encoded.append(state.encode())
 	broadcast(playerstate_updated.bind(encoded))
 	broadcast(minigame_ended.bind(false, placement, minigame_summary.reward))
+
+## Adds up what the heats of a minigame returned and returns the result in the same form as one heat
+func _combine_heats(type, results: Array):
+	match type:
+		MINIGAME_TYPES.FREE_FOR_ALL, MINIGAME_TYPES.DUEL:
+			# 4 points for a first place ... 1 point for the last place in every heat (2 and 1 in a duel)
+			var total := {}
+			var players := 0
+			for heat in results:
+				for group in heat:
+					players += group.size()
+			for heat in results:
+				var rank := 0
+				for group in heat:
+					for player_id in group:
+						total[player_id] = total.get(player_id, 0) + (players / results.size() - rank)
+					rank += group.size()
+			var by_points := {}
+			for player_id in total:
+				if not by_points.has(total[player_id]):
+					by_points[total[player_id]] = []
+				by_points[total[player_id]].append(player_id)
+			var keys := by_points.keys()
+			keys.sort()
+			keys.reverse()
+			var placement := []
+			for key in keys:
+				placement.append(by_points[key])
+			return placement
+		_:
+			# 2v2 and 1v3: the side with more won heats wins, a tie goes to whoever won the last heat
+			var wins := {}
+			for heat in results:
+				wins[heat] = wins.get(heat, 0) + 1
+			var best = results.back()
+			var best_wins: int = wins.get(best, 0)
+			for key in wins:
+				if key is int and key >= 0 and wins[key] > best_wins:
+					best = key
+					best_wins = wins[key]
+			return best
 
 func minigame_win_by_points(points: Array) -> void:
 	var players := []

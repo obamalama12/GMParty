@@ -52,7 +52,8 @@ The logic is in `common/scenes/board_logic/controller/minigamevote.gd`, the opti
 Mario Party games. They share `common/scripts/arcade/podium_game.gd`; the scene, config and texts of a new one come from
 `tools/arcade_builder/gen_minigames.py <name>`. Every minigame starts with a "How to play" card (the goal and everybody's buttons)
 before the 3-2-1, and the game info screen before it has the full description. `UNTIL_END=1` of `tools/minigame_playthrough`
-plays a game to its end and reports how long it took.
+plays a game to its end and reports how long it took; `tools/minigame_playthrough/heats_test` plays a game with several heats for real.
+A short game can list `"heats": 2` in its `minigame.json`: it is played twice in a row and the results are added up (`_combine_heats` in `server/lobby.gd`).
 
 ## Music
 

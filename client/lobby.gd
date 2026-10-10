@@ -286,6 +286,10 @@ func goto_minigame(is_try: bool):
 	_goto_scene("res://client/menus/victory_screen/victory_screen.tscn", false)
 	started = false
 
+@rpc func heat_started(heat: int):
+	if minigame_state:
+		minigame_state.heat = heat
+
 @rpc func load_minigame():
 	_goto_scene_minigame(minigame_state.minigame_config.scene_path, minigame_state)
 
