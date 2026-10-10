@@ -394,6 +394,7 @@ func relocate_cake() -> void:
 	$Screen/SpeechDialog.hide()
 	player_turn = next
 	show_splash()
+	players[next - 1].play_reaction("jump", 1.0)
 
 @rpc func splash_ended():
 	$Screen/TurnBanner.dismiss()
@@ -1090,6 +1091,8 @@ func animation_step(space: NodeBoard, player_id: int) -> void:
 		$Screen/Stepcounter.text = ""
 
 func play_space_step_sfx(space: NodeBoard, player_id: int) -> void:
+	if space.is_visible_space():
+		space.pulse()
 	if player_id == player_turn and space.is_visible_space():
 		$StepFX.play()
 
