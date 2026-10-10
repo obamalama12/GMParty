@@ -253,7 +253,8 @@ func _initialize() -> void:
 	var controller: Node3D = load("res://common/scenes/board_logic/controller/controller.tscn").instantiate()
 	own(board, controller, "Controller")
 	controller.set("COOKIES_FOR_CAKE", 20)
-	controller.set("MAX_TURNS", 40)
+	controller.set("MAX_TURNS", 6)
+	controller.set("show_linking_type", 3)
 	controller.set("start_node", NodePath("../Nodes/" + str(layout.start)))
 	for i in 4:
 		own(board, load("res://common/scenes/board_logic/player_board/player_board.tscn").instantiate(), "Player%d" % (i + 1))
@@ -287,7 +288,7 @@ func _initialize() -> void:
 
 	var music := AudioStreamPlayer.new()
 	music.process_mode = Node.PROCESS_MODE_ALWAYS
-	music.stream = load("res://assets/music/boards/kdevalley.wav")
+	music.stream = load("res://assets/music/retro/valley_stroll.ogg")
 	music.autoplay = true
 	own(board, music, "AudioStreamPlayer")
 	own(board, load("res://common/scenes/speech_dialog/speech_dialog.tscn").instantiate(), "SpeechDialog")

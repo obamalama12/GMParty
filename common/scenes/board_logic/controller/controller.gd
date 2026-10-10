@@ -22,6 +22,7 @@ const PLAYER_TRANSLATION = [Vector3(0, 0, -0.75), Vector3(0.75, 0, 0),
 		Vector3(0, 0, 0.75), Vector3(-0.75, 0, 0)]
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.05, 0)
 const CAMERA_SPEED = 6
+const FOG_DENSITY := 0.0045
 
 # Game options that can be customized in the Godot editor
 # Useful for board creation
@@ -1097,6 +1098,8 @@ func _process(delta: float) -> void:
 		camera_base_position = $Camera3D.position
 	zoom_current = lerpf(zoom_current, zoom_target, minf(1.0, 6.0 * delta))
 	$Camera3D.position = camera_base_position + $Camera3D.transform.basis.z * zoom_current
+	# Zoomed out, the fog would wash the whole board out
+	$Camera3D.environment.fog_density = FOG_DENSITY / (1.0 + maxf(zoom_current, 0.0) * 0.15)
 	if camera_focus != null:
 		var dir: Vector3 = camera_focus.position - position
 		if dir.length() > 0.01:
