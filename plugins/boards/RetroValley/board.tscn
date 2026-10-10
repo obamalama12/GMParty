@@ -493,7 +493,7 @@ instance_count = 60
 mesh = ExtResource("57_3a05e")
 buffer = PackedFloat32Array(-0.75435305, 0, -0.45991704, -52.387, 0, 0.8835, 0, 1.942, 0.45991704, 0, -0.75435305, 86.648, 0.49918592, 0, 0.63121784, -97.48, 0, 0.80474997, 0, 2.021, -0.63121784, 0, 0.49918592, 83.218, 0.63811064, 0, -0.29618764, -69.451, 0, 0.70350003, 0, 1.982, 0.29618764, 0, 0.63811064, 73.255, -0.7506205, 0, -0.51930857, -47.587, 0, 0.91275, 0, 1.58, 0.51930857, 0, -0.7506205, 38.172, 0.019689336, 0, 0.8330173, -98.98, 0, 0.8332499, 0, 1.974, -0.8330173, 0, 0.019689336, 72.257, 0.696196, 0, 0.027779566, -95.355, 0, 0.69675004, 0, 1.978, -0.027779566, 0, 0.696196, 92.268, -0.6237345, 0, -0.3944609, -62.931, 0, 0.73800004, 0, 2.222, 0.3944609, 0, -0.6237345, 68.287, 0.28266972, 0, 1.0679749, -107.012, 0, 1.10475, 0, 1.754, -1.0679749, 0, 0.28266972, 75.011, 0.29928404, 0, 1.0283335, -47.922, 0, 1.071, 0, 1.67, -1.0283335, 0, 0.29928404, 52.913, -0.2131829, 0, -0.9598613, -106.511, 0, 0.98325, 0, 1.828, 0.9598613, 0, -0.2131829, 82.342, -0.0977824, 0, 0.72770983, -55.138, 0, 0.73424995, 0, 1.801, -0.72770983, 0, -0.0977824, 50.898, 0.015381799, 0, 0.8368587, -54.059, 0, 0.837, 0, 1.315, -0.8368587, 0, 0.015381799, 46.041, 0.77794486, 0, 0.6147146, -85.908, 0, 0.9915, 0, 2.096, -0.6147146, 0, 0.77794486, 71.45, 0.7005294, 0, -0.6813781, -81.947, 0, 0.97725, 0, 2.096, 0.6813781, 0, 0.7005294, 81.874, 0.23466422, 0, 0.96255815, -46.82, 0, 0.99074996, 0, 2.281, -0.96255815, 0, 0.23466422, 81.645, 0.754378, 0, -0.36087102, -77.233, 0, 0.83625, 0, 2.153, 0.36087102, 0, 0.754378, 75.634, 0.2672235, 0, 0.8429055, -52.16, 0, 0.88425004, 0, 2.211, -0.8429055, 0, 0.2672235, 104.618, -0.78478324, 0, 0.34495333, -39.441, 0, 0.85725, 0, 2.113, -0.34495333, 0, -0.78478324, 78.008, -0.11315713, 0, 0.86487883, -84.744, 0, 0.87224996, 0, 1.949, -0.86487883, 0, -0.11315713, 100.545, 0.6701057, 0, 0.47087085, -101.667, 0, 0.819, 0, 1.875, -0.47087085, 0, 0.6701057, 67.708, -0.75775254, 0, 0.18810032, -63.449, 0, 0.78075004, 0, 2.035, -0.18810032, 0, -0.75775254, 108.653, 0.5003785, 0, 0.72450095, -62.355, 0, 0.8805, 0, 2.408, -0.72450095, 0, 0.5003785, 72.332, -0.2860375, 0, 0.6345065, -82.168, 0, 0.696, 0, 2.157, -0.6345065, 0, -0.2860375, 75.913, 0.8275494, 0, 0.05685199, -64.124, 0, 0.82949996, 0, 1.664, -0.05685199, 0, 0.8275494, 60.555, 0.6744615, 0, 0.3014187, -95.093, 0, 0.73875, 0, 1.632, -0.3014187, 0, 0.6744615, 100.183, 1.0608732, 0, 0.028280213, -63.321, 0, 1.06125, 0, 1.864, -0.028280213, 0, 1.0608732, 91.977, 0.36398283, 0, -0.7570446, -77.406, 0, 0.84000003, 0, 2.262, 0.7570446, 0, 0.36398283, 71.319, 0.47947952, 0, -0.91723734, -90.228, 0, 1.035, 0, 1.802, 0.91723734, 0, 0.47947952, 94.466, 0.8742776, 0, -0.48181093, -47.816, 0, 0.99825, 0, 1.757, 0.48181093, 0, 0.8742776, 58.199, -0.95816636, 0, 0.43672213, -67.187, 0, 1.053, 0, 1.937, -0.43672213, 0, -0.95816636, 80.565, 0.66475016, 0, -0.30648205, -73.343, 0, 0.732, 0, 1.963, 0.30648205, 0, 0.66475016, 78.244, -1.121923, 0, -0.013139674, -75.383, 0, 1.122, 0, 1.716, 0.013139674, 0, -1.121923, 109.556, 0.4180196, 0, 0.6045533, -40.969, 0, 0.735, 0, 1.511, -0.6045533, 0, 0.4180196, 45.127, -0.8314832, 0, 0.42816857, -61.068, 0, 0.93525, 0, 1.881, -0.42816857, 0, -0.8314832, 63.921, 0.9565133, 0, -0.30098182, -58.967, 0, 1.00275, 0, 1.899, 0.30098182, 0, 0.9565133, 110.116, -0.30926514, 0, 0.6260257, -73.012, 0, 0.69825, 0, 2.14, -0.6260257, 0, -0.30926514, 68.354, 0.98320466, 0, 0.3443134, -57.466, 0, 1.0417501, 0, 2.293, -0.3443134, 0, 0.98320466, 69.354, 0.77415735, 0, -0.12696725, -44.339, 0, 0.7845, 0, 2.055, 0.12696725, 0, 0.77415735, 85.495, -0.123468645, 0, 0.8869474, -50.109, 0, 0.8955, 0, 1.863, -0.8869474, 0, -0.123468645, 63.746, -0.08182181, 0, -0.7311862, -53.079, 0, 0.73575, 0, 2.641, 0.7311862, 0, -0.08182181, 75.348, 0.6856417, 0, -0.34932184, -45.831, 0, 0.7695, 0, 1.404, 0.34932184, 0, 0.6856417, 44.591, 0.8549671, 0, -0.5793132, -45.731, 0, 1.03275, 0, 2.485, 0.5793132, 0, 0.8549671, 70.289, -0.37264422, 0, -0.5807205, -89.147, 0, 0.69, 0, 1.581, 0.5807205, 0, -0.37264422, 102.549, -0.28685084, 0, -0.69054085, -67.866, 0, 0.74775, 0, 2.03, 0.69054085, 0, -0.28685084, 69.148, 0.5878733, 0, 0.79842174, -55.55, 0, 0.9915, 0, 1.697, -0.79842174, 0, 0.5878733, 64.556, 0.23855114, 0, -0.77407587, -87.576, 0, 0.81000006, 0, 1.595, 0.77407587, 0, 0.23855114, 106.53, 0.8231585, 0, -0.10828305, -82.822, 0, 0.83025, 0, 1.956, 0.10828305, 0, 0.8231585, 105.939, -0.68580955, 0, -0.024584131, -100.776, 0, 0.68625003, 0, 1.776, 0.024584131, 0, -0.68580955, 93.738, -0.35438672, 0, -0.66948956, -49.165, 0, 0.7575, 0, 2.512, 0.66948956, 0, -0.35438672, 77.792, -0.69442147, 0, 0.18150467, -71.19, 0, 0.71775, 0, 2.214, -0.18150467, 0, -0.69442147, 86.146, 0.9643706, 0, 0.272017, -102.023, 0, 1.002, 0, 2.089, -0.272017, 0, 0.9643706, 88.656, -0.6599255, 0, -0.1453838, -56.236, 0, 0.67575, 0, 1.859, 0.1453838, 0, -0.6599255, 54.716, 0.2642272, 0, -0.9797457, -99.774, 0, 1.01475, 0, 1.802, 0.9797457, 0, 0.2642272, 77.893, -0.69454366, 0, -0.87736535, -59.527, 0, 1.119, 0, 1.686, 0.87736535, 0, -0.69454366, 86.986, -0.58564675, 0, -0.49914742, -81.456, 0, 0.7695, 0, 2.407, 0.49914742, 0, -0.58564675, 68.428, 0.90173596, 0, 0.030449364, -43.833, 0, 0.90224993, 0, 1.454, -0.030449364, 0, 0.90173596, 48.952, -0.36969247, 0, -1.0426488, -45.46, 0, 1.10625, 0, 1.922, 1.0426488, 0, -0.36969247, 103.681, -0.45296764, 0, -0.8600025, -50.464, 0, 0.972, 0, 1.347, 0.8600025, 0, -0.45296764, 42.082, 0.64599067, 0, -0.5381047, -66.906, 0, 0.84075004, 0, 1.731, 0.5381047, 0, 0.64599067, 64.07, 0.16254753, 0, -0.8340584, -60.971, 0, 0.84975004, 0, 1.833, 0.8340584, 0, 0.16254753, 50.297)
 
-[node name="RetroValley" type="Node3D" unique_id=1285135365]
+[node name="RetroValley" type="Node3D" unique_id=1380211088]
 script = ExtResource("1_wbbbl")
 warps = {
 "N023": "N075",
@@ -506,2276 +506,2276 @@ warps = {
 "N238": "N222"
 }
 
-[node name="Terrain" type="MeshInstance3D" parent="." unique_id=745114342]
+[node name="Terrain" type="MeshInstance3D" parent="." unique_id=241923588]
 mesh = ExtResource("2_2g6ju")
 
-[node name="Water" type="MeshInstance3D" parent="." unique_id=1488265239]
+[node name="Water" type="MeshInstance3D" parent="." unique_id=128906612]
 mesh = SubResource("PlaneMesh_0ya5q")
 
-[node name="Scenery" type="Node3D" parent="." unique_id=453990425]
+[node name="Scenery" type="Node3D" parent="." unique_id=1517967930]
 
-[node name="Bridge" type="Node3D" parent="Scenery" unique_id=72110136]
+[node name="Bridge" type="Node3D" parent="Scenery" unique_id=896391711]
 
-[node name="Piece0" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1730114057]
+[node name="Piece0" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=73754805]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, -34.2, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_7n1tp")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece1" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1034514660]
+[node name="Piece1" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=2070072412]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, -26.6, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_vbkog")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece2" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=814833451]
+[node name="Piece2" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=282260318]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, -19, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_2oh3n")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece3" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=652458612]
+[node name="Piece3" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1353659815]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, -11.4, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_fm232")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece4" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=2035298969]
+[node name="Piece4" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=864415985]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, -3.8, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_s4216")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece5" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=21298543]
+[node name="Piece5" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1901220823]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, 3.8, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_tvj6e")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece6" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1328316916]
+[node name="Piece6" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1801962858]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, 11.4, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_kr27h")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece7" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=394773923]
+[node name="Piece7" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1729301641]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, 19, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_d83kb")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece8" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1591106976]
+[node name="Piece8" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1081251340]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, 26.6, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_5q2g0")
 mesh = ExtResource("5_pba22")
 
-[node name="Piece9" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=745536155]
+[node name="Piece9" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1198168417]
 transform = Transform3D(-6.119594e-08, 0, 0.8796296, 0, 1, 0, -1.4, 0, -3.844983e-08, 34.2, 2.45, -85)
 material_override = SubResource("StandardMaterial3D_g421i")
 mesh = ExtResource("5_pba22")
 
-[node name="Deck" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1986437512]
+[node name="Deck" type="MeshInstance3D" parent="Scenery/Bridge" unique_id=1901708973]
 mesh = SubResource("ArrayMesh_w71af")
 
-[node name="Scatter" type="Node3D" parent="Scenery" unique_id=1405984009]
+[node name="Scatter" type="Node3D" parent="Scenery" unique_id=918602299]
 
-[node name="BirchTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=868945399]
+[node name="BirchTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=561605027]
 multimesh = SubResource("MultiMesh_alj71")
 
-[node name="BirchTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1111872569]
+[node name="BirchTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=215512265]
 multimesh = SubResource("MultiMesh_6wjuo")
 
-[node name="BirchTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1071440579]
+[node name="BirchTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1620827738]
 multimesh = SubResource("MultiMesh_dll7q")
 
-[node name="BirchTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1168146220]
+[node name="BirchTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1183987408]
 multimesh = SubResource("MultiMesh_uny8v")
 
-[node name="BirchTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1658694466]
+[node name="BirchTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1442640290]
 multimesh = SubResource("MultiMesh_gnlfk")
 
-[node name="Bush" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1978784963]
+[node name="Bush" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=361440015]
 multimesh = SubResource("MultiMesh_1avd1")
 
-[node name="Bush_Flowers" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=241473823]
+[node name="Bush_Flowers" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1368190614]
 multimesh = SubResource("MultiMesh_h27wa")
 
-[node name="Bush_Large" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1034390513]
+[node name="Bush_Large" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=877984781]
 multimesh = SubResource("MultiMesh_gv6vk")
 
-[node name="Bush_Large_Flowers" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1990128825]
+[node name="Bush_Large_Flowers" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1331218231]
 multimesh = SubResource("MultiMesh_ak0ib")
 
-[node name="Bush_Small" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1675548814]
+[node name="Bush_Small" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=444972148]
 multimesh = SubResource("MultiMesh_rbvtu")
 
-[node name="DeadTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=623120658]
+[node name="DeadTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2112016137]
 multimesh = SubResource("MultiMesh_acdje")
 
-[node name="DeadTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=349809490]
+[node name="DeadTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=263156023]
 multimesh = SubResource("MultiMesh_o1fd2")
 
-[node name="DeadTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1816874022]
+[node name="DeadTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=662868972]
 multimesh = SubResource("MultiMesh_5dwuq")
 
-[node name="DeadTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1232694108]
+[node name="DeadTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1278378741]
 multimesh = SubResource("MultiMesh_rpgm0")
 
-[node name="DeadTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=834393608]
+[node name="DeadTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=21270971]
 multimesh = SubResource("MultiMesh_wkho1")
 
-[node name="Flower_1_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1958527445]
+[node name="Flower_1_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2066442049]
 multimesh = SubResource("MultiMesh_vi2rl")
 
-[node name="Flower_2_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2050125423]
+[node name="Flower_2_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=752441908]
 multimesh = SubResource("MultiMesh_12co5")
 
-[node name="Flower_3_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1771922929]
+[node name="Flower_3_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1346188107]
 multimesh = SubResource("MultiMesh_1fuu6")
 
-[node name="Flower_4_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=241204926]
+[node name="Flower_4_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1122232122]
 multimesh = SubResource("MultiMesh_ywhox")
 
-[node name="Flower_5_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1441914758]
+[node name="Flower_5_Clump" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1373655940]
 multimesh = SubResource("MultiMesh_petmm")
 
-[node name="Grass_Large" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=354649897]
+[node name="Grass_Large" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1518009096]
 multimesh = SubResource("MultiMesh_01r4r")
 
-[node name="Grass_Small" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1096726714]
+[node name="Grass_Small" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1620900429]
 multimesh = SubResource("MultiMesh_cfqiu")
 
-[node name="MapleTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=610074817]
+[node name="MapleTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=939788465]
 multimesh = SubResource("MultiMesh_x4i32")
 
-[node name="MapleTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=486803999]
+[node name="MapleTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=301982347]
 multimesh = SubResource("MultiMesh_myv08")
 
-[node name="MapleTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1223193997]
+[node name="MapleTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=326880002]
 multimesh = SubResource("MultiMesh_iju4l")
 
-[node name="MapleTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=978864009]
+[node name="MapleTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=444796872]
 multimesh = SubResource("MultiMesh_hy44s")
 
-[node name="MapleTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=782803655]
+[node name="MapleTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=673018990]
 multimesh = SubResource("MultiMesh_ldvvl")
 
-[node name="NormalTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=146626936]
+[node name="NormalTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1960460594]
 multimesh = SubResource("MultiMesh_4n66o")
 
-[node name="NormalTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2057855049]
+[node name="NormalTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=529509809]
 multimesh = SubResource("MultiMesh_yke3f")
 
-[node name="NormalTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=500236190]
+[node name="NormalTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=101703596]
 multimesh = SubResource("MultiMesh_m7lb3")
 
-[node name="NormalTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=317714942]
+[node name="NormalTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1965502999]
 multimesh = SubResource("MultiMesh_avwsk")
 
-[node name="NormalTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=839394947]
+[node name="NormalTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2000507916]
 multimesh = SubResource("MultiMesh_h7vkc")
 
-[node name="PalmTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1402544765]
+[node name="PalmTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=613626151]
 multimesh = SubResource("MultiMesh_u3d3e")
 
-[node name="PalmTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=395205167]
+[node name="PalmTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=278425585]
 multimesh = SubResource("MultiMesh_ptr38")
 
-[node name="PalmTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1151296046]
+[node name="PalmTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=167248993]
 multimesh = SubResource("MultiMesh_c5ci8")
 
-[node name="PalmTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=625819311]
+[node name="PalmTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=969906273]
 multimesh = SubResource("MultiMesh_bwu1r")
 
-[node name="PalmTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=923576327]
+[node name="PalmTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1809311126]
 multimesh = SubResource("MultiMesh_gdnb2")
 
-[node name="Petals_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=995070448]
+[node name="Petals_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1579956530]
 multimesh = SubResource("MultiMesh_vqkby")
 
-[node name="Petals_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=564886667]
+[node name="Petals_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1066245249]
 multimesh = SubResource("MultiMesh_l8c4i")
 
-[node name="PineTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=325797209]
+[node name="PineTree_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1335950214]
 multimesh = SubResource("MultiMesh_5n5rx")
 
-[node name="PineTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=890147827]
+[node name="PineTree_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1734975398]
 multimesh = SubResource("MultiMesh_ekyn5")
 
-[node name="PineTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=517499780]
+[node name="PineTree_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1919461482]
 multimesh = SubResource("MultiMesh_8ei8p")
 
-[node name="PineTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=199765531]
+[node name="PineTree_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=334860421]
 multimesh = SubResource("MultiMesh_c1njq")
 
-[node name="PineTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=99933901]
+[node name="PineTree_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=596686020]
 multimesh = SubResource("MultiMesh_u1yfi")
 
-[node name="Plant_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1318873392]
+[node name="Plant_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2060185044]
 multimesh = SubResource("MultiMesh_wkxry")
 
-[node name="Plant_Flowers" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1362026835]
+[node name="Plant_Flowers" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2074172110]
 multimesh = SubResource("MultiMesh_r24r0")
 
-[node name="Rock_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=2138711274]
+[node name="Rock_1" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=885536471]
 multimesh = SubResource("MultiMesh_y6e2f")
 
-[node name="Rock_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=103559572]
+[node name="Rock_2" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=332028569]
 multimesh = SubResource("MultiMesh_son3u")
 
-[node name="Rock_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1400290737]
+[node name="Rock_3" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1430134658]
 multimesh = SubResource("MultiMesh_vjxbf")
 
-[node name="Rock_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=630170105]
+[node name="Rock_4" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=108010925]
 multimesh = SubResource("MultiMesh_docgl")
 
-[node name="Rock_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=969011142]
+[node name="Rock_5" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1851296863]
 multimesh = SubResource("MultiMesh_kv02y")
 
-[node name="SnowTree" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=1374678930]
+[node name="SnowTree" type="MultiMeshInstance3D" parent="Scenery/Scatter" unique_id=79173412]
 multimesh = SubResource("MultiMesh_k2qa7")
 
-[node name="Landmarks" type="Node3D" parent="Scenery" unique_id=1343214988]
+[node name="Landmarks" type="Node3D" parent="Scenery" unique_id=1739855506]
 
-[node name="Fountain1" type="Node3D" parent="Scenery/Landmarks" unique_id=1892783832 instance=ExtResource("58_x37sc")]
+[node name="Fountain1" type="Node3D" parent="Scenery/Landmarks" unique_id=563100527 instance=ExtResource("58_x37sc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 
-[node name="Arch1" type="Node3D" parent="Scenery/Landmarks" unique_id=157320080 instance=ExtResource("59_xh3hk")]
+[node name="Arch1" type="Node3D" parent="Scenery/Landmarks" unique_id=1899277484 instance=ExtResource("59_xh3hk")]
 transform = Transform3D(-0.0904745, 0, 0.9958988, 0, 1, 0, -0.9958988, 0, -0.0904745, -39.1579, 2.45, 1.4547658)
 
-[node name="Arch2" type="Node3D" parent="Scenery/Landmarks" unique_id=1807175108 instance=ExtResource("59_xh3hk")]
+[node name="Arch2" type="Node3D" parent="Scenery/Landmarks" unique_id=1739761615 instance=ExtResource("59_xh3hk")]
 transform = Transform3D(0.65881926, 0, 0.7523013, 0, 1, 0, -0.7523013, 0, 0.65881926, -12.511315, 2.4573114, -34.72964)
 
-[node name="Arch3" type="Node3D" parent="Scenery/Landmarks" unique_id=2056748280 instance=ExtResource("59_xh3hk")]
+[node name="Arch3" type="Node3D" parent="Scenery/Landmarks" unique_id=147325166 instance=ExtResource("59_xh3hk")]
 transform = Transform3D(0.14633793, 0, 0.9892347, 0, 1, 0, -0.9892347, 0, 0.14633793, 39.94491, 2.45, -1.4610317)
 
-[node name="Arch4" type="Node3D" parent="Scenery/Landmarks" unique_id=447189299 instance=ExtResource("59_xh3hk")]
+[node name="Arch4" type="Node3D" parent="Scenery/Landmarks" unique_id=2011609350 instance=ExtResource("59_xh3hk")]
 transform = Transform3D(0.99894536, 0, -0.045915283, 0, 1, 0, 0.045915283, 0, 0.99894536, -0.16999353, 2.4317062, 40.569275)
 
-[node name="TownHall1" type="Node3D" parent="Scenery/Landmarks" unique_id=1548812768 instance=ExtResource("60_vcun0")]
+[node name="TownHall1" type="Node3D" parent="Scenery/Landmarks" unique_id=1774002310 instance=ExtResource("60_vcun0")]
 transform = Transform3D(0.7249994, 0, -0.6887495, 0, 1, 0, 0.6887495, 0, 0.7249994, 38, 2.6307755, -40)
 
-[node name="Statue1" type="Node3D" parent="Scenery/Landmarks" unique_id=1209884812 instance=ExtResource("61_cphtc")]
+[node name="Statue1" type="Node3D" parent="Scenery/Landmarks" unique_id=1848711807 instance=ExtResource("61_cphtc")]
 transform = Transform3D(-1.2216238, 0, -1.1822164, 0, 1.7, 0, 1.1822164, 0, -1.2216238, 30, 2.5, 31)
 
-[node name="Statue2" type="Node3D" parent="Scenery/Landmarks" unique_id=989445550 instance=ExtResource("61_cphtc")]
+[node name="Statue2" type="Node3D" parent="Scenery/Landmarks" unique_id=100570416 instance=ExtResource("61_cphtc")]
 transform = Transform3D(-1.1822164, 0, 1.2216237, 0, 1.7, 0, -1.2216237, 0, -1.1822164, -31, 2.5, 30)
 
-[node name="Statue3" type="Node3D" parent="Scenery/Landmarks" unique_id=375160216 instance=ExtResource("61_cphtc")]
+[node name="Statue3" type="Node3D" parent="Scenery/Landmarks" unique_id=1371524768 instance=ExtResource("61_cphtc")]
 transform = Transform3D(1.2216237, 0, 1.1822165, 0, 1.7, 0, -1.1822165, 0, 1.2216237, -30, 2.5, -31)
 
-[node name="Flag1" type="Node3D" parent="Scenery/Landmarks" unique_id=1838122856 instance=ExtResource("62_hr7dq")]
+[node name="Flag1" type="Node3D" parent="Scenery/Landmarks" unique_id=1072392075 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.125313, 2.45389, 3.8042612)
 
-[node name="Flag2" type="Node3D" parent="Scenery/Landmarks" unique_id=1081433004 instance=ExtResource("62_hr7dq")]
+[node name="Flag2" type="Node3D" parent="Scenery/Landmarks" unique_id=651092896 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.213657, 2.453958, 10.833619)
 
-[node name="Flag3" type="Node3D" parent="Scenery/Landmarks" unique_id=1778395076 instance=ExtResource("62_hr7dq")]
+[node name="Flag3" type="Node3D" parent="Scenery/Landmarks" unique_id=993888548 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.833619, 2.453958, 16.213657)
 
-[node name="Flag4" type="Node3D" parent="Scenery/Landmarks" unique_id=634092113 instance=ExtResource("62_hr7dq")]
+[node name="Flag4" type="Node3D" parent="Scenery/Landmarks" unique_id=557416016 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8042612, 2.45389, 19.125313)
 
-[node name="Flag5" type="Node3D" parent="Scenery/Landmarks" unique_id=1378318061 instance=ExtResource("62_hr7dq")]
+[node name="Flag5" type="Node3D" parent="Scenery/Landmarks" unique_id=255864676 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8042612, 2.45389, 19.125313)
 
-[node name="Flag6" type="Node3D" parent="Scenery/Landmarks" unique_id=179113393 instance=ExtResource("62_hr7dq")]
+[node name="Flag6" type="Node3D" parent="Scenery/Landmarks" unique_id=1485841038 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.833619, 2.453958, 16.213657)
 
-[node name="Flag7" type="Node3D" parent="Scenery/Landmarks" unique_id=122226441 instance=ExtResource("62_hr7dq")]
+[node name="Flag7" type="Node3D" parent="Scenery/Landmarks" unique_id=2133152269 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.213657, 2.453958, 10.833619)
 
-[node name="Flag8" type="Node3D" parent="Scenery/Landmarks" unique_id=895927318 instance=ExtResource("62_hr7dq")]
+[node name="Flag8" type="Node3D" parent="Scenery/Landmarks" unique_id=561322789 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.125313, 2.45389, 3.8042612)
 
-[node name="Flag9" type="Node3D" parent="Scenery/Landmarks" unique_id=255627534 instance=ExtResource("62_hr7dq")]
+[node name="Flag9" type="Node3D" parent="Scenery/Landmarks" unique_id=460273661 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.125313, 2.45389, -3.8042612)
 
-[node name="Flag10" type="Node3D" parent="Scenery/Landmarks" unique_id=1352107432 instance=ExtResource("62_hr7dq")]
+[node name="Flag10" type="Node3D" parent="Scenery/Landmarks" unique_id=164820364 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.213657, 2.453958, -10.833619)
 
-[node name="Flag11" type="Node3D" parent="Scenery/Landmarks" unique_id=1524227819 instance=ExtResource("62_hr7dq")]
+[node name="Flag11" type="Node3D" parent="Scenery/Landmarks" unique_id=353770576 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.833619, 2.453958, -16.213657)
 
-[node name="Flag12" type="Node3D" parent="Scenery/Landmarks" unique_id=1813023158 instance=ExtResource("62_hr7dq")]
+[node name="Flag12" type="Node3D" parent="Scenery/Landmarks" unique_id=34037377 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8042612, 2.45389, -19.125313)
 
-[node name="Flag13" type="Node3D" parent="Scenery/Landmarks" unique_id=611643083 instance=ExtResource("62_hr7dq")]
+[node name="Flag13" type="Node3D" parent="Scenery/Landmarks" unique_id=1289000202 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8042612, 2.45389, -19.125313)
 
-[node name="Flag14" type="Node3D" parent="Scenery/Landmarks" unique_id=338148799 instance=ExtResource("62_hr7dq")]
+[node name="Flag14" type="Node3D" parent="Scenery/Landmarks" unique_id=425281383 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.833619, 2.453958, -16.213657)
 
-[node name="Flag15" type="Node3D" parent="Scenery/Landmarks" unique_id=1077364230 instance=ExtResource("62_hr7dq")]
+[node name="Flag15" type="Node3D" parent="Scenery/Landmarks" unique_id=1675496418 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.213657, 2.453958, -10.833619)
 
-[node name="Flag16" type="Node3D" parent="Scenery/Landmarks" unique_id=1779607396 instance=ExtResource("62_hr7dq")]
+[node name="Flag16" type="Node3D" parent="Scenery/Landmarks" unique_id=1996262801 instance=ExtResource("62_hr7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.125313, 2.45389, -3.8042612)
 
-[node name="Lantern1" type="Node3D" parent="Scenery/Landmarks" unique_id=1483749572 instance=ExtResource("63_dyjlx")]
+[node name="Lantern1" type="Node3D" parent="Scenery/Landmarks" unique_id=665096662 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.003, 2.4500155, 3.2677221)
 
-[node name="Lantern2" type="Node3D" parent="Scenery/Landmarks" unique_id=583726054 instance=ExtResource("63_dyjlx")]
+[node name="Lantern2" type="Node3D" parent="Scenery/Landmarks" unique_id=1830024030 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.436325, 2.45032, 9.635009)
 
-[node name="Lantern3" type="Node3D" parent="Scenery/Landmarks" unique_id=767545538 instance=ExtResource("63_dyjlx")]
+[node name="Lantern3" type="Node3D" parent="Scenery/Landmarks" unique_id=1486041571 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.391382, 2.4503074, 15.442344)
 
-[node name="Lantern4" type="Node3D" parent="Scenery/Landmarks" unique_id=1348865665 instance=ExtResource("63_dyjlx")]
+[node name="Lantern4" type="Node3D" parent="Scenery/Landmarks" unique_id=443003944 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.045135, 2.4502409, 20.352226)
 
-[node name="Lantern5" type="Node3D" parent="Scenery/Landmarks" unique_id=697866671 instance=ExtResource("63_dyjlx")]
+[node name="Lantern5" type="Node3D" parent="Scenery/Landmarks" unique_id=814117023 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.650169, 2.4501483, 24.079311)
 
-[node name="Lantern6" type="Node3D" parent="Scenery/Landmarks" unique_id=1695626106 instance=ExtResource("63_dyjlx")]
+[node name="Lantern6" type="Node3D" parent="Scenery/Landmarks" unique_id=481200315 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5200224, 2.4503527, 26.406994)
 
-[node name="Lantern7" type="Node3D" parent="Scenery/Landmarks" unique_id=1991808438 instance=ExtResource("63_dyjlx")]
+[node name="Lantern7" type="Node3D" parent="Scenery/Landmarks" unique_id=1626769086 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.059335, 2.4543405, 27.2262)
 
-[node name="Lantern8" type="Node3D" parent="Scenery/Landmarks" unique_id=1094581036 instance=ExtResource("63_dyjlx")]
+[node name="Lantern8" type="Node3D" parent="Scenery/Landmarks" unique_id=347518186 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.498749, 2.450352, 26.412237)
 
-[node name="Lantern9" type="Node3D" parent="Scenery/Landmarks" unique_id=1634168892 instance=ExtResource("63_dyjlx")]
+[node name="Lantern9" type="Node3D" parent="Scenery/Landmarks" unique_id=966169931 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.630769, 2.450162, 24.089493)
 
-[node name="Lantern10" type="Node3D" parent="Scenery/Landmarks" unique_id=1074612222 instance=ExtResource("63_dyjlx")]
+[node name="Lantern10" type="Node3D" parent="Scenery/Landmarks" unique_id=1140691471 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.028734, 2.4502327, 20.366755)
 
-[node name="Lantern11" type="Node3D" parent="Scenery/Landmarks" unique_id=1141885133 instance=ExtResource("63_dyjlx")]
+[node name="Lantern11" type="Node3D" parent="Scenery/Landmarks" unique_id=723271819 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.378937, 2.450307, 15.460376)
 
-[node name="Lantern12" type="Node3D" parent="Scenery/Landmarks" unique_id=197513254 instance=ExtResource("63_dyjlx")]
+[node name="Lantern12" type="Node3D" parent="Scenery/Landmarks" unique_id=1400369520 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.428555, 2.450321, 9.655496)
 
-[node name="Lantern13" type="Node3D" parent="Scenery/Landmarks" unique_id=546273715 instance=ExtResource("63_dyjlx")]
+[node name="Lantern13" type="Node3D" parent="Scenery/Landmarks" unique_id=1364597493 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.000359, 2.4500096, 3.2894728)
 
-[node name="Lantern14" type="Node3D" parent="Scenery/Landmarks" unique_id=1453961557 instance=ExtResource("63_dyjlx")]
+[node name="Lantern14" type="Node3D" parent="Scenery/Landmarks" unique_id=659243741 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.161018, 2.45, -3.5877628)
 
-[node name="Lantern15" type="Node3D" parent="Scenery/Landmarks" unique_id=1364826439 instance=ExtResource("63_dyjlx")]
+[node name="Lantern15" type="Node3D" parent="Scenery/Landmarks" unique_id=1128928085 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.436325, 2.45032, -9.635009)
 
-[node name="Lantern16" type="Node3D" parent="Scenery/Landmarks" unique_id=685012240 instance=ExtResource("63_dyjlx")]
+[node name="Lantern16" type="Node3D" parent="Scenery/Landmarks" unique_id=592387654 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.391382, 2.4503074, -15.442344)
 
-[node name="Lantern17" type="Node3D" parent="Scenery/Landmarks" unique_id=748785074 instance=ExtResource("63_dyjlx")]
+[node name="Lantern17" type="Node3D" parent="Scenery/Landmarks" unique_id=1051679659 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.045135, 2.4502409, -20.352226)
 
-[node name="Lantern18" type="Node3D" parent="Scenery/Landmarks" unique_id=1720174226 instance=ExtResource("63_dyjlx")]
+[node name="Lantern18" type="Node3D" parent="Scenery/Landmarks" unique_id=997288921 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.650169, 2.4501483, -24.079311)
 
-[node name="Lantern19" type="Node3D" parent="Scenery/Landmarks" unique_id=567878010 instance=ExtResource("63_dyjlx")]
+[node name="Lantern19" type="Node3D" parent="Scenery/Landmarks" unique_id=871468992 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5200224, 2.4526043, -26.406994)
 
-[node name="Lantern20" type="Node3D" parent="Scenery/Landmarks" unique_id=1366438791 instance=ExtResource("63_dyjlx")]
+[node name="Lantern20" type="Node3D" parent="Scenery/Landmarks" unique_id=1097404098 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010955297, 2.4507446, -27.199997)
 
-[node name="Lantern21" type="Node3D" parent="Scenery/Landmarks" unique_id=676612529 instance=ExtResource("63_dyjlx")]
+[node name="Lantern21" type="Node3D" parent="Scenery/Landmarks" unique_id=1343913239 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.498749, 2.450352, -26.412237)
 
-[node name="Lantern22" type="Node3D" parent="Scenery/Landmarks" unique_id=423643614 instance=ExtResource("63_dyjlx")]
+[node name="Lantern22" type="Node3D" parent="Scenery/Landmarks" unique_id=405212237 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.630769, 2.450162, -24.089493)
 
-[node name="Lantern23" type="Node3D" parent="Scenery/Landmarks" unique_id=861334702 instance=ExtResource("63_dyjlx")]
+[node name="Lantern23" type="Node3D" parent="Scenery/Landmarks" unique_id=1438863387 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.028734, 2.4502327, -20.366755)
 
-[node name="Lantern24" type="Node3D" parent="Scenery/Landmarks" unique_id=929804759 instance=ExtResource("63_dyjlx")]
+[node name="Lantern24" type="Node3D" parent="Scenery/Landmarks" unique_id=330779058 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.378937, 2.450307, -15.460376)
 
-[node name="Lantern25" type="Node3D" parent="Scenery/Landmarks" unique_id=1373460114 instance=ExtResource("63_dyjlx")]
+[node name="Lantern25" type="Node3D" parent="Scenery/Landmarks" unique_id=1938600874 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.428555, 2.450321, -9.655496)
 
-[node name="Lantern26" type="Node3D" parent="Scenery/Landmarks" unique_id=840291057 instance=ExtResource("63_dyjlx")]
+[node name="Lantern26" type="Node3D" parent="Scenery/Landmarks" unique_id=76007784 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.072054, 2.45, -4.845496)
 
-[node name="Stall1" type="Node3D" parent="Scenery/Landmarks" unique_id=1821629301 instance=ExtResource("64_3heuf")]
+[node name="Stall1" type="Node3D" parent="Scenery/Landmarks" unique_id=1739556669 instance=ExtResource("64_3heuf")]
 transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, -15, 2.4554198, 12)
 
-[node name="Stall2" type="Node3D" parent="Scenery/Landmarks" unique_id=558680134 instance=ExtResource("64_3heuf")]
+[node name="Stall2" type="Node3D" parent="Scenery/Landmarks" unique_id=137706181 instance=ExtResource("64_3heuf")]
 transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 15, 2.4554198, 12)
 
-[node name="Stall3" type="Node3D" parent="Scenery/Landmarks" unique_id=946744042 instance=ExtResource("64_3heuf")]
+[node name="Stall3" type="Node3D" parent="Scenery/Landmarks" unique_id=1290184447 instance=ExtResource("64_3heuf")]
 transform = Transform3D(-0.9396926, 0, 0.3420202, 0, 1, 0, -0.3420202, 0, -0.9396926, 12, 2.4610558, -14)
 
-[node name="Stall4" type="Node3D" parent="Scenery/Landmarks" unique_id=802494049 instance=ExtResource("64_3heuf")]
+[node name="Stall4" type="Node3D" parent="Scenery/Landmarks" unique_id=687731456 instance=ExtResource("64_3heuf")]
 transform = Transform3D(-0.9396926, 0, -0.34202015, 0, 1, 0, 0.34202015, 0, -0.9396926, -12, 2.4610558, -14)
 
-[node name="Bench1" type="Node3D" parent="Scenery/Landmarks" unique_id=854668295 instance=ExtResource("65_drsro")]
+[node name="Bench1" type="Node3D" parent="Scenery/Landmarks" unique_id=437409418 instance=ExtResource("65_drsro")]
 transform = Transform3D(-0.30901694, 0, -0.95105654, 0, 1, 0, 0.95105654, 0, -0.30901694, 14.265848, 2.491578, 4.635255)
 
-[node name="Planter1" type="Node3D" parent="Scenery/Landmarks" unique_id=1222108361 instance=ExtResource("66_3nop7")]
+[node name="Planter1" type="Node3D" parent="Scenery/Landmarks" unique_id=1498539955 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.879862, 2.458278, 5.8095193)
 
-[node name="Bench2" type="Node3D" parent="Scenery/Landmarks" unique_id=2105410031 instance=ExtResource("65_drsro")]
+[node name="Bench2" type="Node3D" parent="Scenery/Landmarks" unique_id=1814085394 instance=ExtResource("65_drsro")]
 transform = Transform3D(-0.88294756, 0, -0.46947157, 0, 1, 0, 0.46947157, 0, -0.88294756, 7.0420732, 2.4916646, 13.244214)
 
-[node name="Planter2" type="Node3D" parent="Scenery/Landmarks" unique_id=928993838 instance=ExtResource("66_3nop7")]
+[node name="Planter2" type="Node3D" parent="Scenery/Landmarks" unique_id=1378728691 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.826065, 2.4584193, 16.599415)
 
-[node name="Bench3" type="Node3D" parent="Scenery/Landmarks" unique_id=1474572300 instance=ExtResource("65_drsro")]
+[node name="Bench3" type="Node3D" parent="Scenery/Landmarks" unique_id=1840910705 instance=ExtResource("65_drsro")]
 transform = Transform3D(-0.88294756, 0, 0.46947157, 0, 1, 0, -0.46947157, 0, -0.88294756, -7.0420732, 2.4916646, 13.244214)
 
-[node name="Planter3" type="Node3D" parent="Scenery/Landmarks" unique_id=16416819 instance=ExtResource("66_3nop7")]
+[node name="Planter3" type="Node3D" parent="Scenery/Landmarks" unique_id=762831346 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.826065, 2.4584193, 16.599415)
 
-[node name="Bench4" type="Node3D" parent="Scenery/Landmarks" unique_id=1047680698 instance=ExtResource("65_drsro")]
+[node name="Bench4" type="Node3D" parent="Scenery/Landmarks" unique_id=519666272 instance=ExtResource("65_drsro")]
 transform = Transform3D(-0.30901694, 0, 0.95105654, 0, 1, 0, -0.95105654, 0, -0.30901694, -14.265848, 2.491578, 4.635255)
 
-[node name="Planter4" type="Node3D" parent="Scenery/Landmarks" unique_id=2129907299 instance=ExtResource("66_3nop7")]
+[node name="Planter4" type="Node3D" parent="Scenery/Landmarks" unique_id=577871641 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.879862, 2.458278, 5.8095193)
 
-[node name="Bench5" type="Node3D" parent="Scenery/Landmarks" unique_id=1194191607 instance=ExtResource("65_drsro")]
+[node name="Bench5" type="Node3D" parent="Scenery/Landmarks" unique_id=2074663424 instance=ExtResource("65_drsro")]
 transform = Transform3D(0.30901697, 0, 0.95105654, 0, 1, 0, -0.95105654, 0, 0.30901697, -14.265848, 2.491578, -4.635255)
 
-[node name="Planter5" type="Node3D" parent="Scenery/Landmarks" unique_id=1296308460 instance=ExtResource("66_3nop7")]
+[node name="Planter5" type="Node3D" parent="Scenery/Landmarks" unique_id=1963881364 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.879862, 2.458278, -5.8095193)
 
-[node name="Bench6" type="Node3D" parent="Scenery/Landmarks" unique_id=69674140 instance=ExtResource("65_drsro")]
+[node name="Bench6" type="Node3D" parent="Scenery/Landmarks" unique_id=533713471 instance=ExtResource("65_drsro")]
 transform = Transform3D(0.92718387, 0, 0.3746066, 0, 1, 0, -0.3746066, 0, 0.92718387, -5.6190987, 2.4916544, -13.907758)
 
-[node name="Planter6" type="Node3D" parent="Scenery/Landmarks" unique_id=921237904 instance=ExtResource("66_3nop7")]
+[node name="Planter6" type="Node3D" parent="Scenery/Landmarks" unique_id=1855146734 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.042604, 2.458466, -17.431057)
 
-[node name="Bench7" type="Node3D" parent="Scenery/Landmarks" unique_id=1521252493 instance=ExtResource("65_drsro")]
+[node name="Bench7" type="Node3D" parent="Scenery/Landmarks" unique_id=324579735 instance=ExtResource("65_drsro")]
 transform = Transform3D(0.92718387, 0, -0.3746066, 0, 1, 0, 0.3746066, 0, 0.92718387, 5.6190987, 2.4916544, -13.907758)
 
-[node name="Planter7" type="Node3D" parent="Scenery/Landmarks" unique_id=1210715336 instance=ExtResource("66_3nop7")]
+[node name="Planter7" type="Node3D" parent="Scenery/Landmarks" unique_id=205047822 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.042604, 2.458466, -17.431057)
 
-[node name="Bench8" type="Node3D" parent="Scenery/Landmarks" unique_id=508195623 instance=ExtResource("65_drsro")]
+[node name="Bench8" type="Node3D" parent="Scenery/Landmarks" unique_id=2081719700 instance=ExtResource("65_drsro")]
 transform = Transform3D(0.30901697, 0, -0.95105654, 0, 1, 0, 0.95105654, 0, 0.30901697, 14.265848, 2.491578, -4.635255)
 
-[node name="Planter8" type="Node3D" parent="Scenery/Landmarks" unique_id=965053483 instance=ExtResource("66_3nop7")]
+[node name="Planter8" type="Node3D" parent="Scenery/Landmarks" unique_id=1367029418 instance=ExtResource("66_3nop7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.879862, 2.458278, -5.8095193)
 
-[node name="Cottage1" type="Node3D" parent="Scenery/Landmarks" unique_id=432753430 instance=ExtResource("67_ax21p")]
+[node name="Cottage1" type="Node3D" parent="Scenery/Landmarks" unique_id=420718073 instance=ExtResource("67_ax21p")]
 transform = Transform3D(-0.99875504, 0, -0.5899901, 0, 1.16, 0, 0.5899901, 0, -0.99875504, 23.396158, 2.484409, 39.605804)
 
-[node name="Cottage2" type="Node3D" parent="Scenery/Landmarks" unique_id=1919426048 instance=ExtResource("67_ax21p")]
+[node name="Cottage2" type="Node3D" parent="Scenery/Landmarks" unique_id=1276796526 instance=ExtResource("67_ax21p")]
 transform = Transform3D(-1.0092287, 0, 0.38452244, 0, 1.08, 0, -0.38452244, 0, -1.0092287, -16.3778, 2.4835553, 42.98567)
 
-[node name="Cottage3" type="Node3D" parent="Scenery/Landmarks" unique_id=188223085 instance=ExtResource("67_ax21p")]
+[node name="Cottage3" type="Node3D" parent="Scenery/Landmarks" unique_id=811383730 instance=ExtResource("67_ax21p")]
 transform = Transform3D(-0.30427065, 0, 0.95258564, 0, 1, 0, -0.95258564, 0, -0.30427065, -43.81894, 2.472839, 13.996447)
 
-[node name="Cottage4" type="Node3D" parent="Scenery/Landmarks" unique_id=2073040593 instance=ExtResource("67_ax21p")]
+[node name="Cottage4" type="Node3D" parent="Scenery/Landmarks" unique_id=1843410952 instance=ExtResource("67_ax21p")]
 transform = Transform3D(1.0761217, 0, 0.09144537, 0, 1.08, 0, -0.09144537, 0, 1.0761217, -3.8948953, 2.4791675, -45.83481)
 
-[node name="Barn1" type="Node3D" parent="Scenery/Landmarks" unique_id=1930270535 instance=ExtResource("68_kqnv2")]
+[node name="Barn1" type="Node3D" parent="Scenery/Landmarks" unique_id=285857121 instance=ExtResource("68_kqnv2")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26, 1.8096291, 78)
 
-[node name="Windmill1" type="Node3D" parent="Scenery/Landmarks" unique_id=1768869359 instance=ExtResource("69_ynhh5")]
+[node name="Windmill1" type="Node3D" parent="Scenery/Landmarks" unique_id=248031199 instance=ExtResource("69_ynhh5")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 30, 2.129982, 72)
 
-[node name="Hay1" type="Node3D" parent="Scenery/Landmarks" unique_id=882567911 instance=ExtResource("70_i80x6")]
+[node name="Hay1" type="Node3D" parent="Scenery/Landmarks" unique_id=477608290 instance=ExtResource("70_i80x6")]
 transform = Transform3D(-0.94129205, 0, 0.33759344, 0, 1, 0, -0.33759344, 0, -0.94129205, -12, 2.4041986, 96)
 
-[node name="Hay2" type="Node3D" parent="Scenery/Landmarks" unique_id=87322268 instance=ExtResource("70_i80x6")]
+[node name="Hay2" type="Node3D" parent="Scenery/Landmarks" unique_id=536683152 instance=ExtResource("70_i80x6")]
 transform = Transform3D(0.9239903, 0, 0.3824159, 0, 1, 0, -0.3824159, 0, 0.9239903, -8, 2.3277657, 97)
 
-[node name="Hay3" type="Node3D" parent="Scenery/Landmarks" unique_id=1829335628 instance=ExtResource("70_i80x6")]
+[node name="Hay3" type="Node3D" parent="Scenery/Landmarks" unique_id=1343979967 instance=ExtResource("70_i80x6")]
 transform = Transform3D(-0.40914634, 0, -0.9124688, 0, 1, 0, 0.9124688, 0, -0.40914634, 14, 2.1322148, 96)
 
-[node name="Hay4" type="Node3D" parent="Scenery/Landmarks" unique_id=1010561469 instance=ExtResource("70_i80x6")]
+[node name="Hay4" type="Node3D" parent="Scenery/Landmarks" unique_id=525620994 instance=ExtResource("70_i80x6")]
 transform = Transform3D(0.024102097, 0, 0.9997095, 0, 1, 0, -0.9997095, 0, 0.024102097, 18, 2.0523038, 94)
 
-[node name="Hay5" type="Node3D" parent="Scenery/Landmarks" unique_id=1162545170 instance=ExtResource("70_i80x6")]
+[node name="Hay5" type="Node3D" parent="Scenery/Landmarks" unique_id=1358422092 instance=ExtResource("70_i80x6")]
 transform = Transform3D(-0.6210298, 0, -0.78378695, 0, 1, 0, 0.78378695, 0, -0.6210298, -22, 2.19498, 66)
 
-[node name="Hay6" type="Node3D" parent="Scenery/Landmarks" unique_id=1640393815 instance=ExtResource("70_i80x6")]
+[node name="Hay6" type="Node3D" parent="Scenery/Landmarks" unique_id=1184831005 instance=ExtResource("70_i80x6")]
 transform = Transform3D(-0.7142785, 0, 0.6998615, 0, 1, 0, -0.6998615, 0, -0.7142785, 24.10603, 2.0974064, 96.42695)
 
-[node name="Hay7" type="Node3D" parent="Scenery/Landmarks" unique_id=1732509294 instance=ExtResource("70_i80x6")]
+[node name="Hay7" type="Node3D" parent="Scenery/Landmarks" unique_id=745908968 instance=ExtResource("70_i80x6")]
 transform = Transform3D(-0.65105414, 0, -0.7590313, 0, 1, 0, 0.7590313, 0, -0.65105414, -30, 2.1817815, 94)
 
-[node name="Cottage5" type="Node3D" parent="Scenery/Landmarks" unique_id=683711420 instance=ExtResource("67_ax21p")]
+[node name="Cottage5" type="Node3D" parent="Scenery/Landmarks" unique_id=1545380068 instance=ExtResource("67_ax21p")]
 transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, -34, 2.1642852, 92)
 
-[node name="Cottage6" type="Node3D" parent="Scenery/Landmarks" unique_id=848063978 instance=ExtResource("67_ax21p")]
+[node name="Cottage6" type="Node3D" parent="Scenery/Landmarks" unique_id=381418071 instance=ExtResource("67_ax21p")]
 transform = Transform3D(0.34202015, 0, -0.9396926, 0, 1, 0, 0.9396926, 0, 0.34202015, 36, 1.4900719, 88)
 
-[node name="Cottage7" type="Node3D" parent="Scenery/Landmarks" unique_id=11707032 instance=ExtResource("67_ax21p")]
+[node name="Cottage7" type="Node3D" parent="Scenery/Landmarks" unique_id=1376971440 instance=ExtResource("67_ax21p")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -36, 2.2624013, 56)
 
-[node name="Dock1" type="Node3D" parent="Scenery/Landmarks" unique_id=1964588945 instance=ExtResource("71_x1eym")]
+[node name="Dock1" type="Node3D" parent="Scenery/Landmarks" unique_id=1314452664 instance=ExtResource("71_x1eym")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 20, 2.0782704, -63)
 
-[node name="Dock2" type="Node3D" parent="Scenery/Landmarks" unique_id=201737651 instance=ExtResource("71_x1eym")]
+[node name="Dock2" type="Node3D" parent="Scenery/Landmarks" unique_id=592880137 instance=ExtResource("71_x1eym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.8574951, -107)
 
-[node name="BoatProp1" type="Node3D" parent="Scenery/Landmarks" unique_id=326493830 instance=ExtResource("72_se2u1")]
+[node name="BoatProp1" type="Node3D" parent="Scenery/Landmarks" unique_id=479820071 instance=ExtResource("72_se2u1")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -14, 0, -96)
 
-[node name="BoatProp2" type="Node3D" parent="Scenery/Landmarks" unique_id=1464395254 instance=ExtResource("72_se2u1")]
+[node name="BoatProp2" type="Node3D" parent="Scenery/Landmarks" unique_id=1467015611 instance=ExtResource("72_se2u1")]
 transform = Transform3D(0.64278764, 0, -0.76604444, 0, 1, 0, 0.76604444, 0, 0.64278764, 10, 0, -100)
 
-[node name="BoatProp3" type="Node3D" parent="Scenery/Landmarks" unique_id=462688328 instance=ExtResource("72_se2u1")]
+[node name="BoatProp3" type="Node3D" parent="Scenery/Landmarks" unique_id=341446034 instance=ExtResource("72_se2u1")]
 transform = Transform3D(0.34202015, 0, 0.9396926, 0, 1, 0, -0.9396926, 0, 0.34202015, 30, 0, -100)
 
-[node name="Lighthouse1" type="Node3D" parent="Scenery/Landmarks" unique_id=1558275260 instance=ExtResource("73_mpy3d")]
+[node name="Lighthouse1" type="Node3D" parent="Scenery/Landmarks" unique_id=312686639 instance=ExtResource("73_mpy3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 1.6154233, -115)
 
-[node name="Castle1" type="Node3D" parent="Scenery/Landmarks" unique_id=785581917 instance=ExtResource("74_jw0r8")]
+[node name="Castle1" type="Node3D" parent="Scenery/Landmarks" unique_id=2111688711 instance=ExtResource("74_jw0r8")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -78, 9.982126, -89)
 
-[node name="Cave1" type="Node3D" parent="Scenery/Landmarks" unique_id=968638134 instance=ExtResource("75_3y8in")]
+[node name="Cave1" type="Node3D" parent="Scenery/Landmarks" unique_id=1830906235 instance=ExtResource("75_3y8in")]
 transform = Transform3D(0.8746197, 0, 0.4848096, 0, 1, 0, -0.4848096, 0, 0.8746197, 56, 2.7070003, -98)
 
-[node name="Tombstone1" type="Node3D" parent="Scenery/Landmarks" unique_id=2082826393 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone1" type="Node3D" parent="Scenery/Landmarks" unique_id=41355767 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.97486085, 0, -0.11194463, 0, 0.98126715, 0, 0.11194463, 0, -0.97486085, 103.51097, 2.18194, 41.93213)
 
-[node name="Tombstone2" type="Node3D" parent="Scenery/Landmarks" unique_id=326858288 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone2" type="Node3D" parent="Scenery/Landmarks" unique_id=276489733 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.9061086, 0, 0.19564912, 0, 0.9269905, 0, -0.19564912, 0, -0.9061086, 111.47477, 2.143808, 22.97192)
 
-[node name="Cross1" type="Node3D" parent="Scenery/Landmarks" unique_id=1813411425 instance=ExtResource("77_f8lq3")]
+[node name="Cross1" type="Node3D" parent="Scenery/Landmarks" unique_id=674167398 instance=ExtResource("77_f8lq3")]
 transform = Transform3D(-0.921278, 0, 0.25067475, 0, 0.9547728, 0, -0.25067475, 0, -0.921278, 93.42626, 1.9584833, 35.270973)
 
-[node name="Tombstone3" type="Node3D" parent="Scenery/Landmarks" unique_id=844516504 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone3" type="Node3D" parent="Scenery/Landmarks" unique_id=746971788 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-1.0841753, 0, -0.41963613, 0, 1.1625535, 0, 0.41963613, 0, -1.0841753, 98.82742, 2.0137758, 43.901794)
 
-[node name="Cross2" type="Node3D" parent="Scenery/Landmarks" unique_id=2032727642 instance=ExtResource("77_f8lq3")]
+[node name="Cross2" type="Node3D" parent="Scenery/Landmarks" unique_id=928279787 instance=ExtResource("77_f8lq3")]
 transform = Transform3D(-0.993506, 0, 0.1362363, 0, 1.0028033, 0, -0.1362363, 0, -0.993506, 95.359085, 2.0831034, 12.320823)
 
-[node name="Tombstone4" type="Node3D" parent="Scenery/Landmarks" unique_id=2060310944 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone4" type="Node3D" parent="Scenery/Landmarks" unique_id=2083219066 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-1.1544148, 0, 0.05915477, 0, 1.1559293, 0, -0.05915477, 0, -1.1544148, 95.04843, 1.962382, 32.16644)
 
-[node name="Tombstone5" type="Node3D" parent="Scenery/Landmarks" unique_id=75972338 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone5" type="Node3D" parent="Scenery/Landmarks" unique_id=2144076106 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-1.2617878, 0, 0.2414622, 0, 1.2846837, 0, -0.2414622, 0, -1.2617878, 107.78025, 2.3276513, 33.211433)
 
-[node name="Tombstone6" type="Node3D" parent="Scenery/Landmarks" unique_id=1948918697 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone6" type="Node3D" parent="Scenery/Landmarks" unique_id=1241487765 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.90580213, 0, 0.020280229, 0, 0.9060291, 0, -0.020280229, 0, -0.90580213, 110.31342, 2.5426025, 27.720251)
 
-[node name="Tombstone7" type="Node3D" parent="Scenery/Landmarks" unique_id=1855602675 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone7" type="Node3D" parent="Scenery/Landmarks" unique_id=39657343 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.9420933, 0, -0.24578357, 0, 0.9736269, 0, 0.24578357, 0, -0.9420933, 98.10071, 2.2283301, 28.645123)
 
-[node name="Tombstone8" type="Node3D" parent="Scenery/Landmarks" unique_id=376916928 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone8" type="Node3D" parent="Scenery/Landmarks" unique_id=2046366875 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.9277363, 0, -0.26326236, 0, 0.96436596, 0, 0.26326236, 0, -0.9277363, 97.392914, 1.9811115, 16.026869)
 
-[node name="Tombstone9" type="Node3D" parent="Scenery/Landmarks" unique_id=1921727688 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone9" type="Node3D" parent="Scenery/Landmarks" unique_id=1365188226 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-1.0764031, 0, 0.44646925, 0, 1.1653234, 0, -0.44646925, 0, -1.0764031, 115.36006, 1.8624716, 16.173965)
 
-[node name="Tombstone10" type="Node3D" parent="Scenery/Landmarks" unique_id=1991760966 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone10" type="Node3D" parent="Scenery/Landmarks" unique_id=359354500 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-1.131211, 0, 0.48899823, 0, 1.2323788, 0, -0.48899823, 0, -1.131211, 108.059975, 1.5514631, 20.124287)
 
-[node name="Cross3" type="Node3D" parent="Scenery/Landmarks" unique_id=1717344283 instance=ExtResource("77_f8lq3")]
+[node name="Cross3" type="Node3D" parent="Scenery/Landmarks" unique_id=1164536832 instance=ExtResource("77_f8lq3")]
 transform = Transform3D(-1.029712, 0, -0.09721074, 0, 1.0342904, 0, 0.09721074, 0, -1.029712, 99.48482, 2.0905511, 10.415132)
 
-[node name="Cross4" type="Node3D" parent="Scenery/Landmarks" unique_id=1145574433 instance=ExtResource("77_f8lq3")]
+[node name="Cross4" type="Node3D" parent="Scenery/Landmarks" unique_id=500359024 instance=ExtResource("77_f8lq3")]
 transform = Transform3D(-1.053158, 0, -0.17994507, 0, 1.0684204, 0, 0.17994507, 0, -1.053158, 100.49813, 2.4079967, 25.52674)
 
-[node name="Tombstone11" type="Node3D" parent="Scenery/Landmarks" unique_id=415669363 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone11" type="Node3D" parent="Scenery/Landmarks" unique_id=1154966577 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.8888509, 0, 0.3434267, 0, 0.9528892, 0, -0.3434267, 0, -0.8888509, 111.041595, 2.445936, 10.158919)
 
-[node name="Tombstone12" type="Node3D" parent="Scenery/Landmarks" unique_id=834620392 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone12" type="Node3D" parent="Scenery/Landmarks" unique_id=230341070 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.9416405, 0, -0.36902148, 0, 1.0113672, 0, 0.36902148, 0, -0.9416405, 107.15332, 2.226399, 37.994057)
 
-[node name="Tombstone13" type="Node3D" parent="Scenery/Landmarks" unique_id=1493567447 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone13" type="Node3D" parent="Scenery/Landmarks" unique_id=436873208 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.96705365, 0, -0.2473686, 0, 0.99819034, 0, 0.2473686, 0, -0.96705365, 109.37853, 1.8168942, 14.214631)
 
-[node name="Tombstone14" type="Node3D" parent="Scenery/Landmarks" unique_id=734745555 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone14" type="Node3D" parent="Scenery/Landmarks" unique_id=778996107 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-0.93431574, 0, -0.37674856, 0, 1.0074152, 0, 0.37674856, 0, -0.93431574, 101.36164, 2.1190581, 15.601201)
 
-[node name="Tombstone15" type="Node3D" parent="Scenery/Landmarks" unique_id=1851428777 instance=ExtResource("76_qf4ty")]
+[node name="Tombstone15" type="Node3D" parent="Scenery/Landmarks" unique_id=822331439 instance=ExtResource("76_qf4ty")]
 transform = Transform3D(-1.029159, 0, 0.44193023, 0, 1.1200315, 0, -0.44193023, 0, -1.029159, 106.15716, 1.6835699, 17.696985)
 
-[node name="Cross5" type="Node3D" parent="Scenery/Landmarks" unique_id=1831333487 instance=ExtResource("77_f8lq3")]
+[node name="Cross5" type="Node3D" parent="Scenery/Landmarks" unique_id=63196780 instance=ExtResource("77_f8lq3")]
 transform = Transform3D(-1.1832596, 0, 0.12618054, 0, 1.1899685, 0, -0.12618054, 0, -1.1832596, 104.53004, 2.3729746, 7.8271728)
 
-[node name="Crypt1" type="Node3D" parent="Scenery/Landmarks" unique_id=1977719340 instance=ExtResource("78_rucnt")]
+[node name="Crypt1" type="Node3D" parent="Scenery/Landmarks" unique_id=1482778852 instance=ExtResource("78_rucnt")]
 transform = Transform3D(-0.9396926, 0, -0.34202015, 0, 1, 0, 0.34202015, 0, -0.9396926, 98, 2.1664941, 10)
 
-[node name="Lantern27" type="Node3D" parent="Scenery/Landmarks" unique_id=2106951462 instance=ExtResource("63_dyjlx")]
+[node name="Lantern27" type="Node3D" parent="Scenery/Landmarks" unique_id=975559796 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 1.5532346, 22)
 
-[node name="Lantern28" type="Node3D" parent="Scenery/Landmarks" unique_id=1751972392 instance=ExtResource("63_dyjlx")]
+[node name="Lantern28" type="Node3D" parent="Scenery/Landmarks" unique_id=1748803359 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 2.6103947, 28)
 
-[node name="Lantern29" type="Node3D" parent="Scenery/Landmarks" unique_id=339266645 instance=ExtResource("63_dyjlx")]
+[node name="Lantern29" type="Node3D" parent="Scenery/Landmarks" unique_id=750901897 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 2.0198987, 46)
 
-[node name="Lantern30" type="Node3D" parent="Scenery/Landmarks" unique_id=1350327617 instance=ExtResource("63_dyjlx")]
+[node name="Lantern30" type="Node3D" parent="Scenery/Landmarks" unique_id=366934322 instance=ExtResource("63_dyjlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 2.205898, 4)
 
-[node name="BeachHut1" type="Node3D" parent="Scenery/Landmarks" unique_id=670959469 instance=ExtResource("79_8grkl")]
+[node name="BeachHut1" type="Node3D" parent="Scenery/Landmarks" unique_id=859857734 instance=ExtResource("79_8grkl")]
 transform = Transform3D(-0.9396926, 0, -0.34202015, 0, 1, 0, 0.34202015, 0, -0.9396926, 58, 2.189704, 84)
 
-[node name="Umbrella1" type="Node3D" parent="Scenery/Landmarks" unique_id=443294391 instance=ExtResource("80_52glv")]
+[node name="Umbrella1" type="Node3D" parent="Scenery/Landmarks" unique_id=1904795188 instance=ExtResource("80_52glv")]
 transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 72, 1.3675928, 90)
 
-[node name="Umbrella2" type="Node3D" parent="Scenery/Landmarks" unique_id=136006415 instance=ExtResource("80_52glv")]
+[node name="Umbrella2" type="Node3D" parent="Scenery/Landmarks" unique_id=868557737 instance=ExtResource("80_52glv")]
 transform = Transform3D(0.34202015, 0, 0.9396926, 0, 1, 0, -0.9396926, 0, 0.34202015, 66, 1.5589658, 80)
 
-[node name="Umbrella3" type="Node3D" parent="Scenery/Landmarks" unique_id=1479106360 instance=ExtResource("80_52glv")]
+[node name="Umbrella3" type="Node3D" parent="Scenery/Landmarks" unique_id=121973962 instance=ExtResource("80_52glv")]
 transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 48, 1.4191959, 92)
 
-[node name="Umbrella4" type="Node3D" parent="Scenery/Landmarks" unique_id=2058588834 instance=ExtResource("80_52glv")]
+[node name="Umbrella4" type="Node3D" parent="Scenery/Landmarks" unique_id=734143150 instance=ExtResource("80_52glv")]
 transform = Transform3D(0.76604444, 0, 0.6427876, 0, 1, 0, -0.6427876, 0, 0.76604444, 78, 1.5242853, 72)
 
-[node name="BoatProp4" type="Node3D" parent="Scenery/Landmarks" unique_id=1423704168 instance=ExtResource("72_se2u1")]
+[node name="BoatProp4" type="Node3D" parent="Scenery/Landmarks" unique_id=181786240 instance=ExtResource("72_se2u1")]
 transform = Transform3D(-0.1736482, 0, 0.9848077, 0, 1, 0, -0.9848077, 0, -0.1736482, 50, 0, 113)
 
-[node name="Igloo1" type="Node3D" parent="Scenery/Landmarks" unique_id=717698452 instance=ExtResource("81_hdehf")]
+[node name="Igloo1" type="Node3D" parent="Scenery/Landmarks" unique_id=989983531 instance=ExtResource("81_hdehf")]
 transform = Transform3D(0.76604444, 0, 0.6427876, 0, 1, 0, -0.6427876, 0, 0.76604444, -74, 2.1223695, 60)
 
-[node name="Snowman1" type="Node3D" parent="Scenery/Landmarks" unique_id=774570584 instance=ExtResource("82_ewsl5")]
+[node name="Snowman1" type="Node3D" parent="Scenery/Landmarks" unique_id=594880275 instance=ExtResource("82_ewsl5")]
 transform = Transform3D(-0.22671682, 0, -0.9739607, 0, 1, 0, 0.9739607, 0, -0.22671682, -60, 2.3262248, 80)
 
-[node name="Snowman2" type="Node3D" parent="Scenery/Landmarks" unique_id=195520152 instance=ExtResource("82_ewsl5")]
+[node name="Snowman2" type="Node3D" parent="Scenery/Landmarks" unique_id=1259183248 instance=ExtResource("82_ewsl5")]
 transform = Transform3D(0.2805677, 0, 0.9598342, 0, 1, 0, -0.9598342, 0, 0.2805677, -86, 2.143538, 78)
 
-[node name="Snowman3" type="Node3D" parent="Scenery/Landmarks" unique_id=304617026 instance=ExtResource("82_ewsl5")]
+[node name="Snowman3" type="Node3D" parent="Scenery/Landmarks" unique_id=401645251 instance=ExtResource("82_ewsl5")]
 transform = Transform3D(-0.12029956, 0, -0.99273765, 0, 1, 0, 0.99273765, 0, -0.12029956, -54, 1.9819449, 58)
 
-[node name="Snowman4" type="Node3D" parent="Scenery/Landmarks" unique_id=1877605100 instance=ExtResource("82_ewsl5")]
+[node name="Snowman4" type="Node3D" parent="Scenery/Landmarks" unique_id=1131455976 instance=ExtResource("82_ewsl5")]
 transform = Transform3D(-0.17924888, 0, 0.98380375, 0, 1, 0, -0.98380375, 0, -0.17924888, -72, 2.066018, 90)
 
-[node name="Campfire1" type="Node3D" parent="Scenery/Landmarks" unique_id=1288976335 instance=ExtResource("83_qvm2v")]
+[node name="Campfire1" type="Node3D" parent="Scenery/Landmarks" unique_id=1876398305 instance=ExtResource("83_qvm2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88, 2.560654, -20)
 
-[node name="Tent1" type="Node3D" parent="Scenery/Landmarks" unique_id=646505673 instance=ExtResource("84_4kbdd")]
+[node name="Tent1" type="Node3D" parent="Scenery/Landmarks" unique_id=1138462967 instance=ExtResource("84_4kbdd")]
 transform = Transform3D(-0.8660254, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, -0.8660254, -84, 2.866765, -13.071796)
 
-[node name="Tent2" type="Node3D" parent="Scenery/Landmarks" unique_id=594050635 instance=ExtResource("84_4kbdd")]
+[node name="Tent2" type="Node3D" parent="Scenery/Landmarks" unique_id=1378611845 instance=ExtResource("84_4kbdd")]
 transform = Transform3D(0.8660253, 0, -0.5000002, 0, 1, 0, 0.5000002, 0, 0.8660253, -84, 2.4355254, -26.928204)
 
-[node name="Tent3" type="Node3D" parent="Scenery/Landmarks" unique_id=2033844548 instance=ExtResource("84_4kbdd")]
+[node name="Tent3" type="Node3D" parent="Scenery/Landmarks" unique_id=1160879941 instance=ExtResource("84_4kbdd")]
 transform = Transform3D(1.3907092e-07, 0, 1, 0, 1, 0, -1, 0, 1.3907092e-07, -96, 2.8723037, -20)
 
-[node name="Signpost1" type="Node3D" parent="Scenery/Landmarks" unique_id=1766751762 instance=ExtResource("85_cymsm")]
+[node name="Signpost1" type="Node3D" parent="Scenery/Landmarks" unique_id=884125222 instance=ExtResource("85_cymsm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.53001, 2.4383051, 13.5255165)
 
-[node name="Signpost2" type="Node3D" parent="Scenery/Landmarks" unique_id=1106854805 instance=ExtResource("85_cymsm")]
+[node name="Signpost2" type="Node3D" parent="Scenery/Landmarks" unique_id=808536962 instance=ExtResource("85_cymsm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.64163, 2.1080368, -76.24324)
 
-[node name="Signpost3" type="Node3D" parent="Scenery/Landmarks" unique_id=1743740662 instance=ExtResource("85_cymsm")]
+[node name="Signpost3" type="Node3D" parent="Scenery/Landmarks" unique_id=1125695980 instance=ExtResource("85_cymsm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.56473, 2.3095837, -0.14583354)
 
-[node name="Signpost4" type="Node3D" parent="Scenery/Landmarks" unique_id=136667724 instance=ExtResource("85_cymsm")]
+[node name="Signpost4" type="Node3D" parent="Scenery/Landmarks" unique_id=486102959 instance=ExtResource("85_cymsm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.158752, 2.2439098, 102.28064)
 
-[node name="Portal1" type="Node3D" parent="Scenery/Landmarks" unique_id=76095405 instance=ExtResource("86_c3loc")]
+[node name="Portal1" type="Node3D" parent="Scenery/Landmarks" unique_id=826750994 instance=ExtResource("86_c3loc")]
 transform = Transform3D(-0.61510724, 0, -0.78844345, 0, 1, 0, 0.78844345, 0, -0.61510724, 70.16042, 3.9491835, -76.01182)
 
-[node name="Portal2" type="Node3D" parent="Scenery/Landmarks" unique_id=338562348 instance=ExtResource("86_c3loc")]
+[node name="Portal2" type="Node3D" parent="Scenery/Landmarks" unique_id=1210692474 instance=ExtResource("86_c3loc")]
 transform = Transform3D(0.89286166, 0, 0.4503311, 0, 1, 0, -0.4503311, 0, 0.89286166, 74.679985, 1.5285944, 89.95257)
 
-[node name="Portal3" type="Node3D" parent="Scenery/Landmarks" unique_id=1213837689 instance=ExtResource("86_c3loc")]
+[node name="Portal3" type="Node3D" parent="Scenery/Landmarks" unique_id=765877608 instance=ExtResource("86_c3loc")]
 transform = Transform3D(0.88074225, 0, -0.4735959, 0, 1, 0, 0.4735959, 0, 0.88074225, -67.87283, 2.130264, 96.49137)
 
-[node name="Portal4" type="Node3D" parent="Scenery/Landmarks" unique_id=1347958067 instance=ExtResource("86_c3loc")]
+[node name="Portal4" type="Node3D" parent="Scenery/Landmarks" unique_id=821097106 instance=ExtResource("86_c3loc")]
 transform = Transform3D(0.35154423, 0, -0.9361713, 0, 1, 0, 0.9361713, 0, 0.35154423, -101.440605, 2.3531969, 27.884071)
 
-[node name="Portal5" type="Node3D" parent="Scenery/Landmarks" unique_id=1366752420 instance=ExtResource("86_c3loc")]
+[node name="Portal5" type="Node3D" parent="Scenery/Landmarks" unique_id=934532277 instance=ExtResource("86_c3loc")]
 transform = Transform3D(-0.35223702, 0, 0.9359108, 0, 1, 0, -0.9359108, 0, -0.35223702, -68.713936, 9.560489, -79.58586)
 
-[node name="Portal6" type="Node3D" parent="Scenery/Landmarks" unique_id=1484846397 instance=ExtResource("86_c3loc")]
+[node name="Portal6" type="Node3D" parent="Scenery/Landmarks" unique_id=610987529 instance=ExtResource("86_c3loc")]
 transform = Transform3D(-0.5999783, 0, 0.8000162, 0, 1, 0, -0.8000162, 0, -0.5999783, -43.77369, 2.156848, -66.07494)
 
-[node name="Portal7" type="Node3D" parent="Scenery/Landmarks" unique_id=1496496986 instance=ExtResource("86_c3loc")]
+[node name="Portal7" type="Node3D" parent="Scenery/Landmarks" unique_id=195800951 instance=ExtResource("86_c3loc")]
 transform = Transform3D(-0.9358653, 0, -0.35235795, 0, 1, 0, 0.35235795, 0, -0.9358653, 89.48038, 2.3818562, 9.9344225)
 
-[node name="Portal8" type="Node3D" parent="Scenery/Landmarks" unique_id=125399141 instance=ExtResource("86_c3loc")]
+[node name="Portal8" type="Node3D" parent="Scenery/Landmarks" unique_id=451334431 instance=ExtResource("86_c3loc")]
 transform = Transform3D(-0.06037238, 0, 0.9981759, 0, 1, 0, -0.9981759, 0, -0.06037238, -7.3665423, 2.311352, 90.54192)
 
-[node name="Controller" type="Node3D" parent="." unique_id=462751549 groups=["Controller"] instance=ExtResource("87_0uxoa")]
+[node name="Controller" type="Node3D" parent="." unique_id=1147698009 groups=["Controller"] instance=ExtResource("87_0uxoa")]
 script = ExtResource("88_hyg5p")
 COOKIES_FOR_CAKE = 20
 start_node = NodePath("../Nodes/Start")
 
-[node name="Player1" type="Node3D" parent="." unique_id=660549395 groups=["players"] instance=ExtResource("89_77pd8")]
+[node name="Player1" type="Node3D" parent="." unique_id=247602913 groups=["players"] instance=ExtResource("89_77pd8")]
 script = ExtResource("90_us6nd")
 
-[node name="Player2" type="Node3D" parent="." unique_id=888633978 groups=["players"] instance=ExtResource("89_77pd8")]
+[node name="Player2" type="Node3D" parent="." unique_id=1752013565 groups=["players"] instance=ExtResource("89_77pd8")]
 script = ExtResource("90_us6nd")
 
-[node name="Player3" type="Node3D" parent="." unique_id=305429378 groups=["players"] instance=ExtResource("89_77pd8")]
+[node name="Player3" type="Node3D" parent="." unique_id=1761280898 groups=["players"] instance=ExtResource("89_77pd8")]
 script = ExtResource("90_us6nd")
 
-[node name="Player4" type="Node3D" parent="." unique_id=2133240525 groups=["players"] instance=ExtResource("89_77pd8")]
+[node name="Player4" type="Node3D" parent="." unique_id=68872406 groups=["players"] instance=ExtResource("89_77pd8")]
 script = ExtResource("90_us6nd")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=227211610]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=491542337]
 transform = Transform3D(0.81915206, 0.43938506, -0.36868784, 0, 0.64278764, 0.76604444, 0.57357645, -0.62750685, 0.5265408, 0, 0, 0)
 light_energy = 1.5
 shadow_enabled = true
 directional_shadow_max_distance = 120.0
 
-[node name="Nodes" type="Node3D" parent="." unique_id=415826045]
+[node name="Nodes" type="Node3D" parent="." unique_id=619765013]
 
-[node name="N001" type="Node3D" parent="Nodes" unique_id=229907326 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N001" type="Node3D" parent="Nodes" unique_id=1621632401 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9874116, 0.15810469, 0.0046021994, -0.15810469, 0.9857291, 0.057801716, 0.0046021994, -0.057801716, 0.9983175, -50, 2.082, -82)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N002"), NodePath("../N198")])
 prev = Array[NodePath]([NodePath("../N155")])
 
-[node name="N002" type="Node3D" parent="Nodes" unique_id=542783455 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N002" type="Node3D" parent="Nodes" unique_id=1692048052 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99957067, -0.029298881, 6.153878e-05, 0.029298881, 0.99956185, -0.0041998397, 6.153878e-05, 0.0041998397, 0.9999912, -44.819, 1.778, -83.751)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N003")])
 prev = Array[NodePath]([NodePath("../N001")])
 
-[node name="N003" type="Node3D" parent="Nodes" unique_id=448662368 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N003" type="Node3D" parent="Nodes" unique_id=1043225529 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9997355, 0.022999348, -0.00012996398, -0.022999348, 0.99967164, -0.011299681, -0.00012996398, 0.011299681, 0.99993616, -39.411, 1.818, -84.641)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N004")])
 prev = Array[NodePath]([NodePath("../N002")])
 
-[node name="N004" type="Node3D" parent="Nodes" unique_id=2016444405 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N004" type="Node3D" parent="Nodes" unique_id=81250141 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.953, 2.49, -85.143)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N005")])
 prev = Array[NodePath]([NodePath("../N003")])
 
-[node name="N005" type="Node3D" parent="Nodes" unique_id=2135077303 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N005" type="Node3D" parent="Nodes" unique_id=1222411883 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.472, 2.49, -85.208)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N006")])
 prev = Array[NodePath]([NodePath("../N004")])
 
-[node name="N006" type="Node3D" parent="Nodes" unique_id=583515746 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N006" type="Node3D" parent="Nodes" unique_id=749972433 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.991, 2.49, -85.08)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N007")])
 prev = Array[NodePath]([NodePath("../N005")])
 
-[node name="N007" type="Node3D" parent="Nodes" unique_id=992746768 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N007" type="Node3D" parent="Nodes" unique_id=1631675600 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.51, 2.49, -85)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N008")])
 prev = Array[NodePath]([NodePath("../N006")])
 
-[node name="N008" type="Node3D" parent="Nodes" unique_id=1097852860 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N008" type="Node3D" parent="Nodes" unique_id=474052913 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.027, 2.49, -85)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N009")])
 prev = Array[NodePath]([NodePath("../N007")])
 
-[node name="N009" type="Node3D" parent="Nodes" unique_id=728717164 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N009" type="Node3D" parent="Nodes" unique_id=1610677621 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.545, 2.49, -85)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N010")])
 prev = Array[NodePath]([NodePath("../N008")])
 
-[node name="N010" type="Node3D" parent="Nodes" unique_id=740524193 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N010" type="Node3D" parent="Nodes" unique_id=436451452 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.062, 2.49, -85)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N011")])
 prev = Array[NodePath]([NodePath("../N009")])
 
-[node name="N011" type="Node3D" parent="Nodes" unique_id=802084727 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N011" type="Node3D" parent="Nodes" unique_id=1807132663 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42, 2.49, -85)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N012")])
 prev = Array[NodePath]([NodePath("../N010")])
 
-[node name="N012" type="Node3D" parent="Nodes" unique_id=1282215767 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N012" type="Node3D" parent="Nodes" unique_id=300888637 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.902, 2.49, -85)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N013")])
 prev = Array[NodePath]([NodePath("../N011")])
 
-[node name="N013" type="Node3D" parent="Nodes" unique_id=1014283913 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N013" type="Node3D" parent="Nodes" unique_id=1854410344 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.385, 2.49, -85)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N014")])
 prev = Array[NodePath]([NodePath("../N012")])
 
-[node name="N014" type="Node3D" parent="Nodes" unique_id=1156196890 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N014" type="Node3D" parent="Nodes" unique_id=1781783142 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.867, 2.49, -85.01)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N015")])
 prev = Array[NodePath]([NodePath("../N013")])
 
-[node name="N015" type="Node3D" parent="Nodes" unique_id=1190633027 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N015" type="Node3D" parent="Nodes" unique_id=2023613353 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.349, 2.49, -85.056)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N016")])
 prev = Array[NodePath]([NodePath("../N014")])
 
-[node name="N016" type="Node3D" parent="Nodes" unique_id=187041418 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N016" type="Node3D" parent="Nodes" unique_id=230896871 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.831, 2.49, -85.07)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N017")])
 prev = Array[NodePath]([NodePath("../N015")])
 
-[node name="N017" type="Node3D" parent="Nodes" unique_id=944136477 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N017" type="Node3D" parent="Nodes" unique_id=1918190503 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.313, 2.49, -84.974)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N018")])
 prev = Array[NodePath]([NodePath("../N016")])
 
-[node name="N018" type="Node3D" parent="Nodes" unique_id=1682273441 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N018" type="Node3D" parent="Nodes" unique_id=1090078159 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.795, 2.084, -85.007)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N019")])
 prev = Array[NodePath]([NodePath("../N017")])
 
-[node name="N019" type="Node3D" parent="Nodes" unique_id=1287104582 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N019" type="Node3D" parent="Nodes" unique_id=1231748669 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99995196, 0.009799519, -7.349458e-06, -0.009799519, 0.9999509, -0.0014999263, -7.349458e-06, 0.0014999263, 0.99999887, 48.243, 2.004, -84.496)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N020")])
 prev = Array[NodePath]([NodePath("../N018")])
 
-[node name="N020" type="Node3D" parent="Nodes" unique_id=1650445940 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N020" type="Node3D" parent="Nodes" unique_id=1599199851 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999795, 0.00639979, -1.599921e-05, -0.00639979, 0.99996704, -0.0049998355, -1.599921e-05, 0.0049998355, 0.9999875, 53.082, 1.968, -82.073)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N021")])
 prev = Array[NodePath]([NodePath("../N019")])
 
-[node name="N021" type="Node3D" parent="Nodes" unique_id=1521859838 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N021" type="Node3D" parent="Nodes" unique_id=1664914878 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999339, -0.0114998715, -5.462682e-05, 0.0114998715, 0.9998887, 0.009499894, -5.462682e-05, -0.009499894, 0.9999549, 57.063, 1.97, -78.305)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N022")])
 prev = Array[NodePath]([NodePath("../N020")])
 
-[node name="N022" type="Node3D" parent="Nodes" unique_id=1812492909 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N022" type="Node3D" parent="Nodes" unique_id=1357188134 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99357235, -0.1131954, 0.0008517162, 0.1131954, 0.9934595, -0.01499939, 0.0008517162, 0.01499939, 0.99988717, 61.847, 2.3, -75.982)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N023")])
 prev = Array[NodePath]([NodePath("../N021")])
 
-[node name="N023" type="Node3D" parent="Nodes" unique_id=1629432412 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N023" type="Node3D" parent="Nodes" unique_id=910117371 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9947143, -0.10250094, 0.006085006, 0.10250094, 0.9877091, -0.11800108, 0.006085006, 0.11800108, 0.99299484, 66.218, 3.112, -79.087)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N024")])
 prev = Array[NodePath]([NodePath("../N022")])
 
-[node name="N024" type="Node3D" parent="Nodes" unique_id=729909720 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N024" type="Node3D" parent="Nodes" unique_id=765602191 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9950886, -0.09879648, 0.0061591347, 0.09879648, 0.98736477, -0.12389558, 0.0061591347, 0.12389558, 0.99227613, 69.59, 3.967, -83.409)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N025")])
 prev = Array[NodePath]([NodePath("../N023")])
 
-[node name="N025" type="Node3D" parent="Nodes" unique_id=1064301324 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N025" type="Node3D" parent="Nodes" unique_id=2049384405 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99079907, -0.13519791, 0.006226977, 0.13519791, 0.9865848, -0.09149859, 0.006226977, 0.09149859, 0.9957857, 73.285, 4.872, -87.445)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N026")])
 prev = Array[NodePath]([NodePath("../N024")])
 
-[node name="N026" type="Node3D" parent="Nodes" unique_id=377804116 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N026" type="Node3D" parent="Nodes" unique_id=587794155 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9938275, -0.11079544, 0.0055931373, 0.11079544, 0.98875934, -0.10039587, 0.0055931373, 0.10039587, 0.9949319, 77.712, 5.728, -90.679)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N027")])
 prev = Array[NodePath]([NodePath("../N025")])
 
-[node name="N027" type="Node3D" parent="Nodes" unique_id=1770859590 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N027" type="Node3D" parent="Nodes" unique_id=290920611 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9936602, -0.11229887, 0.005323612, 0.11229887, 0.9891899, -0.09429905, 0.005323612, 0.09429905, 0.9955297, 82.301, 6.55, -93.674)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N028")])
 prev = Array[NodePath]([NodePath("../N026")])
 
-[node name="N028" type="Node3D" parent="Nodes" unique_id=1113408430 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N028" type="Node3D" parent="Nodes" unique_id=1265761412 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9824306, -0.1865983, 0.0033519368, 0.1865983, 0.9817911, -0.035599675, 0.0033519368, 0.035599675, 0.9993605, 87.323, 7.479, -95.826)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N029")])
 prev = Array[NodePath]([NodePath("../N027")])
 
-[node name="N029" type="Node3D" parent="Nodes" unique_id=1259360279 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N029" type="Node3D" parent="Nodes" unique_id=1755777295 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.98695165, -0.16089651, -0.006228185, 0.16089651, 0.9839788, 0.07679835, -0.006228185, -0.07679835, 0.9970272, 92.631, 8.543, -95.121)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N030")])
 prev = Array[NodePath]([NodePath("../N028")])
 
-[node name="N030" type="Node3D" parent="Nodes" unique_id=852382261 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N030" type="Node3D" parent="Nodes" unique_id=1740145572 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9931642, -0.116601005, -0.0053936043, 0.116601005, 0.9889085, 0.09200079, -0.0053936043, -0.09200079, 0.99574435, 97.105, 9.448, -91.984)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N031")])
 prev = Array[NodePath]([NodePath("../N029")])
 
-[node name="N031" type="Node3D" parent="Nodes" unique_id=1483361913 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N031" type="Node3D" parent="Nodes" unique_id=699629445 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99490976, -0.10060001, -0.005844131, 0.10060001, 0.98820007, 0.11550002, -0.005844131, -0.11550002, 0.9932903, 100.649, 10.295, -87.823)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N032")])
 prev = Array[NodePath]([NodePath("../N030")])
 
-[node name="N032" type="Node3D" parent="Nodes" unique_id=1372624448 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N032" type="Node3D" parent="Nodes" unique_id=1604406108 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99785334, 0.06530272, 0.0049278038, -0.06530272, 0.9865413, 0.14990625, 0.0049278038, -0.14990625, 0.98868793, 101.755, 11.257, -82.65)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N033")])
 prev = Array[NodePath]([NodePath("../N031")])
 
-[node name="N033" type="Node3D" parent="Nodes" unique_id=625570485 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N033" type="Node3D" parent="Nodes" unique_id=1522324587 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9974732, 0.07099716, 0.0025694987, -0.07099716, 0.9948603, 0.07219712, 0.0025694987, -0.07219712, 0.99738705, 98.604, 11.928, -78.213)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N034")])
 prev = Array[NodePath]([NodePath("../N032")])
 
-[node name="N034" type="Node3D" parent="Nodes" unique_id=1650305458 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N034" type="Node3D" parent="Nodes" unique_id=952936309 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99833864, 0.05759941, 0.0014969425, -0.05759941, 0.99698985, 0.051899467, 0.0014969425, -0.051899467, 0.9986512, 94.602, 12.424, -74.468)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N035")])
 prev = Array[NodePath]([NodePath("../N033")])
 
-[node name="N035" type="Node3D" parent="Nodes" unique_id=1065308138 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N035" type="Node3D" parent="Nodes" unique_id=230154118 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9976892, 0.067903474, 0.0023244256, -0.067903474, 0.9953511, 0.068303496, 0.0023244256, -0.068303496, 0.9976619, 90.623, 12.905, -70.699)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N036")])
 prev = Array[NodePath]([NodePath("../N034")])
 
-[node name="N036" type="Node3D" parent="Nodes" unique_id=440445558 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N036" type="Node3D" parent="Nodes" unique_id=1269649501 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9966768, 0.081401266, 0.0030292496, -0.081401266, 0.9939155, 0.07420115, 0.0030292496, -0.07420115, 0.9972387, 86.755, 13.466, -66.823)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N037")])
 prev = Array[NodePath]([NodePath("../N035")])
 
-[node name="N037" type="Node3D" parent="Nodes" unique_id=1345072287 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N037" type="Node3D" parent="Nodes" unique_id=800551992 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99736476, 0.07249773, 0.0027624674, -0.07249773, 0.9944689, 0.07599762, 0.0027624674, -0.07599762, 0.99710417, 82.653, 14.003, -63.187)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N038")])
 prev = Array[NodePath]([NodePath("../N036")])
 
-[node name="N038" type="Node3D" parent="Nodes" unique_id=1738473154 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N038" type="Node3D" parent="Nodes" unique_id=478367983 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999894, 0.004599779, 0.00012335746, -0.004599779, 0.998552, 0.053597424, 0.00012335746, -0.053597424, 0.99856263, 79.957, 14.473, -58.568)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N039")])
 prev = Array[NodePath]([NodePath("../N037")])
 
-[node name="N039" type="Node3D" parent="Nodes" unique_id=1215726925 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N039" type="Node3D" parent="Nodes" unique_id=1732696224 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999995, 0.0009999991, -4.999994e-07, -0.0009999991, 0.999999, -0.0009999991, -4.999994e-07, 0.0009999991, 0.9999995, 82.532, 14.565, -53.861)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N040")])
 prev = Array[NodePath]([NodePath("../N038")])
 
-[node name="N040" type="Node3D" parent="Nodes" unique_id=1476442008 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N040" type="Node3D" parent="Nodes" unique_id=1802531415 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9998451, 0.01760052, -0.000133786, -0.01760052, 0.9997296, -0.01520045, -0.000133786, 0.01520045, 0.9998845, 86.622, 14.493, -50.219)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N041")])
 prev = Array[NodePath]([NodePath("../N039")])
 
-[node name="N041" type="Node3D" parent="Nodes" unique_id=354805985 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N041" type="Node3D" parent="Nodes" unique_id=242955900 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9986778, 0.051400945, -0.00077943306, -0.051400945, 0.9982183, -0.030300561, -0.00077943306, 0.030300561, 0.9995405, 91.212, 14.278, -47.231)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N042")])
 prev = Array[NodePath]([NodePath("../N040")])
 
-[node name="N042" type="Node3D" parent="Nodes" unique_id=1091175325 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N042" type="Node3D" parent="Nodes" unique_id=2140108261 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9855767, 0.16919495, 0.0034097624, -0.16919495, 0.9847706, 0.039998803, 0.0034097624, -0.039998803, 0.9991939, 96.399, 13.624, -45.982)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N043")])
 prev = Array[NodePath]([NodePath("../N041")])
 
-[node name="N043" type="Node3D" parent="Nodes" unique_id=1286521703 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N043" type="Node3D" parent="Nodes" unique_id=1795406109 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.98221344, 0.18739022, 0.011901999, -0.18739022, 0.9742491, 0.12539348, 0.011901999, -0.12539348, 0.9920357, 101.215, 12.517, -48.548)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N044")])
 prev = Array[NodePath]([NodePath("../N042")])
 
-[node name="N044" type="Node3D" parent="Nodes" unique_id=1608872790 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N044" type="Node3D" parent="Nodes" unique_id=2035551278 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9550567, 0.29579535, -0.019280935, -0.29579535, 0.9467851, -0.126898, -0.019280935, 0.126898, 0.99172837, 106.266, 11.002, -49.884)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N045")])
 prev = Array[NodePath]([NodePath("../N043")])
 
-[node name="N045" type="Node3D" parent="Nodes" unique_id=1198415165 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N045" type="Node3D" parent="Nodes" unique_id=144328431 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9872418, 0.15849452, -0.01526962, -0.15849452, 0.9689664, -0.18969344, -0.01526962, 0.18969344, 0.9817246, 110.297, 9.364, -46.241)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N046")])
 prev = Array[NodePath]([NodePath("../N044")])
 
-[node name="N046" type="Node3D" parent="Nodes" unique_id=446172173 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N046" type="Node3D" parent="Nodes" unique_id=815184559 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99698323, 0.07699872, -0.009779024, -0.07699872, 0.965284, -0.24959582, -0.009779024, 0.24959582, 0.9683007, 113.005, 7.944, -41.491)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N047")])
 prev = Array[NodePath]([NodePath("../N045")])
 
-[node name="N047" type="Node3D" parent="Nodes" unique_id=1955956376 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N047" type="Node3D" parent="Nodes" unique_id=947287755 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9994752, -0.032199513, 0.0035483583, 0.032199513, 0.9754852, -0.21769671, 0.0035483583, 0.21769671, 0.97601, 114.03, 6.563, -36.161)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N048")])
 prev = Array[NodePath]([NodePath("../N046")])
 
-[node name="N048" type="Node3D" parent="Nodes" unique_id=355363730 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N048" type="Node3D" parent="Nodes" unique_id=1695782112 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.997083, -0.07610117, 0.0058339317, 0.07610117, 0.98541516, -0.15220234, 0.0058339317, 0.15220234, 0.98833215, 112.612, 5.448, -30.881)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N049")])
 prev = Array[NodePath]([NodePath("../N047")])
 
-[node name="N049" type="Node3D" parent="Nodes" unique_id=1606385182 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N049" type="Node3D" parent="Nodes" unique_id=1563990360 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9981717, -0.06029872, 0.004166016, 0.06029872, 0.988679, -0.13739708, 0.004166016, 0.13739708, 0.9905073, 110.745, 4.575, -25.727)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N050")])
 prev = Array[NodePath]([NodePath("../N048")])
 
-[node name="N050" type="Node3D" parent="Nodes" unique_id=36427208 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N050" type="Node3D" parent="Nodes" unique_id=1069770606 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999467, -0.010299777, 0.00066764746, 0.010299777, 0.99157846, -0.1290972, 0.00066764746, 0.1290972, 0.99163175, 109.909, 3.773, -20.33)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N051")])
 prev = Array[NodePath]([NodePath("../N049")])
 
-[node name="N051" type="Node3D" parent="Nodes" unique_id=229821264 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N051" type="Node3D" parent="Nodes" unique_id=1816927358 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999386, 0.0034998993, -0.00018248484, -0.0034998993, 0.99457145, -0.10399701, -0.00018248484, 0.10399701, 0.9945776, 109.939, 3.095, -14.851)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N052")])
 prev = Array[NodePath]([NodePath("../N050")])
 
-[node name="N052" type="Node3D" parent="Nodes" unique_id=1102737513 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N052" type="Node3D" parent="Nodes" unique_id=804278784 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999836, 0.018099854, -0.0005498782, -0.018099854, 0.997992, -0.060699515, -0.0005498782, 0.060699515, 0.99815595, 110.832, 2.605, -9.45)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N053")])
 prev = Array[NodePath]([NodePath("../N051")])
 
-[node name="N053" type="Node3D" parent="Nodes" unique_id=1260239511 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N053" type="Node3D" parent="Nodes" unique_id=1958627052 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99987036, 0.016099522, -0.000161017, -0.016099522, 0.9996704, -0.019999405, -0.000161017, 0.019999405, 0.99979997, 112.823, 2.338, -4.359)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N054")])
 prev = Array[NodePath]([NodePath("../N052"), NodePath("../N226")])
 
-[node name="N054" type="Node3D" parent="Nodes" unique_id=1444980789 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N054" type="Node3D" parent="Nodes" unique_id=1109517407 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999998, -0.0005999999, -1.1999998e-07, 0.0005999999, 0.99999976, 0.00039999993, -1.1999998e-07, -0.00039999993, 0.99999994, 116.051, 2.274, 0.065)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N055")])
 prev = Array[NodePath]([NodePath("../N053")])
 
-[node name="N055" type="Node3D" parent="Nodes" unique_id=2128415867 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N055" type="Node3D" parent="Nodes" unique_id=1687248559 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999755, -0.007000158, -3.6053025e-05, 0.007000158, 0.99992245, 0.010300233, -3.6053025e-05, -0.010300233, 0.99994695, 119.568, 2.311, 4.271)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N056")])
 prev = Array[NodePath]([NodePath("../N054")])
 
-[node name="N056" type="Node3D" parent="Nodes" unique_id=1371499763 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N056" type="Node3D" parent="Nodes" unique_id=1892176583 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999875, -0.0050002025, -2.4252688e-05, 0.0050002025, 0.99994045, 0.009700393, -2.4252688e-05, -0.009700393, 0.999953, 122.698, 2.371, 8.763)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N057")])
 prev = Array[NodePath]([NodePath("../N055")])
 
-[node name="N057" type="Node3D" parent="Nodes" unique_id=1261122771 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N057" type="Node3D" parent="Nodes" unique_id=533725584 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.357, 2.391, 13.95)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N058")])
 prev = Array[NodePath]([NodePath("../N056")])
 
-[node name="N058" type="Node3D" parent="Nodes" unique_id=1195105384 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N058" type="Node3D" parent="Nodes" unique_id=1061451801 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 0.9999997, 0.00079999986, 0, -0.00079999986, 0.9999997, 124.472, 2.394, 19.421)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N059")])
 prev = Array[NodePath]([NodePath("../N057")])
 
-[node name="N059" type="Node3D" parent="Nodes" unique_id=348544751 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N059" type="Node3D" parent="Nodes" unique_id=2059114315 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.596, 2.397, 24.827)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N060")])
 prev = Array[NodePath]([NodePath("../N058")])
 
-[node name="N060" type="Node3D" parent="Nodes" unique_id=1460499222 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N060" type="Node3D" parent="Nodes" unique_id=951129388 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999999, -0.0004999996, 2.9999964e-07, 0.0004999996, 0.99999917, -0.001199999, 2.9999964e-07, 0.001199999, 0.9999993, 121.896, 2.395, 30.033)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N061")])
 prev = Array[NodePath]([NodePath("../N059")])
 
-[node name="N061" type="Node3D" parent="Nodes" unique_id=1529563357 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N061" type="Node3D" parent="Nodes" unique_id=1071493458 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999577, -0.0028999732, 4.639936e-06, 0.0028999732, 0.9999907, -0.0031999703, 4.639936e-06, 0.0031999703, 0.9999949, 119.194, 2.378, 34.779)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N062")])
 prev = Array[NodePath]([NodePath("../N060")])
 
-[node name="N062" type="Node3D" parent="Nodes" unique_id=231006504 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N062" type="Node3D" parent="Nodes" unique_id=870690790 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999992, -0.0039999397, 7.5998287e-06, 0.0039999397, 0.9999848, -0.0037999426, 7.5998287e-06, 0.0037999426, 0.9999928, 115.37, 2.349, 38.698)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N063")])
 prev = Array[NodePath]([NodePath("../N061")])
 
-[node name="N063" type="Node3D" parent="Nodes" unique_id=1164180277 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N063" type="Node3D" parent="Nodes" unique_id=115484805 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999987, -0.0050999047, 8.669759e-06, 0.0050999047, 0.9999812, -0.0033999367, 8.669759e-06, 0.0033999367, 0.9999942, 111.168, 2.317, 42.219)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N064")])
 prev = Array[NodePath]([NodePath("../N062")])
 
-[node name="N064" type="Node3D" parent="Nodes" unique_id=2115291885 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N064" type="Node3D" parent="Nodes" unique_id=2087423512 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999756, -0.0021999895, 2.4199828e-06, 0.0021999895, 0.9999952, -0.0021999895, 2.4199828e-06, 0.0021999895, 0.99999756, 107.102, 2.292, 45.891)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N065")])
 prev = Array[NodePath]([NodePath("../N063")])
 
-[node name="N065" type="Node3D" parent="Nodes" unique_id=517545851 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N065" type="Node3D" parent="Nodes" unique_id=2124613389 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999714, 0.0023999864, 2.8799757e-06, -0.0023999864, 0.9999942, 0.0023999864, 2.8799757e-06, -0.0023999864, 0.99999714, 103.322, 2.294, 49.862)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N066")])
 prev = Array[NodePath]([NodePath("../N064")])
 
-[node name="N066" type="Node3D" parent="Nodes" unique_id=1056755009 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N066" type="Node3D" parent="Nodes" unique_id=675697093 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.731, 2.309, 53.999)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N067")])
 prev = Array[NodePath]([NodePath("../N065")])
 
-[node name="N067" type="Node3D" parent="Nodes" unique_id=1323573020 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N067" type="Node3D" parent="Nodes" unique_id=210634024 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999998, 0.0005999984, -7.381077e-06, -0.0005999984, 0.9996972, -0.024599932, -7.381077e-06, 0.024599932, 0.9996974, 97.616, 2.252, 58.959)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N068")])
 prev = Array[NodePath]([NodePath("../N066")])
 
-[node name="N068" type="Node3D" parent="Nodes" unique_id=413621327 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N068" type="Node3D" parent="Nodes" unique_id=618502794 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999998, 0.0006000276, -7.9821475e-06, -0.0006000276, 0.99964595, -0.026601223, -7.9821475e-06, 0.026601223, 0.9996461, 98.621, 2.077, 64.334)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N069")])
 prev = Array[NodePath]([NodePath("../N067")])
 
-[node name="N069" type="Node3D" parent="Nodes" unique_id=1196239436 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N069" type="Node3D" parent="Nodes" unique_id=1845723374 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99998486, -0.005500128, 3.0527593e-05, 0.005500128, 0.9999233, -0.011100259, 3.0527593e-05, 0.011100259, 0.99993837, 97.356, 1.969, 69.611)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N070")])
 prev = Array[NodePath]([NodePath("../N068")])
 
-[node name="N070" type="Node3D" parent="Nodes" unique_id=401491899 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N070" type="Node3D" parent="Nodes" unique_id=539475961 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999942, -0.003399885, 1.2749353e-05, 0.003399885, 0.9999661, -0.007499746, 1.2749353e-05, 0.007499746, 0.99997187, 95.107, 1.919, 74.61)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N071")])
 prev = Array[NodePath]([NodePath("../N069")])
 
-[node name="N071" type="Node3D" parent="Nodes" unique_id=1432154794 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N071" type="Node3D" parent="Nodes" unique_id=1421317034 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999912, -0.004199904, 1.11296185e-05, 0.004199904, 0.9999771, -0.005299879, 1.11296185e-05, 0.005299879, 0.99998593, 92.516, 1.879, 79.44)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N072")])
 prev = Array[NodePath]([NodePath("../N070")])
 
-[node name="N072" type="Node3D" parent="Nodes" unique_id=140186924 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N072" type="Node3D" parent="Nodes" unique_id=1729347164 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999034, -0.0043998784, 1.3199453e-05, 0.0043998784, 0.99997234, -0.0059998343, 1.3199453e-05, 0.0059998343, 0.999982, 89.499, 1.84, 84.014)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N073")])
 prev = Array[NodePath]([NodePath("../N071")])
 
-[node name="N073" type="Node3D" parent="Nodes" unique_id=1357182105 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N073" type="Node3D" parent="Nodes" unique_id=1126033974 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99997824, -0.0065997215, 2.1118665e-05, 0.0065997215, 0.99995774, -0.00639973, 2.1118665e-05, 0.00639973, 0.9999795, 85.874, 1.789, 88.117)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N074")])
 prev = Array[NodePath]([NodePath("../N072")])
 
-[node name="N074" type="Node3D" parent="Nodes" unique_id=482181338 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N074" type="Node3D" parent="Nodes" unique_id=674824877 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99992555, -0.012200085, 3.7212252e-05, 0.012200085, 0.99990696, -0.0061000427, 3.7212252e-05, 0.0061000427, 0.9999814, 81.59, 1.723, 91.53)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N075")])
 prev = Array[NodePath]([NodePath("../N073")])
 
-[node name="N075" type="Node3D" parent="Nodes" unique_id=1733586735 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N075" type="Node3D" parent="Nodes" unique_id=1666147604 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999268, -0.012100085, 3.81173e-05, 0.012100085, 0.99990696, -0.0063000433, 3.81173e-05, 0.0063000433, 0.99998015, 76.932, 1.645, 94.417)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N076")])
 prev = Array[NodePath]([NodePath("../N074")])
 
-[node name="N076" type="Node3D" parent="Nodes" unique_id=1877089997 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N076" type="Node3D" parent="Nodes" unique_id=1844738664 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999268, -0.012100233, 2.3596862e-05, 0.012100233, 0.9999192, -0.003900075, 2.3596862e-05, 0.003900075, 0.9999924, 72.038, 1.57, 96.885)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N077")])
 prev = Array[NodePath]([NodePath("../N075")])
 
-[node name="N077" type="Node3D" parent="Nodes" unique_id=970223130 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N077" type="Node3D" parent="Nodes" unique_id=1044400417 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999704, -0.007699746, 1.0009505e-05, 0.007699746, 0.999967, -0.002599914, 1.0009505e-05, 0.002599914, 0.9999966, 66.971, 1.512, 98.976)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N078")])
 prev = Array[NodePath]([NodePath("../N076")])
 
-[node name="N078" type="Node3D" parent="Nodes" unique_id=1669837200 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N078" type="Node3D" parent="Nodes" unique_id=1243246405 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999966, -0.00259999, 1.1699933e-06, 0.00259999, 0.9999962, -0.00089999655, 1.1699933e-06, 0.00089999655, 0.9999996, 61.748, 1.482, 100.633)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N079")])
 prev = Array[NodePath]([NodePath("../N077")])
 
-[node name="N079" type="Node3D" parent="Nodes" unique_id=351663784 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N079" type="Node3D" parent="Nodes" unique_id=1979334096 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999997, 0.00079999986, 7.9999985e-08, -0.00079999986, 0.99999964, 0.00019999997, 7.9999985e-08, -0.00019999997, 1, 56.353, 1.476, 101.583)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N080")])
 prev = Array[NodePath]([NodePath("../N078")])
 
-[node name="N080" type="Node3D" parent="Nodes" unique_id=414312466 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N080" type="Node3D" parent="Nodes" unique_id=613629572 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99998647, 0.00519993, 0, -0.00519993, 0.99998647, 0, 0, 0, 1, 50.885, 1.494, 101.961)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N081")])
 prev = Array[NodePath]([NodePath("../N079")])
 
-[node name="N081" type="Node3D" parent="Nodes" unique_id=1478731487 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N081" type="Node3D" parent="Nodes" unique_id=1059485502 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999568, 0.009299595, -4.6496957e-06, -0.009299595, 0.99995625, -0.0009999564, -4.6496957e-06, 0.0009999564, 0.9999995, 45.403, 1.543, 102.013)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N082")])
 prev = Array[NodePath]([NodePath("../N080")])
 
-[node name="N082" type="Node3D" parent="Nodes" unique_id=1215996726 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N082" type="Node3D" parent="Nodes" unique_id=1964666507 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9997023, 0.024400057, 0, -0.024400057, 0.9997023, 0, 0, 0, 1, 39.923, 1.636, 101.926)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N083")])
 prev = Array[NodePath]([NodePath("../N081")])
 
-[node name="N083" type="Node3D" parent="Nodes" unique_id=1908439438 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N083" type="Node3D" parent="Nodes" unique_id=810015562 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9993873, 0.03499955, -1.225344e-05, -0.03499955, 0.9993871, -0.000699991, -1.225344e-05, 0.000699991, 0.99999976, 34.491, 1.802, 101.2)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N084")])
 prev = Array[NodePath]([NodePath("../N082")])
 
-[node name="N084" type="Node3D" parent="Nodes" unique_id=1053161168 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N084" type="Node3D" parent="Nodes" unique_id=1937292512 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9994387, 0.03350124, -3.0160725e-05, -0.03350124, 0.99943703, -0.0018000668, -3.0160725e-05, 0.0018000668, 0.9999984, 29.088, 2.002, 100.271)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N085")])
 prev = Array[NodePath]([NodePath("../N083")])
 
-[node name="N085" type="Node3D" parent="Nodes" unique_id=1608657978 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N085" type="Node3D" parent="Nodes" unique_id=307053877 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9997355, 0.023000814, 0, -0.023000814, 0.9997355, 0, 0, 0, 1, 23.625, 2.157, 99.902)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N086")])
 prev = Array[NodePath]([NodePath("../N084")])
 
-[node name="N086" type="Node3D" parent="Nodes" unique_id=767481478 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N086" type="Node3D" parent="Nodes" unique_id=2094675722 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999568, 0.009299542, 1.6273798e-05, -0.009299542, 0.99995065, 0.0034998276, 1.6273798e-05, -0.0034998276, 0.99999386, 18.217, 2.241, 100.714)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N087")])
 prev = Array[NodePath]([NodePath("../N085")])
 
-[node name="N087" type="Node3D" parent="Nodes" unique_id=1437547855 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N087" type="Node3D" parent="Nodes" unique_id=1846344776 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999946, 0.0032999793, 2.3099783e-06, -0.0032999793, 0.99999356, 0.0013999912, 2.3099783e-06, -0.0013999912, 0.99999905, 13.011, 2.272, 102.426)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N088")])
 prev = Array[NodePath]([NodePath("../N086")])
 
-[node name="N088" type="Node3D" parent="Nodes" unique_id=1821721463 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N088" type="Node3D" parent="Nodes" unique_id=1330981595 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999997, 0.00079999975, 1.1999994e-07, -0.00079999975, 0.99999964, 0.0002999999, 1.1999994e-07, -0.0002999999, 0.99999994, 7.857, 2.282, 104.295)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N089")])
 prev = Array[NodePath]([NodePath("../N087")])
 
-[node name="N089" type="Node3D" parent="Nodes" unique_id=1635501125 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N089" type="Node3D" parent="Nodes" unique_id=1985654644 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999976, 0.0006999997, 1.7499991e-07, -0.0006999997, 0.99999964, 0.00049999985, 1.7499991e-07, -0.00049999985, 0.9999999, 2.565, 2.286, 105.708)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N090")])
 prev = Array[NodePath]([NodePath("../N088"), NodePath("../N240")])
 
-[node name="N090" type="Node3D" parent="Nodes" unique_id=2050488985 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N090" type="Node3D" parent="Nodes" unique_id=1980408406 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999905, 0.0013999987, -2.099997e-07, -0.0013999987, 0.999999, -0.00029999972, -2.099997e-07, 0.00029999972, 0.99999994, -2.898, 2.296, 105.998)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N091")])
 prev = Array[NodePath]([NodePath("../N089")])
 
-[node name="N091" type="Node3D" parent="Nodes" unique_id=220182192 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N091" type="Node3D" parent="Nodes" unique_id=1742629761 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.341, 2.302, 105.377)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N092")])
 prev = Array[NodePath]([NodePath("../N090")])
 
-[node name="N092" type="Node3D" parent="Nodes" unique_id=1974347087 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N092" type="Node3D" parent="Nodes" unique_id=1546681879 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.696, 2.302, 104.209)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N093")])
 prev = Array[NodePath]([NodePath("../N091")])
 
-[node name="N093" type="Node3D" parent="Nodes" unique_id=1847126782 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N093" type="Node3D" parent="Nodes" unique_id=1914499849 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999887, -0.0014999984, -2.2499967e-07, 0.0014999984, 0.9999988, 0.0002999997, -2.2499967e-07, -0.0002999997, 0.99999994, -18.995, 2.296, 102.803)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N094")])
 prev = Array[NodePath]([NodePath("../N092")])
 
-[node name="N094" type="Node3D" parent="Nodes" unique_id=1462266699 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N094" type="Node3D" parent="Nodes" unique_id=692819819 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999577, -0.002899987, -1.3049911e-06, 0.002899987, 0.9999954, 0.00089999585, -1.3049911e-06, -0.00089999585, 0.9999996, -24.27, 2.284, 101.312)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N095")])
 prev = Array[NodePath]([NodePath("../N093")])
 
-[node name="N095" type="Node3D" parent="Nodes" unique_id=157084539 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N095" type="Node3D" parent="Nodes" unique_id=1133800147 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999928, -0.003799966, -3.6099518e-06, 0.003799966, 0.999991, 0.001899983, -3.6099518e-06, -0.001899983, 0.9999982, -29.371, 2.264, 99.308)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N096")])
 prev = Array[NodePath]([NodePath("../N094")])
 
-[node name="N096" type="Node3D" parent="Nodes" unique_id=655720130 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N096" type="Node3D" parent="Nodes" unique_id=1493507282 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999916, -0.004099956, -4.509927e-06, 0.004099956, 0.99998915, 0.0021999762, -4.509927e-06, -0.0021999762, 0.99999756, -34.403, 2.24, 97.133)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N097")])
 prev = Array[NodePath]([NodePath("../N095")])
 
-[node name="N097" type="Node3D" parent="Nodes" unique_id=1561868681 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N097" type="Node3D" parent="Nodes" unique_id=1972027582 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999912, -0.0041999593, -2.939957e-06, 0.0041999593, 0.9999902, 0.0013999863, -2.939957e-06, -0.0013999863, 0.99999905, -39.527, 2.214, 95.188)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N098")])
 prev = Array[NodePath]([NodePath("../N096")])
 
-[node name="N098" type="Node3D" parent="Nodes" unique_id=822656590 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N098" type="Node3D" parent="Nodes" unique_id=1362567983 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999955, -0.0029999865, -4.49997e-07, 0.0029999865, 0.99999547, 0.00029999865, -4.49997e-07, -0.00029999865, 0.99999994, -44.877, 2.194, 94.045)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N099")])
 prev = Array[NodePath]([NodePath("../N097")])
 
-[node name="N099" type="Node3D" parent="Nodes" unique_id=1114145706 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N099" type="Node3D" parent="Nodes" unique_id=1525559915 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999976, -0.0006999998, 1.0499998e-07, 0.0006999998, 0.9999997, -0.00029999996, 1.0499998e-07, 0.00029999996, 0.99999994, -50.242, 2.184, 94.879)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N100")])
 prev = Array[NodePath]([NodePath("../N098")])
 
-[node name="N100" type="Node3D" parent="Nodes" unique_id=18766142 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N100" type="Node3D" parent="Nodes" unique_id=458285079 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.082, 2.183, 97.437)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N101")])
 prev = Array[NodePath]([NodePath("../N099")])
 
-[node name="N101" type="Node3D" parent="Nodes" unique_id=1425222137 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N101" type="Node3D" parent="Nodes" unique_id=172212065 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999997, 0.00079999975, 1.5999993e-07, -0.00079999975, 0.9999996, 0.00039999987, 1.5999993e-07, -0.00039999987, 0.99999994, -59.761, 2.187, 100.294)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N102")])
 prev = Array[NodePath]([NodePath("../N100")])
 
-[node name="N102" type="Node3D" parent="Nodes" unique_id=1522492426 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N102" type="Node3D" parent="Nodes" unique_id=193366092 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.915, 2.19, 102.023)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N103")])
 prev = Array[NodePath]([NodePath("../N101")])
 
-[node name="N103" type="Node3D" parent="Nodes" unique_id=1066681681 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N103" type="Node3D" parent="Nodes" unique_id=445984279 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.241, 2.19, 100.895)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N104")])
 prev = Array[NodePath]([NodePath("../N102")])
 
-[node name="N104" type="Node3D" parent="Nodes" unique_id=120404974 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N104" type="Node3D" parent="Nodes" unique_id=206878873 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.061, 2.19, 98.303)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N105")])
 prev = Array[NodePath]([NodePath("../N103")])
 
-[node name="N105" type="Node3D" parent="Nodes" unique_id=734119029 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N105" type="Node3D" parent="Nodes" unique_id=1083342119 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.371, 2.19, 94.923)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N106")])
 prev = Array[NodePath]([NodePath("../N104")])
 
-[node name="N106" type="Node3D" parent="Nodes" unique_id=1870975789 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N106" type="Node3D" parent="Nodes" unique_id=81577835 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.185, 2.19, 90.991)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N107")])
 prev = Array[NodePath]([NodePath("../N105")])
 
-[node name="N107" type="Node3D" parent="Nodes" unique_id=2087840647 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N107" type="Node3D" parent="Nodes" unique_id=407181963 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.278, 2.189, 86.478)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N108")])
 prev = Array[NodePath]([NodePath("../N106")])
 
-[node name="N108" type="Node3D" parent="Nodes" unique_id=1139521859 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N108" type="Node3D" parent="Nodes" unique_id=958537989 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.534, 2.185, 81.486)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N109")])
 prev = Array[NodePath]([NodePath("../N107")])
 
-[node name="N109" type="Node3D" parent="Nodes" unique_id=1762214524 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N109" type="Node3D" parent="Nodes" unique_id=650875227 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.341, 2.183, 76.311)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N110")])
 prev = Array[NodePath]([NodePath("../N108")])
 
-[node name="N110" type="Node3D" parent="Nodes" unique_id=26589685 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N110" type="Node3D" parent="Nodes" unique_id=1522686156 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999994, 0.00029999987, -1.3499991e-07, -0.00029999987, 0.9999995, -0.0008999996, -1.3499991e-07, 0.0008999996, 0.9999996, -91.984, 2.185, 71.08)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N111")])
 prev = Array[NodePath]([NodePath("../N109")])
 
-[node name="N111" type="Node3D" parent="Nodes" unique_id=1256272955 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N111" type="Node3D" parent="Nodes" unique_id=748793872 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999998, 0.00059999636, -1.0499905e-06, -0.00059999636, 0.9999937, -0.0034999787, -1.0499905e-06, 0.0034999787, 0.99999386, -93.702, 2.197, 65.874)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N112")])
 prev = Array[NodePath]([NodePath("../N110")])
 
-[node name="N112" type="Node3D" parent="Nodes" unique_id=930938814 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N112" type="Node3D" parent="Nodes" unique_id=1581477263 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999887, 0.0014999757, -4.1249e-06, -0.0014999757, 0.9999837, -0.005499911, -4.1249e-06, 0.005499911, 0.99998486, -95.149, 2.224, 60.587)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N113")])
 prev = Array[NodePath]([NodePath("../N111")])
 
-[node name="N113" type="Node3D" parent="Nodes" unique_id=837695591 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N113" type="Node3D" parent="Nodes" unique_id=599096373 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999996, 0.00089998456, -2.6099326e-06, -0.00089998456, 0.9999828, -0.0057999003, -2.6099326e-06, 0.0057999003, 0.9999832, -96.447, 2.259, 55.261)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N114")])
 prev = Array[NodePath]([NodePath("../N112")])
 
-[node name="N114" type="Node3D" parent="Nodes" unique_id=1352469178 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N114" type="Node3D" parent="Nodes" unique_id=2088103929 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999969, 0.0024999606, -6.2498525e-06, -0.0024999606, 0.9999844, -0.004999921, -6.2498525e-06, 0.004999921, 0.9999875, -97.999, 2.29, 50.004)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N115")])
 prev = Array[NodePath]([NodePath("../N113")])
 
-[node name="N115" type="Node3D" parent="Nodes" unique_id=1559233400 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N115" type="Node3D" parent="Nodes" unique_id=1533824568 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999993, 0.0011999924, -2.0399807e-06, -0.0011999924, 0.9999935, -0.0033999782, -2.0399807e-06, 0.0033999782, 0.9999942, -99.961, 2.314, 44.886)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N116")])
 prev = Array[NodePath]([NodePath("../N114")])
 
-[node name="N116" type="Node3D" parent="Nodes" unique_id=1442396511 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N116" type="Node3D" parent="Nodes" unique_id=441935691 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999857, 0.0016999879, -2.8899692e-06, -0.0016999879, 0.9999928, -0.0033999758, -2.8899692e-06, 0.0033999758, 0.9999942, -102.113, 2.336, 39.843)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N117")])
 prev = Array[NodePath]([NodePath("../N115")])
 
-[node name="N117" type="Node3D" parent="Nodes" unique_id=24887488 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N117" type="Node3D" parent="Nodes" unique_id=1438088620 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999978, 0.0020999701, -5.1448906e-06, -0.0020999701, 0.9999858, -0.0048999307, -5.1448906e-06, 0.0048999307, 0.999988, -104.231, 2.362, 34.787)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N118")])
 prev = Array[NodePath]([NodePath("../N116")])
 
-[node name="N118" type="Node3D" parent="Nodes" unique_id=1689041973 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N118" type="Node3D" parent="Nodes" unique_id=512612164 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999607, 0.00279993, -9.099659e-06, -0.00279993, 0.99997497, -0.006499838, -9.099659e-06, 0.006499838, 0.9999789, -106.121, 2.394, 29.642)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N119")])
 prev = Array[NodePath]([NodePath("../N117")])
 
-[node name="N119" type="Node3D" parent="Nodes" unique_id=563879954 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N119" type="Node3D" parent="Nodes" unique_id=626056895 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999952, 0.003099916, -1.0384578e-05, -0.003099916, 0.99997276, -0.0066998177, -1.0384578e-05, 0.0066998177, 0.9999775, -108.049, 2.431, 24.51)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N120")])
 prev = Array[NodePath]([NodePath("../N118")])
 
-[node name="N120" type="Node3D" parent="Nodes" unique_id=151579631 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N120" type="Node3D" parent="Nodes" unique_id=1874601674 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999969, 0.0024999182, -9.6245285e-06, -0.0024999182, 0.9999672, -0.007699749, -9.6245285e-06, 0.007699749, 0.9999704, -109.991, 2.47, 19.383)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N121")])
 prev = Array[NodePath]([NodePath("../N119")])
 
-[node name="N121" type="Node3D" parent="Nodes" unique_id=2046742158 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N121" type="Node3D" parent="Nodes" unique_id=1838528947 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, -9.999531e-05, 4.8496594e-07, 9.999531e-05, 0.999953, -0.009699546, 4.8496594e-07, 0.009699546, 0.999953, -111.525, 2.52, 14.124)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N122"), NodePath("../N182")])
 prev = Array[NodePath]([NodePath("../N120")])
 
-[node name="N122" type="Node3D" parent="Nodes" unique_id=1867350032 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N122" type="Node3D" parent="Nodes" unique_id=24140990 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 0.99989486, -0.014499926, 0, 0.014499926, 0.99989486, -112.047, 2.581, 8.682)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N123")])
 prev = Array[NodePath]([NodePath("../N121")])
 
-[node name="N123" type="Node3D" parent="Nodes" unique_id=1935442679 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N123" type="Node3D" parent="Nodes" unique_id=1951501927 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999762, -0.0068998015, 5.0025348e-05, 0.0068998015, 0.9998711, -0.014499582, 5.0025348e-05, 0.014499582, 0.99989486, -110.513, 2.671, 3.469)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N124")])
 prev = Array[NodePath]([NodePath("../N122")])
 
-[node name="N124" type="Node3D" parent="Nodes" unique_id=1904606257 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N124" type="Node3D" parent="Nodes" unique_id=1489403030 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999395, -0.0109996945, 6.380053e-05, 0.0109996945, 0.9998722, -0.011599678, 6.380053e-05, 0.011599678, 0.9999327, -107.553, 2.765, -1.139)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N125")])
 prev = Array[NodePath]([NodePath("../N123")])
 
-[node name="N125" type="Node3D" parent="Nodes" unique_id=1483813870 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N125" type="Node3D" parent="Nodes" unique_id=762921361 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99994165, -0.010799742, 9.8286306e-05, 0.010799742, 0.99977607, -0.018199565, 9.8286306e-05, 0.018199565, 0.99983436, -104.401, 2.867, -5.624)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N126")])
 prev = Array[NodePath]([NodePath("../N124")])
 
-[node name="N126" type="Node3D" parent="Nodes" unique_id=746053142 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N126" type="Node3D" parent="Nodes" unique_id=507616687 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999636, -0.002700053, 2.5383286e-05, 0.002700053, 0.99981964, -0.01880037, 2.5383286e-05, 0.01880037, 0.9998233, -102.147, 2.969, -10.588)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N127")])
 prev = Array[NodePath]([NodePath("../N125")])
 
-[node name="N127" type="Node3D" parent="Nodes" unique_id=1340185367 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N127" type="Node3D" parent="Nodes" unique_id=576541477 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999386, 0.003499891, -1.2424419e-05, -0.003499891, 0.99996865, -0.0070997784, -1.2424419e-05, 0.0070997784, 0.9999748, -103.085, 3.043, -15.872)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N128")])
 prev = Array[NodePath]([NodePath("../N126")])
 
-[node name="N128" type="Node3D" parent="Nodes" unique_id=240340144 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N128" type="Node3D" parent="Nodes" unique_id=1580535376 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999034, 0.0043999027, -1.09996345e-05, -0.0043999027, 0.9999778, -0.004999889, -1.09996345e-05, 0.004999889, 0.9999875, -106.233, 3.085, -20.348)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N129")])
 prev = Array[NodePath]([NodePath("../N127")])
 
-[node name="N129" type="Node3D" parent="Nodes" unique_id=1991666108 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N129" type="Node3D" parent="Nodes" unique_id=201143683 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999076, 0.0042998465, -1.569416e-05, -0.0042998465, 0.9999641, -0.007299739, -1.569416e-05, 0.007299739, 0.99997336, -109.664, 3.122, -24.623)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N130")])
 prev = Array[NodePath]([NodePath("../N128")])
 
-[node name="N130" type="Node3D" parent="Nodes" unique_id=413830506 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N130" type="Node3D" parent="Nodes" unique_id=1651131300 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999917, 0.0012999788, -9.880253e-06, -0.0012999788, 0.99988365, -0.015199752, -9.880253e-06, 0.015199752, 0.9998845, -111.957, 3.185, -29.544)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N131")])
 prev = Array[NodePath]([NodePath("../N129")])
 
-[node name="N131" type="Node3D" parent="Nodes" unique_id=1567154414 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N131" type="Node3D" parent="Nodes" unique_id=979368888 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99997264, -0.0073996717, 5.6609068e-05, 0.0073996717, 0.9998556, -0.015299322, 5.6609068e-05, 0.015299322, 0.99988294, -111.151, 3.271, -34.918)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N132")])
 prev = Array[NodePath]([NodePath("../N130")])
 
-[node name="N132" type="Node3D" parent="Nodes" unique_id=347405435 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N132" type="Node3D" parent="Nodes" unique_id=1942955443 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999567, -0.009299707, 6.184517e-05, 0.009299707, 0.99986833, -0.01329958, 6.184517e-05, 0.01329958, 0.99991155, -108.784, 3.361, -39.855)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N133")])
 prev = Array[NodePath]([NodePath("../N131")])
 
-[node name="N133" type="Node3D" parent="Nodes" unique_id=1376146602 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N133" type="Node3D" parent="Nodes" unique_id=621475141 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99991935, -0.012699808, 0.00010414804, 0.012699808, 0.9997849, -0.016399752, 0.00010414804, 0.016399752, 0.99986553, -105.953, 3.474, -44.55)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N134")])
 prev = Array[NodePath]([NodePath("../N132")])
 
-[node name="N134" type="Node3D" parent="Nodes" unique_id=1622528540 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N134" type="Node3D" parent="Nodes" unique_id=1897197023 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99988294, -0.015300225, 0.00023416539, 0.015300225, 0.99941456, -0.03060045, 0.00023416539, 0.03060045, 0.9995317, -103.304, 3.643, -49.347)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N135")])
 prev = Array[NodePath]([NodePath("../N133")])
 
-[node name="N135" type="Node3D" parent="Nodes" unique_id=1088616407 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N135" type="Node3D" parent="Nodes" unique_id=330785391 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9997999, -0.020000022, 0.00034613907, 0.020000022, 0.9992011, -0.034600046, 0.00034613907, 0.034600046, 0.99940115, -100.56, 3.85, -54.093)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N136")])
 prev = Array[NodePath]([NodePath("../N134")])
 
-[node name="N136" type="Node3D" parent="Nodes" unique_id=391292243 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N136" type="Node3D" parent="Nodes" unique_id=1395966908 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9989769, -0.04520179, 0.0014079155, 0.04520179, 0.99703944, -0.062202465, 0.0014079155, 0.062202465, 0.99806255, -97.721, 4.163, -58.782)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N137")])
 prev = Array[NodePath]([NodePath("../N135")])
 
-[node name="N137" type="Node3D" parent="Nodes" unique_id=1604455423 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N137" type="Node3D" parent="Nodes" unique_id=2068241589 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9978384, -0.06560179, 0.003865184, 0.06560179, 0.99092704, -0.11730319, 0.003865184, 0.11730319, 0.9930886, -95.202, 4.739, -63.65)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N138")])
 prev = Array[NodePath]([NodePath("../N136")])
 
-[node name="N138" type="Node3D" parent="Nodes" unique_id=689632711 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N138" type="Node3D" parent="Nodes" unique_id=812003805 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99690396, -0.0782996, 0.007192536, 0.0782996, 0.9801948, -0.18189907, 0.007192536, 0.18189907, 0.9832909, -92.91, 5.681, -68.629)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N139")])
 prev = Array[NodePath]([NodePath("../N137")])
 
-[node name="N139" type="Node3D" parent="Nodes" unique_id=456567142 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N139" type="Node3D" parent="Nodes" unique_id=312977803 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99853235, -0.053902026, 0.0052661393, 0.053902026, 0.9796368, -0.19340727, 0.0052661393, 0.19340727, 0.98110443, -91.216, 6.776, -73.835)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N140")])
 prev = Array[NodePath]([NodePath("../N138")])
 
-[node name="N140" type="Node3D" parent="Nodes" unique_id=1732416012 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N140" type="Node3D" parent="Nodes" unique_id=821929353 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99945575, 0.032799635, -0.0035278571, -0.032799635, 0.9765892, -0.21259762, -0.0035278571, 0.21259762, 0.97713345, -91.062, 7.904, -79.282)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N141")])
 prev = Array[NodePath]([NodePath("../N139")])
 
-[node name="N141" type="Node3D" parent="Nodes" unique_id=626929149 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N141" type="Node3D" parent="Nodes" unique_id=776207020 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9996244, 0.02730116, -0.0024037976, -0.02730116, 0.98424184, -0.17470744, -0.0024037976, 0.17470744, 0.9846175, -91.945, 9.012, -84.692)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N142")])
 prev = Array[NodePath]([NodePath("../N140")])
 
-[node name="N142" type="Node3D" parent="Nodes" unique_id=623628553 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N142" type="Node3D" parent="Nodes" unique_id=1924202718 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999993, -0.0012000244, 4.4764034e-05, 0.0012000244, 0.99722016, -0.074501514, 4.4764034e-05, 0.074501514, 0.9972209, -91.761, 9.694, -90.153)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N143")])
 prev = Array[NodePath]([NodePath("../N141")])
 
-[node name="N143" type="Node3D" parent="Nodes" unique_id=305839522 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N143" type="Node3D" parent="Nodes" unique_id=2024831747 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999894, -0.0046001673, 4.0256215e-05, 0.0046001673, 0.99983627, -0.017500633, 4.0256215e-05, 0.017500633, 0.9998469, -90.794, 9.918, -95.541)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N144")])
 prev = Array[NodePath]([NodePath("../N142")])
 
-[node name="N144" type="Node3D" parent="Nodes" unique_id=2001116682 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N144" type="Node3D" parent="Nodes" unique_id=1834266842 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999339, -0.011499744, 6.0951017e-05, 0.011499744, 0.9998777, -0.010599764, 6.0951017e-05, 0.010599764, 0.9999438, -87.89, 9.995, -100.085)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N145")])
 prev = Array[NodePath]([NodePath("../N143")])
 
-[node name="N145" type="Node3D" parent="Nodes" unique_id=1630619888 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N145" type="Node3D" parent="Nodes" unique_id=375188348 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.053, 10.027, -102.627)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N146")])
 prev = Array[NodePath]([NodePath("../N144")])
 
-[node name="N146" type="Node3D" parent="Nodes" unique_id=526503939 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N146" type="Node3D" parent="Nodes" unique_id=379003236 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999916, 0.0040999632, 2.2549698e-06, -0.0040999632, 0.999991, 0.0010999902, 2.2549698e-06, -0.0010999902, 0.9999994, -77.775, 10.011, -104.077)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N147")])
 prev = Array[NodePath]([NodePath("../N145")])
 
-[node name="N147" type="Node3D" parent="Nodes" unique_id=861466206 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N147" type="Node3D" parent="Nodes" unique_id=1040873122 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999976, 0.0006999998, -3.499999e-08, -0.0006999998, 0.99999976, -9.999998e-05, -3.499999e-08, 9.999998e-05, 1, -72.329, 9.992, -104.092)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N148")])
 prev = Array[NodePath]([NodePath("../N146")])
 
-[node name="N148" type="Node3D" parent="Nodes" unique_id=2067360741 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N148" type="Node3D" parent="Nodes" unique_id=976307394 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999315, -0.0036999546, -6.104888e-06, 0.0036999546, 0.9999877, 0.0032999597, -6.104888e-06, -0.0032999597, 0.9999946, -67.766, 10.009, -101.172)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N149")])
 prev = Array[NodePath]([NodePath("../N147")])
 
-[node name="N149" type="Node3D" parent="Nodes" unique_id=1039489364 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N149" type="Node3D" parent="Nodes" unique_id=1601032634 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.392, 10.027, -96.865)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N150")])
 prev = Array[NodePath]([NodePath("../N148")])
 
-[node name="N150" type="Node3D" parent="Nodes" unique_id=1379133916 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N150" type="Node3D" parent="Nodes" unique_id=313930590 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999989, 0.004699817, -3.7599686e-05, -0.004699817, 0.99986094, -0.015999379, -3.7599686e-05, 0.015999379, 0.999872, -61.986, 9.991, -91.952)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N151")])
 prev = Array[NodePath]([NodePath("../N149")])
 
-[node name="N151" type="Node3D" parent="Nodes" unique_id=2093334021 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N151" type="Node3D" parent="Nodes" unique_id=213540089 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999386, -0.003500105, 1.9776882e-05, 0.003500105, 0.99993, -0.01130034, 1.9776882e-05, 0.01130034, 0.99993616, -62.426, 9.943, -86.578)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N152")])
 prev = Array[NodePath]([NodePath("../N150")])
 
-[node name="N152" type="Node3D" parent="Nodes" unique_id=1346076043 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N152" type="Node3D" parent="Nodes" unique_id=495295306 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99997944, -0.006400137, 0.000369891, 0.006400137, 0.9933214, -0.11520247, 0.000369891, 0.11520247, 0.993342, -64.034, 9.697, -81.347)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N153")])
 prev = Array[NodePath]([NodePath("../N151")])
 
-[node name="N153" type="Node3D" parent="Nodes" unique_id=1779305638 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N153" type="Node3D" parent="Nodes" unique_id=769251095 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9855594, 0.16829567, -0.018687835, -0.16829567, 0.9613751, -0.21779442, -0.018687835, 0.21779442, 0.9758157, -62.153, 8.506, -76.347)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N154")])
 prev = Array[NodePath]([NodePath("../N152")])
 
-[node name="N154" type="Node3D" parent="Nodes" unique_id=1819598736 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N154" type="Node3D" parent="Nodes" unique_id=1611151347 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9010688, 0.43188074, 0.0394213, -0.43188074, 0.88536054, 0.17209233, 0.0394213, -0.17209233, 0.98429173, -57.507, 6.267, -74.152)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N155")])
 prev = Array[NodePath]([NodePath("../N153")])
 
-[node name="N155" type="Node3D" parent="Nodes" unique_id=940241511 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N155" type="Node3D" parent="Nodes" unique_id=1928527308 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.978596, 0.20319396, 0.03259059, -0.20319396, 0.9289723, 0.3093908, 0.03259059, -0.3093908, 0.95037633, -53.917, 3.675, -78.235)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N001")])
 prev = Array[NodePath]([NodePath("../N154")])
 
-[node name="N156" type="Node3D" parent="Nodes" unique_id=1717412940 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N156" type="Node3D" parent="Nodes" unique_id=410422875 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49, -24)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N157")])
 prev = Array[NodePath]([NodePath("../N181"), NodePath("../N210")])
 
-[node name="N157" type="Node3D" parent="Nodes" unique_id=1705629879 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N157" type="Node3D" parent="Nodes" unique_id=966970900 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.744, 2.49, -23.303)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N158")])
 prev = Array[NodePath]([NodePath("../N156")])
 
-[node name="N158" type="Node3D" parent="Nodes" unique_id=372064688 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N158" type="Node3D" parent="Nodes" unique_id=526397678 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.153, 2.49, -21.251)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N159")])
 prev = Array[NodePath]([NodePath("../N157")])
 
-[node name="N159" type="Node3D" parent="Nodes" unique_id=695403663 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N159" type="Node3D" parent="Nodes" unique_id=1374952036 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.915, 2.49, -17.964)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N160")])
 prev = Array[NodePath]([NodePath("../N158")])
 
-[node name="N160" type="Node3D" parent="Nodes" unique_id=1384121744 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N160" type="Node3D" parent="Nodes" unique_id=490854469 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.752, 2.49, -13.634)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N161")])
 prev = Array[NodePath]([NodePath("../N159")])
 
-[node name="N161" type="Node3D" parent="Nodes" unique_id=827489015 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N161" type="Node3D" parent="Nodes" unique_id=1705291176 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.44, 2.49, -8.511)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N162")])
 prev = Array[NodePath]([NodePath("../N160")])
 
-[node name="N162" type="Node3D" parent="Nodes" unique_id=2139687466 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N162" type="Node3D" parent="Nodes" unique_id=1081291654 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.825, 2.49, -2.893)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N163"), NodePath("../N211")])
 prev = Array[NodePath]([NodePath("../N161")])
 
-[node name="N163" type="Node3D" parent="Nodes" unique_id=572438706 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N163" type="Node3D" parent="Nodes" unique_id=1370684199 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.825, 2.49, 2.893)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N164")])
 prev = Array[NodePath]([NodePath("../N162")])
 
-[node name="N164" type="Node3D" parent="Nodes" unique_id=1977681945 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N164" type="Node3D" parent="Nodes" unique_id=1302727688 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.44, 2.49, 8.511)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N165")])
 prev = Array[NodePath]([NodePath("../N163")])
 
-[node name="N165" type="Node3D" parent="Nodes" unique_id=1033949122 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N165" type="Node3D" parent="Nodes" unique_id=346779392 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.752, 2.49, 13.634)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N166")])
 prev = Array[NodePath]([NodePath("../N164")])
 
-[node name="N166" type="Node3D" parent="Nodes" unique_id=1685394907 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N166" type="Node3D" parent="Nodes" unique_id=1183911609 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.915, 2.49, 17.964)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N167")])
 prev = Array[NodePath]([NodePath("../N165")])
 
-[node name="N167" type="Node3D" parent="Nodes" unique_id=167453657 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N167" type="Node3D" parent="Nodes" unique_id=1428459191 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.153, 2.49, 21.251)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N168")])
 prev = Array[NodePath]([NodePath("../N166")])
 
-[node name="N168" type="Node3D" parent="Nodes" unique_id=25807860 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N168" type="Node3D" parent="Nodes" unique_id=595634697 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.744, 2.49, 23.303)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N169")])
 prev = Array[NodePath]([NodePath("../N167")])
 
-[node name="N169" type="Node3D" parent="Nodes" unique_id=653932812 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N169" type="Node3D" parent="Nodes" unique_id=1028987718 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.491, 24)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N170"), NodePath("../N227")])
 prev = Array[NodePath]([NodePath("../N168"), NodePath("../Start")])
 
-[node name="N170" type="Node3D" parent="Nodes" unique_id=365642019 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N170" type="Node3D" parent="Nodes" unique_id=750249930 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.744, 2.49, 23.303)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N171")])
 prev = Array[NodePath]([NodePath("../N169")])
 
-[node name="N171" type="Node3D" parent="Nodes" unique_id=368111179 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N171" type="Node3D" parent="Nodes" unique_id=1369670329 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.153, 2.49, 21.251)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N172")])
 prev = Array[NodePath]([NodePath("../N170")])
 
-[node name="N172" type="Node3D" parent="Nodes" unique_id=2060354767 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N172" type="Node3D" parent="Nodes" unique_id=781618292 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.915, 2.49, 17.964)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N173")])
 prev = Array[NodePath]([NodePath("../N171")])
 
-[node name="N173" type="Node3D" parent="Nodes" unique_id=962828234 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N173" type="Node3D" parent="Nodes" unique_id=172833411 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.752, 2.49, 13.634)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N174")])
 prev = Array[NodePath]([NodePath("../N172")])
 
-[node name="N174" type="Node3D" parent="Nodes" unique_id=1450125028 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N174" type="Node3D" parent="Nodes" unique_id=1597549175 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.44, 2.49, 8.511)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N175")])
 prev = Array[NodePath]([NodePath("../N173")])
 
-[node name="N175" type="Node3D" parent="Nodes" unique_id=82638799 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N175" type="Node3D" parent="Nodes" unique_id=668873084 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.825, 2.49, 2.893)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N176")])
 prev = Array[NodePath]([NodePath("../N174")])
 
-[node name="N176" type="Node3D" parent="Nodes" unique_id=770805631 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N176" type="Node3D" parent="Nodes" unique_id=712426921 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.825, 2.49, -2.893)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N177")])
 prev = Array[NodePath]([NodePath("../N175"), NodePath("../N197")])
 
-[node name="N177" type="Node3D" parent="Nodes" unique_id=614722027 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N177" type="Node3D" parent="Nodes" unique_id=1807272247 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.44, 2.49, -8.511)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N178")])
 prev = Array[NodePath]([NodePath("../N176")])
 
-[node name="N178" type="Node3D" parent="Nodes" unique_id=1996631604 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N178" type="Node3D" parent="Nodes" unique_id=1082999742 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.752, 2.49, -13.634)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N179")])
 prev = Array[NodePath]([NodePath("../N177")])
 
-[node name="N179" type="Node3D" parent="Nodes" unique_id=198525134 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N179" type="Node3D" parent="Nodes" unique_id=1970285860 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.915, 2.49, -17.964)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N180")])
 prev = Array[NodePath]([NodePath("../N178")])
 
-[node name="N180" type="Node3D" parent="Nodes" unique_id=1135369422 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N180" type="Node3D" parent="Nodes" unique_id=942970973 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.153, 2.49, -21.251)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N181")])
 prev = Array[NodePath]([NodePath("../N179")])
 
-[node name="N181" type="Node3D" parent="Nodes" unique_id=434300684 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N181" type="Node3D" parent="Nodes" unique_id=1894673049 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.744, 2.49, -23.303)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N156")])
 prev = Array[NodePath]([NodePath("../N180")])
 
-[node name="N182" type="Node3D" parent="Nodes" unique_id=618854616 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N182" type="Node3D" parent="Nodes" unique_id=1498533861 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99998593, -0.0052998625, 1.2984496e-05, 0.0052998625, 0.99997395, -0.0048998734, 1.2984496e-05, 0.0048998734, 0.999988, -107.53, 2.557, 10.526)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N183")])
 prev = Array[NodePath]([NodePath("../N121")])
 
-[node name="N183" type="Node3D" parent="Nodes" unique_id=1474083655 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N183" type="Node3D" parent="Nodes" unique_id=350611862 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999636, -0.0026999873, 2.0249856e-06, 0.0026999873, 0.99999523, -0.0014999929, 2.0249856e-06, 0.0014999929, 0.99999887, -103.182, 2.586, 7.375)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N184")])
 prev = Array[NodePath]([NodePath("../N182")])
 
-[node name="N184" type="Node3D" parent="Nodes" unique_id=2063267054 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N184" type="Node3D" parent="Nodes" unique_id=1685291901 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999636, 0.0026999891, 1.349992e-06, -0.0026999891, 0.9999958, 0.000999996, 1.349992e-06, -0.000999996, 0.9999995, -98.152, 2.587, 5.537)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N185")])
 prev = Array[NodePath]([NodePath("../N183")])
 
-[node name="N185" type="Node3D" parent="Nodes" unique_id=1184702999 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N185" type="Node3D" parent="Nodes" unique_id=925715592 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999982, 0.0059998925, 0, -0.0059998925, 0.999982, 0, 0, 0, 1, -92.823, 2.563, 4.827)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N186")])
 prev = Array[NodePath]([NodePath("../N184")])
 
-[node name="N186" type="Node3D" parent="Nodes" unique_id=1118600514 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N186" type="Node3D" parent="Nodes" unique_id=1501752568 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999987, 0.0050999313, 2.8049435e-06, -0.0050999313, 0.9999864, 0.0010999852, 2.8049435e-06, -0.0010999852, 0.9999994, -87.453, 2.533, 4.513)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N187")])
 prev = Array[NodePath]([NodePath("../N185")])
 
-[node name="N187" type="Node3D" parent="Nodes" unique_id=1167377757 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N187" type="Node3D" parent="Nodes" unique_id=826978322 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999987, 0.005099934, 0, -0.005099934, 0.999987, 0, 0, 0, 1, -82.079, 2.504, 4.278)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N188")])
 prev = Array[NodePath]([NodePath("../N186")])
 
-[node name="N188" type="Node3D" parent="Nodes" unique_id=1475416450 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N188" type="Node3D" parent="Nodes" unique_id=711154160 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999984, 0.0017999973, 8.999981e-08, -0.0017999973, 0.9999984, 9.999985e-05, 8.999981e-08, -9.999985e-05, 1, -76.715, 2.488, 3.882)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N189")])
 prev = Array[NodePath]([NodePath("../N187")])
 
-[node name="N189" type="Node3D" parent="Nodes" unique_id=1480563027 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N189" type="Node3D" parent="Nodes" unique_id=1551069753 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.361, 2.483, 3.365)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N190")])
 prev = Array[NodePath]([NodePath("../N188")])
 
-[node name="N190" type="Node3D" parent="Nodes" unique_id=1291033759 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N190" type="Node3D" parent="Nodes" unique_id=1429856337 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999976, -0.0006999998, 0, 0.0006999998, 0.99999976, 0, 0, 0, 1, -66.008, 2.484, 2.842)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N191")])
 prev = Array[NodePath]([NodePath("../N189")])
 
-[node name="N191" type="Node3D" parent="Nodes" unique_id=597079664 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N191" type="Node3D" parent="Nodes" unique_id=867741906 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999976, -0.0006999998, 0, 0.0006999998, 0.99999976, 0, 0, 0, 1, -60.65, 2.488, 2.357)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N192")])
 prev = Array[NodePath]([NodePath("../N190")])
 
-[node name="N192" type="Node3D" parent="Nodes" unique_id=1490376909 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N192" type="Node3D" parent="Nodes" unique_id=571613792 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.287, 2.49, 1.955)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N193")])
 prev = Array[NodePath]([NodePath("../N191")])
 
-[node name="N193" type="Node3D" parent="Nodes" unique_id=1088377354 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N193" type="Node3D" parent="Nodes" unique_id=799550497 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.912, 2.49, 1.739)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N194")])
 prev = Array[NodePath]([NodePath("../N192")])
 
-[node name="N194" type="Node3D" parent="Nodes" unique_id=141998212 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N194" type="Node3D" parent="Nodes" unique_id=582878725 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.534, 2.49, 1.624)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N195")])
 prev = Array[NodePath]([NodePath("../N193")])
 
-[node name="N195" type="Node3D" parent="Nodes" unique_id=515312441 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N195" type="Node3D" parent="Nodes" unique_id=1418294105 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.158, 2.49, 1.455)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N196")])
 prev = Array[NodePath]([NodePath("../N194")])
 
-[node name="N196" type="Node3D" parent="Nodes" unique_id=2029091902 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N196" type="Node3D" parent="Nodes" unique_id=106745000 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.803, 2.49, 0.968)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N197")])
 prev = Array[NodePath]([NodePath("../N195")])
 
-[node name="N197" type="Node3D" parent="Nodes" unique_id=1069419514 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N197" type="Node3D" parent="Nodes" unique_id=328937288 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.646, 2.49, -0.513)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N176")])
 prev = Array[NodePath]([NodePath("../N196")])
 
-[node name="N198" type="Node3D" parent="Nodes" unique_id=1353356992 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N198" type="Node3D" parent="Nodes" unique_id=742494276 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999586, -0.009099692, -6.187996e-05, 0.009099692, 0.9998661, 0.013599541, -6.187996e-05, -0.013599541, 0.9999075, -46.536, 2.086, -77.735)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N199")])
 prev = Array[NodePath]([NodePath("../N001")])
 
-[node name="N199" type="Node3D" parent="Nodes" unique_id=138909151 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N199" type="Node3D" parent="Nodes" unique_id=810978142 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99996126, -0.008800017, -4.7962534e-05, 0.008800017, 0.9999019, 0.01090002, -4.7962534e-05, -0.01090002, 0.9999406, -43.114, 2.169, -73.437)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N200")])
 prev = Array[NodePath]([NodePath("../N198")])
 
-[node name="N200" type="Node3D" parent="Nodes" unique_id=456915117 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N200" type="Node3D" parent="Nodes" unique_id=1609905378 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999795, -0.006400208, -3.1043066e-05, 0.006400208, 0.99993247, 0.009700315, -3.1043066e-05, -0.009700315, 0.999953, -39.774, 2.235, -69.075)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N201")])
 prev = Array[NodePath]([NodePath("../N199")])
 
-[node name="N201" type="Node3D" parent="Nodes" unique_id=1218156740 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N201" type="Node3D" parent="Nodes" unique_id=2089375259 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99998593, -0.0053002457, -2.3587821e-05, 0.0053002457, 0.99994636, 0.008900413, -2.3587821e-05, -0.008900413, 0.99996036, -36.477, 2.294, -64.679)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N202")])
 prev = Array[NodePath]([NodePath("../N200")])
 
-[node name="N202" type="Node3D" parent="Nodes" unique_id=1096969683 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N202" type="Node3D" parent="Nodes" unique_id=1559243829 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999885, -0.004799847, -1.5359265e-05, 0.004799847, 0.999968, 0.0063997954, -1.5359265e-05, -0.0063997954, 0.9999795, -33.193, 2.347, -60.274)
 script = ExtResource("92_s6ymy")
 potential_cake = true
 next = Array[NodePath]([NodePath("../N203")])
 prev = Array[NodePath]([NodePath("../N201")])
 
-[node name="N203" type="Node3D" parent="Nodes" unique_id=726039877 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N203" type="Node3D" parent="Nodes" unique_id=1841104497 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99998945, -0.0045998516, -1.51792665e-05, 0.0045998516, 0.99996763, 0.006599787, -1.51792665e-05, -0.006599787, 0.99997824, -29.905, 2.392, -55.873)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N204")])
 prev = Array[NodePath]([NodePath("../N202")])
 
-[node name="N204" type="Node3D" parent="Nodes" unique_id=1529319841 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N204" type="Node3D" parent="Nodes" unique_id=391366335 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999949, -0.0031999298, -9.2796945e-06, 0.0031999298, 0.99997807, 0.005799873, -9.2796945e-06, -0.005799873, 0.9999832, -26.723, 2.43, -51.394)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N205")])
 prev = Array[NodePath]([NodePath("../N203")])
 
-[node name="N205" type="Node3D" parent="Nodes" unique_id=650937657 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N205" type="Node3D" parent="Nodes" unique_id=1553821411 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999966, -0.0025999695, -5.3299063e-06, 0.0025999695, 0.9999882, 0.004099952, -5.3299063e-06, -0.004099952, 0.9999916, -23.583, 2.46, -46.886)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N206")])
 prev = Array[NodePath]([NodePath("../N204")])
 
-[node name="N206" type="Node3D" parent="Nodes" unique_id=418666851 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N206" type="Node3D" parent="Nodes" unique_id=2100339132 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999998, -0.001999989, -2.6999776e-06, 0.001999989, 0.99999434, 0.002699985, -2.6999776e-06, -0.002699985, 0.99999636, -20.234, 2.482, -42.532)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N207")])
 prev = Array[NodePath]([NodePath("../N205")])
 
-[node name="N207" type="Node3D" parent="Nodes" unique_id=2126555861 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N207" type="Node3D" parent="Nodes" unique_id=2086337944 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999993, -0.0011999983, -7.199985e-07, 0.0011999983, 0.99999857, 0.0011999983, -7.199985e-07, -0.0011999983, 0.9999993, -16.521, 2.494, -38.485)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N208")])
 prev = Array[NodePath]([NodePath("../N206")])
 
-[node name="N208" type="Node3D" parent="Nodes" unique_id=2122807043 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N208" type="Node3D" parent="Nodes" unique_id=862566871 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.511, 2.497, -34.73)
 script = ExtResource("92_s6ymy")
 type = 6
 next = Array[NodePath]([NodePath("../N209")])
 prev = Array[NodePath]([NodePath("../N207")])
 
-[node name="N209" type="Node3D" parent="Nodes" unique_id=2139702448 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N209" type="Node3D" parent="Nodes" unique_id=1788763856 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.378, 2.496, -31.11)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N210")])
 prev = Array[NodePath]([NodePath("../N208")])
 
-[node name="N210" type="Node3D" parent="Nodes" unique_id=2145170633 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N210" type="Node3D" parent="Nodes" unique_id=1281513067 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.187, 2.493, -27.557)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N156")])
 prev = Array[NodePath]([NodePath("../N209")])
 
-[node name="N211" type="Node3D" parent="Nodes" unique_id=1046645979 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N211" type="Node3D" parent="Nodes" unique_id=1238706593 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.217, 2.49, -2.644)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N212")])
 prev = Array[NodePath]([NodePath("../N162")])
 
-[node name="N212" type="Node3D" parent="Nodes" unique_id=318489535 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N212" type="Node3D" parent="Nodes" unique_id=2045918294 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.594, 2.49, -2.171)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N213")])
 prev = Array[NodePath]([NodePath("../N211")])
 
-[node name="N213" type="Node3D" parent="Nodes" unique_id=138219334 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N213" type="Node3D" parent="Nodes" unique_id=1352171911 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.945, 2.49, -1.461)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N214")])
 prev = Array[NodePath]([NodePath("../N212")])
 
-[node name="N214" type="Node3D" parent="Nodes" unique_id=1570479571 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N214" type="Node3D" parent="Nodes" unique_id=786931014 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.285, 2.49, -0.671)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N215")])
 prev = Array[NodePath]([NodePath("../N213")])
 
-[node name="N215" type="Node3D" parent="Nodes" unique_id=654642470 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N215" type="Node3D" parent="Nodes" unique_id=654056841 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.619, 2.49, 0.155)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N216")])
 prev = Array[NodePath]([NodePath("../N214")])
 
-[node name="N216" type="Node3D" parent="Nodes" unique_id=2087567103 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N216" type="Node3D" parent="Nodes" unique_id=206921111 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.95, 2.49, 1.007)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N217")])
 prev = Array[NodePath]([NodePath("../N215")])
 
-[node name="N217" type="Node3D" parent="Nodes" unique_id=1271988198 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N217" type="Node3D" parent="Nodes" unique_id=1817076178 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.277, 2.49, 1.88)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N218")])
 prev = Array[NodePath]([NodePath("../N216")])
 
-[node name="N218" type="Node3D" parent="Nodes" unique_id=855023966 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N218" type="Node3D" parent="Nodes" unique_id=96757454 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.564, 2.492, 2.962)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N219")])
 prev = Array[NodePath]([NodePath("../N217")])
 
-[node name="N219" type="Node3D" parent="Nodes" unique_id=875625411 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N219" type="Node3D" parent="Nodes" unique_id=692885301 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.784, 2.495, 4.336)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N220")])
 prev = Array[NodePath]([NodePath("../N218")])
 
-[node name="N220" type="Node3D" parent="Nodes" unique_id=2047168955 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N220" type="Node3D" parent="Nodes" unique_id=797438367 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.038, 2.497, 5.569)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N221")])
 prev = Array[NodePath]([NodePath("../N219")])
 
-[node name="N221" type="Node3D" parent="Nodes" unique_id=233833445 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N221" type="Node3D" parent="Nodes" unique_id=353849672 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999984, 0.0017999973, 0, -0.0017999973, 0.9999984, 0, 0, 0, 1, 82.402, 2.493, 6.085)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N222")])
 prev = Array[NodePath]([NodePath("../N220")])
 
-[node name="N222" type="Node3D" parent="Nodes" unique_id=230780243 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N222" type="Node3D" parent="Nodes" unique_id=1367796121 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999928, 0.0037999693, 2.6599678e-06, -0.0037999693, 0.9999918, 0.0013999887, 2.6599678e-06, -0.0013999887, 0.99999905, 87.719, 2.479, 5.255)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N223")])
 prev = Array[NodePath]([NodePath("../N221")])
 
-[node name="N223" type="Node3D" parent="Nodes" unique_id=332045421 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N223" type="Node3D" parent="Nodes" unique_id=300984079 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999916, 0.004099961, 3.074956e-06, -0.004099961, 0.99999046, 0.0014999857, 3.074956e-06, -0.0014999857, 0.99999887, 92.767, 2.456, 3.355)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N224")])
 prev = Array[NodePath]([NodePath("../N222")])
 
-[node name="N224" type="Node3D" parent="Nodes" unique_id=797855543 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N224" type="Node3D" parent="Nodes" unique_id=801672427 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.999987, 0.005099922, 5.6098716e-06, -0.005099922, 0.99998456, 0.0021999665, 5.6098716e-06, -0.0021999665, 0.99999756, 97.625, 2.429, 1.003)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N225")])
 prev = Array[NodePath]([NodePath("../N223")])
 
-[node name="N225" type="Node3D" parent="Nodes" unique_id=275805743 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N225" type="Node3D" parent="Nodes" unique_id=432766442 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999885, 0.004799932, 5.7598777e-06, -0.004799932, 0.9999856, 0.002399966, 5.7598777e-06, -0.002399966, 0.99999714, 102.469, 2.398, -1.378)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N226")])
 prev = Array[NodePath]([NodePath("../N224")])
 
-[node name="N226" type="Node3D" parent="Nodes" unique_id=1057675491 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N226" type="Node3D" parent="Nodes" unique_id=76128638 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999741, 0.0071998006, 6.839716e-06, -0.0071998006, 0.9999723, 0.0018999475, 6.839716e-06, -0.0018999475, 0.9999982, 107.565, 2.368, -3.146)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N053")])
 prev = Array[NodePath]([NodePath("../N225")])
 
-[node name="N227" type="Node3D" parent="Nodes" unique_id=1650011335 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N227" type="Node3D" parent="Nodes" unique_id=2097579641 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 2.497, 29.524)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N228")])
 prev = Array[NodePath]([NodePath("../N169")])
 
-[node name="N228" type="Node3D" parent="Nodes" unique_id=567004177 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N228" type="Node3D" parent="Nodes" unique_id=471195484 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 0.99999714, -0.0023999934, 0, 0.0023999934, 0.99999714, 0.025, 2.492, 35.048)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N229")])
 prev = Array[NodePath]([NodePath("../N227")])
 
-[node name="N229" type="Node3D" parent="Nodes" unique_id=1191961983 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N229" type="Node3D" parent="Nodes" unique_id=1088456203 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.99999976, -0.00069999247, 1.6099741e-06, 0.00069999247, 0.99998915, -0.0045999507, 1.6099741e-06, 0.0045999507, 0.9999894, -0.17, 2.472, 40.569)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N230")])
 prev = Array[NodePath]([NodePath("../N228")])
 
-[node name="N230" type="Node3D" parent="Nodes" unique_id=699393715 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N230" type="Node3D" parent="Nodes" unique_id=2078780324 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 0.9999875, -0.0049999384, 0, 0.0049999384, 0.9999875, -0.424, 2.443, 46.088)
 script = ExtResource("92_s6ymy")
 type = 7
 next = Array[NodePath]([NodePath("../N231")])
 prev = Array[NodePath]([NodePath("../N229")])
 
-[node name="N231" type="Node3D" parent="Nodes" unique_id=928058214 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N231" type="Node3D" parent="Nodes" unique_id=1427514349 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999996, -0.0008999915, 1.9349727e-06, 0.0008999915, 0.99999034, -0.0042999596, 1.9349727e-06, 0.0042999596, 0.99999076, -0.694, 2.414, 51.606)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N232")])
 prev = Array[NodePath]([NodePath("../N230")])
 
-[node name="N232" type="Node3D" parent="Nodes" unique_id=678856756 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N232" type="Node3D" parent="Nodes" unique_id=7002471 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, -9.9999554e-05, 1.4999901e-07, 9.9999554e-05, 0.99999547, -0.0029999868, 1.4999901e-07, 0.0029999868, 0.9999955, -0.96, 2.393, 57.124)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N233")])
 prev = Array[NodePath]([NodePath("../N231")])
 
-[node name="N233" type="Node3D" parent="Nodes" unique_id=1939511727 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N233" type="Node3D" parent="Nodes" unique_id=1878754301 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.223, 2.385, 62.642)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N234")])
 prev = Array[NodePath]([NodePath("../N232")])
 
-[node name="N234" type="Node3D" parent="Nodes" unique_id=1538341506 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N234" type="Node3D" parent="Nodes" unique_id=1307085966 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 9.999998e-05, 3.9999993e-08, -9.999998e-05, 0.9999997, 0.00079999986, 3.9999993e-08, -0.00079999986, 0.9999997, -1.502, 2.389, 68.16)
 script = ExtResource("92_s6ymy")
 type = 3
 next = Array[NodePath]([NodePath("../N235")])
 prev = Array[NodePath]([NodePath("../N233")])
 
-[node name="N235" type="Node3D" parent="Nodes" unique_id=80570792 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N235" type="Node3D" parent="Nodes" unique_id=95555355 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 0.99999976, 0.0006999998, 0, -0.0006999998, 0.99999976, -1.766, 2.394, 73.678)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N236")])
 prev = Array[NodePath]([NodePath("../N234")])
 
-[node name="N236" type="Node3D" parent="Nodes" unique_id=1663688011 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N236" type="Node3D" parent="Nodes" unique_id=742001875 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 0.9999982, -0.0018999967, 0, 0.0018999967, 0.9999982, -1.977, 2.392, 79.199)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N237")])
 prev = Array[NodePath]([NodePath("../N235")])
 
-[node name="N237" type="Node3D" parent="Nodes" unique_id=1873132693 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N237" type="Node3D" parent="Nodes" unique_id=921189336 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 0.99998486, -0.005499917, 0, 0.005499917, 0.99998486, -2.184, 2.369, 84.719)
 script = ExtResource("92_s6ymy")
 type = 1
 next = Array[NodePath]([NodePath("../N238")])
 prev = Array[NodePath]([NodePath("../N236")])
 
-[node name="N238" type="Node3D" parent="Nodes" unique_id=1959445559 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N238" type="Node3D" parent="Nodes" unique_id=1563318013 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, -9.999672e-05, 4.0498014e-07, 9.999672e-05, 0.9999672, -0.008099735, 4.0498014e-07, 0.008099735, 0.9999672, -2.376, 2.329, 90.24)
 script = ExtResource("92_s6ymy")
 type = 2
 next = Array[NodePath]([NodePath("../N239")])
 prev = Array[NodePath]([NodePath("../N237")])
 
-[node name="N239" type="Node3D" parent="Nodes" unique_id=1093696847 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N239" type="Node3D" parent="Nodes" unique_id=1500559435 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(0.9999996, 0.00089999096, -1.9799702e-06, -0.00089999096, 0.9999899, -0.0043999557, -1.9799702e-06, 0.0043999557, 0.99999034, -2.043, 2.292, 95.748)
 script = ExtResource("92_s6ymy")
 next = Array[NodePath]([NodePath("../N240")])
 prev = Array[NodePath]([NodePath("../N238")])
 
-[node name="N240" type="Node3D" parent="Nodes" unique_id=529784839 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="N240" type="Node3D" parent="Nodes" unique_id=371190916 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214, 2.282, 100.936)
 script = ExtResource("92_s6ymy")
 type = 5
 next = Array[NodePath]([NodePath("../N089")])
 prev = Array[NodePath]([NodePath("../N239")])
 
-[node name="Start" type="Node3D" parent="Nodes" unique_id=858403460 groups=["nodes"] instance=ExtResource("91_cera1")]
+[node name="Start" type="Node3D" parent="Nodes" unique_id=317028295 groups=["nodes"] instance=ExtResource("91_cera1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.52, 13)
 script = ExtResource("92_s6ymy")
 _visible = false
 next = Array[NodePath]([NodePath("../N169")])
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=13038968]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1786071770]
 process_mode = 3
 stream = ExtResource("93_xes51")
 autoplay = true
 
-[node name="SpeechDialog" type="Control" parent="." unique_id=1616230657 instance=ExtResource("94_58a4s")]
+[node name="SpeechDialog" type="Control" parent="." unique_id=1094829728 instance=ExtResource("94_58a4s")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

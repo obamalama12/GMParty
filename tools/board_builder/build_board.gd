@@ -33,7 +33,9 @@ func build_terrain(heights: PackedFloat32Array, colors: PackedByteArray) -> Arra
 	for iz in n:
 		for ix in n:
 			var i := iz * n + ix
-			st.set_uv(Vector2(float(ix) / (n - 1), float(iz) / (n - 1)))
+			var uv := Vector2(float(ix) / (n - 1), float(iz) / (n - 1))
+			st.set_uv(uv)
+			st.set_uv2(uv)     # the tiling ground detail
 			st.add_vertex(Vector3(-half + ix * cell, heights[i], -half + iz * cell))
 	for iz in n - 1:
 		for ix in n - 1:
@@ -52,6 +54,8 @@ func build_terrain(heights: PackedFloat32Array, colors: PackedByteArray) -> Arra
 
 
 var colors_texture: Texture2D
+# how often the ground detail repeats over the whole board (about 2.5 m per repeat)
+const DETAIL_TILES := 95.0
 
 
 func terrain_material() -> StandardMaterial3D:
@@ -61,7 +65,13 @@ func terrain_material() -> StandardMaterial3D:
 	m.diffuse_mode = BaseMaterial3D.DIFFUSE_TOON
 	m.specular_mode = BaseMaterial3D.SPECULAR_TOON
 	m.roughness = 1.0
-	m.albedo_color = Color(0.7, 0.7, 0.7)    # the toon lighting is bright, so darken the colours a little
+	m.albedo_color = Color(0.77, 0.77, 0.77)    # the toon lighting is bright, so darken the colours a little
+	# a tiling grain over the colour map: blotches and tufts, so the ground is not one flat paint
+	m.detail_enabled = true
+	m.detail_albedo = load(BOARD_DIR + "ground_detail.png")
+	m.detail_blend_mode = BaseMaterial3D.BLEND_MODE_MUL
+	m.detail_uv_layer = BaseMaterial3D.DETAIL_UV_2
+	m.uv2_scale = Vector3(DETAIL_TILES, DETAIL_TILES, 1.0)
 	return m
 
 
