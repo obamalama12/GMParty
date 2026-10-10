@@ -1046,3 +1046,6 @@ msgstr "Votes: {count}"
 
 msgid "CONTEXT_VOTE_STAKES"
 msgstr "x2 COOKIES!"
+
+msgid "CONTEXT_HOW_TO_PLAY"
+msgstr "HOW TO PLAY"

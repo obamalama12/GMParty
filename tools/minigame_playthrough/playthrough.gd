@@ -86,6 +86,26 @@ func run_minigame(cfg, mname: String, ty: String):
 	await wait(3.0)
 	shot(label + "_a")
 	var acts := ["up", "down", "left", "right", "action1", "action2"]
+	if OS.get_environment("UNTIL_END") != "":
+		# play until the game ends by itself (the bots play, player 1 presses random buttons) and report how long it took
+		var cap := float(OS.get_environment("CAP")) if OS.get_environment("CAP") != "" else 150.0
+		var began := Time.get_ticks_msec()
+		var shots := 0
+		while (Time.get_ticks_msec() - began) / 1000.0 < cap and _find_scene(cfg.scene_path) != null:
+			var a := "player1_%s" % acts[randi() % acts.size()]
+			Input.action_press(a)
+			await wait(0.25)
+			Input.action_release(a)
+			await wait(0.15)
+			if (Time.get_ticks_msec() - began) / 1000.0 > shots * 8.0 + 4.0:
+				shots += 1
+				shot("%s_t%02d" % [label, shots])
+		var secs := (Time.get_ticks_msec() - began) / 1000.0 + 3.0
+		log_("DURATION %s %.0f s %s" % [label, secs, "(CAP, still running)" if _find_scene(cfg.scene_path) != null else ""])
+		if _find_scene(cfg.scene_path) == null:
+			await wait(6.0)
+			log_("END %s" % label)
+			return
 	for i in 20:
 		for p in 4:
 			var a := "player%d_%s" % [p + 1, acts[randi() % acts.size()]]
