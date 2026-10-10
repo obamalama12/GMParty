@@ -26,7 +26,7 @@ const CAMERA_SPEED = 6
 # Game options that can be customized in the Godot editor
 # Useful for board creation
 @export var COOKIES_FOR_CAKE := 30
-@export var MAX_TURNS := 10
+@export var MAX_TURNS := 6
 
 var lobby: Lobby
 
@@ -601,6 +601,9 @@ func _vote_for_minigame(type: String) -> MinigameLoader.MinigameConfigFile:
 	var chosen: MinigameLoader.MinigameConfigFile = options[0]
 	if options.size() > 1:
 		chosen = await $Screen/MinigameVote.run(options)
+		lobby.minigame_stakes = 2 if $Screen/MinigameVote.winner_has_stakes else 1
+	else:
+		lobby.minigame_stakes = 1
 	lobby.minigame_queue.choose(chosen)
 	return chosen
 
@@ -697,7 +700,7 @@ func _step(player: PlayerBoard, previous_space: NodeBoard, last: bool) -> Array:
 			await get_tree().create_timer(1).timeout
 
 	# If player passes a shop space
-	if player.space.type == NodeBoard.NODE_TYPES.SHOP:
+	if player.space.type == NodeBoard.NODE_TYPES.SHOP and lobby.overrides.items:
 		if not stopped:
 			if player.space != previous_space:
 				update_space(previous_space)
@@ -722,7 +725,7 @@ func _step(player: PlayerBoard, previous_space: NodeBoard, last: bool) -> Array:
 	var space := player.space
 	var last_step := last and space.is_visible_space()
 	var next_step_blocking = not last and (space.next.size() > 1 or
-			space.cake or space.type == NodeBoard.NODE_TYPES.SHOP)
+			space.cake or (space.type == NodeBoard.NODE_TYPES.SHOP and lobby.overrides.items))
 	if not last_step and not next_step_blocking:
 		player._internal_walk_to(player.space, player.space.position)
 	
@@ -860,6 +863,9 @@ func land_on_space(player: PlayerBoard):
 			await $Screen/SpeechDialog.dialog_finished
 			
 			var actions := Lobby.GNU_ACTION_TYPES.values()
+			if not lobby.overrides.items:
+				# The solo game pays out an item
+				actions.erase(Lobby.GNU_ACTION_TYPES.SOLO_MINIGAME)
 			var type: Lobby.GNU_ACTION_TYPES = actions[randi() % actions.size()]
 			
 			var state := Lobby.MinigameState.new()

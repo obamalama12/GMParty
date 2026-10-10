@@ -12,6 +12,7 @@
 - New "your turn" banner and a dice roll animation with sparks
 
 ### Changed
+- A game is 6 rounds instead of 40; the shop and items are off by default (lobby setting "Shop and items"); often one vote option pays double cookies
 - Simpler lobby layout, UI scales with the window size, many clipping fixes, longer Kernel Compiling, weaker "?" events
 - Joy and Glitch (formerly GNU and Nolok) have their own tile art
 

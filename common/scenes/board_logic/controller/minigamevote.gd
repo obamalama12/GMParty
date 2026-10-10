@@ -9,6 +9,8 @@ const VOTE_TIME := 15.0
 const RESULT_TIME := 2.2
 const TIE_RESULT_TIME := 5.6
 const SPIN_STEPS := 18
+## Chance that one of the offered games is a high stakes game
+const STAKES_CHANCE := 0.6
 const CARD_SIZE := Vector2(340, 330)
 const ICON_SIZE := Vector2(44, 44)
 
@@ -23,6 +25,8 @@ const COLOR_SPIN := Color(1, 0.85, 0.2, 1)
 var _options: Array = []
 var _votes := {}
 var _open := false
+## Set by [method run]: whether the winner was the high stakes game (double cookies)
+var winner_has_stakes := false
 
 # ---- client ---- #
 
@@ -57,7 +61,9 @@ func run(options: Array) -> MinigameLoader.MinigameConfigFile:
 	var filenames := []
 	for option in options:
 		filenames.append(option.filename)
-	controller.lobby.broadcast(_client_open.bind(filenames, VOTE_TIME))
+	# Often one of the games is offered with double cookies
+	var stakes_idx := randi() % options.size() if randf() < STAKES_CHANCE else -1
+	controller.lobby.broadcast(_client_open.bind(filenames, VOTE_TIME, stakes_idx))
 
 	for player in controller.players:
 		if player.info.is_ai():
@@ -80,6 +86,7 @@ func run(options: Array) -> MinigameLoader.MinigameConfigFile:
 		if counts[i] == best:
 			tied.append(i)
 	var winner: int = tied.pick_random()
+	winner_has_stakes = winner == stakes_idx
 
 	controller.lobby.broadcast(_client_reveal.bind(counts, tied, winner))
 	await get_tree().create_timer(TIE_RESULT_TIME if tied.size() > 1 else RESULT_TIME).timeout
@@ -122,7 +129,7 @@ func _cast(player_id: int, idx: int) -> void:
 # Client
 # ----------------------------------------------------------------------------------------------- #
 
-@rpc func _client_open(filenames: Array, time: float) -> void:
+@rpc func _client_open(filenames: Array, time: float, stakes_idx: int) -> void:
 	var configs := []
 	for filename in filenames:
 		var config := PluginSystem.minigame_loader.get_config_by_path(filename)
@@ -139,7 +146,7 @@ func _cast(player_id: int, idx: int) -> void:
 			_local_players.append(player.info.player_id)
 			_cursor[player.info.player_id] = 0
 	_time_left = time
-	_build(configs)
+	_build(configs, stakes_idx)
 	_active = true
 	_refresh()
 	show()
@@ -237,7 +244,7 @@ func _on_card_input(event: InputEvent, idx: int) -> void:
 
 # ---- drawing ---- #
 
-func _build(configs: Array) -> void:
+func _build(configs: Array, stakes_idx: int) -> void:
 	for child in get_children():
 		child.queue_free()
 	_cards.clear()
@@ -271,7 +278,7 @@ func _build(configs: Array) -> void:
 	column.add_child(row)
 
 	for i in configs.size():
-		row.add_child(_build_card(configs[i], i))
+		row.add_child(_build_card(configs[i], i, i == stakes_idx))
 
 	_hint = Label.new()
 	_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -283,7 +290,7 @@ func _build(configs: Array) -> void:
 	column.add_child(_timer_label)
 
 
-func _build_card(config: MinigameLoader.MinigameConfigFile, idx: int) -> PanelContainer:
+func _build_card(config: MinigameLoader.MinigameConfigFile, idx: int, stakes: bool) -> PanelContainer:
 	var card := PanelContainer.new()
 	card.custom_minimum_size = CARD_SIZE
 	card.pivot_offset = CARD_SIZE / 2.0
@@ -304,6 +311,15 @@ func _build_card(config: MinigameLoader.MinigameConfigFile, idx: int) -> PanelCo
 	if config.image_path != null and ResourceLoader.exists(config.image_path):
 		picture.texture = load(config.image_path)
 	box.add_child(picture)
+
+	if stakes:
+		var badge := Label.new()
+		badge.text = tr("CONTEXT_VOTE_STAKES")
+		badge.theme_type_variation = &"HeaderMedium"
+		badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		badge.add_theme_color_override("font_color", COLOR_SPIN)
+		badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		box.add_child(badge)
 
 	var name_label := Label.new()
 	name_label.theme_type_variation = &"HeaderMedium"

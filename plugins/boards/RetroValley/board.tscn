@@ -1123,7 +1123,7 @@ transform = Transform3D(-0.06037238, 0, 0.9981759, 0, 1, 0, -0.9981759, 0, -0.06
 [node name="Controller" type="Node3D" parent="." unique_id=732073223 groups=["Controller"] instance=ExtResource("85_qvm2v")]
 script = ExtResource("86_4kbdd")
 COOKIES_FOR_CAKE = 20
-MAX_TURNS = 40
+MAX_TURNS = 6
 start_node = NodePath("../Nodes/Start")
 show_linking_type = 3
 
