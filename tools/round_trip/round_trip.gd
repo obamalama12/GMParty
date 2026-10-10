@@ -60,7 +60,7 @@ func _ready() -> void:
 		var ctrl := server_controller()
 		print("RT round ", r, " starting minigame")
 		ctrl.prepare_minigame()
-		if not await wait_for(func(): return slobby.minigame_state != null, 20, "minigame state"):
+		if not await wait_for(func(): return slobby.minigame_state != null, 60, "minigame state"):
 			break
 		await wait(2.0)
 		clobby.goto_minigame(false)

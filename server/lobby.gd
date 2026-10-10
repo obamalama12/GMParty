@@ -5,9 +5,11 @@ signal setting_changed(setting)
 
 class BoardOverrides:
 	var cake_cost := 30
-	var max_turns := 10
+	var max_turns := 6
 	# Option to choose how players are awarded after completing a mini-game.
 	var award: int = Lobby.AWARD_TYPE.LINEAR
+	# Shop spaces and the items they sell. Off by default, the game is quicker without them.
+	var items := false
 
 const MINIGAME_REWARD_SCREEN = preload("res://server//rewardscreens/rewardscreen.tscn")
 
@@ -15,6 +17,9 @@ const MinigameQueue = preload("res://server/minigame_queue.gd")
 
 var overrides: BoardOverrides = BoardOverrides.new()
 var minigame_queue: MinigameQueue = MinigameQueue.new()
+
+# Cookie multiplier of the minigame that is about to be played (2 if the players voted for the high stakes game)
+var minigame_stakes := 1
 
 var started := false
 var loaded_from_savegame := false
@@ -44,7 +49,8 @@ func _init():
 	settings["main/enable_timeout"] = Settings.new_bool("MENU_SETTINGS_ENABLE_TIMEOUT", not Global.is_local_multiplayer())
 	settings["main/timeout"] = Settings.new_range("MENU_SETTINGS_TIMEOUT", 30, 10, 65535)
 	settings["main/cake_cost"] = Settings.new_range("MENU_SETTINGS_CAKE_COST", 30, 10, 65535)
-	settings["main/turns"] = Settings.new_range("MENU_SETTINGS_TURNS", 10, 1, 65535)
+	settings["main/turns"] = Settings.new_range("MENU_SETTINGS_TURNS", 6, 1, 65535)
+	settings["main/items"] = Settings.new_bool("MENU_SETTINGS_ITEMS", false)
 	settings["main/award_type"] = Settings.new_options("MENU_SETTINGS_AWARD_TYPE", "MENU_SETTINGS_AWARD_LINEAR", ["MENU_SETTINGS_AWARD_LINEAR", "MENU_SETTINGS_AWARD_WINNER_TAKES_ALL"])
 	setting_changed.connect(_on_setting_changed)
 	current_board = PluginSystem.board_loader.get_loaded_boards()[0]
@@ -65,6 +71,8 @@ func _on_setting_changed(setting: Settings):
 			overrides.cake_cost = setting.get_value()
 		"MENU_SETTINGS_TURNS":
 			overrides.max_turns = setting.get_value()
+		"MENU_SETTINGS_ITEMS":
+			overrides.items = setting.get_value()
 		"MENU_SETTINGS_AWARD_TYPE":
 			match setting.get_value():
 				"MENU_SETTINGS_AWARD_LINEAR":
@@ -143,7 +151,7 @@ func game_ended(): pass
 	if is_lobby_owner(multiplayer.get_remote_sender_id()):
 		current_board = board
 		var cake_cost := 30
-		var max_turns := 10
+		var max_turns := 6
 		var scene: SceneState = load(PluginSystem.board_loader.get_board_path(current_board)).get_state()
 		for i in range(scene.get_node_count()):
 			var instance: PackedScene = scene.get_node_instance(i)
@@ -444,7 +452,7 @@ func get_ffa_reward(pos: int):
 ## The last two rounds are the final frenzy: minigame cookie rewards are doubled. (The turn counter has already moved
 ## on when the minigame of a round is played, so the minigame after round N is played at turn N + 1.)
 func reward_factor() -> int:
-	return 2 if turn >= overrides.max_turns else 1
+	return (2 if turn >= overrides.max_turns else 1) * minigame_stakes
 
 
 func _count_stat(player_id: int, key: String) -> void:
@@ -492,6 +500,7 @@ func _goto_board(placement) -> void:
 	minigame_state = null
 	_record_minigame_win(minigame_type, minigame_teams, placement)
 	var factor := reward_factor()
+	minigame_stakes = 1
 
 	match minigame_type:
 		MINIGAME_TYPES.FREE_FOR_ALL:
