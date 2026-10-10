@@ -163,7 +163,19 @@ func _initialize() -> void:
 	var plane := PlaneMesh.new()
 	plane.size = Vector2(900, 900)
 	var water_mat: ShaderMaterial = load("res://assets/materials/water_still.tres").duplicate()
+	water_mat.shader = load("res://assets/shaders/water_foam.gdshader")
 	water_mat.set_shader_parameter("texture_scale", Vector2(900, 900))
+	# the depth of the water over the terrain, for the foam along the shores (0.5 + depth / 6 m, so the shore line is 0.5)
+	var n_cells: int = layout.n
+	var depth_bytes := PackedByteArray()
+	depth_bytes.resize(n_cells * n_cells)
+	for i in n_cells * n_cells:
+		depth_bytes[i] = int(clampf(0.5 + (layout.water_y - heights[i]) / 6.0, 0.0, 1.0) * 255.0)
+	var shore_tex := ImageTexture.create_from_image(Image.create_from_data(n_cells, n_cells, false, Image.FORMAT_R8, depth_bytes))
+	ResourceSaver.save(shore_tex, BOARD_DIR + "shore_depth.res")
+	water_mat.set_shader_parameter("shore_map", load(BOARD_DIR + "shore_depth.res"))
+	water_mat.set_shader_parameter("shore_origin", Vector2(-layout.half, -layout.half))
+	water_mat.set_shader_parameter("shore_size", 2.0 * layout.half)
 	plane.material = water_mat
 	var water := MeshInstance3D.new()
 	water.mesh = plane
